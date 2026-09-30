@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "stag-knight",
+  "name": "Stag Knight",
+  "type": "Fey",
+  "level": 3,
+  "tier": 3,
+  "role": "Standard",
+  "description": "A knight with huge, majestic antlers wearing armor made of dangerous thorns.",
+  "difficulty": 17,
+  "thresholds": {
+    "major": 19,
+    "severe": 36
+  },
+  "hp": 7,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Bramble Sword",
+      "modifier": 3,
+      "range": "Melee",
+      "damage": "3d8+3 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Forest Knowledge",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Isolate",
+    "Maneuver",
+    "Protect the forest",
+    "Weed the unwelcome"
+  ],
+  "abilities": [
+    {
+      "name": "From Above",
+      "kind": "Passive",
+      "description": "When the Knight succeeds on a standard attack from above a target, they deal 3d12+3 physical damage instead of their standard damage."
+    },
+    {
+      "name": "Blade of the Forest",
+      "kind": "Action",
+      "description": "Spend a Fear to make an attack against all targets within Very Close range. Targets the Knight succeeds against take physical damage equal to 3d4 + the target's Major threshold."
+    },
+    {
+      "name": "Thorny Armor",
+      "kind": "Reaction",
+      "description": "When the Knight takes damage from an attack within Melee range, you can mark a Stress to deal 1d10+5 physical damage to the attacker."
+    }
+  ],
+  "tags": [
+    "Fey"
+  ]
+}

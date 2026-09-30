@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "id": "riftshard-wolf",
+  "name": "Riftshard Wolf",
+  "type": "Rift Beast",
+  "level": 2,
+  "tier": 2,
+  "role": "Standard",
+  "description": "A hulking wolf-shaped predator whose body is formed from dark crystalline plates and jagged translucent spikes. Violet-blue Rift energy leaks constantly through fractures in its body, leaving luminous trails as it moves.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 11,
+    "severe": 21
+  },
+  "hp": 5,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Crystal Fangs & Claws",
+      "modifier": 2,
+      "range": "Melee",
+      "damage": "2d10+4 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Rift Hunter",
+      "modifier": 3
+    },
+    {
+      "name": "Pack Predator",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Surround prey",
+    "Rush the wounded",
+    "Overwhelm",
+    "Protect the pack",
+    "Tear through spellcasters"
+  ],
+  "abilities": [
+    {
+      "name": "Rift-Hardened Crystal",
+      "kind": "Passive",
+      "description": "When the Riftshard Wolf takes magic damage, halve the incoming damage before comparing it to its damage thresholds. Physical damage affects it normally."
+    },
+    {
+      "name": "Shardpack",
+      "kind": "Passive",
+      "description": "When the Riftshard Wolf makes a successful standard attack against a target with another Riftshard Wolf within Very Close range, add 1d6 physical damage to the damage roll."
+    },
+    {
+      "name": "Crystal Pounce",
+      "kind": "Action",
+      "description": "Mark a Stress to move from within Close range into Melee range of a target and make an attack. On a success, deal 2d12+4 physical damage and knock the target back to Very Close range."
+    },
+    {
+      "name": "Rift Eruption",
+      "kind": "Reaction",
+      "description": "When the Riftshard Wolf marks 2 or more HP from a single attack, unstable Rift magic erupts from its crystalline wounds. All creatures within Melee range must make an Agility Reaction Roll (15). On a failure, they take 1d8+4 magic damage."
+    }
+  ],
+  "tags": [
+    "Rift Beast",
+    "Beast",
+    "Crystal",
+    "Pack Hunter"
+  ]
+}

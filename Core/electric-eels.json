@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "electric-eels",
+  "name": "Electric Eels",
+  "type": "Beast",
+  "level": 2,
+  "tier": 2,
+  "role": "Horde",
+  "description": "A swarm of eels that encircle and electrocute.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 10,
+    "severe": 20
+  },
+  "hp": 5,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Shocking Bite",
+      "modifier": 0,
+      "range": "Melee",
+      "damage": "2d6+4 physical"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Avoid larger predators",
+    "shock prey",
+    "tear apart"
+  ],
+  "abilities": [
+    {
+      "name": "Horde (2d4+1)",
+      "kind": "Passive",
+      "description": "When the Eels have marked half or more of their HP, their standard attack deals 2d4+1 physical damage instead."
+    },
+    {
+      "name": "Paralyzing Shock",
+      "kind": "Action",
+      "description": "Mark a Stress to make a standard attack against all targets within Very Close range. You gain a Fear for each target that marks HP."
+    }
+  ],
+  "tags": [
+    "Beast"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "environment-id",
+  "name": "Environment Name",
+  "type": "Traversal",
+  "level": 1,
+  "tier": 1,
+  "description": "Short description of the environment.",
+  "difficulty": 10,
+  "impulses": [
+    "First impulse",
+    "Second impulse"
+  ],
+  "potentialAdversaries": [
+    "Example adversary group (Example Adversary, Another Adversary)"
+  ],
+  "features": [
+    {
+      "name": "Feature Name",
+      "kind": "Action",
+      "description": "Complete mechanical text for the feature.",
+      "prompt": "Optional GM question or narrative prompt.",
+      "uses": 3
+    }
+  ]
+}

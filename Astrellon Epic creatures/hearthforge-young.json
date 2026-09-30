@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "hearthforge-young",
+  "name": "Hearthforge Dragon - Young",
+  "type": "Dragon",
+  "lineage": "Covenant",
+  "level": 3,
+  "tier": 2,
+  "role": "Solo",
+  "description": "Young Hearthforge is a good-leaning covenant intelligent true dragon with dark iron plates and hammered bronze horns. It seeks to defend artisans and sacred craft. At this age it is an emerging but formidable predator.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 14,
+    "severe": 28
+  },
+  "hp": 10,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Iron Jaws",
+      "modifier": 3,
+      "range": "Very Close",
+      "damage": "2d10+4 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Master Smith",
+      "modifier": 2
+    },
+    {
+      "name": "Siegecraft",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Hold a chokepoint",
+    "Break siege machines",
+    "Protect the workshop"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (2)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 2 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Iron Brace",
+      "kind": "Passive",
+      "description": "While touching stone or metal, the dragon cannot be knocked back."
+    },
+    {
+      "name": "Forge Breath",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 15. On a failure, take 2d8+4 magic damage and one carried metal item of the target’s choice becomes too hot to handle until its next action, unless dropped. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Covenant",
+    "Young",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Cavern",
+    "Volcanic"
+  ]
+}

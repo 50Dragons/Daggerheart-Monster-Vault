@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "assassin-poisoner",
+  "name": "Assassin Poisoner",
+  "type": "Humanoid",
+  "level": 2,
+  "tier": 2,
+  "role": "Skulk",
+  "description": "A cunning scoundrel skilled in both poisons and ambushing.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 8,
+    "severe": 16
+  },
+  "hp": 4,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Poisoned Throwing Dagger",
+      "modifier": 3,
+      "range": "Close",
+      "damage": "2d8+1 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Intrusion",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Anticipate",
+    "get paid",
+    "kill",
+    "taint food and water"
+  ],
+  "abilities": [
+    {
+      "name": "Grindletooth Venom",
+      "kind": "Passive",
+      "description": "Targets who mark HP from the Assassin\u2019s attacks are Vulnerable until they clear a HP."
+    },
+    {
+      "name": "Out of Nowhere",
+      "kind": "Passive",
+      "description": "The Assassin has advantage on attacks if they are Hidden."
+    },
+    {
+      "name": "Fumigation",
+      "kind": "Action",
+      "description": "Drop a smoke bomb that fills the air within Close range with smoke, Dizzying all targets in this area. Dizzied targets have disadvantage on their next action roll, then clear the condition."
+    }
+  ],
+  "tags": [
+    "Humanoid"
+  ]
+}

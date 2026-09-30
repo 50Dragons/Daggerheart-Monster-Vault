@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "jagged-knife-sniper",
+  "name": "Jagged Knife Sniper",
+  "type": "Humanoid",
+  "level": 1,
+  "tier": 1,
+  "role": "Ranged",
+  "description": "A lanky bandit striking from cover with a shortbow.",
+  "difficulty": 13,
+  "thresholds": {
+    "major": 4,
+    "severe": 7
+  },
+  "hp": 3,
+  "stress": 2,
+  "attacks": [
+    {
+      "name": "Shortbow",
+      "modifier": -1,
+      "range": "Far",
+      "damage": "1d10+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Stealth",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Ambush",
+    "hide",
+    "profit",
+    "reposition"
+  ],
+  "abilities": [
+    {
+      "name": "Unseen Strike",
+      "kind": "Passive",
+      "description": "If the Sniper is Hidden when they make a successful standard attack against a target, they deal 1d10+4 physical damage instead of their standard damage."
+    }
+  ],
+  "tags": [
+    "Humanoid"
+  ]
+}

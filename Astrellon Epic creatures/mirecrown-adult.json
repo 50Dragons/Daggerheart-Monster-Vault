@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "mirecrown-adult",
+  "name": "Mirecrown Linnorm - Adult",
+  "type": "Linnorm",
+  "lineage": "Worldborn Linnorm",
+  "level": 6,
+  "tier": 3,
+  "role": "Solo",
+  "description": "Adult Mirecrown is a chaotic, instinct-driven worldborn linnorm clever, wingless, non-humanoid linnorm with mud-caked scales, reed-crowned sensory spines, and a broad paddle tail. It seeks to restore blocked waterways and defend its nesting grounds. At this age it is a commanding force in its territory.",
+  "difficulty": 18,
+  "thresholds": {
+    "major": 26,
+    "severe": 45
+  },
+  "hp": 15,
+  "stress": 6,
+  "attacks": [
+    {
+      "name": "Ambush Bite",
+      "modifier": 5,
+      "range": "Very Close",
+      "damage": "3d10+5 physical",
+      "description": "The linnorm strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Wetland Ambush",
+      "modifier": 3
+    },
+    {
+      "name": "Waterway Memory",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Hide in silt",
+    "Death-roll prey",
+    "Destroy dams"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The linnorm can be spotlighted up to 3 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Mud Camouflage",
+      "kind": "Passive",
+      "description": "Before the linnorm first attacks or after it becomes Hidden in a wetland, a creature must succeed on an Instinct Roll to locate it."
+    },
+    {
+      "name": "Choking Spray",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 18. On a failure, take 3d8+6 physical damage and the target marks 1 Stress from bile and rotting peat. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Death Roll",
+      "kind": "Action",
+      "description": "Mark a Stress. Make an attack against one creature within Melee range. On a success, deal 3d12+5 physical damage and make the target Restrained in its jaws until the target escapes with a successful Strength Roll."
+    },
+    {
+      "name": "Submerge",
+      "kind": "Reaction",
+      "description": "After taking damage in deep water or mud, mark a Stress to move to another point within Close range and become Hidden until it attacks or an enemy locates it with a successful Instinct Roll."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the linnorm marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Worldborn Linnorm",
+    "Adult",
+    "Epic",
+    "Solo",
+    "Linnorm"
+  ],
+  "biome": [
+    "Wetlands",
+    "River"
+  ]
+}

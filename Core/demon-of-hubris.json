@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "demon-of-hubris",
+  "name": "Demon Of Hubris",
+  "type": "Fiend",
+  "level": 3,
+  "tier": 3,
+  "role": "Leader",
+  "description": "A perfectly beautiful and infinitely cruel demon with a gleaming spear and elegant robes.",
+  "difficulty": 18,
+  "thresholds": {
+    "major": 18,
+    "severe": 36
+  },
+  "hp": 7,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Perfect Spear",
+      "modifier": 4,
+      "range": "Very Close",
+      "damage": "3d10 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Manipulation",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Condescend",
+    "declare premature victory",
+    "prove superiority"
+  ],
+  "abilities": [
+    {
+      "name": "Terrifying",
+      "kind": "Passive",
+      "description": "When the Demon makes a successful attack, all PCs within Far range must lose a Hope and you gain a Fear."
+    },
+    {
+      "name": "Double or Nothing",
+      "kind": "Passive",
+      "description": "When a PC within Far range fails a roll, they can choose to reroll their Fear Die and take the new result. If they still fail, they mark 2 Stress and the Demon clears a Stress."
+    },
+    {
+      "name": "Unparalleled Skill",
+      "kind": "Action",
+      "description": "Mark a Stress to deal the Demon\u2019s standard attack damage to a target within Close range."
+    },
+    {
+      "name": "The Root of Villainy",
+      "kind": "Action",
+      "description": "Spend a Fear to spotlight two other Demons within Far range."
+    },
+    {
+      "name": "You Pale in Comparison",
+      "kind": "Reaction",
+      "description": "When a PC fails a roll within Close range of the Demon, they must mark a Stress."
+    }
+  ],
+  "tags": [
+    "Fiend"
+  ]
+}

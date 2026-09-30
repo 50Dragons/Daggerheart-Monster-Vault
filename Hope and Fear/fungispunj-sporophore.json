@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "fungispunj-sporophore",
+  "name": "Fungispunj Sporophore",
+  "type": "Plant",
+  "level": 2,
+  "tier": 2,
+  "role": "Leader",
+  "description": "A giant mushroom creature that can command the dead.",
+  "difficulty": 16,
+  "thresholds": {
+    "major": 12,
+    "severe": 24
+  },
+  "hp": 6,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Spongy Fist",
+      "modifier": 2,
+      "range": "Very Close",
+      "damage": "2d8+4 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Commander",
+      "modifier": 5
+    },
+    {
+      "name": "Guardian",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Awaken the fallen",
+    "defend the colony",
+    "spread spores"
+  ],
+  "abilities": [
+    {
+      "name": "Neurotoxic Spore Cloud",
+      "kind": "Action",
+      "description": "Mark a Stress to have the Sporophore spray a cloud of spores on all targets within Close range. Each PC must succeed on a Agility Reaction Roll or become Poisoned until they spend a Hope to clear the condition. While Poisoned, a target must roll a d6 before they make an action roll. On a result of 4 or lower, they must mark a Stress."
+    },
+    {
+      "name": "Reanimator",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Sporophore spray a corpse within Very Close range with a cloud of psychic spores. The corpse clears all HP and Stress, then reanimates under the psychic control of the Sporophore. When the Sporophore is spotlighted, you can also spotlight all corpses it controls."
+    },
+    {
+      "name": "Colony",
+      "kind": "Action",
+      "description": "Mark any number of Stress to have the Sporophore summon an equal number of Fungispunj Sporelings within Close range."
+    },
+    {
+      "name": "Mind Meld",
+      "kind": "Reaction",
+      "description": "All Fungispunj can telepathically communicate with one another. When the Sporophore would be forced to mark Stress from an attack, it can cause Fungispunj allies in the scene to mark that Stress in its place, distributed among allies as it chooses."
+    }
+  ],
+  "tags": [
+    "Plant"
+  ]
+}

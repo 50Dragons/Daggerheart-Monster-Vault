@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "cocoon-of-the-third-sister",
+  "name": "Cocoon of the Third Sister",
+  "type": "Fungus",
+  "level": 2,
+  "tier": 2,
+  "role": "Support",
+  "description": "A gigantic puffball-like fungal womb. Its pale surface swells and contracts as though breathing.",
+  "difficulty": null,
+  "thresholds": {
+    "major": 10,
+    "severe": 20
+  },
+  "hp": 6,
+  "stress": 0,
+  "attacks": [],
+  "experiences": [],
+  "motivesTactics": [
+    "Heal the hags",
+    "release spores",
+    "survive"
+  ],
+  "abilities": [
+    {
+      "name": "Life-Giving Spores",
+      "kind": "Action",
+      "description": "Cost: 1 HP. Mark 1 HP on the Cocoon and choose one Hag within Far range. That Hag may either clear 2 HP or clear 3 Stress."
+    },
+    {
+      "name": "Restorative Pulse",
+      "kind": "Reaction",
+      "description": "When either Hag marks 2 or more HP from a single attack, spend a Fear. That Hag clears 1 HP."
+    },
+    {
+      "name": "Poison Spore Burst",
+      "kind": "Action",
+      "description": "Cost: 1 Fear. All PCs within Close range must make an Instinct Reaction Roll (14). Failure: 1d8+3 magic damage and mark a Stress."
+    },
+    {
+      "name": "Death Burst",
+      "kind": "Reaction",
+      "description": "When the Cocoon marks its last HP, it violently ruptures. All creatures within Very Close range must make an Agility Reaction Roll (14). Failure: 1d8+3 magic damage. Then all healing and defensive features provided by the Cocoon immediately end."
+    }
+  ],
+  "tags": [
+    "Fungus",
+    "Cocoon"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "ruby-dragon",
+  "name": "Ruby Dragon",
+  "type": "Dragon",
+  "level": 4,
+  "tier": 4,
+  "role": "Standard",
+  "description": "A huge winged dragon that has visible flames beneath its glittering, gem-encrusted scales. Its body heat melts stone.",
+  "difficulty": 19,
+  "thresholds": {
+    "major": 30,
+    "severe": 50
+  },
+  "hp": 6,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Tooth & Claw",
+      "modifier": 6,
+      "range": "Close",
+      "damage": "4d10+8 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Mountains",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Crack the earth",
+    "melt",
+    "protect treasure"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The Dragon can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Fearsome",
+      "kind": "Passive",
+      "description": "When the Dragon succeeds on an attack against a PC or a PC within Far range fails an action roll, you gain a Fear."
+    },
+    {
+      "name": "Melting Breath",
+      "kind": "Action",
+      "description": "Mark a Stress to have the Dragon unleash a blast of fire on all PCs in front of it within Close range. Each target must succeed on an Agility Reaction Roll or take 4d12+10 magic damage and mark an Armor Slot without gaining its benefits (they can still use armor to reduce the damage)."
+    },
+    {
+      "name": "Volcanic Fissure",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Dragon snap its tail against the ground, opening a lava rift that flows over the area within Close range. Each PC within that area must make an Agility Reaction Roll. Targets who succeed immediately move out of the area. Targets who fail take 4d8+5 magic damage. Until the Dragon is defeated, a creature who enters the area takes 4d8+5 magic damage."
+    },
+    {
+      "name": "Hot-Blooded",
+      "kind": "Reaction",
+      "description": "When a creature makes a successful attack against the Dragon within Very Close range, the Dragon\u2019s blood erupts from the wound and burns the attacker, forcing them to mark an Armor Slot. If they can\u2019t mark an Armor Slot, they mark 1d4 HP."
+    }
+  ],
+  "tags": [
+    "Dragon"
+  ]
+}

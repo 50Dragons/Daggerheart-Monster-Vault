@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "verdant-venerable",
+  "name": "Verdant Dragon - Venerable",
+  "type": "Dragon",
+  "lineage": "Covenant",
+  "level": 9,
+  "tier": 4,
+  "role": "Solo",
+  "description": "Venerable Verdant is a good-leaning covenant intelligent true dragon with moss and verdigris over ancient copper scales. It seeks to restore blighted lands and pursue despoilers. At this age it is a legendary, nearly unstoppable presence.",
+  "difficulty": 20,
+  "thresholds": {
+    "major": 37,
+    "severe": 68
+  },
+  "hp": 20,
+  "stress": 7,
+  "attacks": [
+    {
+      "name": "Copper Jaws",
+      "modifier": 8,
+      "range": "Very Close",
+      "damage": "4d10+10 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Ancient Forest Lore",
+      "modifier": 4
+    },
+    {
+      "name": "Territorial Awareness",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Guard wounded land",
+    "Separate trespassers",
+    "Root and corrode"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (4)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 4 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Rooted Guardian",
+      "kind": "Passive",
+      "description": "While touching natural earth, the dragon cannot be knocked back."
+    },
+    {
+      "name": "Verdigris Breath",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 20. On a failure, take 4d8+10 magic damage and the target is Vulnerable while standing on the rooted ground, ending when they leave it. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Grasping Roots",
+      "kind": "Action",
+      "description": "Mark a Stress. Choose up to two targets within Close range. Each must succeed on a Strength Reaction Roll or become Restrained by roots until they escape with a successful Strength or Agility Roll."
+    },
+    {
+      "name": "Patient Regrowth",
+      "kind": "Reaction",
+      "description": "Once per scene, when the dragon marks HP while touching living ground, clear 1 marked HP after the damage resolves."
+    },
+    {
+      "name": "The Forest Answers",
+      "kind": "Action",
+      "description": "Spend a Fear. All enemies within Close range must make an Agility Reaction Roll. On a failure, they take 4d8+10 physical damage and become Restrained by erupting roots until they escape with a successful Strength or Agility Roll. On a success, they take half damage and are not Restrained."
+    },
+    {
+      "name": "Epic Ferocity",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks its fifth HP, it clears 2 Stress and may immediately move up to Close range. This movement does not grant an attack. If it has fewer than five HP, trigger this after it marks half its total HP instead."
+    }
+  ],
+  "tags": [
+    "Covenant",
+    "Venerable",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Forest",
+    "Ruins"
+  ]
+}

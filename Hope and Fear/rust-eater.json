@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "rust-eater",
+  "name": "Rust Eater",
+  "type": "Monstrosity",
+  "level": 2,
+  "tier": 2,
+  "role": "Standard",
+  "description": "A pony-sized cockroach coated in a corrosive chitin that turns metal into rust.",
+  "difficulty": 12,
+  "thresholds": {
+    "major": 10,
+    "severe": 18
+  },
+  "hp": 5,
+  "stress": 2,
+  "attacks": [
+    {
+      "name": "Bite",
+      "modifier": 1,
+      "range": "Melee",
+      "damage": "2d6+4 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Snuffle",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Avoid detection",
+    "eat rust",
+    "sniff out metal"
+  ],
+  "abilities": [
+    {
+      "name": "Stifling Pheromones",
+      "kind": "Passive",
+      "description": "A PC who makes an action roll within Very Close range of the Rust Eater must succeed on an Instinct Reaction Roll or mark a Stress."
+    },
+    {
+      "name": "Rust Touch",
+      "kind": "Passive",
+      "description": "The Rust Eater\u2019s carapace is coated in a corrosive acid that pits and rusts metal. When a PC within Melee range of the Rust Easter succeeds on an attack against it with a metal weapon, reduce the weapon\u2019s damage die by one step (for example, d8 to d6 or d6 to d4). If a weapon\u2019s damage die is reduced below a d4, the weapon crumbles into rust. The Rust Eater then devours the rust pile and clears a HP."
+    }
+  ],
+  "tags": [
+    "Monstrosity"
+  ]
+}

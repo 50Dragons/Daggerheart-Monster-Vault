@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "volcanic-dragon-obsidian-predator",
+  "name": "Volcanic Dragon: Obsidian Predator",
+  "type": "Dragon",
+  "level": 4,
+  "tier": 4,
+  "role": "Solo",
+  "description": "A massive winged creature with obsidian scales and impossibly sharp claws.",
+  "difficulty": 19,
+  "thresholds": {
+    "major": 33,
+    "severe": 65
+  },
+  "hp": 6,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Obsidian Claws",
+      "modifier": 8,
+      "range": "Close",
+      "damage": "4d10+4 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Hunt from Above",
+      "modifier": 5
+    }
+  ],
+  "motivesTactics": [
+    "Defend lair",
+    "dive-bomb",
+    "fly",
+    "hunt",
+    "intimidate"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (2)",
+      "kind": "Passive",
+      "description": "The Obsidian Predator can be spotlighted up to two times per GM turn. Spend Fear as usual to spotlight them."
+    },
+    {
+      "name": "Flying",
+      "kind": "Passive",
+      "description": "While flying, the Obsidian Predator gains a +3 bonus to their Difficulty."
+    },
+    {
+      "name": "Obsidian Scales",
+      "kind": "Passive",
+      "description": "The Obsidian Predator is resistant to physical damage."
+    },
+    {
+      "name": "Avalanche Tail",
+      "kind": "Action",
+      "description": "Mark a Stress to make an attack against all targets within Close range. Targets the Obsidian Predator succeeds against take 4d6+4 physical damage and are knocked back to Far range and Vulnerable until their next roll with Hope."
+    },
+    {
+      "name": "Dive-Bomb",
+      "kind": "Action",
+      "description": "If the Obsidian Predator is flying, mark a Stress to choose a point within Far range. Move to that point and make an attack against all targets within Very Close range. Targets the Obsidian Predator succeeds against take 2d10+6 physical damage and must mark a Stress and lose a Hope."
+    },
+    {
+      "name": "Erupting Rage (Phase Change)",
+      "kind": "Reaction",
+      "description": "When the Obsidian Predator marks their last HP, replace them with the Molten Scourge and immediately spotlight them."
+    }
+  ],
+  "tags": [
+    "Dragon"
+  ]
+}

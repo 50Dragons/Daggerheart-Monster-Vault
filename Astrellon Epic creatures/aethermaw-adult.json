@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "aethermaw-adult",
+  "name": "Aethermaw Linnorm - Adult",
+  "type": "Linnorm",
+  "lineage": "Worldborn Linnorm",
+  "level": 6,
+  "tier": 3,
+  "role": "Solo",
+  "description": "Adult Aethermaw is a chaotic, instinct-driven worldborn linnorm clever, wingless, non-humanoid linnorm with armoured black plates and translucent cyan aether-sensing organs. It seeks to feed on concentrated aether in the deep. At this age it is a commanding force in its territory.",
+  "difficulty": 18,
+  "thresholds": {
+    "major": 26,
+    "severe": 45
+  },
+  "hp": 15,
+  "stress": 6,
+  "attacks": [
+    {
+      "name": "Armoured Bite",
+      "modifier": 5,
+      "range": "Very Close",
+      "damage": "3d10+5 physical",
+      "description": "The linnorm strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Deep-Sea Hunting",
+      "modifier": 3
+    },
+    {
+      "name": "Aether Scent",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Target engines",
+    "Crush hulls",
+    "Pursue aether trails"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The linnorm can be spotlighted up to 3 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Aether Scent",
+      "kind": "Passive",
+      "description": "The linnorm senses the direction of active concentrated aether within Far range, even through water or a ship’s hull."
+    },
+    {
+      "name": "Scalding Brine",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 18. On a failure, take 3d8+6 physical damage and the target marks 1 Stress from scalding brine and shell shards. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Hull-Crushing Coil",
+      "kind": "Action",
+      "description": "Mark a Stress. Make an attack against a vessel or one creature within Very Close range. On a success, deal 3d12+5 physical damage; a creature is also Restrained until it escapes with a successful Strength Roll."
+    },
+    {
+      "name": "Spined Tail",
+      "kind": "Reaction",
+      "description": "When a creature within Very Close range damages the linnorm, mark a Stress to attack that creature with a +5 modifier for 2d10+5 physical damage."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the linnorm marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Worldborn Linnorm",
+    "Adult",
+    "Epic",
+    "Solo",
+    "Linnorm"
+  ],
+  "biome": [
+    "Deep Sea",
+    "Aquatic"
+  ]
+}

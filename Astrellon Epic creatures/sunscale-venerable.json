@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "sunscale-venerable",
+  "name": "Sunscale Dragon - Venerable",
+  "type": "Dragon",
+  "lineage": "Firmament",
+  "level": 9,
+  "tier": 4,
+  "role": "Solo",
+  "description": "Venerable Sunscale is a neutral-leaning firmament intelligent true dragon with violet scales that kindle molten gold in sunlight. It seeks to test mortals through riddles, wagers, and fire. At this age it is a legendary, nearly unstoppable presence.",
+  "difficulty": 20,
+  "thresholds": {
+    "major": 37,
+    "severe": 68
+  },
+  "hp": 19,
+  "stress": 7,
+  "attacks": [
+    {
+      "name": "Molten Jaws",
+      "modifier": 8,
+      "range": "Very Close",
+      "damage": "4d10+10 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Riddles and Wagers",
+      "modifier": 4
+    },
+    {
+      "name": "Cliff Hunter",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Provoke and test",
+    "Burn escape routes",
+    "Dive upon isolated prey"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (4)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 4 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Sunlit Fury",
+      "kind": "Passive",
+      "description": "In direct sunlight, the dragon gains +2 Difficulty and adds 2 to damage from its attacks."
+    },
+    {
+      "name": "Solar Breath",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 20. On a failure, take 4d8+10 magic damage and clinging solar fire forces the target to mark 1 Stress. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Flare Wing",
+      "kind": "Action",
+      "description": "Mark a Stress. Make an attack against every enemy within Very Close range. Each success deals 4d8+10 physical damage and knocks the target back to Close range."
+    },
+    {
+      "name": "Solar Reprisal",
+      "kind": "Reaction",
+      "description": "When the dragon marks HP from an attack within Close range, mark a Stress to make a Solar Breath attack against that attacker if it remains in range."
+    },
+    {
+      "name": "Liquid Sun",
+      "kind": "Action",
+      "description": "Spend a Fear. Flood an area within Close range with solar fire until the end of the dragon’s next spotlight. Creatures in it must make an Agility Reaction Roll or take 4d8+10 magic damage; a success takes half damage. A creature that enters or acts in the burning area takes 2d8+8 magic damage once per spotlight."
+    },
+    {
+      "name": "Epic Ferocity",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks its fifth HP, it clears 2 Stress and may immediately move up to Close range. This movement does not grant an attack. If it has fewer than five HP, trigger this after it marks half its total HP instead."
+    }
+  ],
+  "tags": [
+    "Firmament",
+    "Venerable",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Cliffs",
+    "Volcanic"
+  ]
+}

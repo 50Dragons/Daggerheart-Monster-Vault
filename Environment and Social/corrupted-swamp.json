@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "corrupted-swamp",
+  "name": "Corrupted Swamp",
+  "type": "Traversal",
+  "level": 1,
+  "tier": 1,
+  "description": "A wretched stretch of slimy water, toxic creatures, and decay.",
+  "difficulty": 11,
+  "impulses": [
+    "Corrupt",
+    "emphasize putrescence",
+    "reveal the twisted and unnatural",
+    "sicken"
+  ],
+  "potentialAdversaries": [
+    "Any Undead (Skeleton, Zombie, Spectral Guardian)",
+    "Giant Rat",
+    "Green Ooze",
+    "Tangle Bramble"
+  ],
+  "features": [
+    {
+      "name": "Swamp Sickness",
+      "kind": "Passive",
+      "description": "At the end of a long rest, each PC must succeed on a Strength Reaction Roll or gain a d4 Sickened Die, starting with the 1 value facing up. If a PC fails this roll and already has a Sickened Die, they increase the value by 1, to a maximum value of 4. A PC with a Sickened Die gains a penalty to their action rolls equal to its value. When a PC with a Sickened Die would clear a HP, they can decrease the value of their Sickened Die by 1 instead. When the die\u2019s value would fall to 0, remove it.",
+      "prompt": "Is the swamp teeming with life, filled with decay, or both? What force blighted this swamp, and what signs of its origins remain?"
+    },
+    {
+      "name": "Soggy and Slogging It",
+      "kind": "Passive",
+      "description": "",
+      "prompt": "When a PC moves as part of an action, they can only move up to Very Close range. Action rolls made to move farther than Very Close range have disadvantage. Before rolling, a PC can mark a Stress to remove this disadvantage. What creatures, living or otherwise, lurk beneath the water\u2019s murky surface? Where or how do the PCs find relief from the stinking water?"
+    },
+    {
+      "name": "Rotbloom",
+      "kind": "Action",
+      "description": "Spend a Fear to dust an area within Far range in noxious pollen. Each target in that area must succeed on a Strength or Instinct Reaction Roll or take 1d6+3 magic damage and become Vulnerable until the end of the scene.",
+      "prompt": "How can you tell the plants that emit this pollen are carnivorous? What nightmares or dreamscapes does the pollen\u2019s scent conjure?"
+    },
+    {
+      "name": "Dancing Lights",
+      "kind": "Action",
+      "description": "At the start of a rest, you can spend a Fear to have floating orbs enthrall the weary and lure a PC deeper into the swamp. A different PC can use a downtime move to make an action roll to search for them. On a success, both PCs return to camp and can choose downtime moves as normal. On a failure\u2014or if no one searches for them\u2014the lost PC returns hours later, covered in mud and worse, and can\u2019t choose downtime moves until their next rest.",
+      "prompt": "What does the lost PC see in the lights that draws them into the darkness? What other glimpses of surprising beauty do the PCs encounter here?"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "sprite",
+  "name": "Sprite",
+  "type": "Fey",
+  "level": 2,
+  "tier": 2,
+  "role": "Minion",
+  "description": "A tiny winged warrior that attacks trespassers with poison-tipped arrows.",
+  "difficulty": 13,
+  "thresholds": "None",
+  "hp": 1,
+  "stress": 1,
+  "attacks": [
+    {
+      "name": "Needle-Sharp Arrows",
+      "modifier": 0,
+      "range": "Close",
+      "damage": "5 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Stealth",
+      "modifier": 2
+    },
+    {
+      "name": "Vengeance",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Avoid detection",
+    "let the poison do its work",
+    "protect the wilderness"
+  ],
+  "abilities": [
+    {
+      "name": "Minion (5)",
+      "kind": "Passive",
+      "description": "The Sprite is defeated when they take any damage. For every 5 damage a PC deals to the Sprite, the PC defeats an additional Minion within range the attack would succeed against."
+    },
+    {
+      "name": "Art of Invisibility",
+      "kind": "Action",
+      "description": "Spend a Fear to make the Sprite Hidden until they attack."
+    },
+    {
+      "name": "Dream Petal Poison",
+      "kind": "Action",
+      "description": "When the Sprite succeeds on a standard attack, you can spend a Fear to make the target Sleepy until the target takes damage. While Sleepy, the target must make a Presence Reaction Roll before they make an action roll. On a failure, they must mark 2 Stress or fall asleep until they take damage."
+    }
+  ],
+  "tags": [
+    "Fey"
+  ]
+}

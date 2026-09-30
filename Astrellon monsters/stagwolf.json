@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "stagwolf",
+  "name": "Stagwolf",
+  "type": "Beast",
+  "level": 1,
+  "tier": 1,
+  "role": "Skulk",
+  "description": "A massive wolf-like predator crowned with broad elk antlers, hunting through coordinated charges and brutal pack attacks.",
+  "difficulty": 12,
+  "thresholds": {
+    "major": 8,
+    "severe": 12
+  },
+  "hp": 5,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Antlers & Fangs",
+      "modifier": 2,
+      "range": "Melee",
+      "damage": "1d6+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Keen Senses",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Surround",
+    "charge",
+    "harry",
+    "isolate prey",
+    "protect the pack",
+    "trail wounded creatures"
+  ],
+  "abilities": [
+    {
+      "name": "Pack Tactics",
+      "kind": "Passive",
+      "description": "When the Stagwolf succeeds on a standard attack against a target with another Stagwolf within Melee range, deal 1d6+5 physical damage instead and gain a Fear."
+    },
+    {
+      "name": "Antler Rush",
+      "kind": "Action",
+      "description": "Move into Melee range of a target within Close range and make an attack. On a success, deal 1d8+4 physical damage and knock the target back to Very Close range. If they collide with a solid object or another creature, they mark a Stress."
+    }
+  ],
+  "tags": [
+    "Beast"
+  ]
+}

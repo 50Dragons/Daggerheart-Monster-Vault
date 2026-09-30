@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "tideglass-venerable",
+  "name": "Tideglass Dragon - Venerable",
+  "type": "Dragon",
+  "lineage": "Covenant",
+  "level": 9,
+  "tier": 4,
+  "role": "Solo",
+  "description": "Venerable Tideglass is a good-leaning covenant intelligent true dragon with translucent sea-glass scales containing remembered faces. It seeks to preserve endangered memories. At this age it is a legendary, nearly unstoppable presence.",
+  "difficulty": 21,
+  "thresholds": {
+    "major": 37,
+    "severe": 68
+  },
+  "hp": 17,
+  "stress": 7,
+  "attacks": [
+    {
+      "name": "Glass Fangs",
+      "modifier": 8,
+      "range": "Very Close",
+      "damage": "4d10+10 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Remembered Histories",
+      "modifier": 4
+    },
+    {
+      "name": "Aquatic Ambush",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Pull apart intruders",
+    "Expose a memory",
+    "Defend the waters"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (4)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 4 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Waterborne",
+      "kind": "Passive",
+      "description": "The dragon moves through water and flooded ground without impediment and can breathe underwater."
+    },
+    {
+      "name": "Remembrance Tide",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 21. On a failure, take 4d8+10 magic damage and the target relives a stored memory and is Vulnerable until its next action. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Undertow",
+      "kind": "Action",
+      "description": "Mark a Stress. Choose up to three targets within Close range. Each must succeed on a Strength Reaction Roll or be moved to another visible place within Close range and become Vulnerable until its next action."
+    },
+    {
+      "name": "Flow Around the Blow",
+      "kind": "Reaction",
+      "description": "When the dragon takes damage, mark a Stress to reduce that instance of damage by 2d10."
+    },
+    {
+      "name": "Living Memory",
+      "kind": "Action",
+      "description": "Spend a Fear. Choose up to three creatures within Far range. Each must succeed on an Instinct Reaction Roll or become Restrained and Vulnerable in a vivid memory. Affected creatures repeat the roll when they act; success or taking damage ends both conditions."
+    },
+    {
+      "name": "Epic Ferocity",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks its fifth HP, it clears 2 Stress and may immediately move up to Close range. This movement does not grant an attack. If it has fewer than five HP, trigger this after it marks half its total HP instead."
+    }
+  ],
+  "tags": [
+    "Covenant",
+    "Venerable",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Aquatic",
+    "Coast"
+  ]
+}

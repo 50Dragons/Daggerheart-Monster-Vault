@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "lilyheart-adult",
+  "name": "Lilyheart Dragon - Adult",
+  "type": "Dragon",
+  "lineage": "Covenant",
+  "level": 6,
+  "tier": 3,
+  "role": "Solo",
+  "description": "Adult Lilyheart is a good-leaning covenant intelligent true dragon with pearl scales and wings shaped like layered lily petals. It seeks to protect the vulnerable and offer mercy before force. At this age it is a commanding force in its territory.",
+  "difficulty": 18,
+  "thresholds": {
+    "major": 22,
+    "severe": 38
+  },
+  "hp": 10,
+  "stress": 7,
+  "attacks": [
+    {
+      "name": "Petal Claws",
+      "modifier": 5,
+      "range": "Very Close",
+      "damage": "3d10+5 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Mercy and Oaths",
+      "modifier": 3
+    },
+    {
+      "name": "Sanctuary Guardian",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Shield the helpless",
+    "Offer surrender",
+    "Scour corruption"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 3 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Gentle Choice",
+      "kind": "Passive",
+      "description": "The dragon can exclude any creatures it chooses from its Silver Mist."
+    },
+    {
+      "name": "Silver Mist",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 18. On a failure, take 3d8+6 magic damage and if the target is undead or sustained by corrupted aether, it must also mark a Stress. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Merciful Mist",
+      "kind": "Action",
+      "description": "Mark a Stress. Choose one ally within Close range; they clear 1 marked HP or 2 marked Stress. An undead or corrupted-aether enemy chosen instead takes 3d8+6 magic damage on a successful attack roll."
+    },
+    {
+      "name": "Sheltering Wings",
+      "kind": "Reaction",
+      "description": "When an ally within Very Close range is attacked, mark a Stress to become the target of that attack instead. Resolve the attack against the dragon."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Covenant",
+    "Adult",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Sanctuary",
+    "Forest"
+  ]
+}

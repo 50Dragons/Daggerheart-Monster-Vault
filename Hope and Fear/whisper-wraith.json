@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "whisper-wraith",
+  "name": "Whisper Wraith",
+  "type": "Undead",
+  "level": 3,
+  "tier": 3,
+  "role": "Skulk",
+  "description": "The echoes of broken promises and dreams unfulfilled, manifesting as a floating, translucent shroud of tattered black velvet in a vaguely humanoid shape.",
+  "difficulty": 16,
+  "thresholds": {
+    "major": 20,
+    "severe": 32
+  },
+  "hp": 6,
+  "stress": 6,
+  "attacks": [
+    {
+      "name": "Shadow Touch",
+      "modifier": 4,
+      "range": "Melee",
+      "damage": "3d8+4 magic"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Dreams",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Bind limbs",
+    "drop from a great height",
+    "lift off the ground",
+    "swirl through the air",
+    "wrap around heads"
+  ],
+  "abilities": [
+    {
+      "name": "Greater Specter",
+      "kind": "Passive",
+      "description": "The Wraith has resistance to physical damage and can move through solid objects."
+    },
+    {
+      "name": "Spooky",
+      "kind": "Passive",
+      "description": "When the Wraith makes a successful attack, all PCs within Close range must mark a Stress, and you gain a Fear."
+    },
+    {
+      "name": "Nightmare Shroud",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Wraith wrap itself around a PC within Melee range, Shrouding the target until they succeed on a Strength Roll to dislodge the Wraith or the Wraith takes Major or greater damage. While Shrouded, the target has disadvantage on attack rolls and marks a Stress when they roll with Fear. Additionally, damage that would be dealt to the Wraith is split evenly between the Wraith and the Shrouded target."
+    }
+  ],
+  "tags": [
+    "Undead"
+  ]
+}

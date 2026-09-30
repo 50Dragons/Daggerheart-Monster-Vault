@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "jack-o-lantern",
+  "name": "Jack-o\u2019-Lantern",
+  "type": "Undead",
+  "level": 2,
+  "tier": 2,
+  "role": "Minion",
+  "description": "A floating pumpkin or other gourd that has a face carved into it. The soul trapped within it emits an eerie glow.",
+  "difficulty": 14,
+  "thresholds": "None",
+  "hp": 1,
+  "stress": 1,
+  "attacks": [
+    {
+      "name": "Chomp",
+      "modifier": 2,
+      "range": "Melee",
+      "damage": "6 physical"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Bite",
+    "float",
+    "laugh",
+    "tell spooky stories"
+  ],
+  "abilities": [
+    {
+      "name": "Minion (4)",
+      "kind": "Passive",
+      "description": "The Jack-o\u2019-Lantern is defeated when it takes any damage. For every 4 damage a PC deals to the Jack-o\u2019- Lantern, the PC defeats an additional Minion within range the attack would succeed against."
+    },
+    {
+      "name": "Group Attack",
+      "kind": "Action",
+      "description": "Spend a Fear to choose a target and spotlight all Jack-o\u2019-Lanterns within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 6 physical damage each. Combine this damage."
+    },
+    {
+      "name": "Spine-Chilling Cackle",
+      "kind": "Reaction",
+      "description": "When a PC within Very Close range rolls with Fear, you can mark a Stress to gain an additional Fear."
+    }
+  ],
+  "tags": [
+    "Undead"
+  ]
+}

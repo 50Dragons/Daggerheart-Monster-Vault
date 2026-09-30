@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "spiralkey-venerable",
+  "name": "Spiralkey Dragon - Venerable",
+  "type": "Dragon",
+  "lineage": "Firmament",
+  "level": 9,
+  "tier": 4,
+  "role": "Solo",
+  "description": "Venerable Spiralkey is a neutral-leaning firmament intelligent true dragon with a floating wingless body traced with golden spirals. It seeks to find sealed paths and challenge those who force passage. At this age it is a legendary, nearly unstoppable presence.",
+  "difficulty": 21,
+  "thresholds": {
+    "major": 32,
+    "severe": 58
+  },
+  "hp": 14,
+  "stress": 8,
+  "attacks": [
+    {
+      "name": "Spiral Horns",
+      "modifier": 8,
+      "range": "Very Close",
+      "damage": "4d10+10 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Hidden Passages",
+      "modifier": 4
+    },
+    {
+      "name": "Spatial Puzzles",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Split the party",
+    "Change angles",
+    "Guard a seal"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (4)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 4 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Floating",
+      "kind": "Passive",
+      "description": "The dragon floats over ground hazards and ignores difficult ground."
+    },
+    {
+      "name": "Threshold Breath",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 21. On a failure, take 4d8+10 magic damage and the dragon moves the target to an unoccupied visible place within Close range. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Open a Way",
+      "kind": "Action",
+      "description": "Mark a Stress. Create an opening between two visible unoccupied points within Far range. The dragon immediately moves between them without crossing the intervening space; the opening closes at the end of its next spotlight."
+    },
+    {
+      "name": "Wrong Door",
+      "kind": "Reaction",
+      "description": "When attacked by a creature within Close range, mark a Stress. After resolving the attack, move that attacker to another unoccupied visible space within Close range."
+    },
+    {
+      "name": "No Safe Distance",
+      "kind": "Action",
+      "description": "Spend a Fear. Choose up to three targets within Far range. Each must make an Instinct Reaction Roll. On a failure, it takes 4d8+10 magic damage and is moved to a separate visible unoccupied space within Far range; on a success, it takes half damage and stays in place."
+    },
+    {
+      "name": "Epic Ferocity",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks its fifth HP, it clears 2 Stress and may immediately move up to Close range. This movement does not grant an attack. If it has fewer than five HP, trigger this after it marks half its total HP instead."
+    }
+  ],
+  "tags": [
+    "Firmament",
+    "Venerable",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Ruins",
+    "Rift"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "jagged-knife-shadow",
+  "name": "Jagged Knife Shadow",
+  "type": "Humanoid",
+  "level": 1,
+  "tier": 1,
+  "role": "Skulk",
+  "description": "A nimble scoundrel bearing a wicked knife and utilizing shadow magic to isolate targets.",
+  "difficulty": 12,
+  "thresholds": {
+    "major": 4,
+    "severe": 8
+  },
+  "hp": 3,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Daggers",
+      "modifier": 1,
+      "range": "Melee",
+      "damage": "1d4+4 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Intrusion",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Ambush",
+    "conceal",
+    "divide",
+    "profit"
+  ],
+  "abilities": [
+    {
+      "name": "Backstab",
+      "kind": "Passive",
+      "description": "When the Shadow succeeds on a standard attack that has advantage, they deal 1d6+6 physical damage instead of their standard damage."
+    },
+    {
+      "name": "Cloaked",
+      "kind": "Action",
+      "description": "Become Hidden until after the Shadow\u2019s next attack. Attacks made while Hidden from this feature have advantage."
+    }
+  ],
+  "tags": [
+    "Humanoid"
+  ]
+}

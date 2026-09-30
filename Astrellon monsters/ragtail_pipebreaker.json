@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "ragtail-pipebreaker",
+  "name": "Ragtail Pipebreaker",
+  "type": "Vermyn",
+  "lineage": "Ragtail",
+  "level": 1,
+  "tier": 1,
+  "role": "Standard",
+  "description": "A large rat-like Vermyn in scavenged metal, fighting with heavy scrap weapons.",
+  "difficulty": 13,
+  "thresholds": {
+    "major": 7,
+    "severe": 13
+  },
+  "hp": 5,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Twin Iron Pipes",
+      "modifier": 2,
+      "range": "Melee",
+      "damage": "1d8+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Sewer Fighter",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Surround",
+    "Bully",
+    "Pursue",
+    "Defend territory",
+    "Retreat when outnumbered"
+  ],
+  "abilities": [
+    {
+      "name": "Pack Fighter",
+      "kind": "Passive",
+      "description": "When this Ragtail succeeds on a standard attack against a target within Melee range of another Vermyn, add 1d4 damage."
+    },
+    {
+      "name": "Drive Them Back",
+      "kind": "Action",
+      "description": "Make a standard attack against a target within Melee range. On a success, mark 1 Stress to deal normal damage, knock the target back to Very Close range, then immediately move back into Melee range."
+    }
+  ],
+  "tags": [
+    "Beasts"
+  ],
+  "biome": [
+    "Underground"
+  ]
+}

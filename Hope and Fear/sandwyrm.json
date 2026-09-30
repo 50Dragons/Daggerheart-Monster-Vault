@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "sandwyrm",
+  "name": "Sandwyrm",
+  "type": "Monstrosity",
+  "level": 3,
+  "tier": 3,
+  "role": "Bruiser",
+  "description": "A gargantuan burrowing worm that has armor plating and gnashing jaws. This intelligent and opportunistic hunter can swim through sand as quickly as a cheetah runs on land.",
+  "difficulty": 17,
+  "thresholds": {
+    "major": 21,
+    "severe": 40
+  },
+  "hp": 6,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Bite",
+      "modifier": 1,
+      "range": "Very Close",
+      "damage": "3d8+4 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Tremor Sense",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Ambush from below",
+    "eat and leave",
+    "tunnel and erupt",
+    "use both ends"
+  ],
+  "abilities": [
+    {
+      "name": "Venomous Tail Stinger",
+      "kind": "Action",
+      "description": "Mark a Stress to attack a target within Close range. On a success, the target takes 3d10+2 physical damage and must succeed on a Strength Reaction Roll or become Restrained and Vulnerable until they roll with Hope."
+    },
+    {
+      "name": "Devour",
+      "kind": "Action",
+      "description": "Make an attack against a target within Melee range. On a success, the Sandwyrm Swallows the target. While Swallowed, the target is Restrained and marks a HP when the Sandwyrm is spotlighted. The Sandwyrm disgorges all Swallowed creatures when it takes Major or greater damage."
+    },
+    {
+      "name": "Hungry, Not Stupid",
+      "kind": "Reaction",
+      "description": "When the Sandwyrm marks half its HP or Swallows a creature, roll a d6. On a result of 3 or lower, the Sandwyrm retreats to safety."
+    }
+  ],
+  "tags": [
+    "Monstrosity"
+  ]
+}

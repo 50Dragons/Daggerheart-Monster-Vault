@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "crownstar-venerable",
+  "name": "Crownstar Dragon - Venerable",
+  "type": "Dragon",
+  "lineage": "Firmament",
+  "level": 9,
+  "tier": 4,
+  "role": "Solo",
+  "description": "Venerable Crownstar is a neutral-leaning firmament intelligent true dragon with ivory scales and orbiting star-like crown fragments. It seeks to judge how rulers carry authority. At this age it is a legendary, nearly unstoppable presence.",
+  "difficulty": 21,
+  "thresholds": {
+    "major": 37,
+    "severe": 68
+  },
+  "hp": 17,
+  "stress": 7,
+  "attacks": [
+    {
+      "name": "Regal Claws",
+      "modifier": 8,
+      "range": "Very Close",
+      "damage": "4d10+10 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Politics and Succession",
+      "modifier": 4
+    },
+    {
+      "name": "Commanding Presence",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Demand accountability",
+    "Pin challengers",
+    "Control the court"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (4)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 4 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Orbiting Crown",
+      "kind": "Passive",
+      "description": "The first ranged attack against the dragon each GM turn has disadvantage."
+    },
+    {
+      "name": "Coronal Breath",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 21. On a failure, take 4d8+10 magic damage and the target is driven to the ground and becomes Vulnerable until it next acts. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Weight of Authority",
+      "kind": "Action",
+      "description": "Mark a Stress. Choose one target within Far range. It must succeed on a Strength Reaction Roll or become Restrained by gravity until it escapes with a successful Strength Roll."
+    },
+    {
+      "name": "The Crown Endures",
+      "kind": "Reaction",
+      "description": "Once per scene, after an attack damages the dragon, ignore 1 HP it would mark from that attack."
+    },
+    {
+      "name": "Imperial Gravity",
+      "kind": "Action",
+      "description": "Spend a Fear. Pull all enemies within Far range toward a visible point within Close range. Each must make a Strength Reaction Roll. On a failure, it takes 4d8+10 physical damage and becomes Restrained until it escapes with a successful Strength Roll; on a success, it takes half damage and is not moved."
+    },
+    {
+      "name": "Epic Ferocity",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks its fifth HP, it clears 2 Stress and may immediately move up to Close range. This movement does not grant an attack. If it has fewer than five HP, trigger this after it marks half its total HP instead."
+    }
+  ],
+  "tags": [
+    "Firmament",
+    "Venerable",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "City",
+    "Palace"
+  ]
+}

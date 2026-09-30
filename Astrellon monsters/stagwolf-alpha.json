@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "stagwolf-alpha",
+  "name": "Stagwolf Alpha",
+  "type": "Beast",
+  "level": 1,
+  "tier": 1,
+  "role": "Leader",
+  "description": "An enormous scarred Stagwolf with towering antlers that directs the pack through growls, posture, and instinctive hunting signals.",
+  "difficulty": 13,
+  "thresholds": {
+    "major": 11,
+    "severe": 20
+  },
+  "hp": 7,
+  "stress": 14,
+  "attacks": [
+    {
+      "name": "Massive Antlers & Fangs",
+      "modifier": 3,
+      "range": "Melee",
+      "damage": "1d10+3 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Apex Hunter",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Command the pack",
+    "isolate prey",
+    "charge",
+    "protect territory",
+    "hunt the wounded"
+  ],
+  "abilities": [
+    {
+      "name": "Alpha of the Pack",
+      "kind": "Passive",
+      "description": "Other Stagwolves within Close range gain +1 to their attack rolls. This ends when the Alpha is defeated."
+    },
+    {
+      "name": "Hunting Cry",
+      "kind": "Action",
+      "description": "When the Alpha is spotlighted, mark a Stress to also spotlight up to two Stagwolves within Close range, one at a time. Each can move and take an action."
+    },
+    {
+      "name": "Great Antler Charge",
+      "kind": "Action",
+      "description": "Move from within Close range into Melee range of a target and make an attack. On a success, deal 1d12+5 physical damage and knock them back to Very Close range. If they mark HP, they also become temporarily Vulnerable."
+    },
+    {
+      "name": "Cull the Weak",
+      "kind": "Reaction",
+      "description": "Move from within Close range into Melee range of a target and make an attack. On a success, deal 1d12+5 physical damage and knock them back to Very Close range. If they mark HP, they also become temporarily Vulnerable."
+    }
+  ],
+  "tags": [
+    "Beast"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "id": "frost-titan",
+  "name": "Frost Titan",
+  "type": "Giant",
+  "level": 3,
+  "tier": 3,
+  "role": "Bruiser",
+  "description": "A blue-skinned goliath who has rimed hair and wears trophies of past battles.",
+  "difficulty": 17,
+  "thresholds": {
+    "major": 22,
+    "severe": 40
+  },
+  "hp": 10,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Dual Axes",
+      "modifier": 7,
+      "range": "Very Close",
+      "damage": "3d10+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Cold",
+      "modifier": 3
+    },
+    {
+      "name": "War",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Claim trophies",
+    "raid and pillage",
+    "test mettle"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (2)",
+      "kind": "Passive",
+      "description": "The Titan can be spotlighted up to two times per GM turn. Spend Fear as usual to spotlight them."
+    },
+    {
+      "name": "War Horn",
+      "kind": "Action",
+      "description": "Mark a Stress to force each PC within Far range to succeed on a Presence Reaction Roll or mark a Stress and become Vulnerable until after the next attack against them."
+    },
+    {
+      "name": "Bull Rush",
+      "kind": "Action",
+      "description": "Mark a Stress to move up to Close range and make an attack roll against a target within Melee range. On a success, deal 4d10+2 physical damage and knock the target back to Close range."
+    },
+    {
+      "name": "Cleaving Strike",
+      "kind": "Reaction",
+      "description": "When a PC marks HP from the Titan\u2019s standard attack, you can mark a Stress to force another PC within Very Close range who the attack would have succeeded against to mark the same number of HP."
+    },
+    {
+      "name": "Trophy Hunter",
+      "kind": "Reaction",
+      "description": "When the Titan defeats a PC, the Titan takes the PC\u2019s most valuable possession as a trophy."
+    }
+  ],
+  "tags": [
+    "Giant"
+  ]
+}

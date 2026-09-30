@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "obsidian-hart-venerable",
+  "name": "Obsidian Hart Dragon - Venerable",
+  "type": "Dragon",
+  "lineage": "Firmament",
+  "level": 9,
+  "tier": 4,
+  "role": "Solo",
+  "description": "Venerable Obsidian Hart is a neutral-leaning firmament intelligent true dragon with black star-speckled scales, antlers, and wing-forelimbs. It seeks to test endurance by taking away comfort and shelter. At this age it is a legendary, nearly unstoppable presence.",
+  "difficulty": 20,
+  "thresholds": {
+    "major": 37,
+    "severe": 68
+  },
+  "hp": 19,
+  "stress": 7,
+  "attacks": [
+    {
+      "name": "Antler and Talon",
+      "modifier": 8,
+      "range": "Very Close",
+      "damage": "4d10+10 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Wilderness Survival",
+      "modifier": 4
+    },
+    {
+      "name": "Relentless Hunt",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Cut off shelter",
+    "Stalk silently",
+    "Test endurance"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (4)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 4 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Hunter’s Darkness",
+      "kind": "Passive",
+      "description": "While in darkness made by its breath, the dragon gains +2 Difficulty."
+    },
+    {
+      "name": "Starless Breath",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 20. On a failure, take 4d8+10 magic damage and ordinary flames and magical light in the target’s space go out until the dragon’s next spotlight. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Antler Charge",
+      "kind": "Action",
+      "description": "Mark a Stress. Move up to Close range and make a standard attack against one target. On a success, deal 4d12+10 physical damage and knock it back to Close range."
+    },
+    {
+      "name": "No Easy Shelter",
+      "kind": "Reaction",
+      "description": "When a creature within Close range enters cover, mark a Stress to move into Very Close range of it. This movement grants no attack."
+    },
+    {
+      "name": "The Ordeal",
+      "kind": "Action",
+      "description": "Spend a Fear. Extinguish light throughout an area within Far range until the end of the dragon’s next spotlight. Creatures inside cannot see beyond Very Close range and must succeed on an Instinct Reaction Roll or mark 2 Stress."
+    },
+    {
+      "name": "Epic Ferocity",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks its fifth HP, it clears 2 Stress and may immediately move up to Close range. This movement does not grant an attack. If it has fewer than five HP, trigger this after it marks half its total HP instead."
+    }
+  ],
+  "tags": [
+    "Firmament",
+    "Venerable",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Mountains",
+    "Wilderness"
+  ]
+}

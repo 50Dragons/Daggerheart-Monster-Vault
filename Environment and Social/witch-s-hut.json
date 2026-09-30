@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "witch-s-hut",
+  "name": "Witch's Hut",
+  "type": "Exploration",
+  "level": 2,
+  "tier": 2,
+  "description": "A rustic, windowless hut sitting atop two huge chicken legs.",
+  "difficulty": 14,
+  "impulses": [
+    "Creep them out",
+    "delay them until the witch\u2019s return",
+    "lock them inside",
+    "move to a different location",
+    "tempt them with magical oddities"
+  ],
+  "potentialAdversaries": [
+    "Chicken-Foot Hut",
+    "Enchanted Defenses (Gargoyle, Ravenous Mockery, Scarecrow)",
+    "Valdenhax",
+    "The Witch\u2019s Victims (Jack-o\u2019-Lanterns, Redcap Biters)"
+  ],
+  "features": [
+    {
+      "name": "Bigger on the Inside",
+      "kind": "Passive",
+      "description": "Though the hut\u2019s exterior is a rustic single-room cottage, the interior is an ever-shifting estate of haunting splendor replete with numerous bedrooms, libraries, and indoor gardens, among other mysterious installations.",
+      "prompt": "Is there any pattern to the way the hut rearranges itself? What is the most surprising location the PCs could find here?"
+    },
+    {
+      "name": "Creepy Doll Collection",
+      "kind": "Passive",
+      "description": "Countdown (5). Throughout the hut, the PCs can see many, many porcelain or wooden dolls with strangely lifelike eyes. When the party first enters a doll\u2019s line of sight, activate the countdown. It ticks down when a PC fails a roll or rolls with Fear. When it triggers, the dolls come to life and attack. Summon a number of living dolls (Redcap Biters) equal to twice the number of PCs.",
+      "prompt": "Who were these dolls before? Is there any way to free them from their imprisonment?"
+    },
+    {
+      "name": "Witches\u2019 Brew",
+      "kind": "Passive",
+      "description": "The hut contains a workshop with every tool or component a witch could need, including a large iron cauldron set atop a smoldering fire. A PC who wants to use the workshop can make a Spellcast Roll to craft a magic potion or poison from the Consumables table. \u2022 Any Failure: The experiment blows up in their face\u2014literally. The PC takes 2d10+2 magic damage. \u2022 Any Success: The PC rolls a number of d12s equal to 1 + their tier, adds the results together, and gains the consumable that matches that value on the Consumables table. If they critically succeeded, they can reroll any d12s showing a result of 1.",
+      "prompt": "What sorts of concoctions does the witch who owns this hut specialize in? What would the witch do if they found the PCs using their things?"
+    },
+    {
+      "name": "Dislocated",
+      "kind": "Reaction",
+      "description": "Time moves differently inside the Witch\u2019s Hut. When the door to the hut is closed, roll a d6. On a result of 4 or higher, the hut moves to a different\u2014often impossibly far\u2013location that\u2019s only revealed to the PCs when they open the hut\u2019s door again.",
+      "prompt": "Why does the hut move so often? Where does it wish to bring the PCs? Is there any way to aim it at a specific location?"
+    }
+  ]
+}

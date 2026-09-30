@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "fallen-warlord-undefeated-champion",
+  "name": "Fallen Warlord: Undefeated Champion",
+  "type": "Fiend",
+  "level": 4,
+  "tier": 4,
+  "role": "Solo",
+  "description": "That which only the most feared have a chance to fear.",
+  "difficulty": 18,
+  "thresholds": {
+    "major": 35,
+    "severe": 58
+  },
+  "hp": 11,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Heart-Shattering Sword",
+      "modifier": 8,
+      "range": "Very Close",
+      "damage": "4d12+13 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Conquest",
+      "modifier": 3
+    },
+    {
+      "name": "History",
+      "modifier": 2
+    },
+    {
+      "name": "Intimidation",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Dispatch merciless death",
+    "punish the defiant",
+    "secure victory at any cost"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The Undefeated Champion can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight them."
+    },
+    {
+      "name": "Faltering Armor",
+      "kind": "Passive",
+      "description": "When the Undefeated Champion takes damage, reduce it by 1d10."
+    },
+    {
+      "name": "Shattering Strike",
+      "kind": "Action",
+      "description": "Mark a Stress to make a standard attack against all targets within Very Close range. PCs the Champion succeeds against lose a number of Hope equal to the HP they marked from this attack."
+    },
+    {
+      "name": "Endless Legions",
+      "kind": "Action",
+      "description": "Spend a Fear to summon a number of Fallen Shock Troops equal to twice the number of PCs. The Shock Troops appear at Far range."
+    },
+    {
+      "name": "Circle of Defilement",
+      "kind": "Reaction",
+      "description": "Countdown (1d8). When the Undefeated Champion is in the spotlight for the first time, activate the countdown. When it triggers, activate a magical circle covering an area within Far range of the Champion. A target within that area is Vulnerable until they leave the circle. The circle can be removed by dealing Severe damage to the Undefeated Champion."
+    },
+    {
+      "name": "Momentum",
+      "kind": "Reaction",
+      "description": "When the Undefeated Champion makes a successful attack against a PC, you gain a Fear."
+    },
+    {
+      "name": "Doombringer",
+      "kind": "Reaction",
+      "description": "When a target marks HP from an attack by the Undefeated Champion, all PCs within Far range of the target lose a Hope."
+    }
+  ],
+  "tags": [
+    "Fiend"
+  ]
+}

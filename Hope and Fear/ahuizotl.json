@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "ahuizotl",
+  "name": "Ahuizotl",
+  "type": "Monstrosity",
+  "level": 1,
+  "tier": 1,
+  "role": "Skulk",
+  "description": "A doglike ambush predator that has a clawed hand on the end of a long prehensile tail and drags victims into rivers to drown them.",
+  "difficulty": 12,
+  "thresholds": {
+    "major": 5,
+    "severe": 9
+  },
+  "hp": 4,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Bite",
+      "modifier": 2,
+      "range": "Melee",
+      "damage": "1d6+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Stealth",
+      "modifier": 2
+    },
+    {
+      "name": "Swimming",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Ambush",
+    "drown",
+    "restrain"
+  ],
+  "abilities": [
+    {
+      "name": "Aquatic Attacker",
+      "kind": "Passive",
+      "description": "When the Ahuizotl attacks from the water, it has advantage on the attack and deals an extra 1d6 damage."
+    },
+    {
+      "name": "Tail Swat",
+      "kind": "Action",
+      "description": "Mark a Stress to make an attack against a target within Very Close range. On a success, deal 1d8+2 physical damage."
+    },
+    {
+      "name": "Drag and Bag",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Ahuizotl grab a target within Close range with its tail, pull the target into Melee range, and temporarily Restrain them. The Ahuizotl has advantage on attacks against targets Restrained in this way."
+    }
+  ],
+  "tags": [
+    "Monstrosity"
+  ]
+}

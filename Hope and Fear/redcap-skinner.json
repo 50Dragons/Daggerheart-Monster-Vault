@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "redcap-skinner",
+  "name": "Redcap Skinner",
+  "type": "Fey",
+  "level": 1,
+  "tier": 1,
+  "role": "Minion",
+  "description": "A cat-sized fey creature wielding a straight razor and wearing a conical red cap sealed on their head with candle wax.",
+  "difficulty": 9,
+  "thresholds": "None",
+  "hp": 1,
+  "stress": 1,
+  "attacks": [
+    {
+      "name": "Razor",
+      "modifier": -1,
+      "range": "Melee",
+      "damage": "2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Leatherwork",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Flense",
+    "giggle",
+    "scrape",
+    "slice"
+  ],
+  "abilities": [
+    {
+      "name": "Minion (4)",
+      "kind": "Passive",
+      "description": "The Skinner is defeated when they take any damage. For every 4 damage a PC deals to the Skinner, the PC defeats an additional Minion within range the attack would succeed against."
+    },
+    {
+      "name": "Shallow Cuts",
+      "kind": "Passive",
+      "description": "When a PC fails a roll, they take 1 physical damage for each Skinner within Melee range of them. Combine this damage."
+    },
+    {
+      "name": "Group Attack",
+      "kind": "Action",
+      "description": "Spend a Fear to choose a target and spotlight all Redcap Skinners within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 2 physical damage each. Combine this damage."
+    }
+  ],
+  "tags": [
+    "Fey"
+  ]
+}

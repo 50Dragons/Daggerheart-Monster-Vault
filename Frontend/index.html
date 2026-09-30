@@ -1,0 +1,2798 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Astrellon Monster Vault</title>
+<link rel="icon" type="image/png" href="/frontend/app-icon.png" />
+<link rel="shortcut icon" type="image/png" href="/frontend/app-icon.png" />
+
+<style>
+  html, body { height:100%; margin:0; font-family:Segoe UI, Arial, sans-serif; background:#17191d; color:#eceff4; overflow:hidden; }
+  * { box-sizing:border-box; }
+  #app { height:100%; display:flex; flex-direction:column; }
+  header { background:#20242a; border-bottom:1px solid #343942; padding:12px 16px; }
+  .topbar { display:flex; align-items:center; gap:14px; }
+  .brand-wrap { display:flex; align-items:center; gap:14px; flex:1; min-width:0; }
+  .app-logo { width:84px; height:84px; min-width:84px; border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,.28); border:1px solid rgba(255,255,255,.08); background:#111318; object-fit:cover; }
+  .title-wrap { min-width:0; }
+  .title-line { display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+  .title { font-size:22px; font-weight:700; line-height:1.05; }
+  .version { font-size:12px; color:#949daa; font-weight:400; }
+  .title-sub { margin-top:6px; font-size:12px; color:#8e98a6; letter-spacing:.25px; }
+  button, select, input, textarea { font:14px Segoe UI, Arial, sans-serif; }
+  button { background:#343b45; color:#fff; border:1px solid #4b5361; border-radius:5px; padding:7px 11px; cursor:pointer; }
+  button:hover { background:#424a57; }
+  button.primary { background:#b8892d; border-color:#d7a947; color:#17120a; font-weight:700; }
+  button.primary:hover { background:#d09d37; }
+  button.danger { background:#5b2a2e; border-color:#764047; }
+  .topbar button { margin-left:8px; }
+  .file-menu { position:relative; margin-left:8px; }
+  .file-menu > button { margin-left:0; min-width:72px; }
+  .view-menu { position:relative; margin-left:8px; }
+  .view-menu > button { margin-left:0; min-width:72px; }
+  .file-dropdown {
+    display:none;
+    position:absolute;
+    right:0;
+    top:36px;
+    width:190px;
+    background:#252a31;
+    border:1px solid #4b5361;
+    border-radius:6px;
+    padding:5px;
+    z-index:450;
+    box-shadow:0 8px 22px rgba(0,0,0,.45);
+  }
+  .file-menu.open .file-dropdown, .view-menu.open .file-dropdown { display:block; }
+  .view-menu .file-dropdown { right:0; }
+  .menu-check { display:inline-block; width:18px; font-weight:800; }
+  .file-dropdown button { display:block; width:100%; margin:0; text-align:left; border:none; background:transparent; padding:8px 9px; }
+  .file-dropdown button:hover { background:#3a424e; }
+  .file-separator { height:1px; background:#414853; margin:4px 2px; }
+
+  /* Toggle menu submenus */
+  .toggle-root { width:150px; overflow:visible; }
+  .toggle-submenu { position:relative; }
+  .toggle-submenu-title { display:flex !important; align-items:center; justify-content:space-between; }
+  .submenu-arrow { font-size:18px; line-height:12px; color:#b9c1cc; }
+  .toggle-submenu-panel {
+    display:none;
+    position:absolute;
+    right:100%;
+    top:-5px;
+    width:190px;
+    background:#252a31;
+    border:1px solid #4b5361;
+    border-radius:6px;
+    padding:5px;
+    z-index:451;
+    box-shadow:0 8px 22px rgba(0,0,0,.45);
+  }
+  .toggle-submenu:hover > .toggle-submenu-panel,
+  .toggle-submenu:focus-within > .toggle-submenu-panel { display:block; }
+
+  /* Encounter compact view: retain combat data, strip reference/flavor bulk. */
+  .monster-card.compact-card .card-head { padding:8px 10px 7px; }
+  .monster-card.compact-card .card-title {
+    font-size:15px;
+    line-height:1.05;
+    margin-right:78px;
+    letter-spacing:0;
+  }
+  .monster-card.compact-card .card-sub,
+  .monster-card.compact-card .level-badge { display:none; }
+  .monster-card.compact-card .role {
+    padding:4px 7px;
+    font-size:8px;
+  }
+  .compact-stats-line {
+    padding:6px 10px;
+    border-bottom:1px solid #d0cec7;
+    color:#4e5359;
+    background:#eeece6;
+    font-size:10px;
+    font-weight:750;
+    line-height:1.3;
+    white-space:normal;
+  }
+  .compact-stat-action {
+    cursor:pointer;
+    color:#31466f;
+    font-weight:900;
+  }
+  .compact-stat-action:hover { text-decoration:underline; }
+  .monster-card.compact-card .threshold-panel { padding:3px 8px 6px; }
+  .monster-card.compact-card .threshold-panel-label { display:none; }
+  .monster-card.compact-card .damage-band {
+    height:28px;
+    padding:2px 3px;
+  }
+  .monster-card.compact-card .damage-band-title {
+    font-size:8px;
+    line-height:1;
+  }
+  .monster-card.compact-card .damage-band-hp { display:none; }
+  .monster-card.compact-card .threshold-marker {
+    height:26px;
+    flex-basis:34px;
+    width:34px;
+    font-size:13px;
+    border-width:2px;
+  }
+  .monster-card.compact-card .threshold-rail.with-massive .threshold-marker {
+    flex-basis:30px;
+    width:30px;
+    font-size:12px;
+  }
+  .monster-card.compact-card .card-section {
+    padding:7px 10px 4px;
+  }
+  .monster-card.compact-card .card-section + .card-section { padding-top:8px; }
+  .monster-card.compact-card .section-label {
+    margin-bottom:5px;
+    font-size:9px;
+  }
+  .monster-card.compact-card .attack {
+    margin-bottom:5px;
+    padding:6px 7px;
+  }
+  .monster-card.compact-card .ability {
+    padding:5px 2px 6px;
+  }
+  .monster-card.compact-card .ability-text,
+  .monster-card.compact-card .attack-meta {
+    line-height:1.35;
+  }
+  .toolbar { margin-top:10px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  #viewTabs { display:flex; margin-left:auto; }
+  #viewTabs button { margin-left:6px; }
+  #viewTabs button.active { background:#596578; border-color:#77849a; }
+
+  main { flex:1; min-height:0; position:relative; }
+  .view { position:absolute; left:0; right:0; top:0; bottom:0; }
+  .hidden { display:none !important; }
+
+  /* Builder */
+  #builderView { overflow:auto; padding:0 18px 50px; }
+  #monsterTable { width:100%; border-collapse:collapse; background:#20242a; border:1px solid #343942; }
+  #monsterTable th { text-align:left; background:#262b32; color:#bac2cc; font-size:12px; text-transform:uppercase; letter-spacing:.5px; padding:9px 10px; position:sticky; top:0; z-index:2; vertical-align:top; }
+  .column-title { margin-bottom:6px; }
+  .header-filter {
+    display:block;
+    width:100%;
+    box-sizing:border-box;
+    background:#111318;
+    color:#f1f3f5;
+    border:1px solid #4b5361;
+    border-radius:4px;
+    padding:6px 7px;
+    font-size:12px;
+    text-transform:none;
+    letter-spacing:normal;
+  }
+  .header-search { min-width:180px; }
+  #monsterTable th:nth-child(1) { width:48%; }
+  #monsterTable th:nth-child(2) { width:11%; }
+  #monsterTable th:nth-child(3) { width:15%; }
+  #monsterTable th:nth-child(4) { width:16%; }
+  #monsterTable th:nth-child(5) { width:10%; }
+  #monsterTable td { padding:9px 10px; border-top:1px solid #30353d; vertical-align:middle; }
+  #monsterTable tr:hover td { background:#252a31; }
+  .monster-name { font-weight:700; color:#f1f3f5; }
+  .monster-desc { color:#aeb4be; font-size:12px; margin-top:2px; }
+  .qty { width:68px; background:#111318; color:#fff; border:1px solid #4b5361; border-radius:4px; padding:6px; }
+  .pill { display:inline-block; border:1px solid #4b5361; border-radius:10px; padding:2px 7px; color:#cbd1d9; font-size:12px; }
+  .buildbar { position:fixed; left:0; right:0; bottom:23px; background:#20242a; border-top:1px solid #343942; padding:9px 18px; text-align:right; z-index:5; }
+  .buildbar .selected-count { float:left; color:#b9c0ca; padding-top:8px; }
+
+  /* Encounter horizontal slider */
+  #encounterView { display:flex; flex-direction:column; min-height:0; }
+  .encounter-tools { flex:0 0 auto; background:#1c2025; border-bottom:1px solid #343942; padding:9px 12px; display:flex; align-items:center; }
+  .encounter-tools button { margin-right:8px; }
+  .encounter-tools .spacer { flex:1; }
+  .slider-hint { color:#aeb4be; font-size:12px; margin-right:10px; }
+
+  #encounterBody {
+    flex:1;
+    min-height:0;
+    min-width:0;
+    display:flex;
+    flex-direction:row;
+    overflow:hidden;
+  }
+
+  #encounterStrip {
+    flex:1 1 auto;
+    min-width:0;
+    min-height:0;
+    display:flex;
+    flex-wrap:nowrap;
+    align-items:flex-start;
+    overflow-x:auto;
+    overflow-y:auto;
+    padding:14px 12px 24px;
+    white-space:normal;
+    scrollbar-base-color:#596578;
+    scrollbar-track-color:#20242a;
+    scrollbar-arrow-color:#ffffff;
+  }
+
+  #initiativeSidebar {
+    flex:0 0 270px;
+    width:270px;
+    min-width:270px;
+    height:100%;
+    background:#20242a;
+    border-left:1px solid #3a404a;
+    box-shadow:-4px 0 12px rgba(0,0,0,.18);
+    padding:12px 10px;
+    overflow-y:auto;
+  }
+  .initiative-title {
+    font-size:15px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    color:#f0f2f5;
+    margin:0 0 4px;
+  }
+  .initiative-sub {
+    color:#9fa8b5;
+    font-size:11px;
+    margin-bottom:10px;
+  }
+  #initiativeList {
+    margin-bottom:10px;
+  }
+  .initiative-row {
+    display:flex;
+    align-items:center;
+    min-height:38px;
+    border-top:1px solid #343942;
+    padding:5px 0;
+  }
+  .initiative-row:first-child { border-top:none; }
+  .initiative-name-input {
+    flex:1 1 auto;
+    min-width:0;
+    width:130px;
+    background:#111318;
+    color:#fff;
+    border:1px solid #596273;
+    border-radius:4px;
+    padding:5px 6px;
+    margin-right:6px;
+  }
+  .initiative-input {
+    flex:0 0 58px;
+    width:58px;
+    background:#111318;
+    color:#fff;
+    border:1px solid #596273;
+    border-radius:4px;
+    padding:5px 6px;
+    text-align:center;
+    font-weight:700;
+  }
+  .initiative-actions {
+    display:flex;
+  }
+  .initiative-actions button {
+    width:100%;
+    margin:0;
+  }
+  .initiative-rank {
+    display:inline-block;
+    min-width:19px;
+    color:#9ea7b4;
+    font-size:11px;
+    font-weight:700;
+  }
+  .monster-card {
+    flex:0 0 430px;
+    width:430px;
+    min-width:430px;
+    background:#f4f3ef;
+    color:#25272a;
+    border:1px solid #aaa9a4;
+    border-radius:7px;
+    margin-right:14px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.28);
+  }
+  .encounter-card .card-head { cursor:grab; user-select:none; }
+  .encounter-card .card-head:active { cursor:grabbing; }
+  .encounter-card.dragging { opacity:.24; }
+  .encounter-card.drag-target-before { box-shadow:-8px 0 0 #d4a53b,0 4px 14px rgba(0,0,0,.28); }
+  .encounter-card.drag-target-after { box-shadow:8px 0 0 #d4a53b,0 4px 14px rgba(0,0,0,.28); }
+  .encounter-drag-ghost {
+    position:fixed;
+    left:-10000px;
+    top:-10000px;
+    width:430px;
+    max-height:560px;
+    overflow:hidden;
+    opacity:.92;
+    transform:rotate(1deg);
+    pointer-events:none;
+    z-index:99999;
+    box-shadow:0 16px 34px rgba(0,0,0,.48);
+  }
+  /* Environment & Social source cards. Existing monster JSONs remain unchanged;
+     cards in the special source are styled from their existing `type` value. */
+  .monster-card.special-card { border-color:#9fb4c3; background:#eef6fb; }
+  .monster-card.special-card .card-head { background:#f6fbfe; border-bottom-color:#79a9c8; }
+  .monster-card.special-card .stat { background:#e2eef6; border-color:#c4d6e2; }
+  .monster-card.special-card .trackers { background:#e2eef6; border-top-color:#bfd0dc; }
+  .monster-card.special-card .creature { border-top-color:#bfd0dc; }
+  .monster-card.special-card .section-label { border-bottom-color:#bdccd6; }
+  .monster-card.special-card .role { background:#4d7ea0; }
+  .monster-card.special-social { background:#fbf0f4; border-color:#c9aab5; }
+  .monster-card.special-social .card-head { background:#fff7fa; border-bottom-color:#c47f98; }
+  .monster-card.special-social .stat { background:#f4e3e9; border-color:#dfc4cd; }
+  .monster-card.special-social .trackers { background:#f1e0e6; border-top-color:#ddc1ca; }
+  .monster-card.special-social .creature { border-top-color:#ddc1ca; }
+  .monster-card.special-social .section-label { border-bottom-color:#d9bdc7; }
+  .monster-card.special-social .role { background:#a85f7a; }
+  .monster-card.special-traversal { background:#edf6fc; border-color:#9dbbd0; }
+  .monster-card.special-traversal .card-head { background:#f6fbff; border-bottom-color:#65a2cc; }
+  .monster-card.special-traversal .role { background:#397ba7; }
+  .monster-card.special-exploration { background:#eef8f5; border-color:#a4c3b8; }
+  .monster-card.special-exploration .card-head { background:#f6fcfa; border-bottom-color:#70a995; }
+  .monster-card.special-exploration .role { background:#4e866f; }
+  .monster-card.special-event { background:#f8f4e9; border-color:#c8b88e; }
+  .monster-card.special-event .card-head { background:#fdfaf3; border-bottom-color:#b7974d; }
+  .monster-card.special-event .role { background:#8f7335; }
+  .environment-card .description { font-size:13px; line-height:1.5; }
+  .environment-card .env-value { font-size:12px; line-height:1.48; color:#454a50; }
+  .environment-card .env-impulses { font-style:italic; }
+  .environment-card .environment-feature { padding:8px 2px 9px; border-bottom:1px solid rgba(90,110,120,.14); }
+  .environment-card .environment-feature:last-child { border-bottom:none; }
+  .environment-card .environment-feature-title { font-size:12px; font-weight:850; color:#353b42; }
+  .environment-card .environment-feature-kind { color:#70767c; font-weight:500; font-size:11px; }
+  .environment-card .environment-feature-meta { font-size:10px; color:#69747c; font-style:italic; margin-top:3px; }
+  .environment-card .environment-feature-text { font-size:12px; line-height:1.48; margin-top:4px; }
+  .environment-card .environment-feature-prompt {
+    font-size:11px; line-height:1.45; color:#626b72; font-style:italic; margin-top:6px;
+    padding-left:9px; border-left:2px solid rgba(90,110,120,.25);
+  }
+  .card-head {
+    background:#faf9f5; padding:14px 15px 11px; border-bottom:3px solid #bd8b30;
+    position:relative; box-shadow:inset 0 -1px 0 rgba(255,255,255,.7);
+  }
+  .card-title { font-size:22px; font-weight:850; text-transform:uppercase; margin-right:105px; line-height:1.05; letter-spacing:.15px; }
+  .card-sub { color:#6b6d72; font-size:11px; margin-top:6px; }
+  .role {
+    position:absolute; right:0; top:0; background:#40577f; color:white;
+    padding:6px 10px; font-size:10px; font-weight:900; letter-spacing:.45px; text-transform:uppercase;
+  }
+  .level-badge {
+    position:absolute; right:13px; top:38px; width:34px; height:34px; border-radius:50%;
+    background:#d7a43b; color:#5f4614; border:2px solid #efd184; font-size:16px; font-weight:900;
+    text-align:center; line-height:30px; box-shadow:0 1px 2px rgba(0,0,0,.12);
+  }
+  .level-badge.tier-1 { background:#d8bb57; color:#5f4a11; border-color:#f2dfa3; }
+  .level-badge.tier-2 { background:#c76e49; color:#fff4ec; border-color:#ebaf93; }
+  .level-badge.tier-3 { background:#8b5ac7; color:#f6edff; border-color:#c7a5ef; }
+  .level-badge.tier-4 { background:#2a6aa8; color:#eef7ff; border-color:#92bce3; }
+  .stats {
+    display:flex; flex-wrap:wrap; gap:6px; border-bottom:1px solid #d0cec7;
+    padding:9px 10px 8px;
+  }
+  .stat {
+    display:flex; align-items:center; min-width:88px; min-height:38px; margin:0;
+    background:#eceae4; border:1px solid #d1cec5; border-radius:18px;
+    padding:4px 10px 4px 5px; box-sizing:border-box;
+  }
+  .stat-icon {
+    flex:0 0 27px; width:27px; height:27px; line-height:27px; border-radius:50%;
+    text-align:center; margin-right:7px; font-family:"Segoe UI Symbol","Segoe UI Emoji",Arial,sans-serif;
+    font-size:15px; font-weight:900; background:#d7d5cf; color:#4c5158;
+  }
+  .stat-copy { min-width:0; display:flex; flex-direction:column; }
+  .stat .k { font-size:8px; color:#70747a; text-transform:uppercase; font-weight:850; letter-spacing:.35px; line-height:1; }
+  .stat .v { font-size:14px; font-weight:900; margin-top:2px; line-height:1; }
+  .stat-difficulty .stat-icon { background:#ded8e9; color:#604c78; }
+  .stat-attack .stat-icon { background:#d9e4f2; color:#31577d; }
+  .stat-hp .stat-icon { background:#f1dadd; color:#9b3742; }
+  .stat-stress .stat-icon { background:#f4e7bf; color:#8b6818; }
+  .stat-evasion .stat-icon { background:#dce9df; color:#477052; }
+  .stat-armor .stat-icon { background:#dfe2e6; color:#535d68; }
+  .quick-attack-stat:hover { background:#dfe7f1; transform:translateY(-1px); }
+  .quick-attack-stat { transition:background .08s ease,transform .08s ease; }
+
+  /* Character-sheet-inspired damage threshold rail.
+     Existing JSON keeps only major/severe; Minor is the below-Major band.
+     Massive is optional homebrew and is calculated as Severe x2. */
+  .threshold-panel { padding:3px 10px 10px; border-bottom:1px solid #d0cec7; }
+  .threshold-panel-label {
+    display:flex; align-items:center; gap:7px; margin:1px 0 6px;
+    color:#686b70; font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.45px;
+  }
+  .threshold-panel-label:before, .threshold-panel-label:after { content:""; height:1px; background:#cbc8c0; flex:1; }
+  .threshold-rail { display:flex; align-items:center; width:100%; min-width:0; }
+  .damage-band {
+    flex:1 1 0; min-width:0; height:52px; background:#626871; color:#fff;
+    display:flex; flex-direction:column; justify-content:center; align-items:center;
+    text-align:center; padding:3px 6px; position:relative; line-height:1.02;
+    border-top:1px solid #777d85; border-bottom:1px solid #4d535b;
+  }
+  .damage-band.first { border-radius:5px 0 0 5px; }
+  .damage-band.last { border-radius:0 5px 5px 0; }
+  .damage-band.massive { background:#6f555c; border-top-color:#846970; border-bottom-color:#574047; }
+  .damage-band-title { font-size:10px; font-weight:900; letter-spacing:.25px; }
+  .damage-band-hp { margin-top:4px; font-size:9px; font-weight:700; color:#e8ebef; }
+  .threshold-marker {
+    flex:0 0 42px; width:42px; height:38px; margin:0 -1px; z-index:1;
+    background:#f9f9f7; color:#30343a; border:3px solid #626871;
+    display:flex; align-items:center; justify-content:center;
+    font-size:17px; font-weight:900; box-shadow:inset 0 0 0 1px #d8d6cf;
+    clip-path:polygon(0 0,82% 0,100% 50%,82% 100%,0 100%,14% 50%);
+  }
+  .threshold-rail.with-massive .threshold-marker { flex-basis:36px; width:36px; font-size:15px; }
+  .threshold-rail.with-massive .damage-band { padding-left:3px; padding-right:3px; }
+  .threshold-rail.with-massive .damage-band-title { font-size:9px; }
+  .threshold-rail.with-massive .damage-band-hp { font-size:8px; }
+  .card-section { padding:10px 13px 5px; }
+  .card-section + .card-section { padding-top:12px; }
+  .section-label {
+    display:flex; align-items:center; gap:7px; border:0; padding:0; margin:0 0 8px;
+    font-size:10px; font-weight:900; color:#555b63; text-transform:uppercase; letter-spacing:.9px;
+  }
+  .section-label:before {
+    content:""; flex:0 0 4px; width:4px; height:14px; border-radius:3px; background:#b68732;
+  }
+  .description { font-size:12px; line-height:1.48; color:#4b4d52; }
+  .attack {
+    border:0; border-left:4px solid #607ca5; background:#e9edf2; border-radius:0 6px 6px 0;
+    margin-bottom:8px; padding:8px 9px;
+  }
+  .attack-top { display:flex; align-items:center; }
+  .attack-roll {
+    flex:1; text-align:left; background:#31466f; border-color:#31466f;
+    padding:6px 9px; font-weight:800; border-radius:5px;
+  }
+  .attack-meta { color:#555960; font-size:11px; margin-top:6px; line-height:1.45; }
+  .ability { padding:7px 2px 8px; border-bottom:1px solid rgba(110,110,105,.16); }
+  .ability:last-child { border-bottom:none; }
+  .ability-title { font-size:12px; font-weight:850; color:#363b42; }
+  .ability-kind { color:#73777d; font-weight:500; font-size:11px; }
+  .ability-text { font-size:12px; line-height:1.46; margin-top:3px; color:#44484e; }
+  .dice-link { background:#fff4ce; color:#3d3116; border:1px solid #d4ab50; border-radius:4px; padding:1px 5px; font-size:11px; font-weight:800; vertical-align:baseline; }
+  .dice-link:hover { background:#ffe8a3; }
+  .motives { font-size:11px; line-height:1.48; color:#555960; }
+  .experience {
+    display:inline-block; border:0; border-radius:12px; padding:3px 7px; margin:0 4px 4px 0;
+    font-size:10px; font-weight:700; background:#e5e2db; color:#50545a;
+  }
+  .monster-card.special-card .section-label:before { background:#5e91b2; }
+  .monster-card.special-social .section-label:before { background:#b86d87; }
+  .monster-card.special-traversal .section-label:before { background:#4d8fbb; }
+  .monster-card.special-exploration .section-label:before { background:#629a84; }
+  .monster-card.special-event .section-label:before { background:#aa873d; }
+
+  .trackers { background:#e8e6df; border-top:1px solid #c8c5bd; padding-bottom:2px; }
+  .creature { border-top:1px solid #c8c5bd; }
+  .creature:first-child { border-top:none; }
+  .creature-name {
+    display:flex; align-items:center; justify-content:space-between; gap:8px;
+    color:#fff; font-size:11px; font-weight:850; padding:7px 10px;
+    transition:background .12s ease;
+  }
+  .creature-name.health-healthy { background:#4d6a64; }
+  .creature-name.health-wounded { background:#856837; }
+  .creature-name.health-bloodied { background:#84434a; }
+  .creature-name.health-critical { background:#642632; }
+  .creature-name.health-down { background:#292d33; color:#c7cbd0; }
+  .health-state {
+    flex:0 0 auto; padding:2px 7px; border-radius:10px; background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.22); font-size:9px; font-weight:900;
+    letter-spacing:.65px; text-transform:uppercase;
+  }
+  .creature-id-name { flex:0 1 auto; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .pawn-color-input {
+    flex:1 1 110px; min-width:70px; max-width:155px; height:23px; box-sizing:border-box;
+    padding:2px 7px; border:1px solid rgba(255,255,255,.42); border-radius:3px;
+    background:rgba(255,255,255,.92); color:#36393d; font:inherit; font-size:11px; font-weight:850;
+    outline:none;
+  }
+  .pawn-color-input::placeholder { color:#a5a8ac; opacity:1; }
+  .pawn-color-input:focus { background:#fff; border-color:#fff; box-shadow:0 0 0 1px rgba(0,0,0,.12); }
+  .health-down .health-state { background:#14171b; border-color:#4b5159; color:#e0e2e5; }
+  .track { display:flex; align-items:center; padding:6px 8px; }
+  .track-label { width:66px; color:#5e6167; font-size:10px; font-weight:800; }
+  .track button.adjust { width:27px; height:27px; padding:0; border-radius:50%; background:#f7f6f2; color:#3e4146; border:1px solid #b8b6af; }
+  .slots { flex:1; display:flex; flex-wrap:wrap; align-items:center; padding:0 6px; min-height:30px; }
+  .track-icon {
+    width:27px; height:29px; padding:0; margin:0 2px; border:0 !important;
+    background:transparent !important; box-shadow:none !important;
+    font-family:"Segoe UI Symbol","Segoe UI Emoji",Arial,sans-serif;
+    font-size:24px; line-height:27px; text-align:center; cursor:pointer;
+    transition:transform .08s ease,color .08s ease,opacity .08s ease;
+  }
+  .track-icon:hover { transform:scale(1.13); }
+  .track-icon.hp.available { color:#d63f4b; text-shadow:0 1px 0 #8a202a; }
+  .track-icon.hp.spent { color:#24282e; opacity:.72; text-shadow:0 0 1px #73777d; }
+  .track-icon.stress.available { color:#f0bd31; text-shadow:0 1px 0 #9c7312; }
+  .track-icon.stress.spent { color:#24282e; opacity:.72; text-shadow:0 0 1px #73777d; }
+
+  #rollBox { position:absolute; right:18px; bottom:38px; width:330px; background:#0d1117; color:#fff; border:1px solid #616b80; border-radius:8px; padding:11px 13px; box-shadow:0 8px 24px rgba(0,0,0,.42); display:none; z-index:300; }
+  #rollTitle { font-size:18px; font-weight:800; }
+  #rollDetail { color:#c7ced9; font-size:12px; margin-top:3px; }
+  #rollBox button { float:right; margin-left:8px; padding:3px 7px; }
+
+  #emptyEncounter { color:#adb5c1; padding:40px; text-align:center; width:100%; }
+  footer { flex:0 0 23px; background:#20242a; border-top:1px solid #343942; color:#aeb4be; font-size:11px; padding:4px 10px; }
+
+  .source-picker { display:flex; align-items:center; margin-left:0; }
+  .source-picker label { color:#aeb5bf; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.4px; margin-right:7px; padding-bottom:0; }
+  .source-picker select { min-width:170px; background:#111318; color:#fff; border:1px solid #4b5361; border-radius:4px; padding:7px 9px; }
+  .source-badge { display:inline-block; margin-left:5px; padding:1px 6px; border-radius:9px; background:#d9d5c9; color:#58544b; font-size:9px; font-weight:800; text-transform:uppercase; vertical-align:1px; }
+
+  .monster-name.previewable {
+    cursor:help;
+    display:inline-block;
+    border-bottom:1px dotted #7e8794;
+  }
+  #monsterPreview {
+    position:fixed;
+    display:none;
+    z-index:200;
+    width:760px;
+    max-height:92%;
+    overflow:hidden;
+    padding:7px;
+    background:#181c22;
+    border:1px solid #566173;
+    border-radius:9px;
+    box-shadow:0 10px 32px rgba(0,0,0,.55);
+    pointer-events:auto;
+  }
+  .preview-layout { display:flex; align-items:flex-start; gap:8px; min-width:0; }
+  .preview-card-pane {
+    flex:1 1 auto; min-width:0; max-height:calc(92vh - 16px);
+    overflow-y:auto; overflow-x:hidden;
+  }
+  #monsterPreview .monster-card {
+    width:auto;
+    min-width:0;
+    margin:0;
+    box-shadow:none;
+  }
+  .preview-art-pane {
+    flex:0 0 320px; width:320px; height:430px;
+    background:#11151b; border:1px solid #566173; border-radius:8px;
+    padding:8px; box-sizing:border-box; overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+  .preview-art-pane img {
+    display:block; width:100%; height:100%; min-height:0; object-fit:contain;
+    border-radius:5px; background:#f7f4ed;
+  }
+  .preview-art-name {
+    flex:0 0 auto; margin-top:6px; color:#cbd1d9; font-size:10px;
+    font-weight:800; text-align:center; text-transform:uppercase; letter-spacing:.45px;
+  }
+  @media (max-width:900px) {
+    .preview-art-pane { flex-basis:250px; width:250px; height:350px; }
+  }
+  #monsterPreview .trackers { display:none; }
+  #monsterPreview .dice-link,
+  #monsterPreview .attack-roll {
+    cursor:pointer;
+  }
+  .quick-attack-stat {
+    cursor:pointer;
+    border-color:#8796ad;
+  }
+  .quick-attack-stat .v {
+    color:#294f86;
+    text-decoration:underline;
+    text-decoration-style:dotted;
+  }
+  .quick-attack-stat:hover {
+    background:#dde4ef;
+  }
+
+  .pool-section { margin-top:16px; padding-top:12px; border-top:1px solid #3a404a; }
+  .pool-row { display:flex; align-items:center; min-height:38px; border-top:1px solid #343942; padding:5px 0; }
+  .pool-row:first-child { border-top:none; }
+  .pool-name { flex:1; min-width:0; font-size:12px; font-weight:700; color:#f1f3f5; padding-right:6px; }
+  .pool-value { width:34px; text-align:center; font-size:15px; font-weight:800; color:#f2c15b; }
+  .pool-adjust { width:27px; height:27px; padding:0; border-radius:50%; }
+
+  .evolution-section { background:#fff4d5; border-top:1px solid #d7ba6b; border-bottom:1px solid #d7ba6b; }
+  .evolution-section .section-label { color:#765616; border-bottom-color:#d9bd76; }
+  .evolution { padding:7px 0; border-bottom:1px dotted #d1b66d; }
+  .evolution:last-child { border-bottom:none; }
+  .evolution-title { font-size:12px; font-weight:800; color:#5f4614; }
+  .evolution-trigger { font-size:11px; color:#765f2b; margin-top:2px; font-style:italic; }
+  .evolution-text { font-size:12px; line-height:1.42; margin-top:3px; color:#41391f; }
+  .evolution-track { display:flex; align-items:center; padding:6px 8px 8px; border-top:1px solid #c8c5bd; background:#f1ead8; }
+  .evolution-track-label { width:72px; color:#685825; font-size:10px; font-weight:800; text-transform:uppercase; }
+  .evolution-button { flex:1; text-align:left; background:#e2c46f; color:#3e3110; border-color:#c49d3e; padding:5px 8px; }
+  .evolution-button.triggered { background:#7d5a18; color:#fff; border-color:#6d4d13; }
+
+  /* File dialogs / New Monster editor */
+  .modal-shade {
+    display:none;
+    position:fixed;
+    left:0; right:0; top:0; bottom:0;
+    z-index:500;
+    background:rgba(0,0,0,.68);
+  }
+  .modal-window {
+    position:absolute;
+    left:4%; right:4%; top:4%; bottom:4%;
+    background:#20242a;
+    border:1px solid #596273;
+    border-radius:9px;
+    box-shadow:0 14px 44px rgba(0,0,0,.65);
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+  .modal-small { left:28%; right:28%; top:18%; bottom:18%; }
+  .modal-head { flex:0 0 auto; display:flex; align-items:center; padding:12px 14px; background:#272c34; border-bottom:1px solid #414854; }
+  .modal-title { flex:1; font-size:20px; font-weight:800; }
+  .modal-head button { margin-left:8px; }
+  .modal-body { flex:1 1 auto; min-height:0; overflow:auto; padding:14px 16px 22px; }
+  .modal-foot { flex:0 0 auto; padding:10px 14px; background:#272c34; border-top:1px solid #414854; text-align:right; }
+  .modal-foot button { margin-left:8px; }
+  .editor-section { background:#191c21; border:1px solid #353c47; border-radius:7px; padding:12px; margin-bottom:12px; }
+  .editor-section-title { font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:.5px; color:#d7a947; margin-bottom:10px; }
+  .form-row { display:flex; flex-wrap:wrap; margin-right:-10px; }
+  .field { flex:1 1 180px; min-width:160px; margin:0 10px 10px 0; }
+  .field.wide { flex-basis:380px; }
+  .field.full { flex-basis:100%; min-width:98%; }
+  .field label { display:block; font-size:11px; font-weight:700; color:#b9c1cc; margin-bottom:4px; }
+  .required-mark { color:#e47c82; }
+  .editor-input { width:100%; background:#101318; color:#f4f6f8; border:1px solid #505967; border-radius:4px; padding:7px 8px; }
+  textarea.editor-input { min-height:64px; resize:vertical; }
+  .editor-input.invalid, .editor-repeat-row.invalid { border-color:#df5964 !important; box-shadow:0 0 0 1px #df5964; }
+  .editor-validation { display:none; background:#4b2328; color:#ffd7db; border:1px solid #8c3d46; border-radius:5px; padding:8px 10px; margin-bottom:12px; font-size:12px; }
+  .editor-repeat-row { border:1px solid #3b424d; border-radius:5px; padding:8px; margin:7px 0; background:#22272e; }
+  .repeat-fields { display:flex; flex-wrap:wrap; align-items:flex-end; margin-right:-8px; }
+  .repeat-field { flex:1 1 150px; min-width:125px; margin-right:8px; margin-bottom:6px; }
+  .repeat-field.small { flex:0 0 100px; min-width:90px; }
+  .repeat-field.medium { flex:0 0 145px; min-width:120px; }
+  .repeat-field.description-field { flex-basis:100%; min-width:98%; }
+  .repeat-field label { display:block; color:#aeb7c3; font-size:10px; font-weight:700; margin-bottom:3px; }
+  .row-remove { flex:0 0 auto; margin:0 8px 6px 0; padding:7px 9px; }
+  .add-row-button { margin-top:5px; }
+  .editor-note { color:#98a2af; font-size:11px; line-height:1.4; margin-top:4px; }
+  #loadSaveList { width:100%; height:260px; background:#101318; color:#fff; border:1px solid #596273; border-radius:5px; padding:5px; }
+  .load-empty { color:#aeb5bf; padding:8px 0; }
+
+
+  /* In-app dialog: replaces browser alert/confirm/prompt so localhost URLs never appear. */
+  #appDialogModal { z-index:1200; }
+  .app-dialog-window {
+    position:absolute; left:50%; top:50%; width:520px; max-width:86%;
+    transform:translate(-50%,-50%); background:#20242a; border:1px solid #616b7a;
+    border-radius:11px; box-shadow:0 18px 58px rgba(0,0,0,.72); overflow:hidden;
+  }
+  .app-dialog-head { display:flex; align-items:center; padding:14px 16px; background:#292f38; border-bottom:1px solid #414955; }
+  .app-dialog-icon { width:34px; height:34px; border-radius:50%; background:#43536c; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:900; margin-right:11px; }
+  .app-dialog-title { flex:1; font-size:18px; font-weight:800; color:#f3f5f7; }
+  .app-dialog-body { padding:17px 18px 12px; color:#d7dce3; font-size:13px; line-height:1.5; white-space:pre-wrap; }
+  .app-dialog-input { width:100%; margin-top:12px; background:#11151a; color:#fff; border:1px solid #596474; border-radius:5px; padding:9px 10px; font-size:14px; }
+  .app-dialog-foot { display:flex; justify-content:flex-end; gap:8px; padding:11px 14px 14px; }
+  .app-dialog-foot button { min-width:92px; }
+  .app-dialog-foot .danger-confirm { background:#833a42; border-color:#a7535d; }
+
+  /* Special-card editor */
+  .special-kind-note { color:#bfc8d5; font-size:12px; line-height:1.45; padding:8px 10px; background:#222933; border-left:3px solid #5e7d9f; margin-bottom:12px; }
+
+</style>
+<script language="javascript">
+var allMonsters = [];
+var monsters = [];
+var filtered = [];
+var quantities = {};
+var encounter = {};
+var encounterOrder = [];
+var draggedEncounterKey = null;
+var encounterDragGhost = null;
+var poolState = {};
+var currentView = "builder";
+var currentSource = "core";
+var rollTimer = null;
+var previewHideTimer = null;
+
+var sourceDefs = [
+  {key:"custom", label:"Custom", folder:"Custom monsters"},
+  {key:"astrellon", label:"Astrellon Monsters", folder:"Astrellon monsters"},
+  {key:"astrellonepic", label:"Astrellon Epic Creatures", folder:"Astrellon Epic creatures"},
+  {key:"core", label:"Core", folder:"Core"},
+  {key:"hopefear", label:"Hope & Fear", folder:"Hope and Fear"},
+  {key:"envsocial", label:"Environment & Social", folder:"Environment and Social"}
+];
+
+var initiativePlayers = makeBlankInitiativePlayers();
+
+function makeBlankInitiativePlayers() {
+  var out=[];
+  for (var i=0;i<8;i++) out.push({name:"", value:"", order:i});
+  return out;
+}
+
+var ASTRELLON_TOKEN = "__ASTRELLON_TOKEN__";
+var sourcePaths = {};
+var initiativeVisible = true;
+var massiveDamageVisible = false;
+var pawnColorVisible = false;
+var compactViewVisible = false;
+var hoverPicturesVisible = false;
+var appDialogResolver = null;
+var appDialogMode = "alert";
+var specialEditorMode = "environment";
+
+function apiRequestRaw(method,path,payload) {
+  var xhr=new XMLHttpRequest();
+  xhr.open(method,path,false);
+  xhr.setRequestHeader("X-Astrellon-Token",ASTRELLON_TOKEN);
+  if (payload != null) xhr.setRequestHeader("Content-Type","application/json");
+  try { xhr.send(payload == null ? null : JSON.stringify(payload)); }
+  catch(e) { return {status:0,data:{error:e.message || String(e)}}; }
+  var data={};
+  try { data=xhr.responseText ? JSON.parse(xhr.responseText) : {}; }
+  catch(e2) { data={error:xhr.responseText || ("HTTP "+xhr.status)}; }
+  return {status:xhr.status,data:data};
+}
+function apiRequest(method,path,payload) {
+  var result=apiRequestRaw(method,path,payload);
+  if (result.status < 200 || result.status >= 300) throw new Error((result.data && result.data.error) ? result.data.error : ("HTTP "+result.status));
+  return result.data;
+}
+function sourceDef(key) {
+  for (var i=0;i<sourceDefs.length;i++) if (sourceDefs[i].key == key) return sourceDefs[i];
+  return sourceDefs[0];
+}
+function sourceFolder(key) { return sourcePaths[key] || sourceDef(key).folder; }
+function monsterFolder() { return sourceFolder("custom"); }
+function selectedSourceFolder() { return sourceFolder(currentSource); }
+function saveFolder() { return sourcePaths.saves || "Saves"; }
+function jsonAscii(obj) {
+  return JSON.stringify(obj,null,2).replace(/[\u007f-\uffff]/g,function(ch) {
+    var code=ch.charCodeAt(0).toString(16);
+    while (code.length<4) code="0"+code;
+    return "\\u"+code;
+  });
+}
+function trimText(v) { return String(v == null ? "" : v).replace(/^\s+|\s+$/g,""); }
+
+
+function appDialogClose(result) {
+  var modal=document.getElementById("appDialogModal");
+  var input=document.getElementById("appDialogInput");
+  var resolver=appDialogResolver;
+  appDialogResolver=null;
+  if (modal) modal.style.display="none";
+  if (!resolver) return;
+  if (appDialogMode=="prompt") resolver(result ? (input ? input.value : "") : null);
+  else if (appDialogMode=="confirm") resolver(!!result);
+  else resolver(true);
+}
+function showAppDialog(options) {
+  options=options||{};
+  appDialogMode=options.mode||"alert";
+  var modal=document.getElementById("appDialogModal");
+  var title=document.getElementById("appDialogTitle");
+  var body=document.getElementById("appDialogBodyText");
+  var input=document.getElementById("appDialogInput");
+  var cancel=document.getElementById("appDialogCancel");
+  var ok=document.getElementById("appDialogOK");
+  var icon=document.getElementById("appDialogIcon");
+  title.innerText=options.title||"Astrellon Monster Vault";
+  body.innerText=options.message||"";
+  icon.innerText=options.icon || (appDialogMode=="confirm"?"?":(appDialogMode=="prompt"?"✎":"i"));
+  input.style.display=appDialogMode=="prompt"?"block":"none";
+  input.value=options.defaultValue==null?"":String(options.defaultValue);
+  cancel.style.display=appDialogMode=="alert"?"none":"inline-block";
+  cancel.innerText=options.cancelLabel||"Cancel";
+  ok.innerText=options.okLabel||(appDialogMode=="confirm"?"Confirm":"OK");
+  ok.className=options.danger?"danger-confirm":"primary";
+  modal.style.display="block";
+  return new Promise(function(resolve) {
+    appDialogResolver=resolve;
+    window.setTimeout(function(){ if (appDialogMode=="prompt") input.focus(); else ok.focus(); },20);
+  });
+}
+function appAlert(title,message) { return showAppDialog({mode:"alert",title:title,message:message,okLabel:"OK"}); }
+function appConfirm(title,message,okLabel,danger) { return showAppDialog({mode:"confirm",title:title,message:message,okLabel:okLabel||"Confirm",danger:!!danger}); }
+function appPrompt(title,message,defaultValue,okLabel) { return showAppDialog({mode:"prompt",title:title,message:message,defaultValue:defaultValue,okLabel:okLabel||"Save"}); }
+function appDialogKey(evt) {
+  evt=evt||window.event; var code=evt.keyCode||evt.which;
+  var modal=document.getElementById("appDialogModal"); if (!modal || modal.style.display!="block") return true;
+  if (code==27) { appDialogClose(false); return false; }
+  if (code==13 && appDialogMode=="prompt") { appDialogClose(true); return false; }
+  return true;
+}
+
+function esc(s) {
+  if (s == null) return "";
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\"/g,"&quot;").replace(/'/g,"&#39;");
+}
+function attr(s) { return esc(s).replace(/`/g,"&#96;"); }
+
+function monsterKey(m) {
+  return String(m._sourceKey || "custom") + "::" + String(m._file || m.id || m.name);
+}
+function getMonsterByKey(key) {
+  for (var i=0;i<allMonsters.length;i++) if (monsterKey(allMonsters[i]) == key) return allMonsters[i];
+  return null;
+}
+function isSpecialSource(m) {
+  return !!m && String(m._sourceKey || "") == "envsocial";
+}
+function specialTypeSlug(m) {
+  var t=String((m && m.type) || "Environment").toLowerCase();
+  if (t.indexOf("social")>=0) return "social";
+  if (t.indexOf("traversal")>=0) return "traversal";
+  if (t.indexOf("exploration")>=0) return "exploration";
+  if (t.indexOf("event")>=0) return "event";
+  return "environment";
+}
+function specialCardClass(m) {
+  return isSpecialSource(m) ? " special-card special-" + specialTypeSlug(m) : "";
+}
+function isEnvironmentLayout(m) {
+  if (!isSpecialSource(m)) return false;
+  if (m.impulses != null || m.potentialAdversaries != null || m.features != null) return true;
+  // Social adversaries in this folder can still use the normal monster schema.
+  return m.hp == null && m.stress == null && !(m.attacks && m.attacks.length) && !m.attack;
+}
+function renderCardHtml(m,key,copies,opts) {
+  return isEnvironmentLayout(m) ? environmentCardHtml(m,key,copies || [],opts || {}) : monsterCardHtml(m,key,copies || [],opts || {});
+}
+function selectSourceMonsters() {
+  monsters = [];
+  for (var i=0;i<allMonsters.length;i++) if (allMonsters[i]._sourceKey == currentSource) monsters.push(allMonsters[i]);
+  monsters.sort(compareMonsterNames);
+}
+function compareMonsterNames(a,b) {
+  var an=String(a.name || "").toLowerCase(), bn=String(b.name || "").toLowerCase();
+  return an < bn ? -1 : (an > bn ? 1 : 0);
+}
+function sourceChanged() {
+  hideMonsterPreview();
+  var sel=document.getElementById("sourceBook");
+  currentSource = sel ? sel.value : "custom";
+  selectSourceMonsters();
+  document.getElementById("search").value="";
+  rebuildFilters();
+  applyFilters();
+  var d=sourceDef(currentSource);
+  setStatus("Source: " + d.label + " — " + monsters.length + " monster(s) in " + sourceFolder(currentSource));
+}
+
+async function loadMonsters() {
+  var previousQty=quantities;
+  try {
+    var response=apiRequest("GET","/api/monsters");
+    allMonsters=response.monsters || [];
+    sourcePaths=response.sourcePaths || {};
+    var errors=response.errors || [];
+    var counts=response.counts || {};
+
+    allMonsters.sort(compareMonsterNames);
+    quantities={};
+    for (var i=0;i<allMonsters.length;i++) {
+      var key=monsterKey(allMonsters[i]);
+      quantities[key]=previousQty[key] || 0;
+    }
+
+    selectSourceMonsters();
+    rebuildFilters();
+    applyFilters();
+    renderEncounterPools();
+
+    var summary=[];
+    for (var j=0;j<sourceDefs.length;j++) summary.push(sourceDefs[j].label + ": " + (counts[sourceDefs[j].key] || 0));
+    setStatus("Loaded " + allMonsters.length + " monster(s) — " + summary.join(" · ") + (errors.length ? " — skipped " + errors.length + " invalid file(s)." : ""));
+    if (errors.length) await appAlert("Some files were skipped","Some JSON files could not be loaded:\n\n" + errors.join("\n\n"));
+  } catch(e) {
+    await appAlert("Could not load files",e.message);
+    setStatus("Could not load monster files.");
+  }
+}
+
+function rebuildFilters() {
+  var types = {}, levels = {}, roles = {};
+  for (var i=0;i<monsters.length;i++) {
+    types[String(monsters[i].type || "Unknown")] = true;
+    levels[String(monsters[i].level == null ? "?" : monsters[i].level)] = true;
+    if (monsters[i].role) roles[String(monsters[i].role)] = true;
+  }
+  fillSelect("typeFilter", types, "All Types");
+  fillSelect("levelFilter", levels, "All Tiers");
+  fillSelect("roleFilter", roles, "All Roles");
+}
+function fillSelect(id, dict, allLabel) {
+  var sel = document.getElementById(id), old = sel.value;
+  sel.options.length = 0;
+  sel.options.add(new Option(allLabel, "All"));
+  var vals = [];
+  for (var k in dict) if (dict.hasOwnProperty(k)) vals.push(k);
+  vals.sort(function(a,b){
+    var na=parseInt(a,10), nb=parseInt(b,10);
+    if (!isNaN(na) && !isNaN(nb)) return na-nb;
+    return a < b ? -1 : (a > b ? 1 : 0);
+  });
+  for (var i=0;i<vals.length;i++) {
+    var label = (id == "levelFilter" && vals[i] != "?") ? ("T" + vals[i]) : vals[i];
+    sel.options.add(new Option(label, vals[i]));
+  }
+  var found=false;
+  for (var j=0;j<sel.options.length;j++) if (sel.options[j].value == old) found=true;
+  sel.value = found ? old : "All";
+}
+
+function applyFilters() {
+  var q = String(document.getElementById("search").value || "").toLowerCase();
+  var t = document.getElementById("typeFilter").value;
+  var l = document.getElementById("levelFilter").value;
+  var r = document.getElementById("roleFilter").value;
+
+  filtered = [];
+  for (var i=0;i<monsters.length;i++) {
+    var m = monsters[i];
+
+    // Search field sits over the Monster column, so it filters monster names.
+    var monsterName = String(m.name || "").toLowerCase();
+    if (q && monsterName.indexOf(q) < 0) continue;
+    if (t != "All" && String(m.type || "Unknown") != t) continue;
+    if (l != "All" && String(m.level == null ? "?" : m.level) != l) continue;
+    if (r != "All" && String(m.role || "Unknown") != r) continue;
+
+    filtered.push(m);
+  }
+
+  // Monster names are ALWAYS alphabetical. This is not a user-selectable sort.
+  filtered.sort(function(a,b) {
+    var an = String(a.name || "").toLowerCase();
+    var bn = String(b.name || "").toLowerCase();
+    return an < bn ? -1 : (an > bn ? 1 : 0);
+  });
+
+  renderBuilder();
+}
+
+function previewImagePaneHtml(m) {
+  if (!m || !m._imageUrl) return "";
+  return '<div class="preview-art-pane"><img alt="' + attr(m.name || 'Monster') + ' image" src="' + attr(m._imageUrl) + '"><div class="preview-art-name">' + esc(m.name || 'Monster') + '</div></div>';
+}
+function tierBadgeClass(value) {
+  var n=parseInt(value,10);
+  return isNaN(n) ? "" : (' tier-' + n);
+}
+function previewableTitleHtml(name,key,opts) {
+  if (opts && (opts.forPreview || opts.forEncounter || opts.disableTitlePreview)) return '<div class="card-title">' + esc(name || 'Unnamed') + '</div>';
+  return '<div class="card-title previewable" title="Hover for full monster details" onmouseover="showMonsterPreview(\'' + jsq(key) + '\',event)" onmousemove="moveMonsterPreview(event)" onmouseout="scheduleHideMonsterPreview()">' + esc(name || 'Unnamed') + '</div>';
+}
+
+function encounterCardClass(opts) { return opts && opts.forEncounter ? ' encounter-card' : ''; }
+function encounterCardAttrs(key,opts) {
+  if (!(opts && opts.forEncounter)) return '';
+  return ' data-encounter-key="' + attr(key) + '" ondragover="encounterDragOver(event,\'' + jsq(key) + '\')" ondragleave="encounterDragLeave(event)" ondrop="encounterDrop(event,\'' + jsq(key) + '\')"';
+}
+function encounterHeadAttrs(key,opts) {
+  if (!(opts && opts.forEncounter)) return '';
+  return ' draggable="true" title="Drag left or right to reorder" ondragstart="encounterDragStart(event,\'' + jsq(key) + '\')" ondragend="encounterDragEnd(event)"';
+}
+
+function renderBuilder() {
+  var body = document.getElementById("monsterRows");
+  var html = "";
+  for (var i=0;i<filtered.length;i++) {
+    var m = filtered[i], key = monsterKey(m), qty = quantities[key] || 0;
+    html += '<tr>' +
+      '<td><div class="monster-name previewable" title="Hover for full monster details" ' +
+      'onmouseover="showMonsterPreview(\'' + jsq(key) + '\',event)" ' +
+      'onmousemove="moveMonsterPreview(event)" ' +
+      'onmouseout="scheduleHideMonsterPreview()">' + esc(m.name) + '</div>' +
+      (m.description ? '<div class="monster-desc">' + esc(m.description) + '</div>' : '') + '</td>' +
+      '<td><span class="pill">T' + esc(m.level == null ? "?" : m.level) + '</span></td>' +
+      '<td>' + esc(m.type || "Unknown") + '</td>' +
+      '<td>' + esc(m.role || "—") + '</td>' +
+      '<td><select class="qty" data-key="' + attr(key) + '" onchange="quantityChanged(this)">' + qtyOptions(qty) + '</select></td>' +
+      '</tr>';
+  }
+  if (!filtered.length) html = '<tr><td colspan="5" style="text-align:center;color:#aeb4be;padding:30px">No cards found.</td></tr>';
+  body.innerHTML = html;
+  updateSelectedCount();
+}
+
+function qtyOptions(selected) {
+  var html="";
+  for (var i=0;i<=12;i++) html += '<option value="' + i + '"' + (i==selected?' selected="selected"':'') + '>' + i + '</option>';
+  return html;
+}
+function quantityChanged(sel) {
+  quantities[String(sel.getAttribute("data-key"))] = parseInt(sel.value,10) || 0;
+  updateSelectedCount();
+}
+function updateSelectedCount() {
+  var total=0, types=0;
+  for (var k in quantities) if (quantities.hasOwnProperty(k) && quantities[k] > 0) { total += quantities[k]; types++; }
+  document.getElementById("selectedCount").innerText = total + " creature(s) · " + types + " monster type(s)";
+}
+
+function showMonsterPreview(key,evt) {
+  cancelHideMonsterPreview();
+  var m=getMonsterByKey(key);
+  var box=document.getElementById("monsterPreview");
+  if (!m || !box) return;
+
+  // Keep the normal preview size when no art exists. If an image is available,
+  // add a fixed artwork panel on the RIGHT of the stat card.
+  var vw=document.documentElement.clientWidth || document.body.clientWidth || 1200;
+  var hasArt=!!(hoverPicturesVisible && m._imageUrl);
+  var previewWidth=hasArt ? 1100 : 760;
+  if (previewWidth > vw - 40) previewWidth=vw - 40;
+  if (previewWidth < 430) previewWidth=430;
+  box.style.width=previewWidth + "px";
+
+  // The encounter card itself never permanently displays artwork. The image is
+  // only part of the hover preview from either the picker or Encounter view.
+  var cardHtml=renderCardHtml(m,key,[],{forPreview:true});
+  box.innerHTML='<div class="preview-layout"><div class="preview-card-pane">' + cardHtml + '</div>' + (hasArt ? previewImagePaneHtml(m) : '') + '</div>';
+  box.style.display="block";
+  moveMonsterPreview(evt);
+}
+
+function moveMonsterPreview(evt) {
+  var box=document.getElementById("monsterPreview");
+  if (!box || box.style.display=="none") return;
+
+  evt=evt || window.event;
+  if (!evt) return;
+
+  var vw=document.documentElement.clientWidth || document.body.clientWidth || 1200;
+  var vh=document.documentElement.clientHeight || document.body.clientHeight || 800;
+  var w=box.offsetWidth || 760;
+  var h=box.offsetHeight || 500;
+
+  var x=evt.clientX + 18;
+  var y=evt.clientY + 14;
+
+  // Flip to the left of the pointer when there isn't enough room on the right.
+  if (x + w > vw - 10) x=evt.clientX - w - 18;
+  if (x < 10) x=10;
+
+  // Keep the entire preview inside the application viewport.
+  if (y + h > vh - 10) y=vh - h - 10;
+  if (y < 10) y=10;
+
+  box.style.left=x + "px";
+  box.style.top=y + "px";
+}
+
+function cancelHideMonsterPreview() {
+  if (previewHideTimer) {
+    window.clearTimeout(previewHideTimer);
+    previewHideTimer=null;
+  }
+}
+function scheduleHideMonsterPreview() {
+  cancelHideMonsterPreview();
+  previewHideTimer=window.setTimeout(hideMonsterPreview,180);
+}
+function hideMonsterPreview() {
+  cancelHideMonsterPreview();
+  var box=document.getElementById("monsterPreview");
+  if (!box) return;
+  box.style.display="none";
+  box.innerHTML="";
+}
+
+async function buildEncounter() {
+  // Synchronize ONLY the currently selected source. Monsters already added
+  // from other books stay in the encounter.
+  for (var i=0;i<monsters.length;i++) {
+    var m=monsters[i], key=monsterKey(m), qty=quantities[key] || 0;
+    if (qty > 0) {
+      var old = encounter[key] && encounter[key].copies ? encounter[key].copies : [];
+      var copies=[];
+      var hpMax=parseInt(m.hp,10); if (isNaN(hpMax) || hpMax<0) hpMax=0;
+      var stMax=parseInt(m.stress,10); if (isNaN(stMax) || stMax<0) stMax=0;
+      for (var c=0;c<qty;c++) copies.push(old[c] || {hp:hpMax,stress:stMax,evolutions:{}});
+      encounter[key]={copies:copies};
+    } else if (encounter[key]) {
+      delete encounter[key];
+    }
+  }
+
+  var hasAny=false;
+  for (var k in encounter) if (encounter.hasOwnProperty(k) && encounter[k].copies && encounter[k].copies.length) { hasAny=true; break; }
+  if (!hasAny) { await appAlert("Nothing selected","Choose at least one monster first."); renderEncounterPools(); return; }
+
+  reconcileEncounterOrder();
+  renderEncounterPools();
+  showEncounter();
+}
+
+function showBuilder() {
+  hideMonsterPreview();
+  currentView="builder";
+  document.getElementById("builderView").className="view";
+  document.getElementById("encounterView").className="view hidden";
+  document.getElementById("builderTab").className="active";
+  document.getElementById("encounterTab").className="";
+  document.getElementById("search").disabled=false;
+  document.getElementById("typeFilter").disabled=false;
+  document.getElementById("levelFilter").disabled=false;
+  document.getElementById("roleFilter").disabled=false;
+  renderBuilder();
+}
+function showEncounter() {
+  hideMonsterPreview();
+  currentView="encounter";
+  document.getElementById("builderView").className="view hidden";
+  document.getElementById("encounterView").className="view";
+  document.getElementById("builderTab").className="";
+  document.getElementById("encounterTab").className="active";
+  document.getElementById("search").disabled=true;
+  document.getElementById("typeFilter").disabled=true;
+  document.getElementById("levelFilter").disabled=true;
+  document.getElementById("roleFilter").disabled=true;
+  renderEncounter();
+}
+
+function defaultEncounterOrder() {
+  var special=[], regular=[];
+  for (var i=0;i<allMonsters.length;i++) {
+    var m=allMonsters[i], key=monsterKey(m);
+    if (encounter[key] && encounter[key].copies && encounter[key].copies.length) {
+      if (isSpecialSource(m)) special.push(m); else regular.push(m);
+    }
+  }
+  special.sort(compareMonsterNames);
+  regular.sort(compareMonsterNames);
+  var ordered=special.concat(regular), keys=[];
+  for (var j=0;j<ordered.length;j++) keys.push(monsterKey(ordered[j]));
+  return keys;
+}
+function reconcileEncounterOrder() {
+  var defaults=defaultEncounterOrder(), valid={}, next=[];
+  for (var i=0;i<defaults.length;i++) valid[defaults[i]]=true;
+
+  // Preserve any order the GM explicitly created by dragging.
+  for (var j=0;j<encounterOrder.length;j++) {
+    var key=encounterOrder[j];
+    if (valid[key]) { next.push(key); delete valid[key]; }
+  }
+
+  // New Environment & Social cards should retain the application's original
+  // behavior: when first added to an encounter they appear on the left.
+  // Regular adversaries are appended on the right. This does not override
+  // cards the GM has already manually reordered.
+  var newSpecial=[], newRegular=[];
+  for (var k=0;k<defaults.length;k++) {
+    var addKey=defaults[k];
+    if (!valid[addKey]) continue;
+    var monster=getMonsterByKey(addKey);
+    if (monster && isSpecialSource(monster)) newSpecial.push(addKey);
+    else newRegular.push(addKey);
+  }
+
+  if (newSpecial.length) {
+    var firstRegular=next.length;
+    for (var n=0;n<next.length;n++) {
+      var existing=getMonsterByKey(next[n]);
+      if (!existing || !isSpecialSource(existing)) { firstRegular=n; break; }
+    }
+    var args=[firstRegular,0].concat(newSpecial);
+    Array.prototype.splice.apply(next,args);
+  }
+
+  for (var r=0;r<newRegular.length;r++) next.push(newRegular[r]);
+  encounterOrder=next;
+}
+function clearEncounterDragMarkers() {
+  var cards=document.querySelectorAll('.encounter-card');
+  for (var i=0;i<cards.length;i++) {
+    cards[i].classList.remove('dragging');
+    cards[i].classList.remove('drag-target-before');
+    cards[i].classList.remove('drag-target-after');
+  }
+}
+function removeEncounterDragGhost() {
+  if (encounterDragGhost && encounterDragGhost.parentNode) {
+    encounterDragGhost.parentNode.removeChild(encounterDragGhost);
+  }
+  encounterDragGhost=null;
+}
+function encounterDragStart(evt,key) {
+  draggedEncounterKey=key;
+  var head=evt.currentTarget;
+  var card=head && head.parentNode;
+  if (card && card.classList) card.classList.add('dragging');
+
+  if (evt.dataTransfer) {
+    evt.dataTransfer.effectAllowed='move';
+    try { evt.dataTransfer.setData('text/plain',key); } catch(e) {}
+
+    // Use a visible copy of the entire encounter card as the drag image.
+    // This makes the card feel physically "grabbed" instead of only showing
+    // a destination marker.
+    removeEncounterDragGhost();
+    if (card && card.cloneNode) {
+      var ghost=card.cloneNode(true);
+      ghost.classList.remove('dragging','drag-target-before','drag-target-after');
+      ghost.classList.add('encounter-drag-ghost');
+      ghost.removeAttribute('ondragover');
+      ghost.removeAttribute('ondragleave');
+      ghost.removeAttribute('ondrop');
+
+      // Native drag images can become enormous when a card is very tall.
+      // Keep the full card width but cap the preview height for usability.
+      document.body.appendChild(ghost);
+      encounterDragGhost=ghost;
+
+      try {
+        var rect=card.getBoundingClientRect();
+        var offsetX=Math.max(18,Math.min(rect.width-18,evt.clientX-rect.left));
+        var offsetY=Math.max(18,Math.min(Math.min(rect.height,560)-18,evt.clientY-rect.top));
+        evt.dataTransfer.setDragImage(ghost,offsetX,offsetY);
+      } catch(e) {}
+    }
+  }
+}
+function encounterDragOver(evt,targetKey) {
+  if (!draggedEncounterKey || draggedEncounterKey==targetKey) return;
+  if (evt.preventDefault) evt.preventDefault();
+  if (evt.dataTransfer) evt.dataTransfer.dropEffect='move';
+  var card=evt.currentTarget;
+  if (!card) return false;
+  card.classList.remove('drag-target-before');
+  card.classList.remove('drag-target-after');
+  var rect=card.getBoundingClientRect();
+  var before=evt.clientX < rect.left + rect.width/2;
+  card.classList.add(before?'drag-target-before':'drag-target-after');
+  return false;
+}
+function encounterDragLeave(evt) {
+  var card=evt.currentTarget;
+  if (!card || !card.classList) return;
+  card.classList.remove('drag-target-before');
+  card.classList.remove('drag-target-after');
+}
+function encounterDrop(evt,targetKey) {
+  if (evt.preventDefault) evt.preventDefault();
+  if (!draggedEncounterKey || draggedEncounterKey==targetKey) {
+    draggedEncounterKey=null;
+    clearEncounterDragMarkers();
+    removeEncounterDragGhost();
+    return false;
+  }
+
+  reconcileEncounterOrder();
+  var source=draggedEncounterKey;
+  var sourceIndex=encounterOrder.indexOf(source);
+  var targetIndex=encounterOrder.indexOf(targetKey);
+  if (sourceIndex<0 || targetIndex<0) {
+    draggedEncounterKey=null;
+    clearEncounterDragMarkers();
+    removeEncounterDragGhost();
+    return false;
+  }
+
+  var card=evt.currentTarget;
+  var rect=card.getBoundingClientRect();
+  var before=evt.clientX < rect.left + rect.width/2;
+
+  encounterOrder.splice(sourceIndex,1);
+  targetIndex=encounterOrder.indexOf(targetKey);
+  encounterOrder.splice(before ? targetIndex : targetIndex+1,0,source);
+
+  draggedEncounterKey=null;
+  clearEncounterDragMarkers();
+  removeEncounterDragGhost();
+  renderEncounter();
+  return false;
+}
+function encounterDragEnd(evt) {
+  draggedEncounterKey=null;
+  clearEncounterDragMarkers();
+  removeEncounterDragGhost();
+}
+function renderEncounter() {
+  var strip=document.getElementById("encounterStrip"), html="", count=0;
+  reconcileEncounterOrder();
+  for (var i=0;i<encounterOrder.length;i++) {
+    var cardKey=encounterOrder[i], card=getMonsterByKey(cardKey);
+    if (!card || !encounter[cardKey] || !encounter[cardKey].copies || !encounter[cardKey].copies.length) continue;
+    html += renderCardHtml(card,cardKey,encounter[cardKey].copies,{forEncounter:true});
+    count++;
+  }
+  strip.innerHTML = count ? html : '<div id="emptyEncounter">No encounter built yet.</div>';
+  renderEncounterPools();
+  setStatus(count ? "Encounter: " + count + " card type(s) across all selected sources." : "No encounter built.");
+}
+
+function monsterCardHtml(m,key,copies,opts) {
+  var level = m.level == null ? "?" : m.level;
+  var tier = m.tier == null ? level : m.tier;
+  var role = isSpecialSource(m) ? (m.type || m.role || "Special") : (m.role || m.type || "Adversary");
+  var compactEncounter=!!(compactViewVisible && opts && opts.forEncounter);
+  var compact=!!(compactEncounter && !isSpecialSource(m));
+  var html = '<div class="monster-card' + specialCardClass(m) + encounterCardClass(opts) + (compactEncounter ? ' compact-card' : '') + '"' + encounterCardAttrs(key,opts) + '>' +
+    '<div class="card-head"' + encounterHeadAttrs(key,opts) + '><div class="role">' + esc(role) + '</div>' +
+    previewableTitleHtml(m.name || 'Unnamed',key,opts) +
+    '<div class="card-sub"><span class="source-badge">' + esc(m._sourceLabel || "Custom") + '</span> ' + esc(m.type || "Unknown") + (m.lineage ? ' · ' + esc(m.lineage) : '') + ' · Tier ' + esc(tier) + '</div>' +
+    '<div class="level-badge' + tierBadgeClass(tier) + '">T' + esc(tier) + '</div></div>';
+
+  if (compact) {
+    html += compactStatsLineHtml(m);
+  } else {
+    html += '<div class="stats">';
+    html += statHtml("Difficulty",m.difficulty);
+
+    // Daggerheart adversaries have a general ATK modifier. Our JSON stores it
+    // on the standard/first attack, so expose it separately for abilities that
+    // say to "make an attack" without using the standard attack's damage.
+    var quickAttacks=m.attacks;
+    if (!quickAttacks && m.attack) quickAttacks=[m.attack];
+    if (quickAttacks && quickAttacks.length && typeof quickAttacks[0] == "object" && quickAttacks[0].modifier != null) {
+      html += attackStatHtml(quickAttacks[0].modifier,m.name || "Monster");
+    }
+
+    html += statHtml("HP",m.hp);
+    html += statHtml("Stress",m.stress);
+    if (m.evasion != null) html += statHtml("Evasion",m.evasion);
+    if (m.armor != null) html += statHtml("Armor",m.armor);
+    html += '</div>';
+  }
+  html += thresholdRailHtml(m.thresholds,compact);
+
+  if (!compact && m.description) html += '<div class="card-section"><div class="description">' + diceText(m.description) + '</div></div>';
+
+  if (!compact && m.experiences && m.experiences.length) {
+    html += '<div class="card-section"><div class="section-label">Experiences</div>';
+    for (var e=0;e<m.experiences.length;e++) {
+      var ex=m.experiences[e];
+      if (typeof ex == "object") html += '<span class="experience">' + esc(ex.name || "Experience") + (ex.modifier != null ? ' +' + esc(ex.modifier) : '') + '</span>';
+      else html += '<span class="experience">' + esc(ex) + '</span>';
+    }
+    html += '</div>';
+  }
+
+  if (!compact && m.motivesTactics && m.motivesTactics.length) {
+    html += '<div class="card-section"><div class="section-label">Motives & Tactics</div><div class="motives">' + esc(m.motivesTactics.join(" · ")) + '</div></div>';
+  }
+
+  var attacks=m.attacks;
+  if (!attacks && m.attack) attacks=[m.attack];
+  if (attacks && attacks.length) {
+    html += '<div class="card-section"><div class="section-label">Attacks</div>';
+    for (var a=0;a<attacks.length;a++) html += attackHtml(attacks[a],m.name);
+    html += '</div>';
+  }
+
+  if (m.abilities && m.abilities.length) {
+    var featureCount=0, featureHtml="";
+    for (var b=0;b<m.abilities.length;b++) {
+      var kind=String((m.abilities[b] && m.abilities[b].kind) || "").toLowerCase();
+      if (kind == "evolution") continue;
+      featureHtml += abilityHtml(m.abilities[b]);
+      featureCount++;
+    }
+    if (featureCount) html += '<div class="card-section"><div class="section-label">Features</div>' + featureHtml + '</div>';
+  }
+
+  var evolutions=getEvolutions(m);
+  if (evolutions.length) {
+    html += '<div class="card-section evolution-section"><div class="section-label">Evolutions</div>';
+    for (var ev=0;ev<evolutions.length;ev++) html += evolutionHtml(evolutions[ev]);
+    html += '</div>';
+  }
+
+  html += '<div class="trackers">';
+  for (var c=0;c<copies.length;c++) html += creatureHtml(m,key,c,copies[c]);
+  html += '</div></div>';
+  return html;
+}
+
+function environmentListText(value) {
+  if (value == null) return "";
+  if (typeof value == "string" || typeof value == "number") return String(value);
+  if (typeof value.length != "undefined") {
+    var parts=[];
+    for (var i=0;i<value.length;i++) {
+      var v=value[i];
+      if (v == null) continue;
+      if (typeof v == "object") {
+        if (v.name && v.members) parts.push(String(v.name) + " (" + environmentListText(v.members) + ")");
+        else if (v.name) parts.push(String(v.name));
+        else parts.push(String(v));
+      } else parts.push(String(v));
+    }
+    return parts.join(", ");
+  }
+  return String(value);
+}
+function environmentFeatureHtml(ab) {
+  if (typeof ab != "object") return '<div class="environment-feature"><div class="environment-feature-text">' + diceText(ab) + '</div></div>';
+  var kind=ab.kind ? ' <span class="environment-feature-kind">— ' + esc(ab.kind) + '</span>' : '';
+  var html='<div class="environment-feature"><div class="environment-feature-title">' + esc(ab.name || "Feature") + kind + '</div>';
+  var meta=[];
+  if (ab.uses != null && String(ab.uses)!="") meta.push("Uses: " + esc(ab.uses));
+  if (ab.cost) meta.push(esc(ab.cost));
+  if (meta.length) html += '<div class="environment-feature-meta">' + meta.join(" · ") + '</div>';
+  if (ab.description) html += '<div class="environment-feature-text">' + diceText(ab.description) + '</div>';
+  if (ab.prompt) html += '<div class="environment-feature-prompt">' + diceText(ab.prompt) + '</div>';
+  html += '</div>';
+  return html;
+}
+function environmentCardHtml(m,key,copies,opts) {
+  var level=m.level == null ? (m.tier == null ? "?" : m.tier) : m.level;
+  var tier=m.tier == null ? level : m.tier;
+  var type=m.type || "Environment";
+  var html='<div class="monster-card environment-card' + specialCardClass(m) + encounterCardClass(opts) + '"' + encounterCardAttrs(key,opts) + '>' +
+    '<div class="card-head"' + encounterHeadAttrs(key,opts) + '><div class="role">' + esc(type) + '</div>' +
+    previewableTitleHtml(m.name || 'Unnamed',key,opts) +
+    '<div class="card-sub"><span class="source-badge">' + esc(m._sourceLabel || "Environment & Social") + '</span> Tier ' + esc(tier) + '</div>' +
+    '<div class="level-badge' + tierBadgeClass(tier) + '">T' + esc(tier) + '</div></div>';
+
+  if (m.description) html += '<div class="card-section"><div class="description">' + diceText(m.description) + '</div></div>';
+
+  if (m.impulses != null && environmentListText(m.impulses)) {
+    html += '<div class="card-section"><div class="section-label">Impulses</div><div class="env-value env-impulses">' + diceText(environmentListText(m.impulses)) + '</div></div>';
+  }
+
+  html += '<div class="stats">' + statHtml("Difficulty",m.difficulty) + '</div>';
+
+  if (m.potentialAdversaries != null && environmentListText(m.potentialAdversaries)) {
+    html += '<div class="card-section"><div class="section-label">Potential Adversaries</div><div class="env-value">' + diceText(environmentListText(m.potentialAdversaries)) + '</div></div>';
+  }
+
+  var features=m.features || m.abilities || [];
+  if (features && features.length) {
+    html += '<div class="card-section"><div class="section-label">Features</div>';
+    for (var i=0;i<features.length;i++) html += environmentFeatureHtml(features[i]);
+    html += '</div>';
+  }
+
+  html += '</div>';
+  return html;
+}
+
+function valueOr(v,fallback) { return v == null ? fallback : v; }
+function statVisual(label) {
+  var key=String(label || "").toLowerCase();
+  if (key=="difficulty") return {cls:"difficulty",icon:"◆"};
+  if (key=="attack") return {cls:"attack",icon:"⚔"};
+  if (key=="hp") return {cls:"hp",icon:"♥"};
+  if (key=="stress") return {cls:"stress",icon:"⚡"};
+  if (key=="evasion") return {cls:"evasion",icon:"↗"};
+  if (key=="armor") return {cls:"armor",icon:"▣"};
+  return {cls:"generic",icon:"•"};
+}
+function statHtml(label,value) {
+  if (value == null) return "";
+  var vis=statVisual(label);
+  return '<div class="stat stat-' + vis.cls + '"><span class="stat-icon" aria-hidden="true">' + vis.icon + '</span>' +
+    '<span class="stat-copy"><span class="k">' + esc(label) + '</span><span class="v">' + esc(value) + '</span></span></div>';
+}
+
+function thresholdNumber(value) {
+  if (value == null || value === "") return null;
+  var n=Number(value);
+  return isFinite(n) ? n : null;
+}
+function compactStatsLineHtml(m) {
+  var bits=[];
+  if (m.difficulty != null) bits.push('Difficulty ' + esc(m.difficulty));
+
+  var quickAttacks=m.attacks;
+  if (!quickAttacks && m.attack) quickAttacks=[m.attack];
+  if (quickAttacks && quickAttacks.length && typeof quickAttacks[0] == "object" && quickAttacks[0].modifier != null) {
+    var raw=quickAttacks[0].modifier;
+    bits.push('<span class="compact-stat-action" title="Roll d20 ' + esc(formatAttackModifier(raw)) + '" onclick="rollAttackValue(\'' +
+      jsq(String(raw)) + '\',\'' + jsq((m.name || "Monster") + " — Attack") + '\')">Attack ' + esc(formatAttackModifier(raw)) + '</span>');
+  }
+
+  if (m.hp != null) bits.push('HP ' + esc(m.hp));
+  if (m.stress != null) bits.push('Stress ' + esc(m.stress));
+  if (m.evasion != null) bits.push('Evasion ' + esc(m.evasion));
+  if (m.armor != null) bits.push('Armor ' + esc(m.armor));
+
+  return bits.length ? '<div class="compact-stats-line">' + bits.join(' · ') + '</div>' : '';
+}
+function thresholdRailHtml(thresholds,compact) {
+  if (!thresholds) return "";
+
+  // The normal app format stores Major and Severe. Leave unusual legacy
+  // string values readable rather than inventing values for them.
+  if (typeof thresholds != "object") {
+    return '<div class="threshold-panel"><div class="threshold-panel-label">Damage Thresholds</div>' +
+      '<div class="stat"><div class="v">' + esc(thresholds) + '</div></div></div>';
+  }
+
+  var major=valueOr(thresholds.major,null);
+  var severe=valueOr(thresholds.severe,null);
+  if (major == null && severe == null) return "";
+
+  var minorLabel=compact ? "MINOR" : "MINOR DAMAGE";
+  var majorLabel=compact ? "MAJOR" : "MAJOR DAMAGE";
+  var severeLabel=compact ? "SEVERE" : "SEVERE DAMAGE";
+  var massiveLabel=compact ? "MASSIVE" : "MASSIVE DAMAGE";
+
+  var html='<div class="threshold-panel"><div class="threshold-panel-label">Damage Thresholds</div>' +
+    '<div class="threshold-rail' + (massiveDamageVisible ? ' with-massive' : '') + '">' +
+    '<div class="damage-band first"><div class="damage-band-title">' + minorLabel + '</div><div class="damage-band-hp">MARK 1 HP</div></div>' +
+    '<div class="threshold-marker" title="Major threshold">' + esc(valueOr(major,"?")) + '</div>' +
+    '<div class="damage-band"><div class="damage-band-title">' + majorLabel + '</div><div class="damage-band-hp">MARK 2 HP</div></div>' +
+    '<div class="threshold-marker" title="Severe threshold">' + esc(valueOr(severe,"?")) + '</div>' +
+    '<div class="damage-band' + (massiveDamageVisible ? '' : ' last') + '"><div class="damage-band-title">' + severeLabel + '</div><div class="damage-band-hp">MARK 3 HP</div></div>';
+
+  if (massiveDamageVisible) {
+    var severeNum=thresholdNumber(severe);
+    var massive=severeNum == null ? "?" : severeNum * 2;
+    html += '<div class="threshold-marker" title="Homebrew Massive threshold: Severe x2">' + esc(massive) + '</div>' +
+      '<div class="damage-band massive last" title="Homebrew"><div class="damage-band-title">' + massiveLabel + '</div><div class="damage-band-hp">MARK 4 HP</div></div>';
+  }
+
+  html += '</div></div>';
+  return html;
+}
+
+function formatAttackModifier(value) {
+  var s=String(value == null ? "0" : value).replace(/^\s+|\s+$/g,"");
+  if (/^-?\d+$/.test(s)) {
+    var n=parseInt(s,10);
+    return n >= 0 ? "+" + n : String(n);
+  }
+  if (s.charAt(0)!="+" && s.charAt(0)!="-") s="+" + s;
+  return s;
+}
+function attackStatHtml(modifier,monsterName) {
+  var label=formatAttackModifier(modifier), vis=statVisual("Attack");
+  return '<div class="stat stat-attack quick-attack-stat" title="Roll d20 ' + esc(label) + '" ' +
+    'onclick="rollAttackValue(\'' + jsq(String(modifier)) + '\',\'' + jsq(monsterName + " — Attack") + '\')">' +
+    '<span class="stat-icon" aria-hidden="true">' + vis.icon + '</span>' +
+    '<span class="stat-copy"><span class="k">Attack</span><span class="v">' + esc(label) + '</span></span></div>';
+}
+
+function attackHtml(at,monsterName) {
+  if (typeof at != "object") return '<div class="attack"><div class="attack-meta">' + diceText(at) + '</div></div>';
+  var modRaw = at.modifier == null ? 0 : at.modifier;
+  var modLabel = formatAttackModifier(modRaw);
+  var html='<div class="attack"><div class="attack-top">' +
+    '<button class="attack-roll" onclick="rollAttackValue(\'' + jsq(String(modRaw)) + '\',\'' + jsq(monsterName || "Monster") + ' — ' + jsq(at.name || "Attack") + '\')">' + esc(at.name || "Attack") + ' · Attack ' + esc(modLabel) + '</button></div>';
+  var bits=[];
+  if (at.range != null) bits.push(esc(at.range));
+  if (at.damage != null) bits.push('Damage ' + diceText(at.damage));
+  html += '<div class="attack-meta">' + bits.join(' · ') + '</div>';
+  if (at.description) html += '<div class="ability-text">' + diceText(at.description) + '</div>';
+  html += '</div>';
+  return html;
+}
+
+
+function getEvolutions(m) {
+  var out=[];
+  if (m.evolutions && m.evolutions.length) {
+    for (var i=0;i<m.evolutions.length;i++) out.push(m.evolutions[i]);
+  }
+  if (m.abilities && m.abilities.length) {
+    for (var j=0;j<m.abilities.length;j++) {
+      var a=m.abilities[j];
+      if (a && typeof a == "object" && String(a.kind || "").toLowerCase() == "evolution") out.push(a);
+    }
+  }
+  return out;
+}
+function evolutionName(ev,index) {
+  if (ev && typeof ev == "object" && ev.name) return String(ev.name);
+  return "Evolution " + (index+1);
+}
+function evolutionHtml(ev) {
+  if (typeof ev != "object") return '<div class="evolution"><div class="evolution-text">' + diceText(ev) + '</div></div>';
+  var html='<div class="evolution"><div class="evolution-title">' + esc(ev.name || "Evolution") + '</div>';
+  if (ev.trigger) html += '<div class="evolution-trigger">Trigger: ' + diceText(ev.trigger) + '</div>';
+  html += '<div class="evolution-text">' + diceText(ev.description || ev.effect || "") + '</div></div>';
+  return html;
+}
+function evolutionTrackerHtml(m,key,index,state) {
+  var evolutions=getEvolutions(m);
+  if (!evolutions.length) return "";
+  if (!state.evolutions) state.evolutions={};
+  var html="";
+  for (var i=0;i<evolutions.length;i++) {
+    var name=evolutionName(evolutions[i],i), on=!!state.evolutions[name];
+    html += '<div class="evolution-track"><div class="evolution-track-label">Evolution</div>' +
+      '<button class="evolution-button' + (on ? ' triggered' : '') + '" onclick="toggleEvolution(\'' + jsq(key) + '\',' + index + ',\'' + jsq(name) + '\')">' +
+      (on ? 'TRIGGERED — ' : 'Trigger — ') + esc(name) + '</button></div>';
+  }
+  return html;
+}
+function toggleEvolution(key,index,name) {
+  if (!encounter[key] || !encounter[key].copies || !encounter[key].copies[index]) return;
+  var state=encounter[key].copies[index];
+  if (!state.evolutions) state.evolutions={};
+  state.evolutions[name]=!state.evolutions[name];
+  renderEncounter();
+}
+
+function getMonsterPools(m) {
+  var out=[], seen={};
+  function add(v) {
+    if (v == null) return;
+    var name="";
+    if (typeof v == "object") name=String(v.name || v.pool || ""); else name=String(v);
+    name=name.replace(/^\s+|\s+$/g,"");
+    if (name && !seen[name]) { seen[name]=true; out.push(name); }
+  }
+  if (m.pools && typeof m.pools.length != "undefined") for (var i=0;i<m.pools.length;i++) add(m.pools[i]);
+  else if (m.pools) add(m.pools);
+  if (m.pool) add(m.pool);
+  if (m.abilities && m.abilities.length) {
+    for (var j=0;j<m.abilities.length;j++) if (m.abilities[j] && typeof m.abilities[j] == "object" && m.abilities[j].pool) add(m.abilities[j].pool);
+  }
+  return out;
+}
+function activePoolNames() {
+  var names=[], seen={};
+  for (var i=0;i<allMonsters.length;i++) {
+    var m=allMonsters[i], key=monsterKey(m);
+    if (!encounter[key] || !encounter[key].copies || !encounter[key].copies.length) continue;
+    var pools=getMonsterPools(m);
+    for (var p=0;p<pools.length;p++) if (!seen[pools[p]]) { seen[pools[p]]=true; names.push(pools[p]); }
+  }
+  names.sort(function(a,b){ var x=a.toLowerCase(), y=b.toLowerCase(); return x<y?-1:(x>y?1:0); });
+  return names;
+}
+function renderEncounterPools() {
+  var section=document.getElementById("poolSection"), list=document.getElementById("poolList");
+  if (!section || !list) return;
+  var names=activePoolNames();
+  if (!names.length) { section.className="pool-section hidden"; list.innerHTML=""; refreshInitiativeVisibility(); return; }
+  section.className="pool-section";
+  var html="";
+  for (var i=0;i<names.length;i++) {
+    var name=names[i];
+    if (poolState[name] == null) poolState[name]=0;
+    html += '<div class="pool-row"><div class="pool-name">' + esc(name) + '</div>' +
+      '<button class="pool-adjust" onclick="adjustPool(\'' + jsq(name) + '\',-1)">−</button>' +
+      '<div class="pool-value">' + poolState[name] + '</div>' +
+      '<button class="pool-adjust" onclick="adjustPool(\'' + jsq(name) + '\',1)">+</button></div>';
+  }
+  list.innerHTML=html;
+  refreshInitiativeVisibility();
+}
+function adjustPool(name,delta) {
+  var v=parseInt(poolState[name],10); if (isNaN(v)) v=0;
+  poolState[name]=Math.max(0,v+delta);
+  renderEncounterPools();
+}
+
+function abilityHtml(ab) {
+  if (typeof ab != "object") return '<div class="ability"><div class="ability-text">' + diceText(ab) + '</div></div>';
+  var kind=ab.kind ? ' <span class="ability-kind">— ' + esc(ab.kind) + '</span>' : '';
+  return '<div class="ability"><div class="ability-title">' + esc(ab.name || "Ability") + kind + '</div>' +
+    '<div class="ability-text">' + diceText(ab.description || "") + '</div></div>';
+}
+
+function diceText(text) {
+  text = String(text == null ? "" : text);
+  var re=/(\d*)d(\d+)([+-]\d+)?/ig, out="", last=0, match;
+  while ((match=re.exec(text)) != null) {
+    out += esc(text.substring(last,match.index));
+    var expr=match[0];
+    out += '<button class="dice-link" onclick="rollDice(\'' + jsq(expr) + '\')">' + esc(expr) + '</button>';
+    last = match.index + expr.length;
+  }
+  out += esc(text.substring(last));
+  return out;
+}
+function jsq(s) { return String(s).replace(/\\/g,"\\\\").replace(/'/g,"\\'").replace(/\r/g," ").replace(/\n/g," "); }
+
+function healthState(hpNow,hpMax) {
+  hpNow=parseInt(hpNow,10); hpMax=parseInt(hpMax,10);
+  if (isNaN(hpMax) || hpMax<=0) return {key:"healthy",label:"Healthy"};
+  if (isNaN(hpNow)) hpNow=hpMax;
+  hpNow=Math.max(0,Math.min(hpMax,hpNow));
+
+  if (hpNow<=0) return {key:"down",label:"Down"};
+  if (hpNow>=hpMax) return {key:"healthy",label:"Healthy"};
+
+  // 1 HP creature: Healthy -> Down.
+  // 2-3 HP creatures: Healthy -> Critical -> Down.
+  if (hpMax==1) return {key:"healthy",label:"Healthy"};
+  if (hpMax<=3) return {key:"critical",label:"Critical"};
+
+  if (hpNow==1) return {key:"critical",label:"Critical"};
+  if ((hpNow / hpMax) <= 0.5) return {key:"bloodied",label:"Bloodied"};
+  return {key:"wounded",label:"Wounded"};
+}
+function creatureHtml(m,key,index,state) {
+  var hpMax=parseInt(m.hp,10); if (isNaN(hpMax) || hpMax<0) hpMax=0;
+  var stMax=parseInt(m.stress,10); if (isNaN(stMax) || stMax<0) stMax=0;
+  var hpNow=parseInt(state.hp,10); if (isNaN(hpNow)) hpNow=hpMax;
+  var stNow=parseInt(state.stress,10); if (isNaN(stNow)) stNow=stMax;
+  hpNow=Math.max(0,Math.min(hpMax,hpNow));
+  stNow=Math.max(0,Math.min(stMax,stNow));
+  var hs=healthState(hpNow,hpMax);
+  var pawnField="";
+  if (pawnColorVisible && !isSpecialSource(m)) {
+    pawnField='<input class="pawn-color-input" type="text" maxlength="30" placeholder="Pawn color" value="' +
+      attr(state.pawnColor || "") + '" onclick="event.stopPropagation()" onmousedown="event.stopPropagation()" ' +
+      'oninput="setPawnColor(\'' + jsq(key) + '\',' + index + ',this.value)" />';
+  }
+  return '<div class="creature"><div class="creature-name health-' + hs.key + '">' +
+    '<span class="creature-id-name">' + esc(m.name) + ' #' + (index+1) + '</span>' +
+    pawnField +
+    '<span class="health-state">' + esc(hs.label) + '</span></div>' +
+    trackHtml(key,index,'hp','HP',hpMax,hpNow) +
+    trackHtml(key,index,'stress','STRESS',stMax,stNow) +
+    evolutionTrackerHtml(m,key,index,state) + '</div>';
+}
+function trackHtml(key,index,type,label,max,current) {
+  var slots="", glyph=type=="hp"?"&#9829;":"&#9889;";
+  current=parseInt(current,10); if (isNaN(current)) current=max;
+  current=Math.max(0,Math.min(max,current));
+  for (var i=0;i<max;i++) {
+    // Trackers represent what remains. Colored icons are available; dark icons are lost/used.
+    // This makes damage/stress disappear from right to left as the minus button is pressed.
+    var available=i<current, stateClass=available?' available':' spent';
+    var setTo=available ? i : i+1;
+    var tip=(available?"Available ":"Lost/used ") + label + " " + (i+1) + " — click to " + (available?"reduce to here":"restore through here");
+    slots += '<button class="track-icon ' + type + stateClass + '" title="' + esc(tip) + '" onclick="setTrack(\'' + jsq(key) + '\',' + index + ',\'' + type + '\',' + setTo + ')">' + glyph + '</button>';
+  }
+  return '<div class="track"><div class="track-label">' + esc(label) + ' (' + max + ')</div>' +
+    '<button class="adjust" title="Reduce one" onclick="adjustTrack(\'' + jsq(key) + '\',' + index + ',\'' + type + '\',-1)">−</button>' +
+    '<div class="slots">' + slots + '</div>' +
+    '<button class="adjust" title="Restore one" onclick="adjustTrack(\'' + jsq(key) + '\',' + index + ',\'' + type + '\',1)">+</button></div>';
+}
+function adjustTrack(key,index,type,delta) {
+  var m=getMonsterByKey(key); if (!m || !encounter[key]) return;
+  var max=parseInt(type=="hp"?m.hp:m.stress,10); if (isNaN(max)||max<0) max=0;
+  var c=encounter[key].copies[index]; if (!c) return;
+  var current=parseInt(c[type],10); if (isNaN(current)) current=max;
+  c[type]=Math.max(0,Math.min(max,current+delta));
+  renderEncounter();
+}
+function setTrack(key,index,type,value) {
+  var m=getMonsterByKey(key); if (!m || !encounter[key]) return;
+  var max=parseInt(type=="hp"?m.hp:m.stress,10); if (isNaN(max)||max<0) max=0;
+  encounter[key].copies[index][type]=Math.max(0,Math.min(max,value));
+  renderEncounter();
+}
+function resetTracks() {
+  for (var key in encounter) if (encounter.hasOwnProperty(key)) {
+    var m=getMonsterByKey(key);
+    var hpMax=m?parseInt(m.hp,10):0; if (isNaN(hpMax)||hpMax<0) hpMax=0;
+    var stMax=m?parseInt(m.stress,10):0; if (isNaN(stMax)||stMax<0) stMax=0;
+    var copies=encounter[key].copies || [];
+    for (var i=0;i<copies.length;i++) { copies[i].hp=hpMax; copies[i].stress=stMax; }
+  }
+  renderEncounter();
+}
+function renderInitiative() {
+  var list=document.getElementById("initiativeList");
+  if (!list) return;
+  var html="";
+  for (var i=0;i<initiativePlayers.length;i++) {
+    var p=initiativePlayers[i];
+    html += '<div class="initiative-row">' +
+      '<span class="initiative-rank">' + (i+1) + '.</span>' +
+      '<input id="initName' + i + '" class="initiative-name-input" type="text" placeholder="Player name" value="' + attr(p.name) + '" ' +
+      'onchange="initiativeChangedAt(' + i + ',\'name\',this.value)" onkeyup="initiativeChangedAt(' + i + ',\'name\',this.value)" />' +
+      '<input id="initValue' + i + '" class="initiative-input" type="text" placeholder="Init" value="' + attr(p.value) + '" ' +
+      'onchange="initiativeChangedAt(' + i + ',\'value\',this.value)" onkeyup="initiativeChangedAt(' + i + ',\'value\',this.value)" />' +
+      '</div>';
+  }
+  list.innerHTML=html;
+}
+function initiativeChangedAt(index,field,value) {
+  if (index<0 || index>=initiativePlayers.length) return;
+  if (field!="name" && field!="value") return;
+  initiativePlayers[index][field]=trimText(value);
+}
+function sortInitiative() {
+  captureInitiativeInputs();
+  initiativePlayers.sort(function(a,b) {
+    var an=trimText(a.name), bn=trimText(b.name);
+    var aNameBlank=an==="", bNameBlank=bn==="";
+    // Unused player slots always stay at the bottom.
+    if (aNameBlank && !bNameBlank) return 1;
+    if (!aNameBlank && bNameBlank) return -1;
+    if (aNameBlank && bNameBlank) return (a.order||0)-(b.order||0);
+
+    var av=parseFloat(a.value), bv=parseFloat(b.value);
+    var aBlank=trimText(a.value)==="" || isNaN(av), bBlank=trimText(b.value)==="" || isNaN(bv);
+    if (aBlank && !bBlank) return 1;
+    if (!aBlank && bBlank) return -1;
+    if (!aBlank && !bBlank && av!=bv) return bv-av;
+    return (a.order||0)-(b.order||0);
+  });
+  renderInitiative();
+}
+function resetInitiative() {
+  initiativePlayers=makeBlankInitiativePlayers();
+  renderInitiative();
+}
+
+async function clearEncounter() {
+  if (!(await appConfirm("Clear Encounter","Clear the encounter, selected quantities, player initiative, shared pools, and evolution states?","Clear Encounter",true))) return;
+  encounter={};
+  encounterOrder=[];
+  poolState={};
+  for (var k in quantities) if (quantities.hasOwnProperty(k)) quantities[k]=0;
+  resetInitiative();
+  renderEncounterPools();
+  renderBuilder();
+  showBuilder();
+}
+
+function rollAttack(mod,label) {
+  rollAttackValue(String(mod),label);
+}
+function rollAttackValue(modifier,label) {
+  var raw=String(modifier == null ? "0" : modifier).replace(/\s/g,"").toLowerCase();
+  var d20=randomDie(20);
+
+  // Normal fixed attack modifier, e.g. +3 or -2.
+  if (/^[+-]?\d+$/.test(raw)) {
+    var fixed=parseInt(raw,10);
+    var total=d20+fixed;
+    var sign=fixed>=0 ? "+" + fixed : String(fixed);
+    showRoll(label + ": " + total, "d20 [" + d20 + "] " + sign);
+    return;
+  }
+
+  // Dynamic attack modifier, e.g. +2d4. A few adversaries use these.
+  var m=/^([+-]?)(\d*)d(\d+)([+-]\d+)?$/.exec(raw);
+  if (m) {
+    var direction=m[1]=="-" ? -1 : 1;
+    var count=parseInt(m[2] || "1",10);
+    var sides=parseInt(m[3],10);
+    var extra=parseInt(m[4] || "0",10);
+    if (count<1 || count>20 || sides<2 || sides>1000) {
+      showRoll("Invalid attack modifier",raw);
+      return;
+    }
+    var rolls=[], diceSum=0;
+    for (var i=0;i<count;i++) {
+      var r=randomDie(sides);
+      rolls.push(r);
+      diceSum+=r;
+    }
+    var modTotal=(direction*diceSum)+extra;
+    var finalTotal=d20+modTotal;
+    var detail="d20 [" + d20 + "] " + (modTotal>=0 ? "+ " : "- ") + Math.abs(modTotal) +
+      "  (ATK " + formatAttackModifier(modifier) + ": [" + rolls.join(", ") + "]" +
+      (extra>0 ? " + " + extra : (extra<0 ? " - " + Math.abs(extra) : "")) + ")";
+    showRoll(label + ": " + finalTotal,detail);
+    return;
+  }
+
+  showRoll("Cannot roll attack","ATK " + String(modifier));
+}
+function rollDice(expr) {
+  expr=String(expr).replace(/\s/g,"").toLowerCase();
+  var m=/^(\d*)d(\d+)([+-]\d+)?$/.exec(expr);
+  if (!m) { showRoll("Cannot roll",expr); return; }
+  var count=parseInt(m[1] || "1",10), sides=parseInt(m[2],10), mod=parseInt(m[3] || "0",10);
+  if (count<1 || count>100 || sides<2 || sides>1000) { showRoll("Invalid dice",expr); return; }
+  var rolls=[], sum=0;
+  for (var i=0;i<count;i++) { var r=randomDie(sides); rolls.push(r); sum+=r; }
+  var total=sum+mod;
+  var detail=count + "d" + sides + " [" + rolls.join(", ") + "]" + (mod>0 ? " + " + mod : (mod<0 ? " - " + Math.abs(mod) : ""));
+  showRoll(expr + " → " + total,detail);
+}
+function randomDie(sides) { return Math.floor(Math.random()*sides)+1; }
+function showRoll(title,detail) {
+  document.getElementById("rollTitle").innerText=title;
+  document.getElementById("rollDetail").innerText=detail;
+  document.getElementById("rollBox").style.display="block";
+  if (rollTimer) window.clearTimeout(rollTimer);
+  rollTimer=window.setTimeout(hideRoll,4500);
+}
+function hideRoll() { document.getElementById("rollBox").style.display="none"; }
+
+function slideEncounter(direction) {
+  var strip=document.getElementById("encounterStrip");
+  strip.scrollLeft += direction * 430;
+}
+function encounterWheel(evt) {
+  evt=evt || window.event;
+  var strip=document.getElementById("encounterStrip");
+  var delta=evt.wheelDelta ? -evt.wheelDelta : (evt.detail ? evt.detail*40 : 0);
+
+  if (!delta) return true;
+
+  // Normal mouse-wheel movement scrolls the encounter vertically so tall
+  // monster cards can be read without grabbing the right-side scrollbar.
+  // Hold Shift while using the wheel to move horizontally between different
+  // monster cards. The bottom horizontal scrollbar and Slide buttons remain.
+  if (evt.shiftKey) {
+    strip.scrollLeft += delta;
+  } else {
+    strip.scrollTop += delta;
+  }
+
+  if (evt.preventDefault) evt.preventDefault();
+  evt.returnValue=false;
+  return false;
+}
+
+
+function toggleFileMenu(evt) { toggleTopMenu("fileMenu","file-menu",evt); }
+function toggleViewMenu(evt) { toggleTopMenu("viewMenu","view-menu",evt); }
+function toggleTopMenu(id,baseClass,evt) {
+  var menu=document.getElementById(id);
+  if (!menu) return;
+  var wasOpen=menu.className.indexOf("open")>=0;
+  closeMenus();
+  menu.className=wasOpen ? baseClass : baseClass+" open";
+  evt=evt || window.event;
+  if (evt) evt.cancelBubble=true;
+}
+function closeMenus() {
+  var file=document.getElementById("fileMenu"); if (file) file.className="file-menu";
+  var view=document.getElementById("viewMenu"); if (view) view.className="view-menu";
+}
+function closeFileMenu() { closeMenus(); }
+function refreshInitiativeVisibility() {
+  var panel=document.getElementById("initiativePanel");
+  if (panel) panel.className=initiativeVisible ? "" : "hidden";
+  var menuItem=document.getElementById("initiativeToggleMenuItem");
+  if (menuItem) menuItem.innerHTML='<span class="menu-check">'+(initiativeVisible?'✓':'')+'</span>Player Initiative';
+  var sidebar=document.getElementById("initiativeSidebar");
+  var pools=document.getElementById("poolSection");
+  if (sidebar) {
+    var poolsVisible=pools && pools.className.indexOf("hidden")<0;
+    sidebar.className=(!initiativeVisible && !poolsVisible) ? "hidden" : "";
+  }
+}
+function toggleInitiativeVisibility() {
+  initiativeVisible=!initiativeVisible;
+  closeMenus();
+  refreshInitiativeVisibility();
+}
+function refreshMassiveDamageVisibility() {
+  var menuItem=document.getElementById("massiveDamageToggleMenuItem");
+  if (menuItem) menuItem.innerHTML='<span class="menu-check">'+(massiveDamageVisible?'✓':'')+'</span>Massive Damage';
+}
+function toggleMassiveDamageVisibility() {
+  massiveDamageVisible=!massiveDamageVisible;
+  closeMenus();
+  refreshMassiveDamageVisibility();
+  hideMonsterPreview();
+  renderEncounter();
+}
+function refreshPawnColorVisibility() {
+  var menuItem=document.getElementById("pawnColorToggleMenuItem");
+  if (menuItem) menuItem.innerHTML='<span class="menu-check">'+(pawnColorVisible?'✓':'')+'</span>Pawn Color';
+}
+function togglePawnColorVisibility() {
+  pawnColorVisible=!pawnColorVisible;
+  closeMenus();
+  refreshPawnColorVisibility();
+  hideMonsterPreview();
+  renderEncounter();
+}
+function setPawnColor(key,index,value) {
+  if (!encounter[key] || !encounter[key].copies || !encounter[key].copies[index]) return;
+  encounter[key].copies[index].pawnColor=String(value == null ? "" : value);
+}
+function refreshCompactView() {
+  var menuItem=document.getElementById("compactViewToggleMenuItem");
+  if (menuItem) menuItem.innerHTML='<span class="menu-check">'+(compactViewVisible?'✓':'')+'</span>Compact View';
+}
+function toggleCompactView() {
+  compactViewVisible=!compactViewVisible;
+  closeMenus();
+  refreshCompactView();
+  hideMonsterPreview();
+  renderEncounter();
+}
+function refreshHoverPictures() {
+  var menuItem=document.getElementById("hoverPictureToggleMenuItem");
+  if (menuItem) menuItem.innerHTML='<span class="menu-check">'+(hoverPicturesVisible?'✓':'')+'</span>Picture';
+}
+function toggleHoverPictures() {
+  hoverPicturesVisible=!hoverPicturesVisible;
+  closeMenus();
+  refreshHoverPictures();
+  hideMonsterPreview();
+}
+function sanitizeFileName(name) {
+  name=trimText(name).replace(/[\\\/:*?"<>|]/g,"-").replace(/\s+/g," ");
+  name=name.replace(/[\. ]+$/g,"");
+  return name;
+}
+function captureInitiativeInputs() {
+  for (var i=0;i<initiativePlayers.length;i++) {
+    var nameBox=document.getElementById("initName"+i);
+    var valueBox=document.getElementById("initValue"+i);
+    if (nameBox) initiativePlayers[i].name=trimText(nameBox.value);
+    if (valueBox) initiativePlayers[i].value=trimText(valueBox.value);
+  }
+}
+async function saveEncounter() {
+  closeMenus();
+  captureInitiativeInputs();
+  var suggested="Encounter";
+  var filename=await appPrompt("Save Encounter","Choose a name for this encounter save.",suggested,"Save");
+  if (filename == null) return;
+  filename=sanitizeFileName(filename);
+  if (!filename) { await appAlert("Save name required","Enter a save name."); return; }
+  if (filename.toLowerCase().substr(filename.length-5)!=".json") filename += ".json";
+
+  var entries=[];
+  for (var i=0;i<allMonsters.length;i++) {
+    var m=allMonsters[i], key=monsterKey(m);
+    if (encounter[key] && encounter[key].copies && encounter[key].copies.length) {
+      entries.push({sourceKey:m._sourceKey || "custom",file:m._file || "",id:m.id || "",name:m.name || "",copies:encounter[key].copies});
+    }
+  }
+  var data={
+    fileType:"Astrellon Monster Vault Encounter",
+    schemaVersion:1,
+    trackerMode:"remaining",
+    savedAt:String(new Date()),
+    currentSource:currentSource,
+    encounter:entries,
+    encounterOrder:encounterOrder.slice(0),
+    initiative:initiativePlayers,
+    pools:poolState,
+    view:{initiativeVisible:initiativeVisible,massiveDamageVisible:massiveDamageVisible,pawnColorVisible:pawnColorVisible,compactViewVisible:compactViewVisible,hoverPicturesVisible:hoverPicturesVisible}
+  };
+  try {
+    var first=apiRequestRaw("POST","/api/save-encounter",{filename:filename,data:data,overwrite:false});
+    if (first.status==409) {
+      if (!(await appConfirm("Overwrite Save","A save named '"+filename+"' already exists. Overwrite it?","Overwrite",true))) return;
+      apiRequest("POST","/api/save-encounter",{filename:filename,data:data,overwrite:true});
+    } else if (first.status<200 || first.status>=300) {
+      throw new Error(first.data && first.data.error ? first.data.error : ("HTTP "+first.status));
+    }
+    setStatus("Saved encounter: "+filename+" — "+saveFolder());
+  } catch(e) { await appAlert("Could not save encounter",e.message); }
+}
+function findMonsterForSave(entry) {
+  var i,m;
+  for (i=0;i<allMonsters.length;i++) {
+    m=allMonsters[i];
+    if (String(m._sourceKey||"custom")==String(entry.sourceKey||"custom") && entry.file && String(m._file||"")==String(entry.file)) return m;
+  }
+  for (i=0;i<allMonsters.length;i++) {
+    m=allMonsters[i];
+    if (String(m._sourceKey||"custom")==String(entry.sourceKey||"custom") && entry.id && String(m.id||"")==String(entry.id)) return m;
+  }
+  for (i=0;i<allMonsters.length;i++) {
+    m=allMonsters[i];
+    if (String(m._sourceKey||"custom")==String(entry.sourceKey||"custom") && entry.name && String(m.name||"")==String(entry.name)) return m;
+  }
+  return null;
+}
+async function openLoadEncounter() {
+  closeMenus();
+  var list=document.getElementById("loadSaveList");
+  list.options.length=0;
+  try {
+    var response=apiRequest("GET","/api/saves");
+    var names=response.files || [];
+    for (var i=0;i<names.length;i++) list.options.add(new Option(names[i],names[i]));
+    document.getElementById("loadEmpty").style.display=names.length?"none":"block";
+    document.getElementById("loadEncounterModal").style.display="block";
+    if (names.length) list.selectedIndex=0;
+  } catch(e) { await appAlert("Could not list saved encounters",e.message); }
+}
+function closeLoadEncounter() { document.getElementById("loadEncounterModal").style.display="none"; }
+function normalizeInitiative(saved) {
+  var out=[], i;
+  if (saved && typeof saved.length!="undefined") {
+    for (i=0;i<saved.length && i<8;i++) out.push({name:trimText(saved[i].name),value:trimText(saved[i].value),order:i});
+  }
+  while (out.length<8) out.push({name:"",value:"",order:out.length});
+  return out;
+}
+async function loadSelectedEncounter() {
+  var list=document.getElementById("loadSaveList");
+  if (!list || list.selectedIndex<0) { await appAlert("No save selected","Choose a saved encounter first."); return; }
+  var filename=list.options[list.selectedIndex].value;
+  try {
+    var response=apiRequest("GET","/api/save?name="+encodeURIComponent(filename));
+    var data=response.data;
+    if (!data || data.fileType!="Astrellon Monster Vault Encounter") throw new Error("This is not an Astrellon encounter save.");
+    await loadMonsters();
+    encounter={}; encounterOrder=[]; poolState=data.pools || {};
+    for (var q in quantities) if (quantities.hasOwnProperty(q)) quantities[q]=0;
+    var missing=[];
+    var entries=data.encounter || [];
+    for (var i=0;i<entries.length;i++) {
+      var m=findMonsterForSave(entries[i]);
+      if (!m) { missing.push(entries[i].name || entries[i].file || "Unknown monster"); continue; }
+      var key=monsterKey(m), copies=entries[i].copies || [];
+      var hpMax=parseInt(m.hp,10); if (isNaN(hpMax)||hpMax<0) hpMax=0;
+      var stMax=parseInt(m.stress,10); if (isNaN(stMax)||stMax<0) stMax=0;
+      for (var ci=0;ci<copies.length;ci++) {
+        if (!copies[ci] || typeof copies[ci]!="object") copies[ci]={};
+        if (data.trackerMode!="remaining") {
+          // v1.4 and earlier stored marked HP/Stress; convert those saves automatically.
+          var oldHp=parseInt(copies[ci].hp,10); if (isNaN(oldHp)) oldHp=0;
+          var oldSt=parseInt(copies[ci].stress,10); if (isNaN(oldSt)) oldSt=0;
+          copies[ci].hp=Math.max(0,hpMax-oldHp);
+          copies[ci].stress=Math.max(0,stMax-oldSt);
+        } else {
+          var remHp=parseInt(copies[ci].hp,10); if (isNaN(remHp)) remHp=hpMax;
+          var remSt=parseInt(copies[ci].stress,10); if (isNaN(remSt)) remSt=stMax;
+          copies[ci].hp=Math.max(0,Math.min(hpMax,remHp));
+          copies[ci].stress=Math.max(0,Math.min(stMax,remSt));
+        }
+        if (!copies[ci].evolutions) copies[ci].evolutions={};
+      }
+      encounter[key]={copies:copies};
+      quantities[key]=copies.length;
+    }
+    if (data.encounterOrder && typeof data.encounterOrder.length!="undefined") {
+      for (var oi=0;oi<data.encounterOrder.length;oi++) encounterOrder.push(String(data.encounterOrder[oi]));
+    }
+    reconcileEncounterOrder();
+    initiativePlayers=normalizeInitiative(data.initiative);
+    if (data.view && typeof data.view.initiativeVisible=="boolean") initiativeVisible=data.view.initiativeVisible;
+    if (data.view && typeof data.view.massiveDamageVisible=="boolean") massiveDamageVisible=data.view.massiveDamageVisible;
+    if (data.view && typeof data.view.pawnColorVisible=="boolean") pawnColorVisible=data.view.pawnColorVisible;
+    if (data.view && typeof data.view.compactViewVisible=="boolean") compactViewVisible=data.view.compactViewVisible;
+    if (data.view && typeof data.view.hoverPicturesVisible=="boolean") hoverPicturesVisible=data.view.hoverPicturesVisible;
+    if (data.currentSource) currentSource=String(data.currentSource);
+    var sourceSel=document.getElementById("sourceBook");
+    if (sourceSel) sourceSel.value=currentSource;
+    selectSourceMonsters(); rebuildFilters(); applyFilters(); renderInitiative(); renderEncounterPools(); refreshInitiativeVisibility(); refreshMassiveDamageVisibility(); refreshPawnColorVisibility(); refreshCompactView(); refreshHoverPictures();
+    closeLoadEncounter();
+    var hasAny=false; for (var k in encounter) if (encounter.hasOwnProperty(k)) { hasAny=true; break; }
+    if (hasAny) showEncounter(); else showBuilder();
+    setStatus("Loaded encounter: "+filename+(missing.length?" — missing "+missing.length+" monster(s).":""));
+    if (missing.length) await appAlert("Encounter loaded with missing files","These monster files were not found:\n\n"+missing.join("\n"));
+  } catch(e) { await appAlert("Could not load encounter",e.message); }
+}
+
+var monsterTypes=["Aberration","Beast","Celestial","Construct","Dragon","Elemental","Fey","Fiend","Giant","Humanoid","Monstrosity","Ooze","Plant","Spirit","Undead","Rift Beast","Vermyn","Fungril","Fungus","Other / Custom"];
+var monsterRoles=["Bruiser","Horde","Leader","Minion","Ranged","Skulk","Social","Solo","Standard","Support"];
+var attackRanges=["Melee","Very Close","Close","Far","Very Far"];
+var abilityKinds=["Passive","Action","Reaction","Evolution"];
+
+function optionsHtml(values,selected) {
+  var html="";
+  for (var i=0;i<values.length;i++) html += '<option value="'+attr(values[i])+'"'+(values[i]==selected?' selected="selected"':'')+'>'+esc(values[i])+'</option>';
+  return html;
+}
+function clearEditorInvalid() {
+  var modal=document.getElementById("monsterEditorModal");
+  var nodes=modal.getElementsByTagName("input"), i;
+  for (i=0;i<nodes.length;i++) nodes[i].className=nodes[i].className.replace(/\s*invalid/g,"");
+  nodes=modal.getElementsByTagName("select"); for (i=0;i<nodes.length;i++) nodes[i].className=nodes[i].className.replace(/\s*invalid/g,"");
+  nodes=modal.getElementsByTagName("textarea"); for (i=0;i<nodes.length;i++) nodes[i].className=nodes[i].className.replace(/\s*invalid/g,"");
+  nodes=modal.getElementsByTagName("div"); for (i=0;i<nodes.length;i++) if (nodes[i].className.indexOf("editor-repeat-row")>=0) nodes[i].className=nodes[i].className.replace(/\s*invalid/g,"");
+  var msg=document.getElementById("editorValidation"); msg.style.display="none"; msg.innerText="";
+}
+function markEditorInvalid(el) { if (el && el.className.indexOf("invalid")<0) el.className += " invalid"; }
+function showEditorErrors(errors) {
+  var msg=document.getElementById("editorValidation");
+  msg.innerText="Cannot save yet. Complete the highlighted fields: "+errors.join(", ")+".";
+  msg.style.display="block";
+  var body=document.getElementById("monsterEditorBody"); if (body) body.scrollTop=0;
+}
+function toggleCustomType() {
+  var sel=document.getElementById("nmType"), box=document.getElementById("nmCustomTypeField");
+  box.style.display=sel.value=="Other / Custom"?"block":"none";
+}
+function openMonsterEditor() {
+  closeFileMenu(); hideMonsterPreview();
+  document.getElementById("monsterEditorForm").reset();
+  document.getElementById("nmType").innerHTML=optionsHtml(monsterTypes,"Beast");
+  document.getElementById("nmRole").innerHTML=optionsHtml(monsterRoles,"Standard");
+  document.getElementById("nmTier").value="1";
+  document.getElementById("nmCustomType").value="";
+  toggleCustomType(); clearEditorInvalid();
+  document.getElementById("attackEditorRows").innerHTML="";
+  document.getElementById("experienceEditorRows").innerHTML="";
+  document.getElementById("abilityEditorRows").innerHTML="";
+  addAttackEditorRow(); addExperienceEditorRow(); addAbilityEditorRow();
+  document.getElementById("monsterEditorModal").style.display="block";
+}
+function closeMonsterEditor() { document.getElementById("monsterEditorModal").style.display="none"; }
+function removeEditorRow(btn) {
+  var row=btn.parentNode;
+  if (row && row.parentNode) row.parentNode.removeChild(row);
+}
+function addAttackEditorRow(data) {
+  data=data||{};
+  var row=document.createElement("div"); row.className="editor-repeat-row attack-edit-row";
+  row.innerHTML='<div class="repeat-fields">'+
+    '<div class="repeat-field"><label>Attack Name <span class="required-mark">*</span></label><input class="editor-input attack-name" type="text" value="'+attr(data.name||"")+'" /></div>'+
+    '<div class="repeat-field small"><label>ATK <span class="required-mark">*</span></label><input class="editor-input attack-mod" type="text" value="'+attr(data.modifier==null?"":data.modifier)+'" placeholder="+2" /></div>'+
+    '<div class="repeat-field medium"><label>Range <span class="required-mark">*</span></label><select class="editor-input attack-range">'+optionsHtml(attackRanges,data.range||"Melee")+'</select></div>'+
+    '<div class="repeat-field"><label>Damage <span class="required-mark">*</span></label><input class="editor-input attack-damage" type="text" value="'+attr(data.damage||"")+'" placeholder="2d8+4 physical" /></div>'+
+    '<button type="button" class="row-remove danger" onclick="removeEditorRow(this)">Remove</button>'+
+    '<div class="repeat-field description-field"><label>Attack Description (optional)</label><textarea class="editor-input attack-description">'+esc(data.description||"")+'</textarea></div>'+
+    '</div>';
+  document.getElementById("attackEditorRows").appendChild(row);
+}
+function addExperienceEditorRow(data) {
+  data=data||{}; var row=document.createElement("div"); row.className="editor-repeat-row experience-edit-row";
+  row.innerHTML='<div class="repeat-fields">'+
+    '<div class="repeat-field"><label>Experience Name</label><input class="editor-input exp-name" type="text" value="'+attr(data.name||"")+'" /></div>'+
+    '<div class="repeat-field small"><label>Modifier</label><input class="editor-input exp-mod" type="text" value="'+attr(data.modifier==null?"":data.modifier)+'" placeholder="+2" /></div>'+
+    '<button type="button" class="row-remove danger" onclick="removeEditorRow(this)">Remove</button></div>';
+  document.getElementById("experienceEditorRows").appendChild(row);
+}
+function addAbilityEditorRow(data) {
+  data=data||{}; var row=document.createElement("div"); row.className="editor-repeat-row ability-edit-row";
+  row.innerHTML='<div class="repeat-fields">'+
+    '<div class="repeat-field"><label>Feature Name</label><input class="editor-input ability-name" type="text" value="'+attr(data.name||"")+'" /></div>'+
+    '<div class="repeat-field medium"><label>Kind</label><select class="editor-input ability-kind">'+optionsHtml(abilityKinds,data.kind||"Passive")+'</select></div>'+
+    '<button type="button" class="row-remove danger" onclick="removeEditorRow(this)">Remove</button>'+
+    '<div class="repeat-field description-field"><label>Description</label><textarea class="editor-input ability-description">'+esc(data.description||"")+'</textarea></div>'+
+    '</div>';
+  document.getElementById("abilityEditorRows").appendChild(row);
+}
+function splitEditorList(text) {
+  var raw=String(text||"").replace(/\r/g,"\n").split(/[\n,]+/), out=[];
+  for (var i=0;i<raw.length;i++) { var v=trimText(raw[i]); if (v) out.push(v); }
+  return out;
+}
+function numericEditorValue(id,label,errors,min) {
+  var el=document.getElementById(id), raw=trimText(el.value), n=parseInt(raw,10);
+  if (raw==="" || isNaN(n) || String(n)!=raw.replace(/^\+/,"") || (min!=null && n<min)) { markEditorInvalid(el); errors.push(label); return null; }
+  return n;
+}
+function attackModifierValue(raw) {
+  raw=trimText(raw);
+  if (/^[+-]?\d+$/.test(raw)) return parseInt(raw,10);
+  return raw;
+}
+function slugifyMonsterName(name) {
+  var s=String(name||"").toLowerCase();
+  var from="àáâãäåæçèéêëìíîïñòóôõöœùúûüýÿ";
+  var to  ="aaaaaaaceeeeiiiinoooooouuuuyy";
+  for (var i=0;i<from.length;i++) s=s.replace(new RegExp(from.charAt(i),"g"),to.charAt(i));
+  s=s.replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
+  return s || "custom-monster";
+}
+async function saveNewMonster() {
+  clearEditorInvalid();
+  var errors=[];
+  function requiredText(id,label) {
+    var el=document.getElementById(id), v=trimText(el.value);
+    if (!v) { markEditorInvalid(el); errors.push(label); }
+    return v;
+  }
+  var name=requiredText("nmName","Name");
+  var typeSel=document.getElementById("nmType"), type=typeSel.value;
+  if (type=="Other / Custom") {
+    type=requiredText("nmCustomType","Custom Type");
+    if (!type) markEditorInvalid(typeSel);
+  }
+  var tier=parseInt(document.getElementById("nmTier").value,10);
+  var role=document.getElementById("nmRole").value;
+  var description=requiredText("nmDescription","Description");
+  var difficulty=numericEditorValue("nmDifficulty","Difficulty",errors,1);
+  var major=numericEditorValue("nmMajor","Major Threshold",errors,0);
+  var severe=numericEditorValue("nmSevere","Severe Threshold",errors,0);
+  var hp=numericEditorValue("nmHP","HP",errors,1);
+  var stress=numericEditorValue("nmStress","Stress",errors,0);
+  var motives=splitEditorList(document.getElementById("nmMotives").value);
+  if (!motives.length) { markEditorInvalid(document.getElementById("nmMotives")); errors.push("Motives & Tactics"); }
+
+  var attacks=[], attackRows=document.getElementById("attackEditorRows").children;
+  for (var i=0;i<attackRows.length;i++) {
+    var row=attackRows[i], n=row.querySelector(".attack-name"), mod=row.querySelector(".attack-mod"), range=row.querySelector(".attack-range"), dmg=row.querySelector(".attack-damage"), desc=row.querySelector(".attack-description");
+    var nv=trimText(n.value), mv=trimText(mod.value), dv=trimText(dmg.value);
+    var allBlank=!nv && !mv && !dv && !trimText(desc.value);
+    if (allBlank) continue;
+    if (!nv || !mv || !dv) { markEditorInvalid(row); errors.push("Attack #"+(i+1)); continue; }
+    var at={name:nv,modifier:attackModifierValue(mv),range:range.value,damage:dv};
+    if (trimText(desc.value)) at.description=trimText(desc.value);
+    attacks.push(at);
+  }
+  if (!attacks.length) { markEditorInvalid(document.getElementById("attackEditorRows")); errors.push("at least one complete Attack"); }
+
+  var experiences=[], expRows=document.getElementById("experienceEditorRows").children;
+  for (i=0;i<expRows.length;i++) {
+    row=expRows[i]; n=row.querySelector(".exp-name"); mod=row.querySelector(".exp-mod");
+    nv=trimText(n.value); mv=trimText(mod.value);
+    if (!nv && !mv) continue;
+    if (!nv || !/^[+-]?\d+$/.test(mv)) { markEditorInvalid(row); errors.push("Experience #"+(i+1)); continue; }
+    experiences.push({name:nv,modifier:parseInt(mv,10)});
+  }
+
+  var abilities=[], abRows=document.getElementById("abilityEditorRows").children;
+  for (i=0;i<abRows.length;i++) {
+    row=abRows[i]; n=row.querySelector(".ability-name"); var kind=row.querySelector(".ability-kind"), ad=row.querySelector(".ability-description");
+    nv=trimText(n.value); var av=trimText(ad.value);
+    if (!nv && !av) continue;
+    if (!nv || !av) { markEditorInvalid(row); errors.push("Feature #"+(i+1)); continue; }
+    abilities.push({name:nv,kind:kind.value,description:av});
+  }
+
+  if (major!=null && severe!=null && severe<major) {
+    markEditorInvalid(document.getElementById("nmMajor")); markEditorInvalid(document.getElementById("nmSevere")); errors.push("Threshold order (Severe must be >= Major)");
+  }
+  if (errors.length) { showEditorErrors(errors); return; }
+
+  var monster={
+    schemaVersion:1,
+    id:slugifyMonsterName(name),
+    name:name,
+    type:type,
+    level:tier,
+    tier:tier,
+    role:role,
+    description:description,
+    difficulty:difficulty,
+    thresholds:{major:major,severe:severe},
+    hp:hp,
+    stress:stress,
+    attacks:attacks,
+    experiences:experiences,
+    motivesTactics:motives,
+    abilities:abilities,
+    tags:splitEditorList(document.getElementById("nmTags").value),
+    biome:splitEditorList(document.getElementById("nmBiome").value)
+  };
+  var lineage=trimText(document.getElementById("nmLineage").value); if (lineage) monster.lineage=lineage;
+  var ev=trimText(document.getElementById("nmEvasion").value); if (ev!=="") monster.evasion=/^[+-]?\d+$/.test(ev)?parseInt(ev,10):ev;
+  var armor=trimText(document.getElementById("nmArmor").value); if (armor!=="") monster.armor=/^[+-]?\d+$/.test(armor)?parseInt(armor,10):armor;
+  var pools=splitEditorList(document.getElementById("nmPools").value); if (pools.length) monster.pools=pools;
+  var hasTypeTag=false; for (i=0;i<monster.tags.length;i++) if (monster.tags[i].toLowerCase()==type.toLowerCase()) hasTypeTag=true;
+  if (!hasTypeTag) monster.tags.unshift(type);
+
+  var filename=monster.id+".json";
+  try {
+    var first=apiRequestRaw("POST","/api/save-monster",{filename:filename,data:monster,overwrite:false});
+    if (first.status==409) {
+      if (!(await appConfirm("Overwrite Custom Monster","A custom monster file named '"+filename+"' already exists. Overwrite it?","Overwrite",true))) return;
+      apiRequest("POST","/api/save-monster",{filename:filename,data:monster,overwrite:true});
+    } else if (first.status<200 || first.status>=300) {
+      throw new Error(first.data && first.data.error ? first.data.error : ("HTTP "+first.status));
+    }
+    closeMonsterEditor();
+    currentSource="custom";
+    var sourceSel=document.getElementById("sourceBook"); if (sourceSel) sourceSel.value="custom";
+    loadMonsters();
+    document.getElementById("search").value=name;
+    applyFilters(); showBuilder();
+    setStatus("Saved custom monster: "+filename+" — "+monsterFolder());
+  } catch(e) { await appAlert("Could not save monster",e.message); }
+}
+
+
+var specialFeatureKinds=["Passive","Action","Reaction"];
+function splitEditorLinesOnly(text) {
+  var raw=String(text||"").replace(/\r/g,"").split(/\n+/), out=[];
+  for (var i=0;i<raw.length;i++) { var v=trimText(raw[i]); if (v) out.push(v); }
+  return out;
+}
+function clearSpecialInvalid() {
+  var modal=document.getElementById("specialEditorModal"), nodes, i;
+  if (!modal) return;
+  nodes=modal.getElementsByTagName("input"); for (i=0;i<nodes.length;i++) nodes[i].className=nodes[i].className.replace(/\s*invalid/g,"");
+  nodes=modal.getElementsByTagName("select"); for (i=0;i<nodes.length;i++) nodes[i].className=nodes[i].className.replace(/\s*invalid/g,"");
+  nodes=modal.getElementsByTagName("textarea"); for (i=0;i<nodes.length;i++) nodes[i].className=nodes[i].className.replace(/\s*invalid/g,"");
+  nodes=modal.getElementsByTagName("div"); for (i=0;i<nodes.length;i++) if (nodes[i].className.indexOf("special-feature-row")>=0) nodes[i].className=nodes[i].className.replace(/\s*invalid/g,"");
+  var msg=document.getElementById("specialValidation"); msg.style.display="none"; msg.innerText="";
+}
+function showSpecialErrors(errors) {
+  var msg=document.getElementById("specialValidation");
+  msg.innerText="Complete or correct: " + errors.join(", ");
+  msg.style.display="block";
+  var body=document.getElementById("specialEditorBody"); if (body) body.scrollTop=0;
+}
+function openSpecialEditor(mode) {
+  closeFileMenu(); hideMonsterPreview(); specialEditorMode=mode||"environment";
+  var form=document.getElementById("specialEditorForm"); form.reset(); clearSpecialInvalid();
+  var title=document.getElementById("specialEditorTitle"), typeSel=document.getElementById("spType"), note=document.getElementById("specialKindNote");
+  if (specialEditorMode=="social") {
+    title.innerText="New Social Environment";
+    typeSel.innerHTML='<option value="Social">Social</option>'; typeSel.disabled=true;
+    note.innerText="Creates a Social environment card using the Daggerheart environment format. It saves to Environment and Social, not Custom.";
+  } else if (specialEditorMode=="traversal") {
+    title.innerText="New Traversal Environment";
+    typeSel.innerHTML='<option value="Traversal">Traversal</option>'; typeSel.disabled=true;
+    note.innerText="Creates a Traversal environment card with Impulses, Potential Adversaries, and Features. It saves to Environment and Social.";
+  } else {
+    title.innerText="New Environment";
+    typeSel.innerHTML='<option value="Exploration">Exploration</option><option value="Event">Event</option><option value="Environment">Environment</option>'; typeSel.disabled=false;
+    note.innerText="Creates a general environment card. Choose Exploration, Event, or Environment; Social and Traversal have their own shortcuts in the File menu.";
+  }
+  document.getElementById("spTier").value="1";
+  document.getElementById("specialFeatureRows").innerHTML="";
+  addSpecialFeatureRow();
+  document.getElementById("specialEditorModal").style.display="block";
+  var body=document.getElementById("specialEditorBody"); if (body) body.scrollTop=0;
+}
+function closeSpecialEditor() { document.getElementById("specialEditorModal").style.display="none"; }
+function addSpecialFeatureRow(data) {
+  data=data||{}; var row=document.createElement("div"); row.className="editor-repeat-row special-feature-row";
+  row.innerHTML='<div class="repeat-fields">'+
+    '<div class="repeat-field"><label>Feature Name <span class="required-mark">*</span></label><input class="editor-input special-feature-name" type="text" value="'+attr(data.name||"")+'" /></div>'+
+    '<div class="repeat-field medium"><label>Kind <span class="required-mark">*</span></label><select class="editor-input special-feature-kind">'+optionsHtml(specialFeatureKinds,data.kind||"Action")+'</select></div>'+
+    '<div class="repeat-field small"><label>Uses (optional)</label><input class="editor-input special-feature-uses" type="text" value="'+attr(data.uses==null?"":data.uses)+'" /></div>'+
+    '<div class="repeat-field medium"><label>Cost (optional)</label><input class="editor-input special-feature-cost" type="text" value="'+attr(data.cost||"")+'" placeholder="Spend a Fear" /></div>'+
+    '<button type="button" class="row-remove danger" onclick="removeEditorRow(this)">Remove</button>'+
+    '<div class="repeat-field description-field"><label>Description <span class="required-mark">*</span></label><textarea class="editor-input special-feature-description">'+esc(data.description||"")+'</textarea></div>'+
+    '<div class="repeat-field description-field"><label>GM Prompt / Question (optional)</label><textarea class="editor-input special-feature-prompt" placeholder="What does this look like?">'+esc(data.prompt||"")+'</textarea></div>'+
+    '</div>';
+  document.getElementById("specialFeatureRows").appendChild(row);
+}
+async function saveSpecialCard() {
+  clearSpecialInvalid(); var errors=[];
+  function req(id,label) { var el=document.getElementById(id), v=trimText(el.value); if (!v) { markEditorInvalid(el); errors.push(label); } return v; }
+  var name=req("spName","Name"), type=document.getElementById("spType").value;
+  var tier=parseInt(document.getElementById("spTier").value,10);
+  var description=req("spDescription","Description");
+  var difficulty=numericEditorValue("spDifficulty","Difficulty",errors,1);
+  var impulses=splitEditorList(document.getElementById("spImpulses").value);
+  if (!impulses.length) { markEditorInvalid(document.getElementById("spImpulses")); errors.push("Impulses"); }
+  var potential=splitEditorLinesOnly(document.getElementById("spPotentialAdversaries").value);
+  var features=[], rows=document.getElementById("specialFeatureRows").children;
+  for (var i=0;i<rows.length;i++) {
+    var row=rows[i], n=row.querySelector(".special-feature-name"), kind=row.querySelector(".special-feature-kind"), uses=row.querySelector(".special-feature-uses"), cost=row.querySelector(".special-feature-cost"), desc=row.querySelector(".special-feature-description"), prompt=row.querySelector(".special-feature-prompt");
+    var nv=trimText(n.value), dv=trimText(desc.value), uv=trimText(uses.value), cv=trimText(cost.value), pv=trimText(prompt.value);
+    if (!nv && !dv && !uv && !cv && !pv) continue;
+    if (!nv || !dv) { markEditorInvalid(row); errors.push("Feature #"+(i+1)); continue; }
+    var f={name:nv,kind:kind.value,description:dv};
+    if (uv) f.uses=/^\d+$/.test(uv)?parseInt(uv,10):uv;
+    if (cv) f.cost=cv;
+    if (pv) f.prompt=pv;
+    features.push(f);
+  }
+  if (!features.length) { markEditorInvalid(document.getElementById("specialFeatureRows")); errors.push("at least one Feature"); }
+  if (errors.length) { showSpecialErrors(errors); return; }
+  var card={schemaVersion:1,id:slugifyMonsterName(name),name:name,type:type,level:tier,tier:tier,description:description,difficulty:difficulty,impulses:impulses,potentialAdversaries:potential,features:features};
+  var filename=card.id+".json";
+  try {
+    var first=apiRequestRaw("POST","/api/save-special",{filename:filename,data:card,overwrite:false});
+    if (first.status==409) {
+      if (!(await appConfirm("Overwrite Special Card","A file named '"+filename+"' already exists in Environment and Social. Overwrite it?","Overwrite",true))) return;
+      apiRequest("POST","/api/save-special",{filename:filename,data:card,overwrite:true});
+    } else if (first.status<200 || first.status>=300) {
+      throw new Error(first.data && first.data.error ? first.data.error : ("HTTP "+first.status));
+    }
+    closeSpecialEditor(); currentSource="envsocial";
+    var sourceSel=document.getElementById("sourceBook"); if (sourceSel) sourceSel.value="envsocial";
+    await loadMonsters(); document.getElementById("search").value=name; applyFilters(); showBuilder();
+    setStatus("Saved " + type + " card: " + filename + " — " + sourceFolder("envsocial"));
+  } catch(e) { await appAlert("Could not save special card",e.message); }
+}
+
+async function openMonsterFolder() {
+  try {
+    var result=apiRequest("POST","/api/open-folder",{sourceKey:currentSource});
+    setStatus("Opened source folder: " + (result.path || selectedSourceFolder()));
+  } catch(e) { await appAlert("Could not open source folder",e.message); }
+}
+function setStatus(s) { document.getElementById("status").innerText=s; }
+
+function requestAppShutdown() {
+  try {
+    fetch("/api/shutdown",{
+      method:"POST",
+      headers:{"X-Astrellon-Token":ASTRELLON_TOKEN},
+      body:"{}",
+      keepalive:true
+    });
+  } catch(e) {}
+}
+window.addEventListener("pagehide",function(e){ if (!e.persisted) requestAppShutdown(); });
+
+window.onload=function() {
+  document.onclick=closeMenus;
+  document.addEventListener("keydown",function(evt){ appDialogKey(evt); },false);
+  var strip=document.getElementById("encounterStrip");
+  if (strip.addEventListener) strip.addEventListener("mousewheel",encounterWheel,false);
+  else strip.attachEvent("onmousewheel",encounterWheel);
+  var sourceSel=document.getElementById("sourceBook");
+  if (sourceSel) sourceSel.value=currentSource;
+  loadMonsters();
+  renderInitiative();
+  renderEncounterPools();
+  refreshInitiativeVisibility();
+  refreshMassiveDamageVisibility();
+  showBuilder();
+};
+</script>
+</head>
+<body>
+<div id="monsterPreview" onmouseover="cancelHideMonsterPreview()" onmouseout="scheduleHideMonsterPreview()"></div>
+<div id="appDialogModal" class="modal-shade" onkeydown="return appDialogKey(event)">
+  <div class="app-dialog-window">
+    <div class="app-dialog-head"><div id="appDialogIcon" class="app-dialog-icon">i</div><div id="appDialogTitle" class="app-dialog-title">Astrellon Monster Vault</div></div>
+    <div class="app-dialog-body"><div id="appDialogBodyText"></div><input id="appDialogInput" class="app-dialog-input" type="text" style="display:none" /></div>
+    <div class="app-dialog-foot"><button id="appDialogCancel" type="button" onclick="appDialogClose(false)">Cancel</button><button id="appDialogOK" type="button" class="primary" onclick="appDialogClose(true)">OK</button></div>
+  </div>
+</div>
+
+<div id="specialEditorModal" class="modal-shade">
+  <div class="modal-window">
+    <div class="modal-head"><div id="specialEditorTitle" class="modal-title">New Environment</div><button onclick="closeSpecialEditor()">×</button></div>
+    <form id="specialEditorForm" onsubmit="return false;" style="display:flex;flex:1 1 auto;min-height:0;flex-direction:column;">
+      <div id="specialEditorBody" class="modal-body">
+        <div id="specialValidation" class="editor-validation"></div>
+        <div id="specialKindNote" class="special-kind-note"></div>
+        <div class="editor-section">
+          <div class="editor-section-title">Environment Identity</div>
+          <div class="form-row">
+            <div class="field wide"><label>Name <span class="required-mark">*</span></label><input id="spName" class="editor-input" type="text" /></div>
+            <div class="field"><label>Type <span class="required-mark">*</span></label><select id="spType" class="editor-input"></select></div>
+            <div class="field"><label>Tier <span class="required-mark">*</span></label><select id="spTier" class="editor-input"><option value="1">T1</option><option value="2">T2</option><option value="3">T3</option><option value="4">T4</option></select></div>
+            <div class="field"><label>Difficulty <span class="required-mark">*</span></label><input id="spDifficulty" class="editor-input" type="text" /></div>
+            <div class="field full"><label>Description <span class="required-mark">*</span></label><textarea id="spDescription" class="editor-input"></textarea></div>
+          </div>
+        </div>
+        <div class="editor-section">
+          <div class="editor-section-title">Impulses <span class="required-mark">*</span></div>
+          <textarea id="spImpulses" class="editor-input" placeholder="One per line or comma separated"></textarea>
+        </div>
+        <div class="editor-section">
+          <div class="editor-section-title">Potential Adversaries</div>
+          <textarea id="spPotentialAdversaries" class="editor-input" placeholder="Optional. One group or entry per line"></textarea>
+        </div>
+        <div class="editor-section">
+          <div class="editor-section-title">Features <span class="required-mark">*</span></div>
+          <div id="specialFeatureRows"></div>
+          <button class="add-row-button" type="button" onclick="addSpecialFeatureRow()">+ Add Feature</button>
+          <div class="editor-note">Features support Passive, Action, and Reaction. Uses, cost, and GM prompt are optional.</div>
+        </div>
+      </div>
+      <div class="modal-foot"><button type="button" onclick="closeSpecialEditor()">Cancel</button><button type="button" class="primary" onclick="saveSpecialCard()">Save to Environment &amp; Social</button></div>
+    </form>
+  </div>
+</div>
+
+<div id="loadEncounterModal" class="modal-shade">
+  <div class="modal-window modal-small">
+    <div class="modal-head"><div class="modal-title">Load Encounter</div><button onclick="closeLoadEncounter()">×</button></div>
+    <div class="modal-body">
+      <select id="loadSaveList" size="12" ondblclick="loadSelectedEncounter()"></select>
+      <div id="loadEmpty" class="load-empty">No saved encounters yet.</div>
+      <div class="editor-note">Encounter saves are stored beside the EXE in the Saves folder.</div>
+    </div>
+    <div class="modal-foot"><button onclick="closeLoadEncounter()">Cancel</button><button class="primary" onclick="loadSelectedEncounter()">Load</button></div>
+  </div>
+</div>
+
+<div id="monsterEditorModal" class="modal-shade">
+  <div class="modal-window">
+    <div class="modal-head"><div class="modal-title">New Custom Monster</div><button onclick="closeMonsterEditor()">×</button></div>
+    <form id="monsterEditorForm" onsubmit="return false;" style="display:flex;flex:1 1 auto;min-height:0;flex-direction:column;">
+      <div id="monsterEditorBody" class="modal-body">
+        <div id="editorValidation" class="editor-validation"></div>
+
+        <div class="editor-section">
+          <div class="editor-section-title">Identity</div>
+          <div class="form-row">
+            <div class="field wide"><label>Name <span class="required-mark">*</span></label><input id="nmName" class="editor-input" type="text" /></div>
+            <div class="field"><label>Type <span class="required-mark">*</span></label><select id="nmType" class="editor-input" onchange="toggleCustomType()"></select></div>
+            <div id="nmCustomTypeField" class="field" style="display:none"><label>Custom Type <span class="required-mark">*</span></label><input id="nmCustomType" class="editor-input" type="text" /></div>
+            <div class="field"><label>Tier <span class="required-mark">*</span></label><select id="nmTier" class="editor-input"><option value="1">T1</option><option value="2">T2</option><option value="3">T3</option><option value="4">T4</option></select></div>
+            <div class="field"><label>Role <span class="required-mark">*</span></label><select id="nmRole" class="editor-input"></select></div>
+            <div class="field"><label>Lineage (optional)</label><input id="nmLineage" class="editor-input" type="text" /></div>
+            <div class="field full"><label>Description <span class="required-mark">*</span></label><textarea id="nmDescription" class="editor-input"></textarea></div>
+          </div>
+        </div>
+
+        <div class="editor-section">
+          <div class="editor-section-title">Core Stats</div>
+          <div class="form-row">
+            <div class="field"><label>Difficulty <span class="required-mark">*</span></label><input id="nmDifficulty" class="editor-input" type="text" /></div>
+            <div class="field"><label>Major Threshold <span class="required-mark">*</span></label><input id="nmMajor" class="editor-input" type="text" /></div>
+            <div class="field"><label>Severe Threshold <span class="required-mark">*</span></label><input id="nmSevere" class="editor-input" type="text" /></div>
+            <div class="field"><label>HP <span class="required-mark">*</span></label><input id="nmHP" class="editor-input" type="text" /></div>
+            <div class="field"><label>Stress <span class="required-mark">*</span></label><input id="nmStress" class="editor-input" type="text" /></div>
+            <div class="field"><label>Evasion (optional)</label><input id="nmEvasion" class="editor-input" type="text" /></div>
+            <div class="field"><label>Armor (optional)</label><input id="nmArmor" class="editor-input" type="text" /></div>
+          </div>
+        </div>
+
+        <div class="editor-section">
+          <div class="editor-section-title">Attacks <span class="required-mark">*</span></div>
+          <div id="attackEditorRows"></div>
+          <button class="add-row-button" type="button" onclick="addAttackEditorRow()">+ Add Attack</button>
+          <div class="editor-note">ATK supports fixed modifiers such as +2 and dynamic modifiers such as +2d4. Damage can include dice and physical/magic/direct text.</div>
+        </div>
+
+        <div class="editor-section">
+          <div class="editor-section-title">Experiences</div>
+          <div id="experienceEditorRows"></div>
+          <button class="add-row-button" type="button" onclick="addExperienceEditorRow()">+ Add Experience</button>
+        </div>
+
+        <div class="editor-section">
+          <div class="editor-section-title">Motives &amp; Tactics <span class="required-mark">*</span></div>
+          <textarea id="nmMotives" class="editor-input" placeholder="One per line, or comma separated"></textarea>
+        </div>
+
+        <div class="editor-section">
+          <div class="editor-section-title">Features</div>
+          <div id="abilityEditorRows"></div>
+          <button class="add-row-button" type="button" onclick="addAbilityEditorRow()">+ Add Feature</button>
+          <div class="editor-note">Feature Kind uses the app's standard list: Passive, Action, Reaction, or Evolution.</div>
+        </div>
+
+        <div class="editor-section">
+          <div class="editor-section-title">Optional Organization</div>
+          <div class="form-row">
+            <div class="field wide"><label>Tags</label><textarea id="nmTags" class="editor-input" placeholder="One per line or comma separated"></textarea></div>
+            <div class="field wide"><label>Biome</label><textarea id="nmBiome" class="editor-input" placeholder="One per line or comma separated"></textarea></div>
+            <div class="field wide"><label>Shared Pools</label><textarea id="nmPools" class="editor-input" placeholder="Pool names, one per line"></textarea></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-foot"><button type="button" onclick="closeMonsterEditor()">Cancel</button><button type="button" class="primary" onclick="saveNewMonster()">Save Monster to Custom</button></div>
+    </form>
+  </div>
+</div>
+
+<div id="app">
+  <header>
+    <div class="topbar">
+      <div class="brand-wrap">
+        <img class="app-logo" alt="Astrellon Monster Vault icon" src="/frontend/app-icon.png" />
+        <div class="title-wrap">
+          <div class="title-line"><div class="title">Astrellon Monster Vault</div><span class="version" title="Frontend __ASTRELLON_FRONTEND_VERSION__ · Engine __ASTRELLON_ENGINE_VERSION__">v__ASTRELLON_FRONTEND_VERSION__ Native</span></div>
+          <div class="title-sub">Custom encounter builder for Daggerheart</div>
+        </div>
+      </div>
+      <div id="fileMenu" class="file-menu">
+        <button onclick="toggleFileMenu(event)">File ▾</button>
+        <div class="file-dropdown" onclick="event.cancelBubble=true">
+          <button onclick="openMonsterEditor()">New Monster...</button>
+          <button onclick="openSpecialEditor('environment')">New Environment...</button>
+          <button onclick="openSpecialEditor('social')">New Social...</button>
+          <button onclick="openSpecialEditor('traversal')">New Traversal...</button>
+          <div class="file-separator"></div>
+          <button onclick="saveEncounter()">Save Encounter...</button>
+          <button onclick="openLoadEncounter()">Load Encounter...</button>
+        </div>
+      </div>
+      <div id="viewMenu" class="view-menu">
+        <button onclick="toggleViewMenu(event)">Toggle ▾</button>
+        <div class="file-dropdown toggle-root" onclick="event.cancelBubble=true">
+          <div class="toggle-submenu">
+            <button class="toggle-submenu-title">Homebrew <span class="submenu-arrow">›</span></button>
+            <div class="toggle-submenu-panel">
+              <button id="initiativeToggleMenuItem" onclick="toggleInitiativeVisibility()"><span class="menu-check">✓</span>Player Initiative</button>
+              <button id="massiveDamageToggleMenuItem" onclick="toggleMassiveDamageVisibility()"><span class="menu-check"></span>Massive Damage</button>
+            </div>
+          </div>
+          <div class="toggle-submenu">
+            <button class="toggle-submenu-title">View <span class="submenu-arrow">›</span></button>
+            <div class="toggle-submenu-panel">
+              <button id="pawnColorToggleMenuItem" onclick="togglePawnColorVisibility()"><span class="menu-check"></span>Pawn Color</button>
+              <button id="compactViewToggleMenuItem" onclick="toggleCompactView()"><span class="menu-check"></span>Compact View</button>
+              <button id="hoverPictureToggleMenuItem" onclick="toggleHoverPictures()"><span class="menu-check"></span>Picture</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button onclick="loadMonsters()">Reload Monsters</button>
+    </div>
+    <div class="toolbar">
+      <div class="source-picker">
+        <label for="sourceBook">Source Book</label>
+        <select id="sourceBook" onchange="sourceChanged()">
+          <option value="custom">Custom</option>
+          <option value="astrellon">Astrellon Monsters</option>
+          <option value="astrellonepic">Astrellon Epic Creatures</option>
+          <option value="core">Core</option>
+          <option value="hopefear">Hope &amp; Fear</option>
+          <option value="envsocial">Environment &amp; Social</option>
+        </select>
+      </div>
+      <div id="viewTabs">
+        <button id="builderTab" class="active" onclick="showBuilder()">Build Encounter</button>
+        <button id="encounterTab" onclick="showEncounter()">Encounter</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="builderView" class="view">
+      <table id="monsterTable">
+        <thead>
+          <tr>
+            <th>
+              <div class="column-title">Monster</div>
+              <input id="search" class="header-filter header-search" type="text" placeholder="Search name..." onkeyup="applyFilters()" />
+            </th>
+            <th>
+              <div class="column-title">Tier</div>
+              <select id="levelFilter" class="header-filter" onchange="applyFilters()"><option value="All">All Tiers</option></select>
+            </th>
+            <th>
+              <div class="column-title">Type</div>
+              <select id="typeFilter" class="header-filter" onchange="applyFilters()"><option value="All">All Types</option></select>
+            </th>
+            <th>
+              <div class="column-title">Role</div>
+              <select id="roleFilter" class="header-filter" onchange="applyFilters()"><option value="All">All Roles</option></select>
+            </th>
+            <th><div class="column-title">Qty</div></th>
+          </tr>
+        </thead>
+        <tbody id="monsterRows"></tbody>
+      </table>
+      <div class="buildbar">
+        <span id="selectedCount" class="selected-count">0 creatures</span>
+        <button class="primary" onclick="buildEncounter()">Add / Update Encounter</button>
+      </div>
+    </div>
+
+    <div id="encounterView" class="view hidden">
+      <div class="encounter-tools">
+        <button onclick="showBuilder()">← Edit Encounter</button>
+        <button onclick="slideEncounter(-1)">◀ Slide</button>
+        <button onclick="slideEncounter(1)">Slide ▶</button>
+        <button onclick="resetTracks()">Reset HP / Stress</button>
+        <button class="danger" onclick="clearEncounter()">Clear Encounter</button>
+        <div class="spacer"></div>
+        <div class="slider-hint">Mouse wheel: vertical. Shift + wheel: horizontal. Different monsters stay side by side.</div>
+      </div>
+      <div id="encounterBody">
+        <div id="encounterStrip"></div>
+        <aside id="initiativeSidebar">
+          <div id="initiativePanel">
+            <div class="initiative-title">Player Initiative</div>
+            <div class="initiative-sub">Up to 8 players. Enter names and initiative; unused blank names stay at the bottom.</div>
+            <div id="initiativeList"></div>
+            <div class="initiative-actions">
+              <button class="primary" onclick="sortInitiative()">Sort Initiative</button>
+            </div>
+          </div>
+          <div id="poolSection" class="pool-section hidden">
+            <div class="initiative-title">Shared Pools</div>
+            <div class="initiative-sub">Hope &amp; Fear pool tokens are shared across matching adversaries.</div>
+            <div id="poolList"></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div id="rollBox">
+      <button onclick="hideRoll()">×</button>
+      <div id="rollTitle"></div>
+      <div id="rollDetail"></div>
+    </div>
+  </main>
+  <footer id="status">Ready</footer>
+</div>
+
+<script>
+(function(){
+  function maximizeToWorkArea(){
+    try {
+      var left = (typeof screen.availLeft === "number") ? screen.availLeft : 0;
+      var top = (typeof screen.availTop === "number") ? screen.availTop : 0;
+      var width = screen.availWidth || screen.width;
+
+      // Keep the Windows taskbar visible while filling the usable desktop.
+      var height = screen.availHeight || screen.height;
+      window.moveTo(left, top);
+      window.resizeTo(width, height);
+
+      // Edge app windows can be created behind an already-active window.
+      // Explicitly request focus after the resize, and repeat briefly while
+      // the new app window is finishing startup.
+      window.focus();
+    } catch(e) {}
+  }
+
+  window.addEventListener("load", function(){
+    maximizeToWorkArea();
+    setTimeout(maximizeToWorkArea, 100);
+    setTimeout(maximizeToWorkArea, 300);
+    setTimeout(maximizeToWorkArea, 700);
+    setTimeout(function(){ try { window.focus(); } catch(e) {} }, 1200);
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "id": "greater-earth-elemental",
+  "name": "Greater Earth Elemental",
+  "type": "Elemental",
+  "level": 3,
+  "tier": 3,
+  "role": "Bruiser",
+  "description": "A living landslide of boulders and dust, as large as a house.",
+  "difficulty": 17,
+  "thresholds": {
+    "major": 22,
+    "severe": 40
+  },
+  "hp": 10,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Boulder Fist",
+      "modifier": 7,
+      "range": "Very Close",
+      "damage": "3d10+1 physical"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Avalanche",
+    "knock over",
+    "pummel"
+  ],
+  "abilities": [
+    {
+      "name": "Slow",
+      "kind": "Passive",
+      "description": "When you spotlight the Elemental and they don\u2019t have a token on their stat block, they can\u2019t act yet. Place a token on their stat block and describe what they\u2019re preparing to do. When you spotlight the Elemental and they have a token on their stat block, clear the token and they can act."
+    },
+    {
+      "name": "Crushing Blows",
+      "kind": "Passive",
+      "description": "When the Elemental makes a successful attack, the target must mark an Armor Slot without receiving its benefits (they can still use armor to reduce the damage). If they can\u2019t mark an Armor Slot, they must mark an additional HP."
+    },
+    {
+      "name": "Immovable Object",
+      "kind": "Passive",
+      "description": "An attack that would move the Elemental moves them two fewer ranges (for example, Far becomes Very Close). When the Elemental takes physical damage, reduce it by 7."
+    },
+    {
+      "name": "Rockslide",
+      "kind": "Action",
+      "description": "Mark a Stress to create a rockslide that buries the land in front of Elemental within Close range with rockfall. All targets in this area must make an Agility Reaction Roll (19). Targets who fail take 2d12+5 physical damage and become Vulnerable until their next roll with Hope. Targets who succeed take half damage."
+    },
+    {
+      "name": "Momentum",
+      "kind": "Reaction",
+      "description": "When the Elemental makes a successful attack against a PC, you gain a Fear."
+    }
+  ],
+  "tags": [
+    "Elemental"
+  ]
+}

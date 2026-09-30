@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "id": "vermin-ragtail",
+  "name": "Ragtail Marauder",
+  "type": "Vermyn",
+  "level": 1,
+  "tier": 1,
+  "role": "Standard",
+  "description": "A large rat-like Vermyn clad in scavenged metal, fighting with rusty swords, broken pipes, and other heavy scrap weapons.",
+  "difficulty": 13,
+  "thresholds": {
+    "major": 7,
+    "severe": 13
+  },
+  "hp": 5,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Scrap Weapon",
+      "modifier": 1,
+      "range": "Melee",
+      "damage": "1d8+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Sewer Fighter",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Escape",
+    "Profit",
+    "Steal",
+    "Throw smoke"
+  ],
+  "abilities": [
+    {
+      "name": "Pack Fighter",
+      "kind": "Passive",
+      "description": "When the Marauder succeeds on a standard attack against a target within Melee range of another Vermyn, add 1d4 to the damage roll. Ragtails circle their prey, attacking whenever another Vermyn creates an opening."
+    },
+    {
+      "name": "Drive Them Back",
+      "kind": "Action",
+      "description": "Make a standard attack against a target within Melee range. On a success, mark a Stress to deal normal damage and knock the target back to Very Close range. The Marauder can immediately move back into Melee range with them. The Ragtail hacks, clubs, and shoulders its target backward without allowing them room to recover."
+    }
+  ],
+  "tags": [
+    "Vermyn"
+  ],
+  "biome": [
+    "Underground"
+  ]
+}

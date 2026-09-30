@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "dragon-knight",
+  "name": "Dragon Knight",
+  "type": "Humanoid",
+  "level": 2,
+  "tier": 2,
+  "role": "Bruiser",
+  "description": "A knight clad in dragonplate armor and a helmet in the shape of a dragon\u2019s head.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 15,
+    "severe": 30
+  },
+  "hp": 5,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Lance",
+      "modifier": 2,
+      "range": "Very Close",
+      "damage": "2d12+3 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Jousts",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Exploit an opening",
+    "get some distance",
+    "knock enemies off-balance",
+    "strike from above"
+  ],
+  "abilities": [
+    {
+      "name": "High Ground",
+      "kind": "Passive",
+      "description": "The Knight gains advantage on attacks made against targets below them."
+    },
+    {
+      "name": "Leaping Strike",
+      "kind": "Action",
+      "description": "Mark a Stress to have the Knight leap into Melee range of a target within Far range and make a standard attack against them. On a success, the attack deals an extra 1d12 damage, and the target must mark an Armor Slot without receiving its benefits (they can still use armor to reduce the damage)."
+    },
+    {
+      "name": "Comeback",
+      "kind": "Reaction",
+      "description": "When the Knight fails a standard attack, you can spend a Fear to reroll the attack with advantage."
+    }
+  ],
+  "tags": [
+    "Humanoid"
+  ]
+}

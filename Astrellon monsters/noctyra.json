@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "noctyra",
+  "name": "Noctyra",
+  "type": "Beast",
+  "level": 1,
+  "tier": 1,
+  "role": "Skulk",
+  "description": "A swift nocturnal predator with powerful wings, hooked talons, and an instinctive connection to the dark forest.",
+  "difficulty": 12,
+  "thresholds": {
+    "major": 7,
+    "severe": 13
+  },
+  "hp": 4,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Talons and Beak",
+      "modifier": 2,
+      "range": "Melee",
+      "damage": "1d8+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Night Hunter",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Ambush",
+    "isolate prey",
+    "hide in the canopy",
+    "attack the wounded",
+    "retreat into darkness"
+  ],
+  "abilities": [
+    {
+      "name": "Silent Flight",
+      "kind": "Passive",
+      "description": "While flying, the Noctyra gains +2 Difficulty."
+    },
+    {
+      "name": "Fade Into the Canopy",
+      "kind": "Action",
+      "description": "While in darkness or natural cover, become Hidden."
+    },
+    {
+      "name": "Ambush Predator",
+      "kind": "Action",
+      "description": "When the Noctyra successfully attacks while Hidden, deal 1d10+4 physical damage instead of its standard damage."
+    },
+    {
+      "name": "Thornclaw",
+      "kind": "Action",
+      "description": "Make an attack against a target within Melee range. On a success, deal 1d8+3 magic damage and make the target temporarily Vulnerable."
+    }
+  ],
+  "tags": [
+    "Beast"
+  ]
+}

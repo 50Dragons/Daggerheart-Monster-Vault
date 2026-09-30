@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "id": "entombed-empress",
+  "name": "Entombed Empress",
+  "type": "Undead",
+  "level": 2,
+  "tier": 2,
+  "role": "Leader",
+  "description": "The undead ruler of a forgotten realm. She\u2019s been given blasphemous funeral rites to prevent her soul from moving on.",
+  "difficulty": 16,
+  "thresholds": {
+    "major": 12,
+    "severe": 24
+  },
+  "hp": 6,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Swipe",
+      "modifier": 2,
+      "range": "Melee",
+      "damage": "2d8+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Ruler",
+      "modifier": 4
+    },
+    {
+      "name": "Undead",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Command inferiors",
+    "curse the invaders"
+  ],
+  "abilities": [
+    {
+      "name": "Empty Husk",
+      "kind": "Passive",
+      "description": "The Empress has resistance to physical damage."
+    },
+    {
+      "name": "Missing Organs",
+      "kind": "Passive",
+      "description": "The Empress\u2019s internal organs have been removed and placed into six crystal containers hidden throughout her tomb. Each time the PCs find and destroy one, the Empress marks a HP."
+    },
+    {
+      "name": "Grasping Chains",
+      "kind": "Action",
+      "description": "Mark a Stress to have the Empress target a creature within Close range and try to telekinetically bind them with her funeral chains. Make an attack against a target within Close range. On a success, the Empress pulls the target into Melee range, deals 2d8 physical damage, and temporarily Restrains them."
+    },
+    {
+      "name": "Deathless Obedience",
+      "kind": "Action",
+      "description": "Up to three times per scene, you can spend a Fear to spotlight any number of allies within Close range. If any attacks succeed against the same target, combine the damage."
+    },
+    {
+      "name": "Accursed Caress",
+      "kind": "Reaction",
+      "description": "When the Empress makes a successful standard attack against a PC, you can spend a Fear to activate a Doom Countdown (1d6+1) for that PC. It ticks down when a PC rolls with Fear. When it triggers, the PC marks all HP and makes a death move. If the Empress is defeated or the PCs take a rest, all Doom Countdowns end."
+    },
+    {
+      "name": "Final Transformation (Phase Change)",
+      "kind": "Reaction",
+      "description": "When the Empress marks her last HP, replace her with the Entombed Cat Beast and immediately spotlight them."
+    }
+  ],
+  "tags": [
+    "Undead"
+  ]
+}

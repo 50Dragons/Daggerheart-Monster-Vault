@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "aethermaw-venerable",
+  "name": "Aethermaw Linnorm - Venerable",
+  "type": "Linnorm",
+  "lineage": "Worldborn Linnorm",
+  "level": 9,
+  "tier": 4,
+  "role": "Solo",
+  "description": "Venerable Aethermaw is a chaotic, instinct-driven worldborn linnorm clever, wingless, non-humanoid linnorm with armoured black plates and translucent cyan aether-sensing organs. It seeks to feed on concentrated aether in the deep. At this age it is a legendary, nearly unstoppable presence.",
+  "difficulty": 20,
+  "thresholds": {
+    "major": 37,
+    "severe": 68
+  },
+  "hp": 20,
+  "stress": 7,
+  "attacks": [
+    {
+      "name": "Armoured Bite",
+      "modifier": 8,
+      "range": "Very Close",
+      "damage": "4d10+10 physical",
+      "description": "The linnorm strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Deep-Sea Hunting",
+      "modifier": 4
+    },
+    {
+      "name": "Aether Scent",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Target engines",
+    "Crush hulls",
+    "Pursue aether trails"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (4)",
+      "kind": "Passive",
+      "description": "The linnorm can be spotlighted up to 4 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Aether Scent",
+      "kind": "Passive",
+      "description": "The linnorm senses the direction of active concentrated aether within Far range, even through water or a ship’s hull."
+    },
+    {
+      "name": "Scalding Brine",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 20. On a failure, take 4d8+10 physical damage and the target marks 1 Stress from scalding brine and shell shards. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Hull-Crushing Coil",
+      "kind": "Action",
+      "description": "Mark a Stress. Make an attack against a vessel or one creature within Very Close range. On a success, deal 4d12+10 physical damage; a creature is also Restrained until it escapes with a successful Strength Roll."
+    },
+    {
+      "name": "Spined Tail",
+      "kind": "Reaction",
+      "description": "When a creature within Very Close range damages the linnorm, mark a Stress to attack that creature with a +8 modifier for 2d10+8 physical damage."
+    },
+    {
+      "name": "Devour the Current",
+      "kind": "Action",
+      "description": "Spend a Fear. Drain one active aether device within Far range, disabling it until repaired. Creatures within Very Close range of the device make an Agility Reaction Roll. On a failure, they take 4d8+10 physical damage and are knocked back to Close range; on a success, they take half damage."
+    },
+    {
+      "name": "Epic Ferocity",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks its fifth HP, it clears 2 Stress and may immediately move up to Close range. This movement does not grant an attack. If it has fewer than five HP, trigger this after it marks half its total HP instead."
+    }
+  ],
+  "tags": [
+    "Worldborn Linnorm",
+    "Venerable",
+    "Epic",
+    "Solo",
+    "Linnorm"
+  ],
+  "biome": [
+    "Deep Sea",
+    "Aquatic"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "vault-guardian-turret",
+  "name": "Vault Guardian Turret",
+  "type": "Construct",
+  "level": 3,
+  "tier": 3,
+  "role": "Ranged",
+  "description": "A massive living turret with reinforced armor and twelve piston- driven mechanical legs.",
+  "difficulty": 16,
+  "thresholds": {
+    "major": 20,
+    "severe": 32
+  },
+  "hp": 5,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Magitech Cannon",
+      "modifier": 3,
+      "range": "Far",
+      "damage": "3d10+3 magic"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Concentrate fire",
+    "lock down",
+    "mark",
+    "protect"
+  ],
+  "abilities": [
+    {
+      "name": "Slow Firing",
+      "kind": "Passive",
+      "description": "When you spotlight the Turret and they don\u2019t have a token on their stat block, they can\u2019t make a standard attack. Place a token on their stat block and describe what they\u2019re preparing to do. When you spotlight the Turret and they have a token on their stat block, clear the token and they can attack."
+    },
+    {
+      "name": "Mark Target",
+      "kind": "Action",
+      "description": "Spend a Fear to Mark a target within Far range until the Turret is destroyed or the Marked target becomes Hidden. While the target is Marked, their Evasion is halved."
+    },
+    {
+      "name": "Concentrate Fire",
+      "kind": "Reaction",
+      "description": "When another adversary deals damage to a target within Far range of the Turret, you can mark a Stress to add the Turret\u2019s standard attack damage to the damage roll."
+    },
+    {
+      "name": "Detonation",
+      "kind": "Reaction",
+      "description": "When the Turret is destroyed, they explode. All targets within Close range must make an Agility Reaction Roll. Targets who fail take 3d20 physical damage. Targets who succeed take half damage."
+    }
+  ],
+  "tags": [
+    "Construct"
+  ]
+}

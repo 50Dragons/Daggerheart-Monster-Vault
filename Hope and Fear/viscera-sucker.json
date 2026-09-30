@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "viscera-sucker",
+  "name": "Viscera Sucker",
+  "type": "Fiend",
+  "level": 3,
+  "tier": 3,
+  "role": "Skulk",
+  "description": "A vampiric demon whose upper body detaches at sundown to fly through nearby villages in search of victims. It has a winged upper body with hanging entrails.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 16,
+    "severe": 30
+  },
+  "hp": 5,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Long Nails",
+      "modifier": 2,
+      "range": "Melee",
+      "damage": "2d6+7 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Flying",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Clamp onto prey",
+    "suck blood",
+    "tear in half"
+  ],
+  "abilities": [
+    {
+      "name": "Join or Die",
+      "kind": "Passive",
+      "description": "The Viscera Sucker dies if it hasn\u2019t reconnected its upper and lower halves by dawn."
+    },
+    {
+      "name": "Entangling Entrails",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Viscera Sucker latch onto a target within Very Close range, Restraining them until they escape with a successful Strength Roll (16)."
+    },
+    {
+      "name": "Lifesuck",
+      "kind": "Action",
+      "description": "Mark a Stress to have the Viscera Sucker drink blood from a Restrained target within Melee range. The target marks a HP, and the Viscera Sucker clears a HP."
+    }
+  ],
+  "tags": [
+    "Fiend"
+  ]
+}

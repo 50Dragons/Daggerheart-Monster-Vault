@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "urco",
+  "name": "Urco",
+  "type": "Spirit",
+  "level": 2,
+  "tier": 2,
+  "role": "Standard",
+  "description": "A black-furred hound from beyond the veil of death that portends death and feeds on fear.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 9,
+    "severe": 18
+  },
+  "hp": 4,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Black Fang",
+      "modifier": 1,
+      "range": "Melee",
+      "damage": "2d8+4 magic"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Omens",
+      "modifier": 3
+    },
+    {
+      "name": "Stealth",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Feed",
+    "frighten",
+    "hunt"
+  ],
+  "abilities": [
+    {
+      "name": "Fearmonger",
+      "kind": "Passive",
+      "description": "When a PC within Very Close range fails with Hope, you gain a Fear."
+    },
+    {
+      "name": "Terror-Fueled",
+      "kind": "Passive",
+      "description": "The Urco gains a bonus to attack and damage rolls equal to the number of Fear you have."
+    },
+    {
+      "name": "Fear Eater",
+      "kind": "Action",
+      "description": "Spend any number of Fear to clear the same number of Stress. If the Urco has no marked Stress, you can spend any number of Fear to clear the same number of HP."
+    },
+    {
+      "name": "Baleful Gaze",
+      "kind": "Reaction",
+      "description": "When the Urco takes damage from an attack, you can spend a Fear to cause the attacker\u2019s damage thresholds to gain a -1 penalty until the end of the scene. This effect can stack."
+    }
+  ],
+  "tags": [
+    "Spirit"
+  ]
+}

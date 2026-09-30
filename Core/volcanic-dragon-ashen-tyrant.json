@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "id": "volcanic-dragon-ashen-tyrant",
+  "name": "Volcanic Dragon: Ashen Tyrant",
+  "type": "Dragon",
+  "level": 4,
+  "tier": 4,
+  "role": "Solo",
+  "description": "No enemy has ever had the insolence to wound the dragon so. As the lava settles, it\u2019s ground to ash like the dragon\u2019s past foes.",
+  "difficulty": 18,
+  "thresholds": {
+    "major": 29,
+    "severe": 55
+  },
+  "hp": 8,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Claws and Teeth",
+      "modifier": 10,
+      "range": "Close",
+      "damage": "4d12+15 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Hunt from Above",
+      "modifier": 5
+    }
+  ],
+  "motivesTactics": [
+    "Choke",
+    "fly",
+    "intimidate",
+    "kill or be killed"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (4)",
+      "kind": "Passive",
+      "description": "The Ashen Tyrant can be spotlighted up to four times per GM turn. Spend Fear as usual to spotlight them."
+    },
+    {
+      "name": "Cornered",
+      "kind": "Passive",
+      "description": "Mark a Stress instead of spending a Fear to spotlight the Ashen Tyrant."
+    },
+    {
+      "name": "Injured Wings",
+      "kind": "Passive",
+      "description": "While flying, the Ashen Tyrant gains a +1 bonus to their Difficulty."
+    },
+    {
+      "name": "Ashes to Ashes",
+      "kind": "Passive",
+      "description": "When a PC rolls a failure while within Close range of the Ashen Tyrant, they lose a Hope and you gain a Fear. If the PC can\u2019t lose a Hope, they must mark a HP."
+    },
+    {
+      "name": "Desperate Rampage",
+      "kind": "Action",
+      "description": "Mark a Stress to make an attack against all targets within Close range. Targets the Ashen Tyrant succeeds against take 2d20+2 physical damage, are knocked back to Close range of where they were, and must mark a Stress."
+    },
+    {
+      "name": "Ashen Cloud",
+      "kind": "Action",
+      "description": "Spend a Fear to smash the ground and kick up ash within Far range. While within the ash cloud, a target has disadvantage on action rolls. The ash cloud clears the next time an adversary is spotlighted."
+    },
+    {
+      "name": "Apocalyptic Thrashing",
+      "kind": "Action",
+      "description": "Countdown (1d12). Spend a Fear to activate. It ticks down when a PC rolls with Fear. When it triggers, the Ashen Tyrant thrashes about, causing environmental damage (such as an earthquake, avalanche, or collapsing walls). All targets within Far range must make a Strength Reaction Roll. Targets who fail take 2d10+10 physical damage and are Restrained by the rubble until they break free with a successful Strength Roll. Targets who succeed take half damage. If the Ashen Tyrant is defeated while this countdown is active, trigger the countdown immediately as the destruction caused by their death throes."
+    }
+  ],
+  "tags": [
+    "Dragon"
+  ]
+}

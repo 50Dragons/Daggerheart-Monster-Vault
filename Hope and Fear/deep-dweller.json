@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "deep-dweller",
+  "name": "Deep Dweller",
+  "type": "Aberration",
+  "level": 3,
+  "tier": 3,
+  "role": "Leader",
+  "description": "A huge psychic lamprey that has pitch-black eyes and toxic tentacles.",
+  "difficulty": 17,
+  "thresholds": {
+    "major": 22,
+    "severe": 42
+  },
+  "hp": 6,
+  "stress": 6,
+  "attacks": [
+    {
+      "name": "Teeth & Tentacles",
+      "modifier": 5,
+      "range": "Close",
+      "damage": "3d10+4 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Ancient Mysteries",
+      "modifier": 2
+    },
+    {
+      "name": "Dark Water",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Abuse power",
+    "seek worship",
+    "stalk sunken ruins"
+  ],
+  "abilities": [
+    {
+      "name": "Psychic Blast",
+      "kind": "Action",
+      "description": "Spend a Fear to choose up to three targets within Close range and force them to make an Instinct or Knowledge Reaction Roll. Targets who succeed mark a Stress. Targets who fail take 3d10+4 direct magic damage and are Vulnerable until spotlighted."
+    },
+    {
+      "name": "Brain Drain",
+      "kind": "Action",
+      "description": "Mark a Stress to choose a Vulnerable PC within Very Close range. The target marks 1d4 Stress, and the Deep Dweller clears an equal number of HP."
+    },
+    {
+      "name": "Call of the Deep",
+      "kind": "Action",
+      "description": "Spend 2 Fear to summon 1d4 Cursed Merfolk, who appear at Far range and immediately take the spotlight."
+    },
+    {
+      "name": "Mucosal Contamination",
+      "kind": "Action",
+      "description": "Make an attack roll against a PC within Very Close range. On a success, the Deep Dweller uses its tentacles to immobilize the target, sliming them with toxic sludge. The target is Restrained until they break free or slip out with a successful Strength or Finesse Roll. Each time the Deep Dweller is spotlighted, all PCs Restrained in this way take 3d8 direct physical damage. The Deep Dweller releases all creatures Restrained by it when it\u2019s defeated or takes Severe damage."
+    }
+  ],
+  "tags": [
+    "Aberration"
+  ]
+}

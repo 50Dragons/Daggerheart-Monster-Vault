@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "will-o-the-wisps",
+  "name": "Will-o\u2019-the-Wisps",
+  "type": "Spirit",
+  "level": 1,
+  "tier": 1,
+  "role": "Horde",
+  "description": "Lazily floating orbs of color-shifting werelight.",
+  "difficulty": 9,
+  "thresholds": {
+    "major": 5,
+    "severe": 9
+  },
+  "hp": 4,
+  "stress": 2,
+  "attacks": [
+    {
+      "name": "Flash",
+      "modifier": -3,
+      "range": "Close",
+      "damage": "1d4+2 magic"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Darkness",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Dazzle and distract",
+    "disorient",
+    "lead astray"
+  ],
+  "abilities": [
+    {
+      "name": "Horde (1d4-1)",
+      "kind": "Passive",
+      "description": "When the Will-o\u2019-the-Wisps have marked half or more of their HP, their standard attack deals 1d4-1 magic damage instead."
+    },
+    {
+      "name": "Kaleidoscopic",
+      "kind": "Passive",
+      "description": "The Will-o\u2019-the-Wisps pulse and dance in hypnotic, color-changing patterns that entrance any creature who looks upon them. All targets within Very Close range of the Will-o\u2019-the-Wisps are Vulnerable."
+    },
+    {
+      "name": "Fascinating",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Will-o\u2019-the-Wisps trace looping light trails through the air, leaving afterimages that beg to be deciphered. Each PC within Far range must succeed on an Instinct Reaction Roll (13) or mark a Stress and move up to Close range toward the Will-o\u2019-the-Wisps."
+    }
+  ],
+  "tags": [
+    "Spirit"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "harpy",
+  "name": "Harpy",
+  "type": "Monstrosity",
+  "level": 1,
+  "tier": 1,
+  "role": "Skulk",
+  "description": "A fierce and foul-smelling bird with an eight-foot wingspan and the upper body and face of a human.",
+  "difficulty": 12,
+  "thresholds": {
+    "major": 3,
+    "severe": 7
+  },
+  "hp": 3,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Talons",
+      "modifier": 0,
+      "range": "Melee",
+      "damage": "1d8+1 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Islands",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Defend nest",
+    "drop enemies from a great height",
+    "maraud from the air",
+    "screech incessantly"
+  ],
+  "abilities": [
+    {
+      "name": "Toxic Aura",
+      "kind": "Passive",
+      "description": "The Harpy emits a foul stench that renders all non-Harpies Vulnerable while within Very Close range."
+    },
+    {
+      "name": "Swooping Attack",
+      "kind": "Action",
+      "description": "Mark a Stress to have the Harpy move in a straight line to a point within Far range and make an attack against a target in the Harpy\u2019s path. On a success, the Harpy deals 3d6 physical damage."
+    }
+  ],
+  "tags": [
+    "Monstrosity"
+  ]
+}

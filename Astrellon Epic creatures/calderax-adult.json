@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "calderax-adult",
+  "name": "Calderax Linnorm - Adult",
+  "type": "Linnorm",
+  "lineage": "Worldborn Linnorm",
+  "level": 6,
+  "tier": 3,
+  "role": "Solo",
+  "description": "Adult Calderax is a chaotic, instinct-driven worldborn linnorm clever, wingless, non-humanoid linnorm with black basalt plates and sulphurous vents. It seeks to reopen volcanic vents and destroy engines that steal geothermal heat. At this age it is a commanding force in its territory.",
+  "difficulty": 18,
+  "thresholds": {
+    "major": 26,
+    "severe": 45
+  },
+  "hp": 15,
+  "stress": 6,
+  "attacks": [
+    {
+      "name": "Basalt Jaws",
+      "modifier": 5,
+      "range": "Very Close",
+      "damage": "3d10+5 physical",
+      "description": "The linnorm strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Volcanic Territory",
+      "modifier": 3
+    },
+    {
+      "name": "Siege Strength",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Smash blocked vents",
+    "Trample threats",
+    "Guard the caldera"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The linnorm can be spotlighted up to 3 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Basalt Plates",
+      "kind": "Passive",
+      "description": "Reduce each instance of physical damage dealt to the linnorm by 3."
+    },
+    {
+      "name": "Sulphur Eruption",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 18. On a failure, take 3d8+6 physical damage and the target must mark 1 Stress from gas and hot fragments. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Trampling Charge",
+      "kind": "Action",
+      "description": "Mark a Stress. Move up to Close range in a straight line and make an attack against each enemy crossed. Each success deals 3d8+6 physical damage and knocks the target back to Close range."
+    },
+    {
+      "name": "Pressure Release",
+      "kind": "Reaction",
+      "description": "When the linnorm marks Severe damage, mark a Stress to force every enemy within Very Close range to succeed on an Agility Reaction Roll or mark 1 Stress and be knocked back to Close range."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the linnorm marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Worldborn Linnorm",
+    "Adult",
+    "Epic",
+    "Solo",
+    "Linnorm"
+  ],
+  "biome": [
+    "Volcanic",
+    "Mountains"
+  ]
+}

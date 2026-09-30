@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "outer-realms-corrupter",
+  "name": "Outer Realms Corrupter",
+  "type": "Aberration",
+  "level": 4,
+  "tier": 4,
+  "role": "Support",
+  "description": "A shifting, formless mass seemingly made of chromatic light.",
+  "difficulty": 19,
+  "thresholds": {
+    "major": 27,
+    "severe": 47
+  },
+  "hp": 4,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Corroding Pseudopod",
+      "modifier": 7,
+      "range": "Very Close",
+      "damage": "4d8+5 magic"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Confuse",
+    "distract",
+    "overwhelm"
+  ],
+  "abilities": [
+    {
+      "name": "Will-Shattering Touch",
+      "kind": "Passive",
+      "description": "When a PC takes damage from the Corrupter, they lose a Hope."
+    },
+    {
+      "name": "Disgorge Reality Flotsam",
+      "kind": "Action",
+      "description": "Mark a Stress to spew partially digested portions of consumed realities at all targets within Close range. Targets must succeed on a Knowledge Reaction Roll or mark 2 Stress."
+    }
+  ],
+  "tags": [
+    "Aberration"
+  ]
+}

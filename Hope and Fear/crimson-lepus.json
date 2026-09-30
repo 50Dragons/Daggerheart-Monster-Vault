@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "id": "crimson-lepus",
+  "name": "Crimson Lepus",
+  "type": "Beast",
+  "level": 3,
+  "tier": 3,
+  "role": "Solo",
+  "description": "A red-eyed rabbit that thinks only of murder.",
+  "difficulty": 18,
+  "thresholds": {
+    "major": 20,
+    "severe": 35
+  },
+  "hp": 10,
+  "stress": 6,
+  "attacks": [
+    {
+      "name": "Leaping Bite",
+      "modifier": 3,
+      "range": "Very Close",
+      "damage": "3d20 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Vicious",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Be cute",
+    "go for the throat",
+    "hop around"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The Lepus can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "\u201cAwww...\u201d",
+      "kind": "Passive",
+      "description": "When the Lepus first appears, it is Too Cute. To attack a Too Cute creature, a PC must succeed on an Instinct Reaction Roll (20). Clear the Too Cute condition if a PC deals damage to the Lepus or if the Lepus attacks a PC."
+    },
+    {
+      "name": "Terrifying",
+      "kind": "Passive",
+      "description": "When the Lepus makes a successful attack, all PCs within Close range lose a Hope, and you gain a Fear."
+    },
+    {
+      "name": "Leaping Jugular Strike",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Lepus leap into Melee range of a target within Far range and make an attack against them. On a success, deal 3d20 direct physical damage. If the target marks HP from this attack, they become Vulnerable until they clear a HP."
+    },
+    {
+      "name": "Evasive",
+      "kind": "Reaction",
+      "description": "When the Lepus would take damage, roll a d6. On a 4 or higher, halve the damage. If the damage was already halved, the Lepus takes no damage."
+    },
+    {
+      "name": "\u201cRun Away!\u201d",
+      "kind": "Reaction",
+      "description": "When a PC with no Hope takes the spotlight within Very Far range of the Lepus, the PC must succeed on a Presence Reaction Roll or use their action to flee the battlefield until they spend a Hope to return."
+    }
+  ],
+  "tags": [
+    "Beast"
+  ]
+}

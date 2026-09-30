@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "master-assassin",
+  "name": "Master Assassin",
+  "type": "Humanoid",
+  "level": 2,
+  "tier": 2,
+  "role": "Leader",
+  "description": "A seasoned killer with a threatening voice and a deadly blade.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 12,
+    "severe": 25
+  },
+  "hp": 7,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Serrated Dagger",
+      "modifier": 5,
+      "range": "Close",
+      "damage": "2d10+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Command",
+      "modifier": 3
+    },
+    {
+      "name": "Intrusion",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Ambush",
+    "get out alive",
+    "kill",
+    "prepare for all scenarios"
+  ],
+  "abilities": [
+    {
+      "name": "Won\u2019t See It Coming",
+      "kind": "Passive",
+      "description": "The Assassin deals direct damage while they\u2019re Hidden."
+    },
+    {
+      "name": "Strike as One",
+      "kind": "Action",
+      "description": "Mark a Stress to spotlight a number of other Assassins equal to the Assassin\u2019s unmarked Stress."
+    },
+    {
+      "name": "The Subtle Blade",
+      "kind": "Reaction",
+      "description": "When the Assassin successfully makes a standard attack against a Vulnerable target, you can spend a Fear to deal Severe damage instead of their standard damage."
+    },
+    {
+      "name": "Momentum",
+      "kind": "Reaction",
+      "description": "When the Assassin makes a successful attack against a PC, you gain a Fear."
+    }
+  ],
+  "tags": [
+    "Humanoid"
+  ]
+}

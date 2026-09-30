@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "tiny-green-ooze",
+  "name": "Tiny Green Ooze",
+  "type": "Ooze",
+  "level": 1,
+  "tier": 1,
+  "role": "Skulk",
+  "description": "A small moving mound of translucent green slime.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 4,
+    "severe": "None"
+  },
+  "hp": 2,
+  "stress": 1,
+  "attacks": [
+    {
+      "name": "Ooze Appendage",
+      "modifier": -1,
+      "range": "Melee",
+      "damage": "1d4+1 magic"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Camouflage",
+    "creep up"
+  ],
+  "abilities": [
+    {
+      "name": "Acidic Form",
+      "kind": "Passive",
+      "description": "When the Ooze makes a successful attack, the target must mark an Armor Slot without receiving its benefits (they can still use armor to reduce the damage). If they can\u2019t mark an Armor Slot, they must mark an additional HP."
+    }
+  ],
+  "tags": [
+    "Ooze"
+  ]
+}

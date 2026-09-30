@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "spiralkey-adult",
+  "name": "Spiralkey Dragon - Adult",
+  "type": "Dragon",
+  "lineage": "Firmament",
+  "level": 6,
+  "tier": 3,
+  "role": "Solo",
+  "description": "Adult Spiralkey is a neutral-leaning firmament intelligent true dragon with a floating wingless body traced with golden spirals. It seeks to find sealed paths and challenge those who force passage. At this age it is a commanding force in its territory.",
+  "difficulty": 19,
+  "thresholds": {
+    "major": 22,
+    "severe": 38
+  },
+  "hp": 11,
+  "stress": 7,
+  "attacks": [
+    {
+      "name": "Spiral Horns",
+      "modifier": 5,
+      "range": "Very Close",
+      "damage": "3d10+5 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Hidden Passages",
+      "modifier": 3
+    },
+    {
+      "name": "Spatial Puzzles",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Split the party",
+    "Change angles",
+    "Guard a seal"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 3 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Floating",
+      "kind": "Passive",
+      "description": "The dragon floats over ground hazards and ignores difficult ground."
+    },
+    {
+      "name": "Threshold Breath",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 19. On a failure, take 3d8+6 magic damage and the dragon moves the target to an unoccupied visible place within Close range. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Open a Way",
+      "kind": "Action",
+      "description": "Mark a Stress. Create an opening between two visible unoccupied points within Far range. The dragon immediately moves between them without crossing the intervening space; the opening closes at the end of its next spotlight."
+    },
+    {
+      "name": "Wrong Door",
+      "kind": "Reaction",
+      "description": "When attacked by a creature within Close range, mark a Stress. After resolving the attack, move that attacker to another unoccupied visible space within Close range."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Firmament",
+    "Adult",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Ruins",
+    "Rift"
+  ]
+}

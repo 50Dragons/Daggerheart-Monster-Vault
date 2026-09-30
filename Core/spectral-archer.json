@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "spectral-archer",
+  "name": "Spectral Archer",
+  "type": "Undead",
+  "level": 2,
+  "tier": 2,
+  "role": "Ranged",
+  "description": "A ghostly fighter with an ethereal bow, unable to move on while their charge is vulnerable.",
+  "difficulty": 13,
+  "thresholds": {
+    "major": 6,
+    "severe": 14
+  },
+  "hp": 3,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Longbow",
+      "modifier": 3,
+      "range": "Far",
+      "damage": "2d10+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Ancient Knowledge",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Move through solid objects",
+    "stay out of the fray",
+    "rehash old battles"
+  ],
+  "abilities": [
+    {
+      "name": "Ghost",
+      "kind": "Passive",
+      "description": "The Archer has resistance to physical damage. Mark a Stress to move up to Close range through solid objects."
+    },
+    {
+      "name": "Pick Your Target",
+      "kind": "Action",
+      "description": "Spend a Fear to make an attack within Far range against a PC who is within Very Close range of at least two other PCs. On a success, the target takes 2d8+12 physical damage."
+    }
+  ],
+  "tags": [
+    "Undead"
+  ]
+}

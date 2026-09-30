@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "id": "hagbeast",
+  "name": "Hagbeast",
+  "type": "Hagbeast",
+  "level": 2,
+  "tier": 2,
+  "role": "Bruiser",
+  "description": "An enormous predator combining the bulk of a bear, the articulated limbs of a spider, and the armored tail and stinger of a scorpion.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 12,
+    "severe": 23
+  },
+  "hp": 6,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Claws",
+      "modifier": 2,
+      "range": "Melee",
+      "damage": "d8+3 physical"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Guard",
+    "maul",
+    "restrain",
+    "drag prey away"
+  ],
+  "abilities": [
+    {
+      "name": "Armored Hide",
+      "kind": "Passive",
+      "description": "The Hagbeast has resistance to physical damage from attacks made beyond Very Close range."
+    },
+    {
+      "name": "Web Snare",
+      "kind": "Action",
+      "description": "Cost: 1 Stress. The target must make an Agility Reaction Roll (14). Failure: Restrained. The target can escape with a successful Strength or Finesse Roll (14)."
+    },
+    {
+      "name": "Venomous Stinger",
+      "kind": "Action",
+      "description": "Make an attack against a target within Very Close range. On a success, deal 2d8+3 physical damage and the target becomes Poisoned. The next time the Poisoned target marks HP, they also mark 1 Stress, then the poison ends."
+    },
+    {
+      "name": "Brood Guardian",
+      "kind": "Reaction",
+      "description": "When a PC within Close range attacks the Cocoon, the Hagbeast may mark a Stress to move into Melee range of that PC."
+    }
+  ],
+  "tags": [
+    "Beast"
+  ],
+  "biome": [
+    "Underground",
+    "Hag Lair"
+  ]
+}

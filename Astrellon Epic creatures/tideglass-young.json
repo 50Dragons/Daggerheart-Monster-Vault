@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "tideglass-young",
+  "name": "Tideglass Dragon - Young",
+  "type": "Dragon",
+  "lineage": "Covenant",
+  "level": 3,
+  "tier": 2,
+  "role": "Solo",
+  "description": "Young Tideglass is a good-leaning covenant intelligent true dragon with translucent sea-glass scales containing remembered faces. It seeks to preserve endangered memories. At this age it is an emerging but formidable predator.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 13,
+    "severe": 26
+  },
+  "hp": 9,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Glass Fangs",
+      "modifier": 3,
+      "range": "Very Close",
+      "damage": "2d10+4 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Remembered Histories",
+      "modifier": 2
+    },
+    {
+      "name": "Aquatic Ambush",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Pull apart intruders",
+    "Expose a memory",
+    "Defend the waters"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (2)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 2 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Waterborne",
+      "kind": "Passive",
+      "description": "The dragon moves through water and flooded ground without impediment and can breathe underwater."
+    },
+    {
+      "name": "Remembrance Tide",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 15. On a failure, take 2d8+4 magic damage and the target relives a stored memory and is Vulnerable until its next action. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Covenant",
+    "Young",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Aquatic",
+    "Coast"
+  ]
+}

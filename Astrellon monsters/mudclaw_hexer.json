@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "id": "mudclaw-hexer",
+  "name": "Mudclaw Hexer",
+  "type": "Vermyn",
+  "level": 1,
+  "tier": 1,
+  "role": "Support",
+  "description": "A hooded mole-like Vermyn that channels toxic sewer magic through an improvised crystal staff.",
+  "difficulty": 13,
+  "thresholds": {
+    "major": 5,
+    "severe": 9
+  },
+  "hp": 4,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Blightr Bolt",
+      "modifier": 2,
+      "range": "Far",
+      "damage": "1d6+2 magic"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Sewer Magic",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Curse intruders",
+    "command Vermyn",
+    "attack from safety",
+    "retreat through narrow tunnels"
+  ],
+  "abilities": [
+    {
+      "name": "Sewer Hex",
+      "kind": "Action",
+      "description": "Choose a target within Far range and temporarily Curse them. While the target is Cursed, the Hexer can mark a Stress when that target rolls with Hope to make the roll be with Fear instead. The Mudclaw points its crystal staff, surrounding the target with the stink of stagnant water and crawling shadows."
+    },
+    {
+      "name": "Foul Flux",
+      "kind": "Action",
+      "description": "Make an attack against up to three targets within Very Close range. Mark a Stress to deal 2d6+3 magic damage to targets the Hexer succeeded against. The Mudclaw strikes the ground, releasing a violent burst of poisonous green vapour and unstable crystal energy."
+    }
+  ],
+  "tags": [
+    "Vermyn"
+  ],
+  "biome": [
+    "Underground"
+  ]
+}

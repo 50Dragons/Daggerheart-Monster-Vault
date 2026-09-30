@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "cursed-merfolk",
+  "name": "Cursed Merfolk",
+  "type": "Humanoid",
+  "level": 3,
+  "tier": 3,
+  "role": "Standard",
+  "description": "A half-fish, half-human creature psychically bound to serve the Deep Dwellers.",
+  "difficulty": 16,
+  "thresholds": {
+    "major": 18,
+    "severe": 35
+  },
+  "hp": 5,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Chained Trident",
+      "modifier": 3,
+      "range": "Far",
+      "damage": "3d6 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Aquatic",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Separate enemies",
+    "strike from the shadows",
+    "use aquatic environment to advantage"
+  ],
+  "abilities": [
+    {
+      "name": "Fish-Tailed",
+      "kind": "Passive",
+      "description": "The Merfolk is Vulnerable out of the water."
+    },
+    {
+      "name": "Gang Up",
+      "kind": "Passive",
+      "description": "The Merfolk gains a +2 bonus to attack rolls against targets within Melee range of one or more allies."
+    },
+    {
+      "name": "\u201cGet Over Here!\u201d",
+      "kind": "Reaction",
+      "description": "When the Merfolk makes a successful standard attack against a target beyond Melee range, you can mark a Stress to pull them into Melee range. If you do, you can spend a Fear to make a standard attack with advantage against the target."
+    }
+  ],
+  "tags": [
+    "Humanoid"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "lilyheart-venerable",
+  "name": "Lilyheart Dragon - Venerable",
+  "type": "Dragon",
+  "lineage": "Covenant",
+  "level": 9,
+  "tier": 4,
+  "role": "Solo",
+  "description": "Venerable Lilyheart is a good-leaning covenant intelligent true dragon with pearl scales and wings shaped like layered lily petals. It seeks to protect the vulnerable and offer mercy before force. At this age it is a legendary, nearly unstoppable presence.",
+  "difficulty": 21,
+  "thresholds": {
+    "major": 30,
+    "severe": 55
+  },
+  "hp": 11,
+  "stress": 8,
+  "attacks": [
+    {
+      "name": "Petal Claws",
+      "modifier": 8,
+      "range": "Very Close",
+      "damage": "4d10+10 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Mercy and Oaths",
+      "modifier": 4
+    },
+    {
+      "name": "Sanctuary Guardian",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Shield the helpless",
+    "Offer surrender",
+    "Scour corruption"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (4)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 4 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Gentle Choice",
+      "kind": "Passive",
+      "description": "The dragon can exclude any creatures it chooses from its Silver Mist."
+    },
+    {
+      "name": "Silver Mist",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 21. On a failure, take 4d8+10 magic damage and if the target is undead or sustained by corrupted aether, it must also mark a Stress. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Merciful Mist",
+      "kind": "Action",
+      "description": "Mark a Stress. Choose one ally within Close range; they clear 1 marked HP or 2 marked Stress. An undead or corrupted-aether enemy chosen instead takes 4d8+10 magic damage on a successful attack roll."
+    },
+    {
+      "name": "Sheltering Wings",
+      "kind": "Reaction",
+      "description": "When an ally within Very Close range is attacked, mark a Stress to become the target of that attack instead. Resolve the attack against the dragon."
+    },
+    {
+      "name": "Last Refuge",
+      "kind": "Reaction",
+      "description": "Once per scene, when an ally within Close range would mark their last HP, they instead have one unmarked HP. The dragon can immediately make a Silver Mist attack against the source of the damage if it is within Close range."
+    },
+    {
+      "name": "Epic Ferocity",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks its fifth HP, it clears 2 Stress and may immediately move up to Close range. This movement does not grant an attack. If it has fewer than five HP, trigger this after it marks half its total HP instead."
+    }
+  ],
+  "tags": [
+    "Covenant",
+    "Venerable",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Sanctuary",
+    "Forest"
+  ]
+}

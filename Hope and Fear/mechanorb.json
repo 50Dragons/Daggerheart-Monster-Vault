@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "id": "mechanorb",
+  "name": "Mechanorb",
+  "type": "Construct",
+  "level": 1,
+  "tier": 1,
+  "role": "Standard",
+  "description": "A floating clockwork sphere that has telescoping limbs and comes from a realm of machines and metal.",
+  "difficulty": 12,
+  "thresholds": {
+    "major": 5,
+    "severe": 10
+  },
+  "hp": 4,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Needle",
+      "modifier": 1,
+      "range": "Melee",
+      "damage": "1d10+1 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Machines",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Coordinate",
+    "(dis)assemble",
+    "move orthogonally",
+    "speak in binary"
+  ],
+  "abilities": [
+    {
+      "name": "Hive Mind",
+      "kind": "Passive",
+      "description": "The Mechanorb gains a +1 bonus to their Difficulty for each other Mechanorb within Close range."
+    },
+    {
+      "name": "Adaptive Tactics",
+      "kind": "Passive",
+      "description": "Pool. When the Mechanorb fails an attack roll, add a token to the Mechanorb Pool. All Mechanorbs in the scene gain a bonus to attack rolls equal to the number of tokens in the Mechanorb Pool. Clear all tokens when any Mechanorb takes Severe damage or is defeated."
+    }
+  ],
+  "pools": [
+    "Mechanorb Pool"
+  ],
+  "tags": [
+    "Construct"
+  ]
+}

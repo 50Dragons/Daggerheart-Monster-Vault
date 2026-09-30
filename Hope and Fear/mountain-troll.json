@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "mountain-troll",
+  "name": "Mountain Troll",
+  "type": "Giant",
+  "level": 1,
+  "tier": 1,
+  "role": "Solo",
+  "description": "A hideous giant born out of a massive rock. They wear purloined armor and a belt of severed heads or skulls.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 8,
+    "severe": 15
+  },
+  "hp": 8,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Skull Flail",
+      "modifier": 2,
+      "range": "Very Close",
+      "damage": "1d8+1 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Mountains",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Ambush",
+    "bellow",
+    "hurl large boulders",
+    "smash",
+    "stomp"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The Troll can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight them."
+    },
+    {
+      "name": "Stolen Armor",
+      "kind": "Passive",
+      "description": "Countdown. When combat begins, activate a countdown with a value equal to the number of PCs. When the Troll takes damage, reduce the severity by one threshold, then tick down the countdown. When it triggers, the Troll evolves (see \u201cEnraged Mountain Troll\u201d)."
+    },
+    {
+      "name": "Flail Swipe",
+      "kind": "Action",
+      "description": "Mark a Stress to make an attack against all targets in front of the Troll within Very Close range. Targets the Troll succeeds against take 2d8+2 physical damage."
+    },
+    {
+      "name": "Enraged Mountain Troll",
+      "kind": "Evolution",
+      "description": "The Troll loses their \u201cStolen Armor\u201d and \u201cFlail Swipe\u201d features, then gains a +1 bonus to their Difficulty. Additionally, they gain the \u201cDouble Swipe\u201d feature and replace \u201cSkull Flail\u201d with the following standard attack: Claw Swipe: Very Close | 1d10+3 phy Double Swipe - Action: Spend a Fear to move up to Close range and make two standard attacks against a target within Melee range. If both attacks succeed, combine the damage, and the target loses a Hope."
+    }
+  ],
+  "tags": [
+    "Giant"
+  ]
+}

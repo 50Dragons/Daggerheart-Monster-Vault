@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "nameless-maw-venerable",
+  "name": "Nameless Maw Dragon - Venerable",
+  "type": "Dragon",
+  "lineage": "Eclipsed",
+  "level": 9,
+  "tier": 4,
+  "role": "Solo",
+  "description": "Venerable Nameless Maw is a evil-leaning eclipsed intelligent true dragon with a gaunt wyvern form and burial-cloth wings. It seeks to consume identities, records, and recognition. At this age it is a legendary, nearly unstoppable presence.",
+  "difficulty": 21,
+  "thresholds": {
+    "major": 34,
+    "severe": 62
+  },
+  "hp": 15,
+  "stress": 8,
+  "attacks": [
+    {
+      "name": "Maw and Talons",
+      "modifier": 8,
+      "range": "Very Close",
+      "damage": "4d10+10 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Secrets and Erasure",
+      "modifier": 4
+    },
+    {
+      "name": "Patient Stalker",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Silence witnesses",
+    "Isolate known figures",
+    "Erase records"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (4)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 4 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Hushed Presence",
+      "kind": "Passive",
+      "description": "The dragon cannot be located by sound alone; writing exposed to its breath fades until restored by a GM-approved means."
+    },
+    {
+      "name": "Breath of Erasure",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 21. On a failure, take 4d8+10 magic damage and the target cannot speak until its next action. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Unremembered",
+      "kind": "Action",
+      "description": "Mark a Stress. Choose one creature within Close range. It must succeed on a Knowledge Reaction Roll or become Vulnerable, and allies cannot use actions that target it beneficially until its next action."
+    },
+    {
+      "name": "Vanishing Record",
+      "kind": "Reaction",
+      "description": "After the dragon takes damage, mark a Stress to move to a visible place within Close range and become Hidden until it attacks or an enemy finds it with a successful Instinct Roll."
+    },
+    {
+      "name": "Erase the Name",
+      "kind": "Action",
+      "description": "Spend a Fear. One creature within Close range makes a Knowledge Reaction Roll. On a failure, it takes 4d8+10 direct magic damage, loses 2 Hope, and cannot benefit from an ally’s action until it succeeds on a Knowledge Roll when it next acts; on a success, it takes half damage and loses no Hope."
+    },
+    {
+      "name": "Epic Ferocity",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks its fifth HP, it clears 2 Stress and may immediately move up to Close range. This movement does not grant an attack. If it has fewer than five HP, trigger this after it marks half its total HP instead."
+    }
+  ],
+  "tags": [
+    "Eclipsed",
+    "Venerable",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Ruins",
+    "Settlement"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "juvenile-flickerfly",
+  "name": "Juvenile Flickerfly",
+  "type": "Beast",
+  "level": 2,
+  "tier": 2,
+  "role": "Solo",
+  "description": "A horse-sized insect with iridescent scales and crystalline wings moving faster than the eye can see.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 13,
+    "severe": 26
+  },
+  "hp": 10,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Wing Slash",
+      "modifier": 3,
+      "range": "Very Close",
+      "damage": "2d10+4 physical"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Collect shiny things",
+    "hunt",
+    "swoop"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The Flickerfly can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight them."
+    },
+    {
+      "name": "Peerless Accuracy",
+      "kind": "Passive",
+      "description": "Before the Flickerfly makes an attack, roll a d6. On a result of 4 or higher, the target\u2019s Evasion is halved against this attack."
+    },
+    {
+      "name": "Mind Dance",
+      "kind": "Action",
+      "description": "Mark a Stress to create a magically dazzling display that grapples the minds of nearby foes. All targets within Close range must make an Instinct Reaction Roll. For each target who failed, you gain a Fear and the Flickerfly learns one of the target\u2019s fears."
+    },
+    {
+      "name": "Hallucinatory Breath",
+      "kind": "Reaction",
+      "description": "Countdown (Loop 1d6). When the Flickerfly takes damage for the first time, activate the countdown. When it triggers, the Flickerfly breathes hallucinatory gas on all targets in front of them up to Far range. Targets must succeed on an Instinct Reaction Roll or be tormented by fearful hallucinations. Targets whose fears are known to the Flickerfly have disadvantage on this roll. Targets who fail must mark a Stress and lose a Hope."
+    }
+  ],
+  "tags": [
+    "Beast"
+  ]
+}

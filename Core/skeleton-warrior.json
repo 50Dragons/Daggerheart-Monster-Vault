@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "skeleton-warrior",
+  "name": "Skeleton Warrior",
+  "type": "Undead",
+  "level": 1,
+  "tier": 1,
+  "role": "Standard",
+  "description": "A dirt-covered skeleton armed with a rusted blade.",
+  "difficulty": 10,
+  "thresholds": {
+    "major": 4,
+    "severe": 8
+  },
+  "hp": 3,
+  "stress": 2,
+  "attacks": [
+    {
+      "name": "Sword",
+      "modifier": 0,
+      "range": "Melee",
+      "damage": "1d6+2 physical"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Feign death",
+    "gang up",
+    "steal skin"
+  ],
+  "abilities": [
+    {
+      "name": "Only Bones",
+      "kind": "Passive",
+      "description": "The Warrior is resistant to physical damage."
+    },
+    {
+      "name": "Won\u2019t Stay Dead",
+      "kind": "Reaction",
+      "description": "When the Warrior is defeated, you can spotlight them and roll a d6. On a result of 6, if there are other adversaries on the battlefield, the Warrior re-forms with no marked HP."
+    }
+  ],
+  "tags": [
+    "Undead"
+  ]
+}

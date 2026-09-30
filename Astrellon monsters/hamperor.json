@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "id": "hamperor",
+  "name": "Ham-peror",
+  "type": "Vermyn",
+  "level": 1,
+  "tier": 1,
+  "role": "Solo",
+  "description": "An enormous hamster-like Vermyn wearing a broken crown, wielding a massive bone club and a sewer-cover shield.",
+  "difficulty": 13,
+  "thresholds": {
+    "major": 8,
+    "severe": 15
+  },
+  "hp": 9,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Great Bone Club",
+      "modifier": 1,
+      "range": "Melee",
+      "damage": "1d10+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Immovable Bulk",
+      "modifier": 2
+    },
+    {
+      "name": "King of the Warrens",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Crush challengers",
+    "command the chamber",
+    "separate intruders",
+    "protect his crown"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (2)",
+      "kind": "Passive",
+      "description": "The Ham-peror can be spotlighted up to two times per GM turn. Spend Fear as usual to spotlight them."
+    },
+    {
+      "name": "Sewer-Cover Shield",
+      "kind": "Reaction",
+      "description": "Once per GM turn, when the Ham-peror takes damage from an attack, they can mark a Stress to reduce the damage severity by one threshold. The Ham-peror raises the heavy sewer cover, catching the attack with a deafening metallic crash."
+    },
+    {
+      "name": "Ham-perial Stomp",
+      "kind": "Action",
+      "description": "Spend a Fear to leap to a point within Close range and make an attack against all targets within Melee range of where the Ham-peror lands. Targets the Ham-peror succeeds against take 1d10+2 physical damage. They become Restrained beneath the Ham-peror. A Restrained target can escape with a successful Strength or Agility Roll (13), moving them in Melee range. The Ham-peror can stand up during their spotlight, immediately ending the Restrained condition on all affected targets. The Ham-peror launches his enormous body into the air, crashes down with a sewer-shaking impact, then settles his full weight onto anyone trapped beneath him."
+    },
+    {
+      "name": "Overload",
+      "kind": "Reaction",
+      "description": "Before rolling damage for the Construct\u2019s attack, you can mark a Stress to gain a +10 bonus to the damage roll. The Construct can then take the spotlight again."
+    },
+    {
+      "name": "The Crown Comes Off",
+      "kind": "Reaction",
+      "description": "The first time the Ham-peror marks their fifth Hit Point, they throw away the sewer-cover shield and grip the bone club with both hands. Clear 2 Stress. They can no longer use Sewer-Cover Shield, and their standard attack permanently becomes 1d12+3 physical damage. The broken crown tumbles into the wastewater. The Ham-peror stops pretending to be a king and begins fighting like a cornered beast."
+    }
+  ],
+  "tags": [
+    "Vermyn"
+  ],
+  "biome": [
+    "Underground"
+  ]
+}

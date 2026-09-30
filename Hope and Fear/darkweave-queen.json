@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "darkweave-queen",
+  "name": "Darkweave Queen",
+  "type": "Monstrosity",
+  "level": 1,
+  "tier": 1,
+  "role": "Solo",
+  "description": "A wagon-sized spider woven from shadow-silk by a long-forgotten god. Each of her many eyes bears the face of a different victim.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 8,
+    "severe": 15
+  },
+  "hp": 9,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Spider Bite",
+      "modifier": 3,
+      "range": "Very Close",
+      "damage": "1d12+4 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Giant-Sized",
+      "modifier": 3
+    },
+    {
+      "name": "Hunter",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Ambush prey",
+    "climb the walls and ceiling",
+    "misdirect",
+    "paralyze",
+    "stash bodies away for later",
+    "steal faces"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The Queen can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight her."
+    },
+    {
+      "name": "Terrifying",
+      "kind": "Passive",
+      "description": "When a PC fails an attack roll against the Queen, you gain a Fear."
+    },
+    {
+      "name": "Den Mother",
+      "kind": "Action",
+      "description": "Once per scene, spend 2 Fear to summon up to two Darkweave adversaries (other than Darkweave Queens), who appear within Close range and immediately take the spotlight."
+    },
+    {
+      "name": "Quicker Than She Looks",
+      "kind": "Action",
+      "description": "Spend a Fear to move up to Far range and make a standard attack with advantage."
+    },
+    {
+      "name": "Darkfang Envenomation",
+      "kind": "Reaction",
+      "description": "When the Queen succeeds on a standard attack, you can spend a Fear to make the target Vulnerable and Restrained until they succeed on a Strength Roll (12) or take a rest."
+    }
+  ],
+  "tags": [
+    "Monstrosity"
+  ]
+}

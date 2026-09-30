@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "entombed-stonemason",
+  "name": "Entombed Stonemason",
+  "type": "Undead",
+  "level": 2,
+  "tier": 2,
+  "role": "Minion",
+  "description": "An unfortunate undead laborer chosen by lottery to wall up their empress\u2019s tomb from the inside.",
+  "difficulty": 12,
+  "thresholds": "None",
+  "hp": 1,
+  "stress": 1,
+  "attacks": [
+    {
+      "name": "Hammer and Chisel",
+      "modifier": -1,
+      "range": "Melee",
+      "damage": "5 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Builder",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Never stop working",
+    "sacrifice yourself for the empress"
+  ],
+  "abilities": [
+    {
+      "name": "Minion (5)",
+      "kind": "Passive",
+      "description": "The Stonemason is defeated when they take any damage. For every 5 damage a PC deals to the Stonemason, the PC defeats an additional Minion within range their attack would succeed against."
+    },
+    {
+      "name": "Group Attack",
+      "kind": "Action",
+      "description": "Spend a Fear to choose a target and spotlight all Entombed Stonemasons within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 5 physical damage each. Combine this damage."
+    },
+    {
+      "name": "The Work Never Ends",
+      "kind": "Reaction",
+      "description": "When the Stonemason is defeated by an attack that deals physical damage, you can spend a Fear to clear the Stonemason\u2019s HP and Stress."
+    }
+  ],
+  "tags": [
+    "Undead"
+  ]
+}

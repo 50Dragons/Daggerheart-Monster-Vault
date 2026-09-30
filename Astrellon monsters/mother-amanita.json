@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "id": "mother-amanita",
+  "name": "Mother Amanita",
+  "type": "Fungril",
+  "level": 2,
+  "tier": 2,
+  "role": "Solo",
+  "description": "A towering red-capped Fungril hag who fills the battlefield with poisonous spores and waking nightmares.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 13,
+    "severe": 25
+  },
+  "hp": 9,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Spore Claws",
+      "modifier": 3,
+      "range": "Melee",
+      "damage": "2d10+4 magic"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Manipulation",
+      "modifier": 3
+    },
+    {
+      "name": "Toxicology",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Terrify",
+    "poison",
+    "isolate",
+    "protect the Cocoon"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (2)",
+      "kind": "Passive",
+      "description": "Mother Amanita can be spotlighted up to twice per GM turn. Spend Fear as usual."
+    },
+    {
+      "name": "Toxic Bloom",
+      "kind": "Action",
+      "description": "Mark a Stress. All PCs within Close range must make an Instinct Reaction Roll (14). On a failure, they take 2d6+3 magic damage and mark a Stress."
+    },
+    {
+      "name": "Nightmare Spores",
+      "kind": "Action",
+      "description": "Spend a Fear and choose a target within Far range. They must make a Presence Reaction Roll (15). On a failure, they become Vulnerable and have disadvantage on their next action roll as horrifying hallucinations overwhelm them. Both effects end after that roll."
+    },
+    {
+      "name": "Feed on Terror",
+      "kind": "Reaction",
+      "description": "When a PC within Far range marks Stress because of one of Mother Amanita\u2019s features, Mother Amanita may clear a Stress."
+    },
+    {
+      "name": "My Sister Will Not Die",
+      "kind": "Reaction",
+      "description": "When Mother Cordyceps would mark her last HP while the Cocoon is alive, spend 2 Fear. The Cocoon immediately uses Life-Giving Spores on Cordyceps before the damage resolves."
+    }
+  ],
+  "tags": [
+    "Fungril",
+    "Hag"
+  ]
+}

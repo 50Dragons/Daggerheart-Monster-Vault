@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "gargoyle",
+  "name": "Gargoyle",
+  "type": "Construct",
+  "level": 2,
+  "tier": 2,
+  "role": "Bruiser",
+  "description": "A magically animated statue resembling a terrifying beast or demon.",
+  "difficulty": 13,
+  "thresholds": {
+    "major": 14,
+    "severe": 28
+  },
+  "hp": 8,
+  "stress": 2,
+  "attacks": [
+    {
+      "name": "Stone Claws",
+      "modifier": 2,
+      "range": "Melee",
+      "damage": "2d10+3 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Camouflage",
+      "modifier": 4
+    },
+    {
+      "name": "Ruins",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Hide in plain sight",
+    "overwatch",
+    "swoop down"
+  ],
+  "abilities": [
+    {
+      "name": "Unliving",
+      "kind": "Passive",
+      "description": "The Gargoyle has resistance to magic damage."
+    },
+    {
+      "name": "Swooping Strike",
+      "kind": "Action",
+      "description": "Choose a point within Far range. The Gargoyle moves to that point and makes a standard attack against one target along its path."
+    },
+    {
+      "name": "Petrifying Slash",
+      "kind": "Reaction",
+      "description": "When the Gargoyle deals damage, the target must succeed on a Strength Reaction Roll or become Vulnerable. If the target is already Vulnerable, they become Restrained. If the target is already Vulnerable and Restrained, they must make a death move. The PC can spend a Hope per condition to clear it."
+    }
+  ],
+  "tags": [
+    "Construct"
+  ]
+}

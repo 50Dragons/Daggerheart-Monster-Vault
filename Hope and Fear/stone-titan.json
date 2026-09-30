@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "stone-titan",
+  "name": "Stone Titan",
+  "type": "Giant",
+  "level": 2,
+  "tier": 2,
+  "role": "Solo",
+  "description": "A gray-skinned goliath who lives underground and specializes in crafting powerful items inlaid with magical runes.",
+  "difficulty": 17,
+  "thresholds": {
+    "major": 17,
+    "severe": 32
+  },
+  "hp": 5,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Stone Hammer",
+      "modifier": 3,
+      "range": "Very Close",
+      "damage": "3d6+8 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Crafting",
+      "modifier": 3
+    },
+    {
+      "name": "Runes",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Blend into the rocks",
+    "craft and contemplate",
+    "pursue prophecy and solitude"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The Titan can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight them."
+    },
+    {
+      "name": "Skillful Strike",
+      "kind": "Passive",
+      "description": "Before the Titan makes an attack, you can mark a Stress and roll a d6. On a result of 3 or higher, the target\u2019s Evasion is halved against this attack."
+    },
+    {
+      "name": "Sunlight Sickness",
+      "kind": "Passive",
+      "description": "When the Titan first appears above ground, roll a d4. Mark a number of Stress equal to the result. The Titan gains a bonus to their attack and damage rolls equal to the number of Stress marked."
+    },
+    {
+      "name": "Hammer Smash",
+      "kind": "Action",
+      "description": "When a PC marks HP from the Titan\u2019s standard attack, you can spend a Fear to force the target to mark an Armor Slot without gaining its benefits (they can still use armor to reduce the damage)."
+    }
+  ],
+  "tags": [
+    "Giant"
+  ]
+}

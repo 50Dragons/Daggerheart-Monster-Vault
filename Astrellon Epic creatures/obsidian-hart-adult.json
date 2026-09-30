@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "obsidian-hart-adult",
+  "name": "Obsidian Hart Dragon - Adult",
+  "type": "Dragon",
+  "lineage": "Firmament",
+  "level": 6,
+  "tier": 3,
+  "role": "Solo",
+  "description": "Adult Obsidian Hart is a neutral-leaning firmament intelligent true dragon with black star-speckled scales, antlers, and wing-forelimbs. It seeks to test endurance by taking away comfort and shelter. At this age it is a commanding force in its territory.",
+  "difficulty": 18,
+  "thresholds": {
+    "major": 24,
+    "severe": 41
+  },
+  "hp": 14,
+  "stress": 6,
+  "attacks": [
+    {
+      "name": "Antler and Talon",
+      "modifier": 5,
+      "range": "Very Close",
+      "damage": "3d10+5 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Wilderness Survival",
+      "modifier": 3
+    },
+    {
+      "name": "Relentless Hunt",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Cut off shelter",
+    "Stalk silently",
+    "Test endurance"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 3 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Hunter’s Darkness",
+      "kind": "Passive",
+      "description": "While in darkness made by its breath, the dragon gains +2 Difficulty."
+    },
+    {
+      "name": "Starless Breath",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 18. On a failure, take 3d8+6 magic damage and ordinary flames and magical light in the target’s space go out until the dragon’s next spotlight. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Antler Charge",
+      "kind": "Action",
+      "description": "Mark a Stress. Move up to Close range and make a standard attack against one target. On a success, deal 3d12+5 physical damage and knock it back to Close range."
+    },
+    {
+      "name": "No Easy Shelter",
+      "kind": "Reaction",
+      "description": "When a creature within Close range enters cover, mark a Stress to move into Very Close range of it. This movement grants no attack."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Firmament",
+    "Adult",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Mountains",
+    "Wilderness"
+  ]
+}

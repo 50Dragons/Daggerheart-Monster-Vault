@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "nameless-maw-adult",
+  "name": "Nameless Maw Dragon - Adult",
+  "type": "Dragon",
+  "lineage": "Eclipsed",
+  "level": 6,
+  "tier": 3,
+  "role": "Solo",
+  "description": "Adult Nameless Maw is a evil-leaning eclipsed intelligent true dragon with a gaunt wyvern form and burial-cloth wings. It seeks to consume identities, records, and recognition. At this age it is a commanding force in its territory.",
+  "difficulty": 19,
+  "thresholds": {
+    "major": 24,
+    "severe": 41
+  },
+  "hp": 12,
+  "stress": 7,
+  "attacks": [
+    {
+      "name": "Maw and Talons",
+      "modifier": 5,
+      "range": "Very Close",
+      "damage": "3d10+5 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Secrets and Erasure",
+      "modifier": 3
+    },
+    {
+      "name": "Patient Stalker",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Silence witnesses",
+    "Isolate known figures",
+    "Erase records"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 3 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Hushed Presence",
+      "kind": "Passive",
+      "description": "The dragon cannot be located by sound alone; writing exposed to its breath fades until restored by a GM-approved means."
+    },
+    {
+      "name": "Breath of Erasure",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 19. On a failure, take 3d8+6 magic damage and the target cannot speak until its next action. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Unremembered",
+      "kind": "Action",
+      "description": "Mark a Stress. Choose one creature within Close range. It must succeed on a Knowledge Reaction Roll or become Vulnerable, and allies cannot use actions that target it beneficially until its next action."
+    },
+    {
+      "name": "Vanishing Record",
+      "kind": "Reaction",
+      "description": "After the dragon takes damage, mark a Stress to move to a visible place within Close range and become Hidden until it attacks or an enemy finds it with a successful Instinct Roll."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Eclipsed",
+    "Adult",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Ruins",
+    "Settlement"
+  ]
+}

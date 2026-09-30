@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "courtesan",
+  "name": "Courtesan",
+  "type": "Social",
+  "level": 2,
+  "tier": 2,
+  "role": "Social",
+  "description": "An accomplished manipulator and master of the social arts.",
+  "difficulty": 13,
+  "thresholds": {
+    "major": 7,
+    "severe": 13
+  },
+  "hp": 3,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Dagger",
+      "modifier": -3,
+      "range": "Melee",
+      "damage": "1d4+3 phy"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Manipulation",
+      "modifier": 3
+    },
+    {
+      "name": "Socialite",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Entice",
+    "maneuver",
+    "secure patrons"
+  ],
+  "abilities": [
+    {
+      "name": "Searing Glance",
+      "kind": "Reaction",
+      "description": "When a PC within Close range makes a Presence Roll, you can mark a Stress to cast a gaze toward the aftermath. On the target's failure, they must mark 2 Stress and are Vulnerable until the scene ends or they succeed on a social action against the Courtesan. On the target's success, they must mark a Stress."
+    }
+  ],
+  "tags": [
+    "Social"
+  ]
+}

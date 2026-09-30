@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "id": "spellblade",
+  "name": "Spellblade",
+  "type": "Humanoid",
+  "level": 1,
+  "tier": 1,
+  "role": "Leader",
+  "description": "A mercenary combining swordplay and magic to deadly effect.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 8,
+    "severe": 14
+  },
+  "hp": 6,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Empowered Longsword",
+      "modifier": 3,
+      "range": "Melee",
+      "damage": "1d8+4 physical/magic"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Magical Knowledge",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Blast",
+    "command",
+    "endure"
+  ],
+  "abilities": [
+    {
+      "name": "Arcane Steel",
+      "kind": "Passive",
+      "description": "Damage dealt by the Spellblade\u2019s standard attack is considered both physical and magic."
+    },
+    {
+      "name": "Suppressing Blast",
+      "kind": "Action",
+      "description": "Mark a Stress and target a group within Far range. All targets must succeed on an Agility Reaction Roll or take 1d8+2 magic damage. You gain a Fear for each target who marked HP from this attack."
+    },
+    {
+      "name": "Move as a Unit",
+      "kind": "Action",
+      "description": "Spend 2 Fear to spotlight up to five allies within Far range."
+    },
+    {
+      "name": "Momentum",
+      "kind": "Reaction",
+      "description": "When the Spellblade makes a successful attack against a PC, you gain a Fear."
+    }
+  ],
+  "tags": [
+    "Humanoid"
+  ]
+}

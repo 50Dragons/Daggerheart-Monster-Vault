@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "falcon",
+  "name": "Falcon",
+  "type": "Beast",
+  "level": 1,
+  "tier": 1,
+  "role": "Skulk",
+  "description": "A bird of prey that has long, pointed wings and a notched beak.",
+  "difficulty": 12,
+  "thresholds": {
+    "major": 5,
+    "severe": 8
+  },
+  "hp": 3,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Talons",
+      "modifier": 2,
+      "range": "Melee",
+      "damage": "1d6+1 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Keen Senses",
+      "modifier": 4
+    },
+    {
+      "name": "Fly",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Circle",
+    "clutch",
+    "dive",
+    "spy"
+  ],
+  "abilities": [
+    {
+      "name": "Nimble Flyer",
+      "kind": "Passive",
+      "description": "While flying, the Falcon gains a +3 bonus to its Difficulty."
+    },
+    {
+      "name": "Dive Bomb",
+      "kind": "Action",
+      "description": "Mark a Stress to make a standard attack against a target from above. The Falcon gains a +2 bonus to the attack and damage rolls."
+    }
+  ],
+  "tags": [
+    "Beast"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "skeleton-archer",
+  "name": "Skeleton Archer",
+  "type": "Undead",
+  "level": 1,
+  "tier": 1,
+  "role": "Ranged",
+  "description": "A fragile skeleton with a shortbow and arrows.",
+  "difficulty": 9,
+  "thresholds": {
+    "major": 4,
+    "severe": 7
+  },
+  "hp": 3,
+  "stress": 2,
+  "attacks": [
+    {
+      "name": "Shortbow",
+      "modifier": 2,
+      "range": "Far",
+      "damage": "1d8+1 physical"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Perforate distracted targets",
+    "play dead",
+    "steal skin"
+  ],
+  "abilities": [
+    {
+      "name": "Opportunist",
+      "kind": "Passive",
+      "description": "When two or more adversaries are within Very Close range of a creature, all damage the Archer deals to that creature is doubled."
+    },
+    {
+      "name": "Deadly Shot",
+      "kind": "Action",
+      "description": "Make an attack against a Vulnerable target within Far range. On a success, mark a Stress to deal 3d4+8 physical damage."
+    }
+  ],
+  "tags": [
+    "Undead"
+  ]
+}

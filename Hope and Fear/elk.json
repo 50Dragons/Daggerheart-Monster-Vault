@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "elk",
+  "name": "Elk",
+  "type": "Beast",
+  "level": 1,
+  "tier": 1,
+  "role": "Skulk",
+  "description": "A large deer.",
+  "difficulty": 13,
+  "thresholds": {
+    "major": 4,
+    "severe": 8
+  },
+  "hp": 3,
+  "stress": 2,
+  "attacks": [
+    {
+      "name": "Antlers",
+      "modifier": 0,
+      "range": "Melee",
+      "damage": "1d8+1 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Keen Senses",
+      "modifier": 3
+    },
+    {
+      "name": "Run",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Bound away",
+    "graze",
+    "rut",
+    "sense danger"
+  ],
+  "abilities": [
+    {
+      "name": "Headbutt",
+      "kind": "Passive",
+      "description": "When the Elk moves from Close range or farther before making a standard attack, it deals 1d12+2 physical damage instead of its standard damage."
+    },
+    {
+      "name": "Bolt",
+      "kind": "Reaction",
+      "description": "When the Elk marks a HP or Stress, it must succeed on a Reaction Roll (10) or flee the scene."
+    }
+  ],
+  "tags": [
+    "Beast"
+  ]
+}

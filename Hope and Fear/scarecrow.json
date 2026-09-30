@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "scarecrow",
+  "name": "Scarecrow",
+  "type": "Construct",
+  "level": 2,
+  "tier": 2,
+  "role": "Standard",
+  "description": "A bundle of straw bound into a humanoid shape, clothed in rags, and animated by a trapped soul.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 7,
+    "severe": 15
+  },
+  "hp": 4,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Sickle",
+      "modifier": 1,
+      "range": "Melee",
+      "damage": "2d6+1 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Birds",
+      "modifier": 2
+    },
+    {
+      "name": "Fields",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Pull yourself together",
+    "scratch and claw"
+  ],
+  "abilities": [
+    {
+      "name": "Made of Straw",
+      "kind": "Passive",
+      "description": "The Scarecrow has resistance to physical damage but takes double damage from fire."
+    },
+    {
+      "name": "Terror Vision",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Scarecrow lock eyes with a PC within Very Close range, dealing 2d8 magic damage and making them Vulnerable until they roll with Hope."
+    }
+  ],
+  "tags": [
+    "Construct"
+  ]
+}

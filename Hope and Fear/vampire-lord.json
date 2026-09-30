@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "id": "vampire-lord",
+  "name": "Vampire Lord",
+  "type": "Undead",
+  "level": 3,
+  "tier": 3,
+  "role": "Solo",
+  "description": "A cruel vampire lord from a long-lost age, cursed with immortality.",
+  "difficulty": 18,
+  "thresholds": {
+    "major": 24,
+    "severe": 45
+  },
+  "hp": 7,
+  "stress": 7,
+  "attacks": [
+    {
+      "name": "Claws",
+      "modifier": 5,
+      "range": "Melee",
+      "damage": "3d10+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Evil",
+      "modifier": 3
+    },
+    {
+      "name": "Noble",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Corrupt",
+    "destroy",
+    "overwhelm with evil power"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The Vampire Lord can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight them."
+    },
+    {
+      "name": "Midnight Heart",
+      "kind": "Passive",
+      "description": "Long-Term Countdown (6). The Vampire Lord keeps their heart hidden in a safe place. If it\u2019s destroyed, the Vampire Lord dies. Otherwise, when the Vampire Lord is defeated, activate the countdown. It ticks down each time the PCs finish a long rest. When it triggers, the Vampire Lord revives within Close range of the heart with all HP and Stress cleared."
+    },
+    {
+      "name": "Terrifying",
+      "kind": "Passive",
+      "description": "When the Vampire Lord makes a successful attack roll, all PCs within Close range lose a Hope, and you gain a Fear."
+    },
+    {
+      "name": "Unleash Hellfire",
+      "kind": "Action",
+      "description": "Mark a Stress to have the Vampire Lord momentarily conjure 1d4 bursts of hellfire within Far range. Each burst deals 3d6 magic damage to each target within Very Close range. If a target takes damage from multiple bursts, combine the damage."
+    },
+    {
+      "name": "Resurgence",
+      "kind": "Reaction",
+      "description": "When a PC within Very Close range rolls with Hope, you can spend a Fear to clear a HP or a Stress."
+    },
+    {
+      "name": "Melt into Shadow",
+      "kind": "Reaction",
+      "description": "When a PC would deal damage to the Vampire Lord, you can spend a Fear to roll a d6. On a result of 5 or higher, negate the damage, then teleport the Vampire Lord to a point within Far range."
+    },
+    {
+      "name": "Hellwing",
+      "kind": "Evolution",
+      "description": "When the Vampire Lord marks half their HP, they transform into the Hellwing: a towering, demonic bat creature. They gain the \u201cOn Crimson Wings\u201d and \u201cBloodbath\u201d features and replace their standard attack with the following standard attack: Claws: Close | 3d12+6 phy On Crimson Wings - Passive: While flying, the Hellwing gains a +1 bonus to their Difficulty. Bloodbath - Reaction: When the Hellwing takes Major or greater damage, the ground within Very Close range is covered with blood, dealing 3d10 magic damage to all other creatures in the area. When the Hellwing takes the spotlight on subsequent GM turns, all other creatures in that area take 3d6 magic damage."
+    }
+  ],
+  "tags": [
+    "Undead"
+  ]
+}

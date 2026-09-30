@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "vampire",
+  "name": "Vampire",
+  "type": "Undead",
+  "level": 3,
+  "tier": 3,
+  "role": "Standard",
+  "description": "An intelligent undead with blood-stained lips and a predator\u2019s smile.",
+  "difficulty": 16,
+  "thresholds": {
+    "major": 18,
+    "severe": 35
+  },
+  "hp": 5,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Rapier",
+      "modifier": 3,
+      "range": "Melee",
+      "damage": "3d8 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Nocturnal Hunter",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Bite",
+    "charm",
+    "deceive",
+    "feed",
+    "intimidate"
+  ],
+  "abilities": [
+    {
+      "name": "Draining Bite",
+      "kind": "Action",
+      "description": "Make an attack against a target within Melee range. On a success, deal 5d4 physical damage. A target who marks HP from this attack loses a Hope and must mark a Stress. The Vampire then clears a HP."
+    },
+    {
+      "name": "Mistform",
+      "kind": "Reaction",
+      "description": "When the Vampire takes physical damage, you can spend a Fear to take half damage."
+    }
+  ],
+  "tags": [
+    "Undead"
+  ]
+}

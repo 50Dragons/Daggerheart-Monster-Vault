@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "ghastly-legion",
+  "name": "Ghastly Legion",
+  "type": "Undead",
+  "level": 4,
+  "tier": 4,
+  "role": "Horde",
+  "description": "A teeming army of ghosts roused from dreamless slumber to fulfill their ancient oath.",
+  "difficulty": 17,
+  "thresholds": {
+    "major": 25,
+    "severe": 45
+  },
+  "hp": 8,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Spectral Armaments",
+      "modifier": 2,
+      "range": "Close",
+      "damage": "4d6+10 magic"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Tactics",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Overwhelm",
+    "serve",
+    "swarm"
+  ],
+  "abilities": [
+    {
+      "name": "Horde (2d6+5)",
+      "kind": "Passive",
+      "description": "When the Legion has marked half or more of its HP, its standard attack deals 2d6+5 magic damage instead."
+    },
+    {
+      "name": "Necroplasmic",
+      "kind": "Passive",
+      "description": "The Legion is immune to physical damage and takes double magic damage."
+    },
+    {
+      "name": "Final Act",
+      "kind": "Reaction",
+      "description": "When the Legion is defeated, it makes a standard attack against all targets within Close range before being dispelled."
+    }
+  ],
+  "tags": [
+    "Undead"
+  ]
+}

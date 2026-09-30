@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "berserker-initiate",
+  "name": "Berserker Initiate",
+  "type": "Humanoid",
+  "level": 2,
+  "tier": 2,
+  "role": "Standard",
+  "description": "A raging warrior who imbibes ritualistic concoctions to enhance their form with aspects of a predatory beast.",
+  "difficulty": 13,
+  "thresholds": {
+    "major": 9,
+    "severe": 18
+  },
+  "hp": 4,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Tooth & Claw",
+      "modifier": 1,
+      "range": "Melee",
+      "damage": "2d10 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Hunt",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Coordinate with packmates",
+    "dance around the fire",
+    "howl at the moon"
+  ],
+  "abilities": [
+    {
+      "name": "Pack Fury",
+      "kind": "Passive",
+      "description": "The Initiate gains a +1 bonus to their attack rolls for each ally within Very Close range of their attack\u2019s target."
+    },
+    {
+      "name": "Berserker Rage",
+      "kind": "Reaction",
+      "description": "The first time in a scene the Initiate marks their last Stress, they gain a +4 bonus to damage rolls."
+    }
+  ],
+  "tags": [
+    "Humanoid"
+  ]
+}

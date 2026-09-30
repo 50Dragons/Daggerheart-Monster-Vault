@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "ocean-voyage",
+  "name": "Ocean Voyage",
+  "type": "Traversal",
+  "level": 2,
+  "tier": 2,
+  "description": "The PCs gain passage to a far-offdestination by offering their labor in exchange.",
+  "difficulty": 14,
+  "impulses": [
+    "Reveal what lurks beneath the waves",
+    "send them in the wrong direction",
+    "sink the ship",
+    "use up their resources"
+  ],
+  "potentialAdversaries": [
+    "Deep Sea Denizens (Electric Eels, Kraken, Shark, Siren)",
+    "Pirates (Pirate Captain, Pirate Raiders)"
+  ],
+  "features": [
+    {
+      "name": "Open Water",
+      "kind": "Passive",
+      "description": "Countdown (8). Reaching their destination requires the party to complete the Open Water Countdown. It ticks down when a PC succeeds on an action roll to aid the ship\u2019s journey.",
+      "prompt": "Where is the ship headed? What dangers along the route do the crew speak about in hushed tones?"
+    },
+    {
+      "name": "Rations Run Low",
+      "kind": "Passive",
+      "description": "The first time a PC rolls a failure with Fear on this journey, the crew discovers that the food and fresh water in the ship\u2019s hold have been befouled by pests and mold. Until the party reaches its destination, a PC who makes an action roll to advance the Open Water Countdown must succeed on a Strength Reaction Roll or mark a Stress first.",
+      "prompt": "What happened to the rations? What drastic measures does the crew take to ensure they don\u2019t all die of hunger and thirst?"
+    },
+    {
+      "name": "\u201cPirates!\u201d",
+      "kind": "Action",
+      "description": "Spend a Fear to have a crewmember in the crow\u2019s nest spy black sails on the horizon! Start a Consequence Countdown (4). If it triggers before the party reaches their destination, the pirates catch up to the ship and board it. Gain a Fear, then summon one Pirate Captain and three Hordes of Pirate Raiders within Close range of the party.",
+      "prompt": "Does the captain recognize the ship that\u2019s giving chase? What ungentlemanly practices are the pirates in this area famous for?"
+    },
+    {
+      "name": "Foul Weather",
+      "kind": "Reaction",
+      "description": "",
+      "prompt": "When the Open Water Countdown ticks down to an odd number, roll a d6. On a result of 4 or higher, the ship runs into a patch of foul weather, such as a fog bank that makes navigation difficult or a squall that threatens to capsize the ship. Each PC must succeed on a reaction roll using a relevant trait chosen by the GM or mark 1d4 Stress. What makes this weather different from anything the PCs have experienced before? How do they coordinate with the crew to find their way through this hazard?"
+    },
+    {
+      "name": "Here There Be Monsters",
+      "kind": "Reaction",
+      "description": "",
+      "prompt": "When the Open Water Countdown ticks down to an even number, roll a d6. On a result of 4 or higher, summon 1d4 Deep Sea Denizens. What attracts these creatures to the ship? Is there any way to drive them offwithout combat? MASQUERADE BALL 105"
+    }
+  ]
+}

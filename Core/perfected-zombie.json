@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "perfected-zombie",
+  "name": "Perfected Zombie",
+  "type": "Undead",
+  "level": 4,
+  "tier": 4,
+  "role": "Bruiser",
+  "description": "A towering, muscular zombie with magically infused strength and skill.",
+  "difficulty": 20,
+  "thresholds": {
+    "major": 40,
+    "severe": 70
+  },
+  "hp": 9,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Greataxe",
+      "modifier": 4,
+      "range": "Very Close",
+      "damage": "4d12+15 physical"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Consume",
+    "hound",
+    "maim",
+    "terrify"
+  ],
+  "abilities": [
+    {
+      "name": "Terrifying",
+      "kind": "Passive",
+      "description": "When the Zombie makes a successful attack, all PCs within Far range lose a Hope and you gain a Fear."
+    },
+    {
+      "name": "Fearsome Presence",
+      "kind": "Passive",
+      "description": "PCs can\u2019t spend Hope to use features against the Zombie."
+    },
+    {
+      "name": "Perfect Strike",
+      "kind": "Action",
+      "description": "Mark a Stress to make a standard attack against all targets within Very Close range. Targets the Zombie succeeds against are Vulnerable until their next rest."
+    },
+    {
+      "name": "Skilled Opportunist",
+      "kind": "Reaction",
+      "description": "When another adversary deals damage to a target within Very Close range of the Zombie, you can spend a Fear to add the Zombie\u2019s standard attack damage to the damage roll."
+    }
+  ],
+  "tags": [
+    "Undead"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "id": "elephant",
+  "name": "Elephant",
+  "type": "Beast",
+  "level": 2,
+  "tier": 2,
+  "role": "Bruiser",
+  "description": "A huge pachyderm that has large ears and a prehensile trunk.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 14,
+    "severe": 28
+  },
+  "hp": 6,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Feet & Tusks",
+      "modifier": 3,
+      "range": "Very Close",
+      "damage": "2d12 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Huge",
+      "modifier": 2
+    },
+    {
+      "name": "Never Forgets",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Eat vegetation",
+    "protect the herd",
+    "socialize"
+  ],
+  "abilities": [
+    {
+      "name": "Trample",
+      "kind": "Action",
+      "description": "Mark a Stress to have the Elephant charge up to Far range in a straight line. Each target in its path must succeed on an Agility Reaction Roll or take 2d10+3 physical damage."
+    },
+    {
+      "name": "Toss",
+      "kind": "Reaction",
+      "description": "When the Elephant makes a successful standard attack, you can spend a Fear to have it toss the target to another location within Close range and deal an extra 1d12 damage."
+    }
+  ],
+  "tags": [
+    "Beast"
+  ]
+}

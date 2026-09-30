@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "id": "owl-witch",
+  "name": "Owl Witch",
+  "type": "Monstrosity",
+  "level": 4,
+  "tier": 4,
+  "role": "Support",
+  "description": "A giant, vengeful barn owl that has a 15-foot wingspan and a human face.",
+  "difficulty": 19,
+  "thresholds": {
+    "major": 27,
+    "severe": 47
+  },
+  "hp": 4,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Razor Talons",
+      "modifier": 7,
+      "range": "Very Close",
+      "damage": "4d8+5 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Magic",
+      "modifier": 2
+    },
+    {
+      "name": "Night Stalker",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Consume essence",
+    "curse",
+    "predict death"
+  ],
+  "abilities": [
+    {
+      "name": "Ill Omen",
+      "kind": "Passive",
+      "description": "When a PC within Close range makes an action roll, their Fear Die gains a bonus equal to the amount of Fear you have."
+    },
+    {
+      "name": "Witch Barrier",
+      "kind": "Passive",
+      "description": "The Owl Witch has resistance to magic damage."
+    },
+    {
+      "name": "Voice Mimicry",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Owl Witch beckon with the voice of a beloved figure to a creature within earshot. The target must succeed on an Instinct Reaction Roll or move up to Far range toward the Owl Witch."
+    },
+    {
+      "name": "Nightmare Stare",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Owl Witch Afflict a PC within Far range with waking nightmares unless the target succeeds on a Knowledge Reaction Roll. While Afflicted, the target can\u2019t clear HP or Stress. The condition is cleared when another PC uses a downtime move to comfort the Afflicted creature."
+    },
+    {
+      "name": "Visions of a Violent End",
+      "kind": "Reaction",
+      "description": "When the Owl Witch is targeted by an attack, you can spend a Fear to force the attacker to make a Presence Reaction Roll. On a failure, they must mark 1d4 Stress as their mind is flooded with harrowing imagery."
+    }
+  ],
+  "tags": [
+    "Monstrosity"
+  ]
+}

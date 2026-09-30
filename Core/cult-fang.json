@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "cult-fang",
+  "name": "Cult Fang",
+  "type": "Humanoid",
+  "level": 2,
+  "tier": 2,
+  "role": "Skulk",
+  "description": "A professional killer-turned-cultist.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 9,
+    "severe": 17
+  },
+  "hp": 4,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Long Knife",
+      "modifier": 2,
+      "range": "Melee",
+      "damage": "2d8+4 physical"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Capture sacrifices",
+    "isolate prey",
+    "rise in the ranks"
+  ],
+  "abilities": [
+    {
+      "name": "Shadow\u2019s Embrace",
+      "kind": "Passive",
+      "description": "The Fang can climb and walk on vertical surfaces. Mark a Stress to move from one shadow to another within Far range."
+    },
+    {
+      "name": "Pick Off the Straggler",
+      "kind": "Action",
+      "description": "Mark a Stress to cause a target within Melee range to make an Instinct Reaction Roll. On a failure, the target must mark 2 Stress and is teleported with the Fang to a shadow within Far range, making them temporarily Vulnerable. On a success, the target must mark a Stress."
+    }
+  ],
+  "tags": [
+    "Humanoid"
+  ]
+}

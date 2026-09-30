@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "temporal-enforcer",
+  "name": "Temporal Enforcer",
+  "type": "Construct",
+  "level": 4,
+  "tier": 4,
+  "role": "Bruiser",
+  "description": "A giant mechanical being from a dimension outside time, built by the Time Keepers to preserve the Holy Continuum.",
+  "difficulty": 20,
+  "thresholds": {
+    "major": 42,
+    "severe": 68
+  },
+  "hp": 8,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Adamantine Hammer",
+      "modifier": 4,
+      "range": "Very Close",
+      "damage": "40 direct physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Temporal Anomalies",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Repair the timeline",
+    "seek out temporal heretics",
+    "serve the Lords of Continuity"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (2)",
+      "kind": "Passive",
+      "description": "The Enforcer can be spotlighted up to two times per GM turn. Spend Fear as usual to spotlight them."
+    },
+    {
+      "name": "Time Looper",
+      "kind": "Passive",
+      "description": "Countdown (Loop 2d6). When the Enforcer first appears, activate the countdown. It ticks down when the Enforcer is spotlighted. When it triggers, the Enforcer clears all HP, Stress, and conditions. Reroll the countdown when the Enforcer takes Severe damage."
+    },
+    {
+      "name": "Move Between Moments",
+      "kind": "Action",
+      "description": "Mark a Stress to have the Enforcer teleport to a point within Very Far range, then spotlight them again."
+    },
+    {
+      "name": "Instant Rewind",
+      "kind": "Reaction",
+      "description": "When the Enforcer fails an attack, you can spend a Fear to reroll the die."
+    },
+    {
+      "name": "Invert Polarity",
+      "kind": "Reaction",
+      "description": "Up to three times per scene, you can spend a Fear to flip any die rolled onto its obverse result. This effect can\u2019t be used to alter a critical success."
+    }
+  ],
+  "tags": [
+    "Construct"
+  ]
+}

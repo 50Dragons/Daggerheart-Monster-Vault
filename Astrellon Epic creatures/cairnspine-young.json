@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "cairnspine-young",
+  "name": "Cairnspine Linnorm - Young",
+  "type": "Linnorm",
+  "lineage": "Worldborn Linnorm",
+  "level": 3,
+  "tier": 2,
+  "role": "Solo",
+  "description": "Young Cairnspine is a chaotic, instinct-driven worldborn linnorm clever, wingless, non-humanoid linnorm with granite-coloured scales and high slate spines. It seeks to keep mountain slopes stable through controlled rockfalls. At this age it is an emerging but formidable predator.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 14,
+    "severe": 28
+  },
+  "hp": 10,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Stonebreaking Jaws",
+      "modifier": 3,
+      "range": "Very Close",
+      "damage": "2d10+4 physical",
+      "description": "The linnorm strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Mountain Paths",
+      "modifier": 2
+    },
+    {
+      "name": "Rockfall Sense",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Hold high ground",
+    "Cause rockfalls",
+    "Break drills"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (2)",
+      "kind": "Passive",
+      "description": "The linnorm can be spotlighted up to 2 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Cliff-Grip",
+      "kind": "Passive",
+      "description": "The linnorm climbs sheer rock without slowing and cannot be knocked from a cliff by ordinary movement."
+    },
+    {
+      "name": "Concussive Roar",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 15. On a failure, take 2d8+4 physical damage and the target is knocked back to Close range by gravel and slate. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the linnorm marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Worldborn Linnorm",
+    "Young",
+    "Epic",
+    "Solo",
+    "Linnorm"
+  ],
+  "biome": [
+    "Mountains",
+    "Cliffs"
+  ]
+}

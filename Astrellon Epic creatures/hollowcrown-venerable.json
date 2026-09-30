@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "hollowcrown-venerable",
+  "name": "Hollowcrown Dragon - Venerable",
+  "type": "Dragon",
+  "lineage": "Eclipsed",
+  "level": 9,
+  "tier": 4,
+  "role": "Solo",
+  "description": "Venerable Hollowcrown is a evil-leaning eclipsed intelligent true dragon with blackened gold scales and a broken halo. It seeks to compel obedience from subjects who no longer exist. At this age it is a legendary, nearly unstoppable presence.",
+  "difficulty": 21,
+  "thresholds": {
+    "major": 37,
+    "severe": 68
+  },
+  "hp": 20,
+  "stress": 7,
+  "attacks": [
+    {
+      "name": "Crowned Talons",
+      "modifier": 8,
+      "range": "Very Close",
+      "damage": "4d10+10 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Ruined Royalty",
+      "modifier": 4
+    },
+    {
+      "name": "Tyrannical Command",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Brand rebels",
+    "Demand fealty",
+    "Punish defiance"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (4)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 4 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Royal Brand",
+      "kind": "Passive",
+      "description": "The dragon knows the direction of every creature branded by its breath within Far range."
+    },
+    {
+      "name": "Sovereign Flame",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 21. On a failure, take 4d8+10 magic damage and the target is branded with a visible crown until the end of the scene. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Kneel",
+      "kind": "Action",
+      "description": "Mark a Stress. Choose one branded creature within Far range. It must succeed on a Presence Reaction Roll or become Restrained until it escapes with a successful Presence Roll or the dragon is defeated."
+    },
+    {
+      "name": "Defiance Burns",
+      "kind": "Reaction",
+      "description": "When a branded creature within Far range openly defies a spoken command, mark a Stress to make it mark 1 Stress."
+    },
+    {
+      "name": "Kingdom of Ash",
+      "kind": "Action",
+      "description": "Spend a Fear. All branded enemies within Far range make a Presence Reaction Roll. On a failure, they take 4d8+10 magic damage, lose 1 Hope, and become Vulnerable until their next roll with Hope; on a success, they take half damage."
+    },
+    {
+      "name": "Epic Ferocity",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks its fifth HP, it clears 2 Stress and may immediately move up to Close range. This movement does not grant an attack. If it has fewer than five HP, trigger this after it marks half its total HP instead."
+    }
+  ],
+  "tags": [
+    "Eclipsed",
+    "Venerable",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Ruins",
+    "City"
+  ]
+}

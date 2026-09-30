@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "kelpie",
+  "name": "Kelpie",
+  "type": "Fey",
+  "level": 1,
+  "tier": 1,
+  "role": "Skulk",
+  "description": "A river-dwelling shapeshifter who prefers an enchanting equine form in and out of the water.",
+  "difficulty": 12,
+  "thresholds": {
+    "major": 4,
+    "severe": 8
+  },
+  "hp": 3,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Hooves",
+      "modifier": -2,
+      "range": "Very Close",
+      "damage": "1d8+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Entanglement",
+      "modifier": 3
+    },
+    {
+      "name": "Mind Reader",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Adopt an attractive or useful shape",
+    "drown and devour",
+    "entice unwary travelers"
+  ],
+  "abilities": [
+    {
+      "name": "Captivating",
+      "kind": "Passive",
+      "description": "A PC must mark a Stress to move out of the Kelpie\u2019s Melee range."
+    },
+    {
+      "name": "Heart\u2019s Desire",
+      "kind": "Passive",
+      "description": "After the Kelpie interacts with or watches a creature for at least a hundred heartbeats, the Kelpie knows the physical form that creature would find most pleasing or alluring."
+    },
+    {
+      "name": "Shapeshifter",
+      "kind": "Action",
+      "description": "Mark a Stress to change the Kelpie\u2019s physical form into any creature or object smaller than a wagon. A creature has disadvantage on rolls against the Kelpie while the Kelpie is in a form the creature finds pleasing or alluring."
+    },
+    {
+      "name": "Enchant",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Kelpie beguile a PC within Close range. The PC must succeed on an Instinct Reaction Roll or become Enchanted until they take damage. While Enchanted, the PC perceives the Kelpie as a trusted friend or ally and will do what the Kelpie says unless it contradicts the PC\u2019s most deeply held morals."
+    }
+  ],
+  "tags": [
+    "Fey"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "swarm-of-rats",
+  "name": "Swarm Of Rats",
+  "type": "Beast",
+  "level": 1,
+  "tier": 1,
+  "role": "Horde",
+  "description": "A skittering mass of ordinary rodents moving as one like a ravenous wave.",
+  "difficulty": 10,
+  "thresholds": {
+    "major": 6,
+    "severe": 10
+  },
+  "hp": 6,
+  "stress": 2,
+  "attacks": [
+    {
+      "name": "Claws",
+      "modifier": -3,
+      "range": "Melee",
+      "damage": "1d8+2 physical"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Consume",
+    "obscure",
+    "swarm"
+  ],
+  "abilities": [
+    {
+      "name": "Horde (1d4+1)",
+      "kind": "Passive",
+      "description": "When the Swarm has marked half or more of their HP, their standard attack deals 1d4+1 physical damage instead."
+    },
+    {
+      "name": "In Your Face",
+      "kind": "Passive",
+      "description": "All targets within Melee range have disadvantage on attacks against targets other than the Swarm."
+    }
+  ],
+  "tags": [
+    "Beast"
+  ]
+}

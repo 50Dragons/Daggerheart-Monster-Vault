@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "entombed-skin-beetles",
+  "name": "Entombed Skin Beetles",
+  "type": "Beast",
+  "level": 2,
+  "tier": 2,
+  "role": "Horde",
+  "description": "Flesh-eating beetles that burrow beneath the skin.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 10,
+    "severe": 20
+  },
+  "hp": 5,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Pincers",
+      "modifier": 0,
+      "range": "Melee",
+      "damage": "2d8+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Tombs",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Carpet the ground",
+    "consume the living",
+    "crawl under clothing"
+  ],
+  "abilities": [
+    {
+      "name": "Horde (2d4+1)",
+      "kind": "Passive",
+      "description": "When the Beetles have marked half or more of their HP, their standard attack deals 2d4+1 physical damage instead."
+    },
+    {
+      "name": "Momentum",
+      "kind": "Passive",
+      "description": "When the Beetles make a successful attack against a PC, you gain a Fear."
+    },
+    {
+      "name": "Omophagous",
+      "kind": "Action",
+      "description": "Mark a HP to have 5 Beetles burrow under the skin of a PC within Melee range, forcing them to mark a Stress and Infecting them. While Infected, the target takes 6 direct physical damage every time they roll with Fear. This condition is cleared when the PC clears a HP or a Stress."
+    }
+  ],
+  "tags": [
+    "Beast"
+  ]
+}

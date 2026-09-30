@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "oak-treant",
+  "name": "Oak Treant",
+  "type": "Plant",
+  "level": 3,
+  "tier": 3,
+  "role": "Bruiser",
+  "description": "A sturdy animate old-growth tree.",
+  "difficulty": 17,
+  "thresholds": {
+    "major": 22,
+    "severe": 40
+  },
+  "hp": 7,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Branch",
+      "modifier": 2,
+      "range": "Very Close",
+      "damage": "3d8+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Forest Knowledge",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Hide in plain sight",
+    "preserve the forest",
+    "root down",
+    "swing branches"
+  ],
+  "abilities": [
+    {
+      "name": "Just a Tree",
+      "kind": "Passive",
+      "description": "Before they make their first attack in a fight or after they become Hidden, the Treant is indistinguishable from other trees until they next act or a PC succeeds on an Instinct Roll to identify them."
+    },
+    {
+      "name": "Seed Barrage",
+      "kind": "Action",
+      "description": "Mark a Stress and make an attack against up to three targets within Close range, pummeling them with giant acorns. Targets the Treant succeeds against take 2d10+5 physical damage."
+    },
+    {
+      "name": "Take Root",
+      "kind": "Action",
+      "description": "Mark a Stress to Root the Treant in place. The Treant is Restrained while Rooted, and can end this effect instead of moving while they are spotlighted. While Rooted, the Treant has resistance to physical damage."
+    }
+  ],
+  "tags": [
+    "Plant"
+  ]
+}

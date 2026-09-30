@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "crownstar-young",
+  "name": "Crownstar Dragon - Young",
+  "type": "Dragon",
+  "lineage": "Firmament",
+  "level": 3,
+  "tier": 2,
+  "role": "Solo",
+  "description": "Young Crownstar is a neutral-leaning firmament intelligent true dragon with ivory scales and orbiting star-like crown fragments. It seeks to judge how rulers carry authority. At this age it is an emerging but formidable predator.",
+  "difficulty": 16,
+  "thresholds": {
+    "major": 13,
+    "severe": 26
+  },
+  "hp": 9,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Regal Claws",
+      "modifier": 3,
+      "range": "Very Close",
+      "damage": "2d10+4 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Politics and Succession",
+      "modifier": 2
+    },
+    {
+      "name": "Commanding Presence",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Demand accountability",
+    "Pin challengers",
+    "Control the court"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (2)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 2 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Orbiting Crown",
+      "kind": "Passive",
+      "description": "The first ranged attack against the dragon each GM turn has disadvantage."
+    },
+    {
+      "name": "Coronal Breath",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 16. On a failure, take 2d8+4 magic damage and the target is driven to the ground and becomes Vulnerable until it next acts. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Firmament",
+    "Young",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "City",
+    "Palace"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "id": "hill-titan",
+  "name": "Hill Titan",
+  "type": "Giant",
+  "level": 2,
+  "tier": 2,
+  "role": "Solo",
+  "description": "A goliath clad in animal skins and surrounded by a swarm of insects.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 13,
+    "severe": 26
+  },
+  "hp": 10,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Tree Stump",
+      "modifier": 3,
+      "range": "Very Close",
+      "damage": "2d10+4 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Survival",
+      "modifier": 3
+    },
+    {
+      "name": "Vengeful",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Eat",
+    "make a mess",
+    "patrol stomping grounds"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The Titan can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight them."
+    },
+    {
+      "name": "Momentum",
+      "kind": "Passive",
+      "description": "When the Titan makes a successful attack against a PC, you gain a Fear."
+    },
+    {
+      "name": "Gullible",
+      "kind": "Passive",
+      "description": "PCs have advantage on action rolls to trick or emotionally manipulate the Titan."
+    },
+    {
+      "name": "Bug Swarm",
+      "kind": "Passive",
+      "description": "PCs are Vulnerable while within Very Close range."
+    },
+    {
+      "name": "Mighty Swing",
+      "kind": "Action",
+      "description": "Spend a Fear to make a standard attack against all targets within Very Close range."
+    }
+  ],
+  "tags": [
+    "Giant"
+  ]
+}

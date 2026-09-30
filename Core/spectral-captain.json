@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "id": "spectral-captain",
+  "name": "Spectral Captain",
+  "type": "Undead",
+  "level": 2,
+  "tier": 2,
+  "role": "Leader",
+  "description": "A ghostly commander leading their troops beyond death.",
+  "difficulty": 16,
+  "thresholds": {
+    "major": 13,
+    "severe": 26
+  },
+  "hp": 6,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Longbow",
+      "modifier": 3,
+      "range": "Far",
+      "damage": "2d10+3 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Ancient Knowledge",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Move through solid objects",
+    "rally troops",
+    "rehash old battles"
+  ],
+  "abilities": [
+    {
+      "name": "Ghost",
+      "kind": "Passive",
+      "description": "The Captain has resistance to physical damage. Mark a Stress to move up to Close range through solid objects."
+    },
+    {
+      "name": "Unending Battle",
+      "kind": "Action",
+      "description": "Spend 2 Fear to return up to 1d4+1 defeated Spectral allies to the battle at the points where they first appeared (with no marked HP or Stress)."
+    },
+    {
+      "name": "Hold Fast",
+      "kind": "Reaction",
+      "description": "When the Captain\u2019s Spectral allies are forced to make a reaction roll, you can mark a Stress to give those allies a +2 bonus to the roll."
+    },
+    {
+      "name": "Momentum",
+      "kind": "Reaction",
+      "description": "When the Captain makes a successful attack against a PC, you gain a Fear."
+    }
+  ],
+  "tags": [
+    "Undead"
+  ]
+}

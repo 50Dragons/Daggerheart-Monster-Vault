@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "hallowed-archer",
+  "name": "Hallowed Archer",
+  "type": "Celestial",
+  "level": 4,
+  "tier": 4,
+  "role": "Ranged",
+  "description": "Spirit soldiers with sanctified bows.",
+  "difficulty": 19,
+  "thresholds": {
+    "major": 25,
+    "severe": 45
+  },
+  "hp": 3,
+  "stress": 2,
+  "attacks": [
+    {
+      "name": "Sanctified Longbow",
+      "modifier": 4,
+      "range": "Far",
+      "damage": "4d8+8 physical"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Focus fire",
+    "obey",
+    "reposition",
+    "volley"
+  ],
+  "abilities": [
+    {
+      "name": "Punish the Guilty",
+      "kind": "Passive",
+      "description": "The Archer deals double damage to targets marked Guilty by a High Seraph."
+    },
+    {
+      "name": "Divine Volley",
+      "kind": "Action",
+      "description": "Mark a Stress to make a standard attack against up to three targets."
+    }
+  ],
+  "tags": [
+    "Celestial"
+  ]
+}

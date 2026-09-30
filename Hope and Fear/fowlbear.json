@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "fowlbear",
+  "name": "Fowlbear",
+  "type": "Monstrosity",
+  "level": 2,
+  "tier": 2,
+  "role": "Bruiser",
+  "description": "A grizzly bear with a feathery hide and the head of a giant goose.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 14,
+    "severe": 28
+  },
+  "hp": 7,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Goose Teeth & Bear Claws",
+      "modifier": 3,
+      "range": "Very Close",
+      "damage": "2d12+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Keen Senses",
+      "modifier": 3
+    },
+    {
+      "name": "Ponds",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Drive prey into an ambush",
+    "fight to the death",
+    "hunt in pairs"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (2)",
+      "kind": "Passive",
+      "description": "The Fowlbear can be spotlighted up to two times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Double Strike",
+      "kind": "Action",
+      "description": "Mark a Stress to make two standard attacks. If both attacks succeed against the same target, combine the damage."
+    },
+    {
+      "name": "Dread Honk",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Fowlbear unleash a terrifying, ear-splitting goose honk. Each PC within Close range must make a Presence Reaction Roll. Targets who fail must mark a Stress, move away from the Fowlbear to Far range, and become Vulnerable until the Fowlbear deals damage to them. Targets who succeed must mark a Stress or move away from the Fowlbear to Far range."
+    }
+  ],
+  "tags": [
+    "Monstrosity"
+  ]
+}

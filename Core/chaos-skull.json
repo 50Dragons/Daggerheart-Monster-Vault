@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "chaos-skull",
+  "name": "Chaos Skull",
+  "type": "Construct",
+  "level": 2,
+  "tier": 2,
+  "role": "Ranged",
+  "description": "A floating humanoid skull animated by scintillating magic.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 8,
+    "severe": 16
+  },
+  "hp": 5,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Energy Blast",
+      "modifier": 2,
+      "range": "Close",
+      "damage": "2d8+3 magic"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Cackle",
+    "consume magic",
+    "serve creator"
+  ],
+  "abilities": [
+    {
+      "name": "Levitation",
+      "kind": "Passive",
+      "description": "The Skull levitates several feet off the ground and can\u2019t be Restrained."
+    },
+    {
+      "name": "Wards",
+      "kind": "Passive",
+      "description": "The Skull is resistant to magic damage."
+    },
+    {
+      "name": "Magic Burst",
+      "kind": "Action",
+      "description": "Mark a Stress to make an attack against all targets within Close range. Targets the Skull succeeds against take 2d6+4 magic damage."
+    },
+    {
+      "name": "Siphon Magic",
+      "kind": "Action",
+      "description": "Spend a Fear to make an attack against a PC with a Spellcast trait within Very Close range. On a success, the target marks 1d4 Stress and the Skull clears that many Stress. Additionally, on a success, the Skull can immediately be spotlighted again."
+    }
+  ],
+  "tags": [
+    "Construct"
+  ]
+}

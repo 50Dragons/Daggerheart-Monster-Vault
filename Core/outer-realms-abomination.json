@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "outer-realms-abomination",
+  "name": "Outer Realms Abomination",
+  "type": "Aberration",
+  "level": 4,
+  "tier": 4,
+  "role": "Bruiser",
+  "description": "A chaotic mockery of life, constantly in flux.",
+  "difficulty": 19,
+  "thresholds": {
+    "major": 35,
+    "severe": 71
+  },
+  "hp": 7,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Massive Pseudopod",
+      "modifier": "+2d4",
+      "range": "Very Close",
+      "damage": "4d6+13 magic"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Demolish",
+    "devour",
+    "undermine"
+  ],
+  "abilities": [
+    {
+      "name": "Chaotic Form",
+      "kind": "Passive",
+      "description": "When the Abomination attacks, roll 2d4 and use the result as their attack modifier."
+    },
+    {
+      "name": "Disorienting Presence",
+      "kind": "Passive",
+      "description": "When a target takes damage from the Abomination, they must make an Instinct Reaction Roll. On a failure, they gain disadvantage on their next action roll and you gain a Fear."
+    },
+    {
+      "name": "Reality Quake",
+      "kind": "Action",
+      "description": "Spend a Fear to rattle the edges of reality within Far range of the Abomination. All targets within that area must succeed on a Knowledge Reaction Roll or become Unstuck from reality until the end of the scene. When an Unstuck target spends Hope or marks Armor Slots, HP, or Stress, they must double the amount spent or marked."
+    },
+    {
+      "name": "Unreal Form",
+      "kind": "Reaction",
+      "description": "When the Abomination takes damage, reduce it by 1d20. If the Abomination marks 1 or fewer Hit Points from a successful attack against them, you gain a Fear."
+    }
+  ],
+  "tags": [
+    "Aberration"
+  ]
+}

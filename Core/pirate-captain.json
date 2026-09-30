@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "pirate-captain",
+  "name": "Pirate Captain",
+  "type": "Humanoid",
+  "level": 1,
+  "tier": 1,
+  "role": "Leader",
+  "description": "A charismatic sea dog with an impressive hat, eager to raid and plunder.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 7,
+    "severe": 14
+  },
+  "hp": 7,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Cutlass",
+      "modifier": 4,
+      "range": "Melee",
+      "damage": "1d12+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Commander",
+      "modifier": 2
+    },
+    {
+      "name": "Sailor",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Command",
+    "make \u2019em walk the plank",
+    "plunder",
+    "raid"
+  ],
+  "abilities": [
+    {
+      "name": "Swashbuckler",
+      "kind": "Passive",
+      "description": "When the Captain marks 2 or fewer HP from an attack within Melee range, the attacker must mark a Stress."
+    },
+    {
+      "name": "Reinforcements",
+      "kind": "Action",
+      "description": "Once per scene, mark a Stress to summon a Pirate Raiders Horde, which appears at Far range."
+    },
+    {
+      "name": "No Quarter",
+      "kind": "Action",
+      "description": "Spend a Fear to choose a target who has three or more Pirates within Melee range of them. The Captain leads the Pirates in hurling threats and promises of a watery grave. The target must make a Presence Reaction Roll. On a failure, the target marks 1d4+1 Stress. On a success, they must mark a Stress."
+    },
+    {
+      "name": "Momentum",
+      "kind": "Reaction",
+      "description": "When the Captain makes a successful attack against a PC, you gain a Fear."
+    }
+  ],
+  "tags": [
+    "Humanoid"
+  ]
+}

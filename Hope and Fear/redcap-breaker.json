@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "redcap-breaker",
+  "name": "Redcap Breaker",
+  "type": "Fey",
+  "level": 1,
+  "tier": 1,
+  "role": "Bruiser",
+  "description": "A large, brutish fey creature who has a conical red cap sealed on their head with candle wax.",
+  "difficulty": 13,
+  "thresholds": {
+    "major": 8,
+    "severe": 15
+  },
+  "hp": 6,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Wooden Mallet",
+      "modifier": 1,
+      "range": "Melee",
+      "damage": "1d12+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Bones",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Beat chest and bellow",
+    "ragdoll puny enemies",
+    "rush forward recklessly"
+  ],
+  "abilities": [
+    {
+      "name": "Backbreaker",
+      "kind": "Action",
+      "description": "Mark a Stress to make an attack against a target within Melee range. On a success, deal 3d4+10 physical damage. A target who marks HP from this attack is Restrained until they clear a HP."
+    },
+    {
+      "name": "Kneecapper",
+      "kind": "Reaction",
+      "description": "When the Breaker makes a successful standard attack, you can spend a Fear to make the target temporarily Vulnerable."
+    }
+  ],
+  "tags": [
+    "Fey"
+  ]
+}

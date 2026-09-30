@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "upscale-casino",
+  "name": "Upscale Casino",
+  "type": "Social",
+  "level": 3,
+  "tier": 3,
+  "description": "A glittering gambling hall where well-heeled merchants and nobles come to fritter away their fortunes.",
+  "difficulty": 16,
+  "impulses": [
+    "Dangle the jackpot just out of reach",
+    "dazzle them with spectacle",
+    "prey on their vices"
+  ],
+  "potentialAdversaries": [
+    "Automated Security (Vault Guardians)",
+    "Gamblers (Courtesan, Merchant Baron, Petty Noble, Spy)"
+  ],
+  "features": [
+    {
+      "name": "Glitz & Glamor",
+      "kind": "Passive",
+      "description": "The overwhelming spectacle of this place can entrance even the most jaded patron. While here, all PCs have disadvantage on reaction rolls caused by a staffmember or regular patron of the casino. What\u2019s so wondrous about the casino\u2019s trappings? Are they truly magical in nature or merely mundane wonders taken to an impossible extreme?"
+    },
+    {
+      "name": "Fortune Favors the Bold",
+      "kind": "Passive",
+      "description": "Once per long rest, a PC can gamble any amount of gold by stating how much they want to wager and rolling their Hope Die. On a result of 7 or higher, the PC wins an equal amount, doubling their money. On a result of 6 or lower, they lose it all.",
+      "prompt": "What game does the PC choose to play? What house rules does this casino have? Is there anything besides gold the PCs are willing to risk?"
+    },
+    {
+      "name": "The House Always Wins",
+      "kind": "Reaction",
+      "description": "",
+      "prompt": "When an adversary fails a roll, you can spend a Fear to make it a success instead. Is this place blessed with impossible fortune, or does something curse anyone who steps through its doors?"
+    },
+    {
+      "name": "Automated Security",
+      "kind": "Reaction",
+      "description": "",
+      "prompt": "When a PC attempts to cheat at a game in the casino and fails, they must mark a Stress as they activate the casino\u2019s mechanical security detail. Gain a Fear and summon one Vault Guardian Gaoler and Turret for each PC, plus a Vault Guardian Sentinel. All adversaries appear within Far range of the PCs, and the Vault Guardian Sentinel immediately takes the spotlight. Who built these machines? Why are they preferable to living beings?"
+    },
+    {
+      "name": "The Devil\u2019s Playground",
+      "kind": "Reaction",
+      "description": "If the PCs defeat the casino\u2019s automated security or try to leave with stolen winnings, you can spend an amount of Fear equal to the number of PCs to summon the casino\u2019s true owner, a Demon of Avarice, within Close range of a PC. The Demon is immediately spotlighted and bars the party\u2019s exit at all costs.",
+      "prompt": "How did the demon mask their influence until now? How does the casino itself change to reveal its true nature? VOLCANIC ERUPTION"
+    }
+  ]
+}

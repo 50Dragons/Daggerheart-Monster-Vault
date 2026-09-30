@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "tiny-red-ooze",
+  "name": "Tiny Red Ooze",
+  "type": "Ooze",
+  "level": 1,
+  "tier": 1,
+  "role": "Skulk",
+  "description": "A small moving mound of translucent flaming red slime",
+  "difficulty": 11,
+  "thresholds": {
+    "major": 5,
+    "severe": "None"
+  },
+  "hp": 2,
+  "stress": 1,
+  "attacks": [
+    {
+      "name": "Ooze Appendage",
+      "modifier": -1,
+      "range": "Melee",
+      "damage": "1d4+2 magic"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Blaze",
+    "camouflage"
+  ],
+  "abilities": [
+    {
+      "name": "Burning",
+      "kind": "Reaction",
+      "description": "When a creature within Melee range deals damage to the Ooze, they take 1d6 direct magic damage"
+    }
+  ],
+  "tags": [
+    "Ooze"
+  ]
+}

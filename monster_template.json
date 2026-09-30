@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "unique-id",
+  "name": "Monster Name",
+  "type": "Creature Type",
+  "lineage": "Optional lineage",
+  "level": 1,
+  "tier": 1,
+  "role": "Standard",
+  "description": "Short description.",
+  "difficulty": 12,
+  "thresholds": {
+    "major": 6,
+    "severe": 12
+  },
+  "hp": 5,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Attack Name",
+      "modifier": 2,
+      "range": "Melee",
+      "damage": "1d8+2 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Example Experience",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Pressure the closest target",
+    "Protect allies"
+  ],
+  "abilities": [
+    {
+      "name": "Ability Name",
+      "kind": "Action",
+      "description": "Describe the feature here. Dice such as 2d6+3 become clickable automatically."
+    }
+  ],
+  "tags": [
+    "Example"
+  ],
+  "biome": [
+    "Any"
+  ],
+  "pools": [],
+  "evolutions": []
+}

@@ -1,0 +1,82 @@
+{
+  "currentSource": "core",
+  "encounter": [
+    {
+      "copies": [
+        {
+          "evolutions": {},
+          "hp": 0,
+          "stress": 0
+        }
+      ],
+      "file": "cocoon-of-the-third-sister.json",
+      "id": "cocoon-of-the-third-sister",
+      "name": "Cocoon of the Third Sister",
+      "sourceKey": "custom"
+    },
+    {
+      "copies": [
+        {
+          "evolutions": {},
+          "hp": 7,
+          "stress": 4
+        }
+      ],
+      "file": "secret-keeper.json",
+      "id": "secret-keeper",
+      "name": "Secret-Keeper",
+      "sourceKey": "core"
+    }
+  ],
+  "fileType": "Astrellon Monster Vault Encounter",
+  "initiative": [
+    {
+      "name": "",
+      "order": 0,
+      "value": ""
+    },
+    {
+      "name": "",
+      "order": 1,
+      "value": ""
+    },
+    {
+      "name": "",
+      "order": 2,
+      "value": ""
+    },
+    {
+      "name": "",
+      "order": 3,
+      "value": ""
+    },
+    {
+      "name": "",
+      "order": 4,
+      "value": ""
+    },
+    {
+      "name": "",
+      "order": 5,
+      "value": ""
+    },
+    {
+      "name": "",
+      "order": 6,
+      "value": ""
+    },
+    {
+      "name": "",
+      "order": 7,
+      "value": ""
+    }
+  ],
+  "pools": {},
+  "savedAt": "Mon Sep 28 2026 11:50:28 GMT-0400 (Eastern Daylight Time)",
+  "schemaVersion": 1,
+  "trackerMode": "remaining",
+  "view": {
+    "initiativeVisible": true,
+    "massiveDamageVisible": true
+  }
+}

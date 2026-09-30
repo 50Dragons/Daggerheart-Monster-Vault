@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "entombed-necropriest",
+  "name": "Entombed Necropriest",
+  "type": "Undead",
+  "level": 2,
+  "tier": 2,
+  "role": "Support",
+  "description": "A necromancer charged with preserving the empress\u2019s life beyond death.",
+  "difficulty": 13,
+  "thresholds": {
+    "major": 8,
+    "severe": 16
+  },
+  "hp": 3,
+  "stress": 7,
+  "attacks": [
+    {
+      "name": "Death Bolt",
+      "modifier": 2,
+      "range": "Far",
+      "damage": "2d6+2 magic"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Dark Magic",
+      "modifier": 4
+    },
+    {
+      "name": "Protect",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Boost allies",
+    "conquer time",
+    "hold down enemies",
+    "serve the empress",
+    "wield death as a weapon"
+  ],
+  "abilities": [
+    {
+      "name": "Invigorate",
+      "kind": "Action",
+      "description": "Mark a Stress to choose up to three allies within Far range. Each one gains advantage on their next attack roll."
+    },
+    {
+      "name": "Last Grasp",
+      "kind": "Action",
+      "description": "Spend a Fear to choose a PC within Far range. Skeletal hands burst out of the ground at the PC\u2019s feet and Restrain them until the PC breaks free with a successful Strength Roll. When a target Restrained in this way spends Hope, you gain a Fear."
+    },
+    {
+      "name": "Chill Touch",
+      "kind": "Action",
+      "description": "Mark a Stress to make a standard attack against a target within Melee range. On a success, the target takes standard damage and must mark 1d4 Stress. If the target marks their last Stress from this attack, you gain a Fear."
+    }
+  ],
+  "tags": [
+    "Undead"
+  ]
+}

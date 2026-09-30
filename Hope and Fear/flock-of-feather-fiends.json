@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "flock-of-feather-fiends",
+  "name": "Flock Of Feather Fiends",
+  "type": "Undead",
+  "level": 2,
+  "tier": 2,
+  "role": "Horde",
+  "description": "A flock of undead crow corpses, eyes aglow with necroplasmic light.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 10,
+    "severe": 20
+  },
+  "hp": 5,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Peck and Claw",
+      "modifier": 0,
+      "range": "Melee",
+      "damage": "2d6+2 magic"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Fly",
+      "modifier": 2
+    },
+    {
+      "name": "Swarm",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Caw incessantly",
+    "claw faces",
+    "flutter through the air",
+    "peck eyes"
+  ],
+  "abilities": [
+    {
+      "name": "Horde (1d6+1)",
+      "kind": "Passive",
+      "description": "When the Flock has marked half or more of its HP, its standard attack deals 1d6+1 magic damage instead."
+    },
+    {
+      "name": "Maddening Cacophony",
+      "kind": "Action",
+      "description": "Mark a Stress to force each PC within Very Close range to make an Instinct Reaction Roll. Targets who fail must spend a Hope or become Vulnerable until they deal damage to the Flock or the Flock is defeated."
+    }
+  ],
+  "tags": [
+    "Undead"
+  ]
+}

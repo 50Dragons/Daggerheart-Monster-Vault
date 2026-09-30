@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "redcap-butcher",
+  "name": "Redcap Butcher",
+  "type": "Fey",
+  "level": 1,
+  "tier": 1,
+  "role": "Standard",
+  "description": "A halfling-sized fey creature who hacks their victims apart with a variety of cutting implements. They wear a conical red hat sealed on their head with candle wax.",
+  "difficulty": 12,
+  "thresholds": {
+    "major": 5,
+    "severe": 10
+  },
+  "hp": 4,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Meat Cleaver",
+      "modifier": 1,
+      "range": "Melee",
+      "damage": "1d8+1 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Scurry",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Grin disconcertingly",
+    "hack and slash",
+    "scramble"
+  ],
+  "abilities": [
+    {
+      "name": "Chop Happy",
+      "kind": "Action",
+      "description": "Mark a Stress to make a standard attack against up to three targets. For each target who marks HP, you gain a Fear."
+    },
+    {
+      "name": "Knife Thrower",
+      "kind": "Action",
+      "description": "Mark a Stress to make a standard attack against a target within Far range. If the Butcher is Hidden, they make the attack with advantage."
+    }
+  ],
+  "tags": [
+    "Fey"
+  ]
+}

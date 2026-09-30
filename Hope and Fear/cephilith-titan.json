@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "id": "cephilith-titan",
+  "name": "Cephilith Titan",
+  "type": "Aberration",
+  "level": 4,
+  "tier": 4,
+  "role": "Solo",
+  "description": "A transdimensional entity in the form of an impossibly large, winged humanoid with an octopus-shaped head and rows of glowing eyes.",
+  "difficulty": 20,
+  "thresholds": {
+    "major": 38,
+    "severe": 68
+  },
+  "hp": 10,
+  "stress": 10,
+  "attacks": [
+    {
+      "name": "Pseudoclaw",
+      "modifier": 8,
+      "range": "Close",
+      "damage": "4d8+10 magic"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Chaos",
+      "modifier": 5
+    },
+    {
+      "name": "Psychic",
+      "modifier": 5
+    }
+  ],
+  "motivesTactics": [
+    "Call and consume followers",
+    "corrupt reality",
+    "invade the Mortal Realm",
+    "spew forth chaos"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (X)",
+      "kind": "Passive",
+      "description": "The Titan can be spotlighted up to X times per GM turn, where X equals the number of PCs in the scene. Spend Fear as usual to spotlight them."
+    },
+    {
+      "name": "Terrifying",
+      "kind": "Passive",
+      "description": "When the Titan makes a successful attack, all PCs within Close range lose a Hope, and you gain a Fear."
+    },
+    {
+      "name": "Merely a Projection",
+      "kind": "Passive",
+      "description": "The Titan appears in the Mortal Realm as a psychic projection approximating their true form. They have immunity to physical damage and resistance to magic damage."
+    },
+    {
+      "name": "Psychic Scream",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Titan unleash a mind-shattering onslaught of nightmarish visions from the Outer Realms. Each PC within Far range must make an Instinct Reaction Roll (22). Targets who fail take 4d12 direct magic damage. Targets who succeed must mark a Stress."
+    },
+    {
+      "name": "Summon Worshippers",
+      "kind": "Action",
+      "description": "Spend a Fear to summon 1d4 Cephilith Abominations, which appear within Far range, then choose one to immediately spotlight."
+    },
+    {
+      "name": "\u201cIt\u2019s Here\u2026\u201d",
+      "kind": "Evolution",
+      "description": "When the Titan has marked half their HP, they manifest in their full form, clearing all HP and losing the \u201cMerely a Projection\u201d feature. While the Titan is in this form, a creature who marks HP from the Titan\u2019s standard attack must mark an additional HP."
+    }
+  ],
+  "tags": [
+    "Aberration"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "riftglass-young",
+  "name": "Riftglass Dragon - Young",
+  "type": "Dragon",
+  "lineage": "Eclipsed",
+  "level": 3,
+  "tier": 2,
+  "role": "Solo",
+  "description": "Young Riftglass is a evil-leaning eclipsed intelligent true dragon with fractured violet crystal plates reflecting unreal lives. It seeks to turn certainty into contradiction. At this age it is an emerging but formidable predator.",
+  "difficulty": 16,
+  "thresholds": {
+    "major": 13,
+    "severe": 26
+  },
+  "hp": 9,
+  "stress": 6,
+  "attacks": [
+    {
+      "name": "Crystal Claws",
+      "modifier": 3,
+      "range": "Very Close",
+      "damage": "2d10+4 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Rift Phenomena",
+      "modifier": 2
+    },
+    {
+      "name": "Impossible Reflections",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Confuse positions",
+    "Fracture certainty",
+    "Target isolated minds"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (2)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 2 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "False Reflection",
+      "kind": "Passive",
+      "description": "The first attack against the dragon each GM turn has disadvantage."
+    },
+    {
+      "name": "Refraction Breath",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 16. On a failure, take 2d8+4 magic damage and the dragon moves the target to another visible place within Very Close range. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Eclipsed",
+    "Young",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Rift",
+    "Ruins"
+  ]
+}

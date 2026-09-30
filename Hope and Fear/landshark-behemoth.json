@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "landshark-behemoth",
+  "name": "Landshark Behemoth",
+  "type": "Monstrosity",
+  "level": 2,
+  "tier": 2,
+  "role": "Solo",
+  "description": "A landshark that\u2019s lived long enough to become a large burrowing monstrosity with steely hide and razor-sharp teeth.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 15,
+    "severe": 28
+  },
+  "hp": 10,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Toothy Maw",
+      "modifier": 2,
+      "range": "Very Close",
+      "damage": "2d12+6 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Subterranean",
+      "modifier": 4
+    },
+    {
+      "name": "Bloodthirsty",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Bite",
+    "burrow",
+    "burst out of the ground"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The Behemoth can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Deep Diver",
+      "kind": "Passive",
+      "description": "The Behemoth can move through the ground as easily as over it. When the Behemoth moves, it can choose to burrow or surface. While underground, the Behemoth is immune to damage but can\u2019t attack."
+    },
+    {
+      "name": "Steel-Skinned",
+      "kind": "Passive",
+      "description": "All damage dealt to the Behemoth is reduced by one threshold."
+    },
+    {
+      "name": "Forceful Eruption",
+      "kind": "Action",
+      "description": "The Behemoth erupts from the ground, forcing each PC within Very Close range to succeed on an Agility Reaction Roll or be knocked over, becoming Vulnerable until they make an action roll. For each PC made Vulnerable in this way, you gain a Fear."
+    }
+  ],
+  "tags": [
+    "Monstrosity"
+  ]
+}

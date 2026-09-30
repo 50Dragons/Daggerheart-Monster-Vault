@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "aethermaw-young",
+  "name": "Aethermaw Linnorm - Young",
+  "type": "Linnorm",
+  "lineage": "Worldborn Linnorm",
+  "level": 3,
+  "tier": 2,
+  "role": "Solo",
+  "description": "Young Aethermaw is a chaotic, instinct-driven worldborn linnorm clever, wingless, non-humanoid linnorm with armoured black plates and translucent cyan aether-sensing organs. It seeks to feed on concentrated aether in the deep. At this age it is an emerging but formidable predator.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 14,
+    "severe": 28
+  },
+  "hp": 10,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Armoured Bite",
+      "modifier": 3,
+      "range": "Very Close",
+      "damage": "2d10+4 physical",
+      "description": "The linnorm strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Deep-Sea Hunting",
+      "modifier": 2
+    },
+    {
+      "name": "Aether Scent",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Target engines",
+    "Crush hulls",
+    "Pursue aether trails"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (2)",
+      "kind": "Passive",
+      "description": "The linnorm can be spotlighted up to 2 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Aether Scent",
+      "kind": "Passive",
+      "description": "The linnorm senses the direction of active concentrated aether within Far range, even through water or a ship’s hull."
+    },
+    {
+      "name": "Scalding Brine",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 15. On a failure, take 2d8+4 physical damage and the target marks 1 Stress from scalding brine and shell shards. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the linnorm marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Worldborn Linnorm",
+    "Young",
+    "Epic",
+    "Solo",
+    "Linnorm"
+  ],
+  "biome": [
+    "Deep Sea",
+    "Aquatic"
+  ]
+}

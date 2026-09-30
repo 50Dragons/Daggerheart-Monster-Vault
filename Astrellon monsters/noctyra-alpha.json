@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "noctyra-alpha",
+  "name": "Noctyra Alpha",
+  "type": "Beast",
+  "level": 2,
+  "tier": 2,
+  "role": "Leader",
+  "description": "A ghostly commander leading their troops beyond death.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 13,
+    "severe": 24
+  },
+  "hp": 6,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Great Talons & Beak",
+      "modifier": 3,
+      "range": "Melee",
+      "damage": "2d8+4 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Apex Night Hunter",
+      "modifier": 3
+    },
+    {
+      "name": "Wild Magic",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Move through solid objects",
+    "Rally troops",
+    "Rehash old battles"
+  ],
+  "abilities": [
+    {
+      "name": "Silent Flight (2)",
+      "kind": "Passive",
+      "description": "While flying, the Noctyra Alpha gains +2 Difficulty."
+    },
+    {
+      "name": "Command the Hunt",
+      "kind": "Action",
+      "description": "When the Alpha is spotlighted, mark a Stress to also spotlight up to two Noctyra within Close range, one at a time. Each can move and take an action."
+    },
+    {
+      "name": "Blackbriar Snare",
+      "kind": "Reaction",
+      "description": "Choose a point within Close range. Targets within Very Close range make an Agility Reaction Roll (15). Failure: 2d8+3 magic damage and Restrained. Success: Half damage. Restrained targets escape with a Strength or Agility Roll (15)."
+    },
+    {
+      "name": "Flyby Assault",
+      "kind": "Action",
+      "description": "Choose a target within Far range and make an attack. Success: Deal 2d10+8 physical damage. The target makes an Agility Reaction Roll (15). Success: Alpha ends anywhere within Far range. Failure: Target becomes Restrained and is carried with the Alpha to anywhere within Far range. A carried target escapes with a Strength or Agility Roll (15). If released while airborne, they take 1d12+5 physical damage from the fall unless they prevent it."
+    }
+  ],
+  "tags": [
+    "Beast"
+  ]
+}

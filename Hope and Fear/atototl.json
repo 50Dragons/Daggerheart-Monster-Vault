@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "atototl",
+  "name": "Atototl",
+  "type": "Beast",
+  "level": 1,
+  "tier": 1,
+  "role": "Standard",
+  "description": "A majestic green water bird that has a ten-foot wingspan and is hunted for the fortune-telling stone inside their stomach.",
+  "difficulty": 12,
+  "thresholds": {
+    "major": 8,
+    "severe": 12
+  },
+  "hp": 5,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Talons",
+      "modifier": 1,
+      "range": "Melee",
+      "damage": "1d8+1 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Flight",
+      "modifier": 3
+    },
+    {
+      "name": "Jungles",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Avoid",
+    "escape",
+    "misdirect"
+  ],
+  "abilities": [
+    {
+      "name": "Wind Lord",
+      "kind": "Passive",
+      "description": "While the Atototl is flying, attacks against it is made with disadvantage."
+    },
+    {
+      "name": "Stone of Omens",
+      "kind": "Passive",
+      "description": "Inside the Atototl is a stone that foretells good or ill fortune, depending on its color. A PC who searches the Atototl\u2019s remains finds the stone and makes a fate roll. On an even result, the PC gains Hope equal to half the result, which they can distribute among the PCs however they wish. On an odd result, you gain Fear equal to half the result."
+    },
+    {
+      "name": "Archer\u2019s Bane",
+      "kind": "Reaction",
+      "description": "When a creature beyond Very Close range would deal damage to the Atototl with a weapon attack, you can spend a Fear to make an attack roll against them. On a success, whirling winds reflect the attack and deal the attacker\u2019s damage back to them."
+    }
+  ],
+  "tags": [
+    "Beast"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "catrin",
+  "name": "Catrin",
+  "type": "Social",
+  "level": 3,
+  "tier": 3,
+  "role": "Social",
+  "description": "A lavishly adorned skeleton that has an endless appetite for gold.",
+  "difficulty": 17,
+  "thresholds": {
+    "major": 20,
+    "severe": 32
+  },
+  "hp": 5,
+  "stress": 6,
+  "attacks": [
+    {
+      "name": "Spirit Flame",
+      "modifier": 3,
+      "range": "Far",
+      "damage": "3d8+5 mag"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Opulence",
+      "modifier": 2
+    },
+    {
+      "name": "Storyteller",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Dominate the conversation",
+    "seek attention",
+    "steal everything"
+  ],
+  "abilities": [
+    {
+      "name": "Attracted to Wealth",
+      "kind": "Passive",
+      "description": "PCs carrying at least a bag of gold gain advantage on Presence Rolls made to influence the Catrin."
+    },
+    {
+      "name": "The Weight of Opulence",
+      "kind": "Action",
+      "description": "Spend a Fear to turn the Catrin\u2019s gaze toward the PC carrying the most gold. The target must succeed on an Instinct Reaction Roll or lose a Hope for each bag of gold they\u2019re carrying. If the PC loses their last Hope or has no Hope to lose, they mark Stress instead."
+    },
+    {
+      "name": "Expensive Failure",
+      "kind": "Reaction",
+      "description": "When a PC within Melee range fails an action roll, you can mark a Stress to have the Catrin brazenly steal a handful of gold from them."
+    }
+  ],
+  "tags": [
+    "Social"
+  ]
+}

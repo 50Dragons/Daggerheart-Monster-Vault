@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "wyvern",
+  "name": "Wyvern",
+  "type": "Dragon",
+  "level": 3,
+  "tier": 3,
+  "role": "Standard",
+  "description": "A two-legged dragon that flies from its mountaintop aerie to devour livestock.",
+  "difficulty": 16,
+  "thresholds": {
+    "major": 18,
+    "severe": 35
+  },
+  "hp": 7,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Teeth & Claws",
+      "modifier": 2,
+      "range": "Very Close",
+      "damage": "3d8+5 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Death from Above",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Cast a long shadow",
+    "snatch and grab",
+    "wheel through the air"
+  ],
+  "abilities": [
+    {
+      "name": "Double Strike",
+      "kind": "Action",
+      "description": "Mark a Stress to have the Wyvern make two standard attacks. If both attacks succeed against the same target, combine the damage."
+    },
+    {
+      "name": "Terrifying Shriek",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Wyvern let out a spine-chilling screech. All PCs within Far range are Terrified until they succeed on a Presence Roll (18) to clear the condition or the Wyvern is defeated. While Terrified, a PC doesn\u2019t gain a Hope when they roll with Hope."
+    },
+    {
+      "name": "Clutch",
+      "kind": "Reaction",
+      "description": "When the Wyvern makes a successful attack against a PC, you can spend a Fear to have the Wyvern Restrain the target in its claws until the PC succeeds on a Strength Roll (18) or the Wyvern takes Major or greater damage. While Restrained in this way, the PC has disadvantage on attack rolls."
+    }
+  ],
+  "tags": [
+    "Dragon"
+  ]
+}

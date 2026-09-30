@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "cairnspine-adult",
+  "name": "Cairnspine Linnorm - Adult",
+  "type": "Linnorm",
+  "lineage": "Worldborn Linnorm",
+  "level": 6,
+  "tier": 3,
+  "role": "Solo",
+  "description": "Adult Cairnspine is a chaotic, instinct-driven worldborn linnorm clever, wingless, non-humanoid linnorm with granite-coloured scales and high slate spines. It seeks to keep mountain slopes stable through controlled rockfalls. At this age it is a commanding force in its territory.",
+  "difficulty": 18,
+  "thresholds": {
+    "major": 26,
+    "severe": 45
+  },
+  "hp": 15,
+  "stress": 6,
+  "attacks": [
+    {
+      "name": "Stonebreaking Jaws",
+      "modifier": 5,
+      "range": "Very Close",
+      "damage": "3d10+5 physical",
+      "description": "The linnorm strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Mountain Paths",
+      "modifier": 3
+    },
+    {
+      "name": "Rockfall Sense",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Hold high ground",
+    "Cause rockfalls",
+    "Break drills"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The linnorm can be spotlighted up to 3 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Cliff-Grip",
+      "kind": "Passive",
+      "description": "The linnorm climbs sheer rock without slowing and cannot be knocked from a cliff by ordinary movement."
+    },
+    {
+      "name": "Concussive Roar",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 18. On a failure, take 3d8+6 physical damage and the target is knocked back to Close range by gravel and slate. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Spine Sweep",
+      "kind": "Action",
+      "description": "Mark a Stress. Make an attack against every enemy within Very Close range. Each success deals 3d8+6 physical damage and the target marks 1 Stress."
+    },
+    {
+      "name": "Stonewall Stance",
+      "kind": "Reaction",
+      "description": "When the linnorm takes physical damage while touching rock, mark a Stress to reduce that instance of damage by 2d8."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the linnorm marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Worldborn Linnorm",
+    "Adult",
+    "Epic",
+    "Solo",
+    "Linnorm"
+  ],
+  "biome": [
+    "Mountains",
+    "Cliffs"
+  ]
+}

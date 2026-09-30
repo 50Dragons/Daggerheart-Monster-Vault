@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "fallen-sorcerer",
+  "name": "Fallen Sorcerer",
+  "type": "Fiend",
+  "level": 4,
+  "tier": 4,
+  "role": "Support",
+  "description": "A powerful mage bound by the bargains they made in life.",
+  "difficulty": 19,
+  "thresholds": {
+    "major": 26,
+    "severe": 42
+  },
+  "hp": 6,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Corrupted Staff",
+      "modifier": 4,
+      "range": "Far",
+      "damage": "4d6+10 magic"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Ancient Knowledge",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Acquire",
+    "dishearten",
+    "dominate",
+    "torment"
+  ],
+  "abilities": [
+    {
+      "name": "Conflagration",
+      "kind": "Action",
+      "description": "Spend a Fear to unleash an all-consuming firestorm and make an attack against all targets within Close range. Targets the Sorcerer succeeds against take 2d10+6 direct magic damage."
+    },
+    {
+      "name": "Nightmare Tableau",
+      "kind": "Action",
+      "description": "Mark a Stress to trap a target within Far range in a powerful illusion of their worst fears. While trapped, the target is Restrained and Vulnerable until they break free, ending both conditions, with a successful Instinct Roll."
+    },
+    {
+      "name": "Slippery",
+      "kind": "Reaction",
+      "description": "When the Sorcerer takes damage from an attack, they can teleport up to Far range."
+    },
+    {
+      "name": "Shackles of Guilt",
+      "kind": "Reaction",
+      "description": "Countdown (Loop 2d6). When the Sorcerer is in the spotlight for the first time, activate the countdown. When it triggers, all targets within Far range become Vulnerable and must mark a Stress as they relive their greatest regrets. A target can break free from their regret with a successful Presence or Strength Roll. When a PC fails to break free, they lose a Hope."
+    }
+  ],
+  "tags": [
+    "Fiend"
+  ]
+}

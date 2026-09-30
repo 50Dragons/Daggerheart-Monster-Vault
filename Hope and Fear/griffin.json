@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "id": "griffin",
+  "name": "Griffin",
+  "type": "Monstrosity",
+  "level": 4,
+  "tier": 4,
+  "role": "Standard",
+  "description": "A large leonine creature that has the head, talons, and wings of an eagle.",
+  "difficulty": 18,
+  "thresholds": {
+    "major": 30,
+    "severe": 45
+  },
+  "hp": 6,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Beak & Talons",
+      "modifier": 4,
+      "range": "Very Close",
+      "damage": "4d8+4 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Riches",
+      "modifier": 5
+    },
+    {
+      "name": "Keen Senses",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Hunt",
+    "look for an opening",
+    "swoop"
+  ],
+  "abilities": [
+    {
+      "name": "Treasure Hoarder",
+      "kind": "Passive",
+      "description": "When a PC would mark any number of HP from the Griffin\u2019s attack, the PC can choose instead to give the Griffin an equal number of bags of gold."
+    },
+    {
+      "name": "Swooping Slash",
+      "kind": "Action",
+      "description": "Move up to Far range and make a standard attack against a target along the way."
+    }
+  ],
+  "tags": [
+    "Monstrosity"
+  ]
+}

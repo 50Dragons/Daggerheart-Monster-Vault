@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "mother-cordyceps",
+  "name": "Mother Cordyceps",
+  "type": "Fungril",
+  "level": 2,
+  "tier": 2,
+  "role": "Solo",
+  "description": "A warped Fungril hag covered in black-purple fungal stalks. Her mycelium spreads through the mud beneath the entire clearing.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 14,
+    "severe": 26
+  },
+  "hp": 9,
+  "stress": 6,
+  "attacks": [
+    {
+      "name": "Claws",
+      "modifier": 3,
+      "range": "Melee",
+      "damage": "2d10+5 magic"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Forest Knowledge",
+      "modifier": 3
+    },
+    {
+      "name": "Mycology",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Control",
+    "infect",
+    "restrain",
+    "command beasts",
+    "protect the Cocoon"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless",
+      "kind": "Action",
+      "description": "Mother Cordyceps can be spotlighted up to twice per GM turn. Spend Fear as usual."
+    },
+    {
+      "name": "Creeping Mycelium",
+      "kind": "Action",
+      "description": "Spend a Fear and choose a point within Far range. All enemies within Very Close range of that point must make an Agility Reaction Roll (14). On a failure, they become Restrained."
+    },
+    {
+      "name": "Infesting Strike",
+      "kind": "Action",
+      "description": "Make an attack against a target within Very Close range. On a success, deal 2d8+4 magic damage and the target becomes Infected. The next time an Infected target rolls with Fear, they must mark a Stress, then the infection ends."
+    },
+    {
+      "name": "Hunt Them",
+      "kind": "Action",
+      "description": "Mark a Stress to immediately spotlight one Hagbeast without spending Fear."
+    },
+    {
+      "name": "Protect the Brood",
+      "kind": "Reaction",
+      "description": "When the Cocoon takes damage from a PC within Close range, Mother Cordyceps may mark a Stress to move into Melee range of that PC and make a standard attack against them."
+    }
+  ],
+  "tags": [
+    "Fungril",
+    "Hag"
+  ]
+}

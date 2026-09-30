@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "fallen-shock-troop",
+  "name": "Fallen Shock Troop",
+  "type": "Undead",
+  "level": 4,
+  "tier": 4,
+  "role": "Minion",
+  "description": "A cursed soul bound to the Fallen\u2019s will.",
+  "difficulty": 18,
+  "thresholds": "None",
+  "hp": 1,
+  "stress": 1,
+  "attacks": [
+    {
+      "name": "Cursed Axe",
+      "modifier": 2,
+      "range": "Very Close",
+      "damage": "12 physical"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Crush",
+    "dominate",
+    "earn relief",
+    "punish"
+  ],
+  "abilities": [
+    {
+      "name": "Minion (12)",
+      "kind": "Passive",
+      "description": "The Shock Troop is defeated when they take any damage. For every 12 damage a PC deals to the Shock Troop, defeat an additional Minion within range the attack would succeed against."
+    },
+    {
+      "name": "Aura of Doom",
+      "kind": "Passive",
+      "description": "When a PC marks HP from an attack by the Shock Troop, they lose a Hope."
+    },
+    {
+      "name": "Group Attack",
+      "kind": "Action",
+      "description": "Spend a Fear to choose a target and spotlight all Fallen Shock Troops within Close range of them. Those Minions move into Melee range of the target and make one shared attack roll. On a success, they deal 12 physical damage each. Combine this damage."
+    }
+  ],
+  "tags": [
+    "Undead"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "verdant-adult",
+  "name": "Verdant Dragon - Adult",
+  "type": "Dragon",
+  "lineage": "Covenant",
+  "level": 6,
+  "tier": 3,
+  "role": "Solo",
+  "description": "Adult Verdant is a good-leaning covenant intelligent true dragon with moss and verdigris over ancient copper scales. It seeks to restore blighted lands and pursue despoilers. At this age it is a commanding force in its territory.",
+  "difficulty": 18,
+  "thresholds": {
+    "major": 26,
+    "severe": 45
+  },
+  "hp": 15,
+  "stress": 6,
+  "attacks": [
+    {
+      "name": "Copper Jaws",
+      "modifier": 5,
+      "range": "Very Close",
+      "damage": "3d10+5 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Ancient Forest Lore",
+      "modifier": 3
+    },
+    {
+      "name": "Territorial Awareness",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Guard wounded land",
+    "Separate trespassers",
+    "Root and corrode"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 3 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Rooted Guardian",
+      "kind": "Passive",
+      "description": "While touching natural earth, the dragon cannot be knocked back."
+    },
+    {
+      "name": "Verdigris Breath",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 18. On a failure, take 3d8+6 magic damage and the target is Vulnerable while standing on the rooted ground, ending when they leave it. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Grasping Roots",
+      "kind": "Action",
+      "description": "Mark a Stress. Choose up to two targets within Close range. Each must succeed on a Strength Reaction Roll or become Restrained by roots until they escape with a successful Strength or Agility Roll."
+    },
+    {
+      "name": "Patient Regrowth",
+      "kind": "Reaction",
+      "description": "Once per scene, when the dragon marks HP while touching living ground, clear 1 marked HP after the damage resolves."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Covenant",
+    "Adult",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Forest",
+    "Ruins"
+  ]
+}

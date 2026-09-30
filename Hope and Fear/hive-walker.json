@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "hive-walker",
+  "name": "Hive Walker",
+  "type": "Undead",
+  "level": 2,
+  "tier": 2,
+  "role": "Standard",
+  "description": "A corpse filled with and puppeted by a colony of carrion-eating bees.",
+  "difficulty": 12,
+  "thresholds": {
+    "major": 11,
+    "severe": 24
+  },
+  "hp": 3,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Rotting Fist",
+      "modifier": 1,
+      "range": "Melee",
+      "damage": "2d6+3 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Meat Eater",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Encase prey in honey",
+    "protect the hive"
+  ],
+  "abilities": [
+    {
+      "name": "Blood Honey",
+      "kind": "Action",
+      "description": "The Walker disgorges thick crimson honey at all targets between it and a point within Close range. Each target in that line must succeed on an Agility Reaction Roll or take 2d8 magic damage and become temporarily Restrained as the honey hardens on them."
+    },
+    {
+      "name": "Bee-Ruption",
+      "kind": "Reaction",
+      "description": "When the Walker marks HP, vengeful bees erupt from its body to protect it. Each target within Very Close range must succeed on an Instinct Reaction Roll or take 1d8 direct physical damage for each HP the Hive Walker has marked. Restrained targets automatically fail the reaction roll."
+    }
+  ],
+  "tags": [
+    "Undead"
+  ]
+}

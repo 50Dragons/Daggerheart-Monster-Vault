@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "quillback-ravager",
+  "name": "Quillback Ravager",
+  "type": "Vermyn",
+  "level": 2,
+  "tier": 2,
+  "role": "Bruiser",
+  "description": "A massive bull-headed firbolg with a quick temper.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 13,
+    "severe": 25
+  },
+  "hp": 7,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Hurled Quills",
+      "modifier": 2,
+      "range": "Far",
+      "damage": "2d8+3 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Brawler",
+      "modifier": 2
+    },
+    {
+      "name": "Sewer Hunter",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Barrage",
+    "defend territory",
+    "maul",
+    "punish grapplers",
+    "pursue"
+  ],
+  "abilities": [
+    {
+      "name": "Barbed Hide",
+      "kind": "Passive",
+      "description": "When a creature succeeds on an action roll to Grapple or physically Restrain the Ravager, they take 1d8+2 physical damage. The Grapple or Restrained effect still succeeds. The Ravager\u2019s backward-facing quills drive into anyone who tries to hold it."
+    },
+    {
+      "name": "Quill Fan",
+      "kind": "Action",
+      "description": "Make an attack against all targets in front of the Ravager within Close range. Targets the Ravager succeeds against take 2d6+3 physical damage. The Ravager arches its back and releases a wide spray of jagged quills."
+    },
+    {
+      "name": "Crushing Pummel",
+      "kind": "Action",
+      "description": "Make an attack against a target within Melee range. On a success, deal 2d10+5 physical damage and knock the target back to Very Close range. The Ravager lowers its quills and batters the target with both massive fists."
+    }
+  ],
+  "tags": [
+    "Vermyn"
+  ],
+  "biome": [
+    "Underground"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "royal-advisor",
+  "name": "Royal Advisor",
+  "type": "Social",
+  "level": 2,
+  "tier": 2,
+  "role": "Social",
+  "description": "A high-ranking courtier with the ear of the local nobility.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 8,
+    "severe": 15
+  },
+  "hp": 3,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Wand",
+      "modifier": -3,
+      "range": "Far",
+      "damage": "1d4+3 phy"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Administration",
+      "modifier": 3
+    },
+    {
+      "name": "Courtier",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Curry favor",
+    "manufacture evidence",
+    "scheme"
+  ],
+  "abilities": [
+    {
+      "name": "Devastating Retort",
+      "kind": "Passive",
+      "description": "A PC who rolls less than 17 on an action roll targeting the Advisor must mark a Stress."
+    },
+    {
+      "name": "Bend Ears",
+      "kind": "Action",
+      "description": "Mark a Stress to influence an NPC within Melee range with whispered words. That target's opinion on one matter shifts toward the Advisor's preference unless it is in direct opposition to the target's motives."
+    },
+    {
+      "name": "Scapegoat",
+      "kind": "Action",
+      "description": "Spend a Fear to convince a crowd or notable individual that one person or group is responsible for some problem facing the target. The target becomes hostile to the scapegoat until convinced of their innocence with a successful Presence Roll (17)."
+    }
+  ],
+  "tags": [
+    "Social"
+  ]
+}

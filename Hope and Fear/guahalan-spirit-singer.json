@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "guahalan-spirit-singer",
+  "name": "Guahalan Spirit Singer",
+  "type": "Humanoid",
+  "level": 2,
+  "tier": 2,
+  "role": "Support",
+  "description": "A shapeshifting summoner who has animalistic features.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 9,
+    "severe": 18
+  },
+  "hp": 4,
+  "stress": 6,
+  "attacks": [
+    {
+      "name": "Spirit Flame",
+      "modifier": 2,
+      "range": "Close",
+      "damage": "2d6+4 magic"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Ritual",
+      "modifier": 3
+    },
+    {
+      "name": "Ancient History",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Abjure",
+    "bolster",
+    "summon"
+  ],
+  "abilities": [
+    {
+      "name": "Unleash the Beast",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Spirit Singer adopt a more bestial form. While in this form, they gain a bonus to attack and damage rolls equal to the number of Stress they have marked. Additionally, they can move up to Far range instead of Close range before taking an action."
+    },
+    {
+      "name": "Beast-Caller",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Spirit Singer summon 2d4 Guahalan Spirit Beasts within Very Close range and immediately spotlight one."
+    },
+    {
+      "name": "Rage of Spirits",
+      "kind": "Action",
+      "description": "Mark a Stress to spotlight any number of Guahalan Spirit Beasts within Very Close range and have each one move into Melee range with the nearest PC and make a standard attack. If any attacks succeed against the same target, combine their damage."
+    },
+    {
+      "name": "Spiritual Sacrifice",
+      "kind": "Reaction",
+      "description": "When the Spirit Singer would take damage while within Very Close range of a Guahalan Spirit Beast, you can spend a Fear to sacrifice the Spirit Beast and negate the damage."
+    }
+  ],
+  "tags": [
+    "Humanoid"
+  ]
+}

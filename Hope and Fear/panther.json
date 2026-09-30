@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "id": "panther",
+  "name": "Panther",
+  "type": "Beast",
+  "level": 1,
+  "tier": 1,
+  "role": "Skulk",
+  "description": "A large feline predator that stalks its prey from the shadows.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 5,
+    "severe": 10
+  },
+  "hp": 4,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Teeth and Claws",
+      "modifier": 2,
+      "range": "Melee",
+      "damage": "1d8+1 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Keen Senses",
+      "modifier": 3
+    },
+    {
+      "name": "Slink",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Climb trees",
+    "pounce",
+    "stalk"
+  ],
+  "abilities": [
+    {
+      "name": "Shadow Stalker",
+      "kind": "Passive",
+      "description": "While Hidden, the Panther gains a +2 bonus to its attack rolls."
+    },
+    {
+      "name": "Pouncing Strike",
+      "kind": "Action",
+      "description": "Mark a Stress to have the Panther leap into Melee range of a target within Far range and make an attack against them. On a success, deal 1d12+2 physical damage."
+    }
+  ],
+  "tags": [
+    "Beast"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "id": "young-fire-dragon",
+  "name": "Young Fire Dragon",
+  "type": "Dragon",
+  "level": 3,
+  "tier": 3,
+  "role": "Solo",
+  "description": "A crimson dragon with four powerful limbs and smoldering wings.",
+  "difficulty": 18,
+  "thresholds": {
+    "major": 21,
+    "severe": 34
+  },
+  "hp": 10,
+  "stress": 6,
+  "attacks": [
+    {
+      "name": "Bite & Claws",
+      "modifier": 7,
+      "range": "Close",
+      "damage": "4d10 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Burning Rage",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Burn",
+    "defend lair",
+    "erupt",
+    "fly",
+    "shred",
+    "take"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The Dragon can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Intimidating",
+      "kind": "Passive",
+      "description": "When you spend a Fear to spotlight the Dragon, all PCs within Close range must mark a Stress or lose a Hope."
+    },
+    {
+      "name": "Flame Breath",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Dragon unleash a blast of flame against all targets in front of it within Close range. Each target must make an Agility Reaction Roll. Targets who fail take 4d8+3 magic damage. Targets who succeed must mark a Stress or take half damage. A target who marks HP from this attack also becomes Vulnerable until they clear a HP."
+    },
+    {
+      "name": "Eruption",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Dragon crack the earth open with its tail, unleashing an explosion of lava. Choose a point within Far range. Each PC on the line between the Dragon and the chosen point must succeed on an Agility Reaction Roll or get burned, becoming Vulnerable until their next rest. You gain a Fear for each PC who fails."
+    },
+    {
+      "name": "Blazing Scales",
+      "kind": "Reaction",
+      "description": "When a creature within Very Close range attacks the Dragon, the attacker must mark a Stress."
+    },
+    {
+      "name": "Slash and Burn",
+      "kind": "Reaction",
+      "description": "When the Dragon makes a successful standard attack, you gain a Fear and can mark a Stress to have the attack deal an extra 10 magic damage."
+    }
+  ],
+  "tags": [
+    "Dragon"
+  ]
+}

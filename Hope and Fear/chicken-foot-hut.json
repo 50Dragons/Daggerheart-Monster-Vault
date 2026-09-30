@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "chicken-foot-hut",
+  "name": "Chicken-Foot Hut",
+  "type": "Construct",
+  "level": 2,
+  "tier": 2,
+  "role": "Bruiser",
+  "description": "A tall wooden shack that moves around on giant chicken legs.",
+  "difficulty": 16,
+  "thresholds": {
+    "major": 14,
+    "severe": 27
+  },
+  "hp": 8,
+  "stress": 2,
+  "attacks": [
+    {
+      "name": "Clawed Feet",
+      "modifier": 2,
+      "range": "Very Close",
+      "damage": "2d10+3 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Forests",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Claw",
+    "protect master",
+    "run and jump",
+    "trample"
+  ],
+  "abilities": [
+    {
+      "name": "Fast",
+      "kind": "Passive",
+      "description": "The Hut can move up to Far range when spotlighted."
+    },
+    {
+      "name": "Double Strike",
+      "kind": "Action",
+      "description": "Mark a Stress to make two standard attacks. If both attacks succeed against the same target, combine the damage."
+    },
+    {
+      "name": "Pin",
+      "kind": "Reaction",
+      "description": "When the Hut makes a successful standard attack, you can mark a Stress to temporarily Restrain the target. The Hut drags the Restrained target when it moves."
+    }
+  ],
+  "tags": [
+    "Construct"
+  ]
+}

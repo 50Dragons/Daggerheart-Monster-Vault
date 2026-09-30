@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "calderax-young",
+  "name": "Calderax Linnorm - Young",
+  "type": "Linnorm",
+  "lineage": "Worldborn Linnorm",
+  "level": 3,
+  "tier": 2,
+  "role": "Solo",
+  "description": "Young Calderax is a chaotic, instinct-driven worldborn linnorm clever, wingless, non-humanoid linnorm with black basalt plates and sulphurous vents. It seeks to reopen volcanic vents and destroy engines that steal geothermal heat. At this age it is an emerging but formidable predator.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 14,
+    "severe": 28
+  },
+  "hp": 10,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Basalt Jaws",
+      "modifier": 3,
+      "range": "Very Close",
+      "damage": "2d10+4 physical",
+      "description": "The linnorm strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Volcanic Territory",
+      "modifier": 2
+    },
+    {
+      "name": "Siege Strength",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Smash blocked vents",
+    "Trample threats",
+    "Guard the caldera"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (2)",
+      "kind": "Passive",
+      "description": "The linnorm can be spotlighted up to 2 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Basalt Plates",
+      "kind": "Passive",
+      "description": "Reduce each instance of physical damage dealt to the linnorm by 2."
+    },
+    {
+      "name": "Sulphur Eruption",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 15. On a failure, take 2d8+4 physical damage and the target must mark 1 Stress from gas and hot fragments. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the linnorm marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Worldborn Linnorm",
+    "Young",
+    "Epic",
+    "Solo",
+    "Linnorm"
+  ],
+  "biome": [
+    "Volcanic",
+    "Mountains"
+  ]
+}

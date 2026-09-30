@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "ashweaver-young",
+  "name": "Ashweaver Dragon - Young",
+  "type": "Dragon",
+  "lineage": "Eclipsed",
+  "level": 3,
+  "tier": 2,
+  "role": "Solo",
+  "description": "Young Ashweaver is a evil-leaning eclipsed intelligent true dragon with soot-black flesh that falls to an animate skeleton in strong light. It seeks to hunt at night and avenge deliberate exposure to light. At this age it is an emerging but formidable predator.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 14,
+    "severe": 28
+  },
+  "hp": 10,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Cinder Claws",
+      "modifier": 3,
+      "range": "Very Close",
+      "damage": "2d10+4 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Nocturnal Ambush",
+      "modifier": 2
+    },
+    {
+      "name": "Eclipse Lore",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Extinguish lights",
+    "Choke intruders",
+    "Recover in darkness"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (2)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 2 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Daylight Skeleton",
+      "kind": "Passive",
+      "description": "In direct sunlight or intense magical light, the dragon’s flesh burns away, leaving a fully animate skeleton; reduce its Difficulty by 2 while exposed. In darkness its flesh returns at the end of its next spotlight."
+    },
+    {
+      "name": "Cinder-Ash Breath",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 15. On a failure, take 2d8+4 magic damage and in bright light, the target also becomes Vulnerable until its next action from choking ash. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Eclipsed",
+    "Young",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Ruins",
+    "Ashlands"
+  ]
+}

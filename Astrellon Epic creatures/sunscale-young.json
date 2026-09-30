@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "sunscale-young",
+  "name": "Sunscale Dragon - Young",
+  "type": "Dragon",
+  "lineage": "Firmament",
+  "level": 3,
+  "tier": 2,
+  "role": "Solo",
+  "description": "Young Sunscale is a neutral-leaning firmament intelligent true dragon with violet scales that kindle molten gold in sunlight. It seeks to test mortals through riddles, wagers, and fire. At this age it is an emerging but formidable predator.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 14,
+    "severe": 28
+  },
+  "hp": 10,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Molten Jaws",
+      "modifier": 3,
+      "range": "Very Close",
+      "damage": "2d10+4 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Riddles and Wagers",
+      "modifier": 2
+    },
+    {
+      "name": "Cliff Hunter",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Provoke and test",
+    "Burn escape routes",
+    "Dive upon isolated prey"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (2)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 2 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Sunlit Fury",
+      "kind": "Passive",
+      "description": "In direct sunlight, the dragon gains +2 Difficulty and adds 2 to damage from its attacks."
+    },
+    {
+      "name": "Solar Breath",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 15. On a failure, take 2d8+4 magic damage and clinging solar fire forces the target to mark 1 Stress. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Firmament",
+    "Young",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Cliffs",
+    "Volcanic"
+  ]
+}

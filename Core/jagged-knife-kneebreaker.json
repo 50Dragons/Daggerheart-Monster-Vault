@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "jagged-knife-kneebreaker",
+  "name": "Jagged Knife Kneebreaker",
+  "type": "Humanoid",
+  "level": 1,
+  "tier": 1,
+  "role": "Bruiser",
+  "description": "An imposing brawler carrying a large club.",
+  "difficulty": 12,
+  "thresholds": {
+    "major": 7,
+    "severe": 14
+  },
+  "hp": 7,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Club",
+      "modifier": -3,
+      "range": "Melee",
+      "damage": "1d4+6 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Thief",
+      "modifier": 2
+    },
+    {
+      "name": "Unveiled Threats",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Grapple",
+    "intimidate",
+    "profit",
+    "steal"
+  ],
+  "abilities": [
+    {
+      "name": "I\u2019ve Got \u2019Em",
+      "kind": "Passive",
+      "description": "Creatures Restrained by the Kneebreaker take double damage from attacks by other adversaries."
+    },
+    {
+      "name": "Hold Them Down",
+      "kind": "Action",
+      "description": "Make an attack against a target within Melee range. On a success, the target takes no damage but is Restrained and Vulnerable. The target can break free, clearing both conditions, with a successful Strength Roll or is freed automatically if the Kneebreaker takes Major or greater damage."
+    }
+  ],
+  "tags": [
+    "Humanoid"
+  ]
+}

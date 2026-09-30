@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "fire-titan-warlord",
+  "name": "Fire Titan Warlord",
+  "type": "Giant",
+  "level": 4,
+  "tier": 4,
+  "role": "Leader",
+  "description": "A smoldering, battle-obsessed goliath wearing bespoke armor and wielding a massive maul.",
+  "difficulty": 21,
+  "thresholds": {
+    "major": 33,
+    "severe": 66
+  },
+  "hp": 9,
+  "stress": 8,
+  "attacks": [
+    {
+      "name": "Maul",
+      "modifier": 6,
+      "range": "Very Close",
+      "damage": "4d10+10 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Tactics",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Compete against rivals",
+    "conquer the weak",
+    "craft colossal war machines"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (2)",
+      "kind": "Passive",
+      "description": "The Warlord can be spotlighted up to two times per GM turn. Spend Fear as usual to spotlight them."
+    },
+    {
+      "name": "Colossus Crafter",
+      "kind": "Passive",
+      "description": "Countdown (6). When the Warlord enters the scene, activate the countdown. It ticks down when the Warlord is spotlighted. When it triggers, summon the Gargantuan War Machine, which appears at the edge of the battlefield and immediately takes the spotlight."
+    },
+    {
+      "name": "Release the Hounds",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Warlord summon two Demonic Hound Packs, which appear at Close range and immediately take the spotlight."
+    },
+    {
+      "name": "Spinning Strike",
+      "kind": "Action",
+      "description": "Mark a Stress to make a standard attack against all targets within Very Close range and gain a Fear."
+    },
+    {
+      "name": "Ground-Breaking",
+      "kind": "Action",
+      "description": "Spend a Fear to have the Warlord crack the earth with a downward swing of their maul and make an attack against a group within Close range. Targets the attack succeeds against take 4d10+10 direct damage. The area becomes rough terrain, and a PC must succeed on an Agility Reaction Roll (16) to move through it."
+    }
+  ],
+  "tags": [
+    "Giant"
+  ]
+}

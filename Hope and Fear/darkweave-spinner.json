@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "darkweave-spinner",
+  "name": "Darkweave Spinner",
+  "type": "Monstrosity",
+  "level": 1,
+  "tier": 1,
+  "role": "Standard",
+  "description": "A boar-sized arachnid woven from primordial shadow-silk.",
+  "difficulty": 12,
+  "thresholds": {
+    "major": 6,
+    "severe": 9
+  },
+  "hp": 4,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Fangs",
+      "modifier": 1,
+      "range": "Melee",
+      "damage": "1d8+1 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Holes",
+      "modifier": 2
+    },
+    {
+      "name": "Webs",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Bite",
+    "stick to the darkness"
+  ],
+  "abilities": [
+    {
+      "name": "Wrap in Shadow-Silk",
+      "kind": "Action",
+      "description": "Mark a Stress to make an attack against a target within Melee range. On a success, the target is Vulnerable and Restrained until they succeed on a Strength Roll (10)."
+    },
+    {
+      "name": "Shadow Fang",
+      "kind": "Reaction",
+      "description": "When the Spinner makes a successful attack against a target within Melee range, you can spend a Fear to make the target Shaky until they succeed on an Instinct Roll (10). While Shaky, the target has disadvantage on attack rolls."
+    }
+  ],
+  "tags": [
+    "Monstrosity"
+  ]
+}

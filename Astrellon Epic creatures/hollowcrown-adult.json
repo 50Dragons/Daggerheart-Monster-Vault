@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "hollowcrown-adult",
+  "name": "Hollowcrown Dragon - Adult",
+  "type": "Dragon",
+  "lineage": "Eclipsed",
+  "level": 6,
+  "tier": 3,
+  "role": "Solo",
+  "description": "Adult Hollowcrown is a evil-leaning eclipsed intelligent true dragon with blackened gold scales and a broken halo. It seeks to compel obedience from subjects who no longer exist. At this age it is a commanding force in its territory.",
+  "difficulty": 18,
+  "thresholds": {
+    "major": 26,
+    "severe": 45
+  },
+  "hp": 15,
+  "stress": 6,
+  "attacks": [
+    {
+      "name": "Crowned Talons",
+      "modifier": 5,
+      "range": "Very Close",
+      "damage": "3d10+5 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Ruined Royalty",
+      "modifier": 3
+    },
+    {
+      "name": "Tyrannical Command",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Brand rebels",
+    "Demand fealty",
+    "Punish defiance"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 3 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Royal Brand",
+      "kind": "Passive",
+      "description": "The dragon knows the direction of every creature branded by its breath within Far range."
+    },
+    {
+      "name": "Sovereign Flame",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 18. On a failure, take 3d8+6 magic damage and the target is branded with a visible crown until the end of the scene. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Kneel",
+      "kind": "Action",
+      "description": "Mark a Stress. Choose one branded creature within Far range. It must succeed on a Presence Reaction Roll or become Restrained until it escapes with a successful Presence Roll or the dragon is defeated."
+    },
+    {
+      "name": "Defiance Burns",
+      "kind": "Reaction",
+      "description": "When a branded creature within Far range openly defies a spoken command, mark a Stress to make it mark 1 Stress."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Eclipsed",
+    "Adult",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Ruins",
+    "City"
+  ]
+}

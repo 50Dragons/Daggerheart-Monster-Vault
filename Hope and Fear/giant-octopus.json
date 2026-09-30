@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "giant-octopus",
+  "name": "Giant Octopus",
+  "type": "Beast",
+  "level": 2,
+  "tier": 2,
+  "role": "Solo",
+  "description": "A monstrous, aquatic mollusk that has eight sucker-bearing arms and a hard, beaklike jaw.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 13,
+    "severe": 26
+  },
+  "hp": 10,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Arm Whip",
+      "modifier": 3,
+      "range": "Close",
+      "damage": "2d10 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Intelligent",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Crush and bite",
+    "grapple",
+    "harry sailing vessels",
+    "hunt prey"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The Octopus can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Armed and Dangerous",
+      "kind": "Passive",
+      "description": "When the Octopus first appears, place a d8 on this stat block with the 8 value facing up. When the Octopus makes a successful standard attack against a PC, you can add the die\u2019s value to the damage dealt. After you add its value to a roll, decrease the die\u2019s value by 1."
+    },
+    {
+      "name": "Grapple",
+      "kind": "Action",
+      "description": "When the Octopus succeeds on a standard attack, you can spend a Fear to have the Octopus Grapple the target. While Grappled, the target is Restrained and Vulnerable until they break free with a successful Strength or Finesse Roll."
+    },
+    {
+      "name": "Crush",
+      "kind": "Action",
+      "description": "Mark a Stress to deal 3d8 direct physical damage to a target Grappled by the Octopus."
+    }
+  ],
+  "tags": [
+    "Beast"
+  ]
+}

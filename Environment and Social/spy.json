@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "spy",
+  "name": "Spy",
+  "type": "Social",
+  "level": 2,
+  "tier": 2,
+  "role": "Social",
+  "description": "A skilled espionage agent with a knack for being in the right place to overhear secrets.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 8,
+    "severe": 17
+  },
+  "hp": 4,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Dagger",
+      "modifier": -2,
+      "range": "Melee",
+      "damage": "2d6+3 phy"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Espionage",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Cut and run",
+    "disguise appearance",
+    "eavesdrop"
+  ],
+  "abilities": [
+    {
+      "name": "Gathering Secrets",
+      "kind": "Action",
+      "description": "Spend a Fear to describe how the Spy knows a secret about a PC in the scene."
+    },
+    {
+      "name": "Fly on the Wall",
+      "kind": "Reaction",
+      "description": "When a PC or group is discussing something sensitive, you can mark a Stress to reveal that the Spy is present in the scene, observing them. If the Spy escapes the scene to report their findings, you gain 1d4 Fear."
+    }
+  ],
+  "tags": [
+    "Social"
+  ]
+}

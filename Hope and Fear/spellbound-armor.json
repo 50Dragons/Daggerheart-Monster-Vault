@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "spellbound-armor",
+  "name": "Spellbound Armor",
+  "type": "Construct",
+  "level": 1,
+  "tier": 1,
+  "role": "Bruiser",
+  "description": "An empty suit of full plate armor that glows with a faint corona of ghostly light.",
+  "difficulty": 10,
+  "thresholds": {
+    "major": 9,
+    "severe": 17
+  },
+  "hp": 6,
+  "stress": null,
+  "attacks": [
+    {
+      "name": "Zweih\u00e4nder",
+      "modifier": 0,
+      "range": "Very Close",
+      "damage": "1d10+1 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Guardian",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Clank noisily",
+    "move like clockwork",
+    "watch silently"
+  ],
+  "abilities": [
+    {
+      "name": "Tireless",
+      "kind": "Passive",
+      "description": "The Armor can\u2019t be forced to mark Stress. When an effect would cause it to mark Stress, the Armor ignores that part of the effect."
+    },
+    {
+      "name": "Clatter & Recombobulate",
+      "kind": "Reaction",
+      "description": "Once per scene when the Armor is defeated, you can spend a Fear to reactivate it. Clear 2 HP and immediately spotlight it."
+    }
+  ],
+  "tags": [
+    "Construct"
+  ]
+}

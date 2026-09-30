@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "merchant",
+  "name": "Merchant",
+  "type": "Social",
+  "level": 1,
+  "tier": 1,
+  "role": "Social",
+  "description": "A finely dressed trader with a keen eye for financial gain.",
+  "difficulty": 12,
+  "thresholds": {
+    "major": 4,
+    "severe": 8
+  },
+  "hp": 3,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Club",
+      "modifier": -4,
+      "range": "Melee",
+      "damage": "1d4+1 phy"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Shrewd Negotiator",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Buy low and sell high",
+    "create demand",
+    "inflate prices",
+    "seek profit"
+  ],
+  "abilities": [
+    {
+      "name": "Preferential Treatment",
+      "kind": "Passive",
+      "description": "A PC who succeeds on a Presence Roll against the Merchant gains a discount on purchases. A PC who fails on a Presence Roll against the Merchant must pay more and has disadvantage on future Presence Rolls against the Merchant."
+    },
+    {
+      "name": "The Runaround",
+      "kind": "Passive",
+      "description": "When a PC rolls a 14 or lower on a Presence Roll made against the Merchant, they must mark a Stress."
+    }
+  ],
+  "tags": [
+    "Social"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "waxwork-creation",
+  "name": "Waxwork Creation",
+  "type": "Construct",
+  "level": 1,
+  "tier": 1,
+  "role": "Solo",
+  "description": "A ten-foot-tall, semisolid (and semisentient) candle wax construct.",
+  "difficulty": 13,
+  "thresholds": {
+    "major": 8,
+    "severe": 15
+  },
+  "hp": 10,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Fists",
+      "modifier": 2,
+      "range": "Very Close",
+      "damage": "1d20 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Giant-Sized",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Lumber menacingly",
+    "moan with the pain of unlife",
+    "smother"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (2)",
+      "kind": "Passive",
+      "description": "The Creation can be spotlighted up to two times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "No Vital Organs",
+      "kind": "Passive",
+      "description": "The Creation doesn\u2019t take extra damage from attacks that critically succeed against it."
+    },
+    {
+      "name": "Wax Ball",
+      "kind": "Action",
+      "description": "Mark a Stress to have the Creation throw a ball of wax at a target within Far range. Make an attack against the target. On a success, the target takes 1d12+2 physical damage and becomes Restrained until they succeed on a Strength Roll (15)."
+    },
+    {
+      "name": "Splutch!",
+      "kind": "Reaction",
+      "description": "When a PC within Melee range of the Creation makes a weapon attack against it, roll a d6. On a 5 or higher, the attacker\u2019s weapon gets stuck in the Creation and can be removed only with a successful Strength Roll (15)."
+    },
+    {
+      "name": "Smothering Grapple",
+      "kind": "Reaction",
+      "description": "When the Creation makes a successful standard attack against a target within Melee range, you can spend a Fear to Trap the target inside the Creation\u2019s wax body. While Trapped, the target is Restrained and must mark a Stress and move with the Creation each time it\u2019s spotlighted. A Trapped creature is freed when the Creation takes Major or greater damage."
+    }
+  ],
+  "tags": [
+    "Construct"
+  ]
+}

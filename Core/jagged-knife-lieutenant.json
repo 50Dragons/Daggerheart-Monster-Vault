@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "jagged-knife-lieutenant",
+  "name": "Jagged Knife Lieutenant",
+  "type": "Humanoid",
+  "level": 1,
+  "tier": 1,
+  "role": "Leader",
+  "description": "A seasoned bandit in quality leathers with a strong voice and cunning eyes.",
+  "difficulty": 13,
+  "thresholds": {
+    "major": 7,
+    "severe": 14
+  },
+  "hp": 6,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Javelin",
+      "modifier": 2,
+      "range": "Close",
+      "damage": "1d8+3 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Local Knowledge",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Bully",
+    "command",
+    "profit",
+    "reinforce"
+  ],
+  "abilities": [
+    {
+      "name": "Tactician",
+      "kind": "Action",
+      "description": "When you spotlight the Lieutenant, mark a Stress to also spotlight two allies within Close range."
+    },
+    {
+      "name": "More Where That Came From",
+      "kind": "Action",
+      "description": "Summon three Jagged Knife Lackeys, who appear at Far range."
+    },
+    {
+      "name": "Coup de Grace",
+      "kind": "Action",
+      "description": "Spend a Fear to make an attack against a Vulnerable target within Close range. On a success, deal 2d6+12 physical damage and the target must mark a Stress."
+    },
+    {
+      "name": "Momentum",
+      "kind": "Reaction",
+      "description": "When the Lieutenant makes a successful attack against a PC, you gain a Fear."
+    }
+  ],
+  "tags": [
+    "Humanoid"
+  ]
+}

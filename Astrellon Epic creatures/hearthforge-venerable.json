@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "hearthforge-venerable",
+  "name": "Hearthforge Dragon - Venerable",
+  "type": "Dragon",
+  "lineage": "Covenant",
+  "level": 9,
+  "tier": 4,
+  "role": "Solo",
+  "description": "Venerable Hearthforge is a good-leaning covenant intelligent true dragon with dark iron plates and hammered bronze horns. It seeks to defend artisans and sacred craft. At this age it is a legendary, nearly unstoppable presence.",
+  "difficulty": 20,
+  "thresholds": {
+    "major": 37,
+    "severe": 68
+  },
+  "hp": 20,
+  "stress": 7,
+  "attacks": [
+    {
+      "name": "Iron Jaws",
+      "modifier": 8,
+      "range": "Very Close",
+      "damage": "4d10+10 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Master Smith",
+      "modifier": 4
+    },
+    {
+      "name": "Siegecraft",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Hold a chokepoint",
+    "Break siege machines",
+    "Protect the workshop"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (4)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 4 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Iron Brace",
+      "kind": "Passive",
+      "description": "While touching stone or metal, the dragon cannot be knocked back."
+    },
+    {
+      "name": "Forge Breath",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 20. On a failure, take 4d8+10 magic damage and one carried metal item of the target’s choice becomes too hot to handle until its next action, unless dropped. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Siege Leap",
+      "kind": "Action",
+      "description": "Mark a Stress. Leap to a point within Close range and make an attack against every enemy within Very Close range of the landing point. Each success deals 4d8+10 physical damage and knocks the target back to Close range."
+    },
+    {
+      "name": "Tempered Plates",
+      "kind": "Reaction",
+      "description": "When the dragon takes physical damage, mark a Stress to reduce that instance of damage by 2d10."
+    },
+    {
+      "name": "Master of the Forge",
+      "kind": "Action",
+      "description": "Spend a Fear. Reshape a visible section of stone or metal within Close range to form a barrier or seal a passage until the end of the scene. Creatures in that space must make an Agility Reaction Roll. On a failure, they take 4d8+10 physical damage and are Restrained until freed with a successful Strength Roll; on a success, they move out and take half damage."
+    },
+    {
+      "name": "Epic Ferocity",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks its fifth HP, it clears 2 Stress and may immediately move up to Close range. This movement does not grant an attack. If it has fewer than five HP, trigger this after it marks half its total HP instead."
+    }
+  ],
+  "tags": [
+    "Covenant",
+    "Venerable",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Cavern",
+    "Volcanic"
+  ]
+}

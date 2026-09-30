@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "rugaru",
+  "name": "Rugaru",
+  "type": "Monstrosity",
+  "level": 1,
+  "tier": 1,
+  "role": "Solo",
+  "description": "A wolf-headed humanoid cursed by the gods to prowl the swamps in search of blood.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 7,
+    "severe": 14
+  },
+  "hp": 8,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Snapping Jaws",
+      "modifier": 4,
+      "range": "Melee",
+      "damage": "2d8+4 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Swamps",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Blaspheme",
+    "go for the throat",
+    "stalk",
+    "terrorize"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (3)",
+      "kind": "Passive",
+      "description": "The Rugaru can be spotlighted up to three times per GM turn. Spend Fear as usual to spotlight them."
+    },
+    {
+      "name": "Child of Night",
+      "kind": "Passive",
+      "description": "While in moonlight, the Rugaru gains a +2 bonus to their Difficulty."
+    },
+    {
+      "name": "Bloodthirsty",
+      "kind": "Passive",
+      "description": "When a PC marks HP from the Rugaru\u2019s standard attack, add a token to this stat block. The Rugaru gains a bonus to attack rolls equal to the number of tokens on this stat block. Clear all tokens when the Rugaru takes Severe damage."
+    },
+    {
+      "name": "Howl at the Moon",
+      "kind": "Action",
+      "description": "Mark a Stress to force each PC within Far range to make a Presence Reaction Roll (15). Targets who fail lose a Hope. Gain a Fear for each Hope lost. If a PC has no Hope, they must mark a Stress and become Vulnerable until they roll with Hope."
+    },
+    {
+      "name": "Flesh Ripper",
+      "kind": "Action",
+      "description": "Mark a Stress to make an attack against a target within Melee range. On a success, deal 1d12+2 direct physical damage."
+    }
+  ],
+  "tags": [
+    "Monstrosity"
+  ]
+}

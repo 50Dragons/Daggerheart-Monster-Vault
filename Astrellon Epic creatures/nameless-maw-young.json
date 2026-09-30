@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "nameless-maw-young",
+  "name": "Nameless Maw Dragon - Young",
+  "type": "Dragon",
+  "lineage": "Eclipsed",
+  "level": 3,
+  "tier": 2,
+  "role": "Solo",
+  "description": "Young Nameless Maw is a evil-leaning eclipsed intelligent true dragon with a gaunt wyvern form and burial-cloth wings. It seeks to consume identities, records, and recognition. At this age it is an emerging but formidable predator.",
+  "difficulty": 16,
+  "thresholds": {
+    "major": 13,
+    "severe": 26
+  },
+  "hp": 9,
+  "stress": 6,
+  "attacks": [
+    {
+      "name": "Maw and Talons",
+      "modifier": 3,
+      "range": "Very Close",
+      "damage": "2d10+4 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Secrets and Erasure",
+      "modifier": 2
+    },
+    {
+      "name": "Patient Stalker",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Silence witnesses",
+    "Isolate known figures",
+    "Erase records"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (2)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 2 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Hushed Presence",
+      "kind": "Passive",
+      "description": "The dragon cannot be located by sound alone; writing exposed to its breath fades until restored by a GM-approved means."
+    },
+    {
+      "name": "Breath of Erasure",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 16. On a failure, take 2d8+4 magic damage and the target cannot speak until its next action. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Roused Fury",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks half its total HP (round up), clear 1 Stress and move up to Close range. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Eclipsed",
+    "Young",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Ruins",
+    "Settlement"
+  ]
+}

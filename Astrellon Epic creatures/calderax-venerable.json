@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "calderax-venerable",
+  "name": "Calderax Linnorm - Venerable",
+  "type": "Linnorm",
+  "lineage": "Worldborn Linnorm",
+  "level": 9,
+  "tier": 4,
+  "role": "Solo",
+  "description": "Venerable Calderax is a chaotic, instinct-driven worldborn linnorm clever, wingless, non-humanoid linnorm with black basalt plates and sulphurous vents. It seeks to reopen volcanic vents and destroy engines that steal geothermal heat. At this age it is a legendary, nearly unstoppable presence.",
+  "difficulty": 20,
+  "thresholds": {
+    "major": 37,
+    "severe": 68
+  },
+  "hp": 20,
+  "stress": 7,
+  "attacks": [
+    {
+      "name": "Basalt Jaws",
+      "modifier": 8,
+      "range": "Very Close",
+      "damage": "4d10+10 physical",
+      "description": "The linnorm strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Volcanic Territory",
+      "modifier": 4
+    },
+    {
+      "name": "Siege Strength",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Smash blocked vents",
+    "Trample threats",
+    "Guard the caldera"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (4)",
+      "kind": "Passive",
+      "description": "The linnorm can be spotlighted up to 4 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Basalt Plates",
+      "kind": "Passive",
+      "description": "Reduce each instance of physical damage dealt to the linnorm by 5."
+    },
+    {
+      "name": "Sulphur Eruption",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 20. On a failure, take 4d8+10 physical damage and the target must mark 1 Stress from gas and hot fragments. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Trampling Charge",
+      "kind": "Action",
+      "description": "Mark a Stress. Move up to Close range in a straight line and make an attack against each enemy crossed. Each success deals 4d8+10 physical damage and knocks the target back to Close range."
+    },
+    {
+      "name": "Pressure Release",
+      "kind": "Reaction",
+      "description": "When the linnorm marks Severe damage, mark a Stress to force every enemy within Very Close range to succeed on an Agility Reaction Roll or mark 1 Stress and be knocked back to Close range."
+    },
+    {
+      "name": "Break the Vent",
+      "kind": "Action",
+      "description": "Spend a Fear. Fracture ground within Close range. Creatures there make an Agility Reaction Roll. On a failure, they take 4d8+10 physical damage and become Vulnerable until they leave the area; on a success, they take half damage. Until the end of the scene, a creature that enters or acts in the fractured area takes 2d8+8 physical damage once per spotlight."
+    },
+    {
+      "name": "Epic Ferocity",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks its fifth HP, it clears 2 Stress and may immediately move up to Close range. This movement does not grant an attack. If it has fewer than five HP, trigger this after it marks half its total HP instead."
+    }
+  ],
+  "tags": [
+    "Worldborn Linnorm",
+    "Venerable",
+    "Epic",
+    "Solo",
+    "Linnorm"
+  ],
+  "biome": [
+    "Volcanic",
+    "Mountains"
+  ]
+}

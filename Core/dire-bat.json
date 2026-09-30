@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "dire-bat",
+  "name": "Dire Bat",
+  "type": "Beast",
+  "level": 3,
+  "tier": 3,
+  "role": "Skulk",
+  "description": "A wide-winged pet endlessly loyal to their vampire owner.",
+  "difficulty": 14,
+  "thresholds": {
+    "major": 16,
+    "severe": 30
+  },
+  "hp": 5,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Claws and Teeth",
+      "modifier": 2,
+      "range": "Melee",
+      "damage": "2d6+7 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Bloodthirsty",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Dive-bomb",
+    "hide",
+    "protect leader"
+  ],
+  "abilities": [
+    {
+      "name": "Flying",
+      "kind": "Passive",
+      "description": "While flying, the Bat gains a +3 bonus to their Difficulty."
+    },
+    {
+      "name": "Screech",
+      "kind": "Action",
+      "description": "Mark a Stress to send a high-pitch screech out toward all targets in front of the Bat within Far range. Those targets must mark 1d4 Stress."
+    },
+    {
+      "name": "Guardian",
+      "kind": "Reaction",
+      "description": "When an allied Vampire marks HP, you can mark a Stress to fly into Melee range of the attacker and make an attack with advantage against them. On a success, deal 2d6+2 physical damage."
+    }
+  ],
+  "tags": [
+    "Beast"
+  ]
+}

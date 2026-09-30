@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "whisker-nail-scrapper",
+  "name": "Whiskers",
+  "type": "Vermyn",
+  "level": 1,
+  "tier": 1,
+  "role": "Standard",
+  "description": "A stocky mouse-like Vermyn that fights recklessly with heavy wooden planks studded with rusty nails.",
+  "difficulty": 12,
+  "thresholds": {
+    "major": 8,
+    "severe": 14
+  },
+  "hp": 5,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Nailed Plank",
+      "modifier": 1,
+      "range": "Melee",
+      "damage": "1d8+1 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Sewer Scavenger",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Gang up",
+    "scurry through debris",
+    "strike ankles",
+    "retreat when isolated"
+  ],
+  "abilities": [
+    {
+      "name": "Scurry Through",
+      "kind": "Passive",
+      "description": "The Whisker can move through spaces occupied by other creatures and squeeze through openings too small for larger creatures. They ignore difficult terrain caused by rubble, refuse, and scattered scrap. The Whisker ducks between legs, crawls beneath debris, and disappears through narrow gaps."
+    },
+    {
+      "name": "Wild Swing",
+      "kind": "Action",
+      "description": "Mark a Stress to make a standard attack against every target within Melee range. Roll separately against each target. The Whisker spins violently, swinging both nailed planks at anything nearby."
+    }
+  ],
+  "tags": [
+    "Vermyn"
+  ],
+  "biome": [
+    "Urban",
+    "Underground"
+  ]
+}

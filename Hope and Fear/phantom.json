@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "phantom",
+  "name": "Phantom",
+  "type": "Undead",
+  "level": 1,
+  "tier": 1,
+  "role": "Standard",
+  "description": "The echo of a lost soul in the form of an ectoplasmic shadow.",
+  "difficulty": 11,
+  "thresholds": {
+    "major": 5,
+    "severe": "None"
+  },
+  "hp": 2,
+  "stress": 1,
+  "attacks": [
+    {
+      "name": "Chill Touch",
+      "modifier": -1,
+      "range": "Melee",
+      "damage": "1d6+2 magic"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Spooky",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Create cold spots",
+    "swoop through the air",
+    "whisper dark tidings"
+  ],
+  "abilities": [
+    {
+      "name": "Incorporeal",
+      "kind": "Passive",
+      "description": "The Phantom has resistance to physical damage and can move through solid objects."
+    },
+    {
+      "name": "Fear Aura",
+      "kind": "Passive",
+      "description": "A PC who takes the spotlight within Very Close range of the Phantom must succeed on a Presence Reaction Roll (10) or mark a Stress."
+    },
+    {
+      "name": "Lingering Haunt",
+      "kind": "Reaction",
+      "description": "Countdown (1d6). When the Phantom is defeated, you can spend a Fear to activate the countdown. It ticks down when a PC rolls with Fear. When it triggers, clear the Phantom\u2019s HP and immediately spotlight them."
+    }
+  ],
+  "tags": [
+    "Undead"
+  ]
+}

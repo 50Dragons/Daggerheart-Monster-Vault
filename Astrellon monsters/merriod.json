@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "id": "merriod",
+  "name": "Merriod",
+  "type": "Monstrosity",
+  "level": 2,
+  "tier": 2,
+  "role": "Bruiser",
+  "description": "A hulking shark-like predator whose elongated appendages end in snapping secondary mouths. It seizes prey from a distance and drags them toward its enormous central jaws.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 12,
+    "severe": 25
+  },
+  "hp": 7,
+  "stress": 4,
+  "attacks": [
+    {
+      "name": "Maw-Arms",
+      "modifier": 2,
+      "range": "Very Close",
+      "damage": "2d8+4 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Blood Hunter",
+      "modifier": 2
+    },
+    {
+      "name": "Powerful Swimmer",
+      "modifier": 2
+    }
+  ],
+  "motivesTactics": [
+    "Grab",
+    "Drag",
+    "Isolate",
+    "Maul",
+    "Pursue wounded prey"
+  ],
+  "abilities": [
+    {
+      "name": "Twin Maws",
+      "kind": "Action",
+      "description": "Mark a Stress to make an attack roll (+2) against up to two different targets within Very Close range. On a success, each target takes 2d6+3 physical damage."
+    },
+    {
+      "name": "Hook and Haul",
+      "kind": "Action",
+      "description": "Make an attack roll (+2) against a target within Very Close range. On a success, deal 2d8+3 physical damage, pull the target into Melee range, and make them Restrained in one of the Merriod's secondary maws. They can escape with a successful Strength or Agility Roll (15)."
+    },
+    {
+      "name": "Feeding Bite",
+      "kind": "Action",
+      "description": "Target a creature Restrained by the Merriod and make an attack roll (+2). On a success, deal 2d12+4 physical damage and end the Restrained condition."
+    },
+    {
+      "name": "Blood in the Water",
+      "kind": "Reaction",
+      "description": "When a PC within Close range marks 2 or more HP, the Merriod can mark a Stress to immediately move into Very Close range of them. This movement does not grant an attack."
+    }
+  ],
+  "tags": [
+    "Aquatic",
+    "Predator"
+  ],
+  "biome": [
+    "Aquatic"
+  ]
+}

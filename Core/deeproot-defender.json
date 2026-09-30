@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "deeproot-defender",
+  "name": "Deeproot Defender",
+  "type": "Plant",
+  "level": 1,
+  "tier": 1,
+  "role": "Bruiser",
+  "description": "A burly vegetable-person with grasping vines.",
+  "difficulty": 10,
+  "thresholds": {
+    "major": 8,
+    "severe": 14
+  },
+  "hp": 7,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Vines",
+      "modifier": 2,
+      "range": "Close",
+      "damage": "1d8+3 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Huge",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Ambush",
+    "grab",
+    "protect",
+    "pummel"
+  ],
+  "abilities": [
+    {
+      "name": "Ground Slam",
+      "kind": "Action",
+      "description": "Slam the ground, knocking all targets within Very Close range back to Far range. Each target knocked back this way must mark a Stress."
+    },
+    {
+      "name": "Grab and Drag",
+      "kind": "Action",
+      "description": "Make an attack against a target within Close range. On a success, spend a Fear to pull them into Melee range, deal 1d6+2 physical damage, and Restrain them until the Defender takes Severe damage."
+    }
+  ],
+  "tags": [
+    "Plant"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "ashweaver-venerable",
+  "name": "Ashweaver Dragon - Venerable",
+  "type": "Dragon",
+  "lineage": "Eclipsed",
+  "level": 9,
+  "tier": 4,
+  "role": "Solo",
+  "description": "Venerable Ashweaver is a evil-leaning eclipsed intelligent true dragon with soot-black flesh that falls to an animate skeleton in strong light. It seeks to hunt at night and avenge deliberate exposure to light. At this age it is a legendary, nearly unstoppable presence.",
+  "difficulty": 20,
+  "thresholds": {
+    "major": 37,
+    "severe": 68
+  },
+  "hp": 18,
+  "stress": 7,
+  "attacks": [
+    {
+      "name": "Cinder Claws",
+      "modifier": 8,
+      "range": "Very Close",
+      "damage": "4d10+10 physical",
+      "description": "The dragon strikes one target within Very Close range with its primary natural weapons."
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Nocturnal Ambush",
+      "modifier": 4
+    },
+    {
+      "name": "Eclipse Lore",
+      "modifier": 4
+    }
+  ],
+  "motivesTactics": [
+    "Extinguish lights",
+    "Choke intruders",
+    "Recover in darkness"
+  ],
+  "abilities": [
+    {
+      "name": "Relentless (4)",
+      "kind": "Passive",
+      "description": "The dragon can be spotlighted up to 4 times per GM turn. Spend Fear as usual to spotlight it."
+    },
+    {
+      "name": "Daylight Skeleton",
+      "kind": "Passive",
+      "description": "In direct sunlight or intense magical light, the dragon’s flesh burns away, leaving a fully animate skeleton; reduce its Difficulty by 2 while exposed. In darkness its flesh returns at the end of its next spotlight."
+    },
+    {
+      "name": "Cinder-Ash Breath",
+      "kind": "Action",
+      "description": "Spend a Fear to exhale a cone reaching Close range. All enemies in the cone make an Agility Reaction Roll against Difficulty 20. On a failure, take 4d8+10 magic damage and in bright light, the target also becomes Vulnerable until its next action from choking ash. On a success, take half damage without the additional effect."
+    },
+    {
+      "name": "Ashen Cloud",
+      "kind": "Action",
+      "description": "Mark a Stress. Fill an area within Close range with ash until the end of the dragon’s next spotlight. Sight through the ash is limited to Very Close range. Creatures there must succeed on an Agility Reaction Roll or take 4d8+10 magic damage and become Vulnerable until they leave."
+    },
+    {
+      "name": "Ash Form",
+      "kind": "Reaction",
+      "description": "When the dragon takes damage, mark a Stress to reduce that instance of damage by 2d10."
+    },
+    {
+      "name": "Night Rebuilds the Flesh",
+      "kind": "Reaction",
+      "description": "Once per scene, when the dragon begins a spotlight in darkness after exposure to direct sunlight or intense magical light, clear 2 marked HP."
+    },
+    {
+      "name": "Epic Ferocity",
+      "kind": "Evolution",
+      "description": "Once per scene, immediately after the dragon marks its fifth HP, it clears 2 Stress and may immediately move up to Close range. This movement does not grant an attack. If it has fewer than five HP, trigger this after it marks half its total HP instead."
+    }
+  ],
+  "tags": [
+    "Eclipsed",
+    "Venerable",
+    "Epic",
+    "Solo",
+    "Dragon"
+  ],
+  "biome": [
+    "Ruins",
+    "Ashlands"
+  ]
+}

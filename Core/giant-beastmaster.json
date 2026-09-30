@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "giant-beastmaster",
+  "name": "Giant Beastmaster",
+  "type": "Giant",
+  "level": 2,
+  "tier": 2,
+  "role": "Leader",
+  "description": "A leather-clad warrior bearing a whip and massive bow.",
+  "difficulty": 16,
+  "thresholds": {
+    "major": 12,
+    "severe": 24
+  },
+  "hp": 6,
+  "stress": 5,
+  "attacks": [
+    {
+      "name": "Longbow",
+      "modifier": 2,
+      "range": "Far",
+      "damage": "2d8+4 physical"
+    }
+  ],
+  "experiences": [
+    {
+      "name": "Animal Handling",
+      "modifier": 3
+    }
+  ],
+  "motivesTactics": [
+    "Command",
+    "make a living",
+    "maneuver",
+    "pin down",
+    "protect companion animals"
+  ],
+  "abilities": [
+    {
+      "name": "Two as One",
+      "kind": "Passive",
+      "description": "When the Beastmaster is spotlighted, you can also spotlight a Tier 1 animal adversary currently under their control."
+    },
+    {
+      "name": "Pinning Strike",
+      "kind": "Action",
+      "description": "Make a standard attack against a target. On a success, you can mark a Stress to pin them to a nearby surface. The pinned target is Restrained until they break free with a successful Finesse or Strength Roll."
+    },
+    {
+      "name": "Deadly Companion",
+      "kind": "Action",
+      "description": "Twice per scene, summon a Bear, Dire Wolf, or similar Tier 1 animal adversary under the Beastmaster\u2019s control. The adversary appears at Close range and is immediately spotlighted."
+    }
+  ],
+  "tags": [
+    "Giant"
+  ]
+}

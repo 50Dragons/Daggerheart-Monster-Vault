@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "elite-soldier",
+  "name": "Elite Soldier",
+  "type": "Humanoid",
+  "level": 2,
+  "tier": 2,
+  "role": "Standard",
+  "description": "An armored squire or experienced commoner looking to advance.",
+  "difficulty": 15,
+  "thresholds": {
+    "major": 9,
+    "severe": 18
+  },
+  "hp": 4,
+  "stress": 3,
+  "attacks": [
+    {
+      "name": "Spear",
+      "modifier": 1,
+      "range": "Very Close",
+      "damage": "2d8+4 physical"
+    }
+  ],
+  "experiences": [],
+  "motivesTactics": [
+    "Gain glory",
+    "keep order",
+    "make alliances"
+  ],
+  "abilities": [
+    {
+      "name": "Reinforce",
+      "kind": "Action",
+      "description": "Mark a Stress to move into Melee range of an ally and make a standard attack against a target within Very Close range. On a success, deal 2d10+2 physical damage and the ally can clear a Stress."
+    },
+    {
+      "name": "Vassal\u2019s Loyalty",
+      "kind": "Reaction",
+      "description": "When the Soldier is within Very Close range of a knight or other noble who would take damage, you can mark a Stress to move into Melee range of them and take the damage instead."
+    }
+  ],
+  "tags": [
+    "Humanoid"
+  ]
+}
